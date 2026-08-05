@@ -1,0 +1,435 @@
+const DATA_URL = './data/patches.json';
+const state = {
+  data: null,
+  patch: null,
+  classId: 'all',
+  spec: 'all',
+  direction: 'all',
+  query: '',
+  revisedOnly: false,
+  openClassMenu: null,
+  menuCloseScrollY: null,
+};
+
+const $ = (selector) => document.querySelector(selector);
+const elements = {
+  patchSelect: $('#patch-select'),
+  classNav: $('#class-nav'),
+  specFilter: $('#spec-filter'),
+  directionFilter: $('#direction-filter'),
+  search: $('#search'),
+  revisedOnly: $('#revised-only'),
+  list: $('#change-list'),
+  empty: $('#empty-state'),
+  roundList: $('#round-list'),
+};
+
+function node(tag, options = {}, children = []) {
+  const element = document.createElement(tag);
+  if (options.className) element.className = options.className;
+  if (options.text !== undefined) element.textContent = options.text;
+  if (options.attrs) {
+    for (const [key, value] of Object.entries(options.attrs)) element.setAttribute(key, value);
+  }
+  for (const child of Array.isArray(children) ? children : [children]) {
+    if (child) element.append(child);
+  }
+  return element;
+}
+
+function formatDate(value, long = false) {
+  if (!value) return 'Unknown';
+  return new Intl.DateTimeFormat('en', long
+    ? { day: 'numeric', month: 'long', year: 'numeric' }
+    : { day: '2-digit', month: 'short', year: 'numeric' }
+  ).format(new Date(value));
+}
+
+function highlightedText(text) {
+  const fragment = document.createDocumentFragment();
+  const expression = /(\b\d+(?:\.\d+)?%?(?:\s*\/\s*\d+(?:\.\d+)?%?)?(?:\s+(?:seconds?|yards?|targets?|charges?|stacks?|Fury|Rage|Astral Power))?\b)/gi;
+  let cursor = 0;
+  for (const match of text.matchAll(expression)) {
+    fragment.append(document.createTextNode(text.slice(cursor, match.index)));
+    fragment.append(node('span', { className: 'number', text: match[0] }));
+    cursor = match.index + match[0].length;
+  }
+  fragment.append(document.createTextNode(text.slice(cursor)));
+  return fragment;
+}
+
+function allChanges() {
+  return state.patch.classes.flatMap((classInfo) => classInfo.changes.map((change) => ({ ...change, classInfo })));
+}
+
+function selectedClass() {
+  return state.patch.classes.find((classInfo) => classInfo.id === state.classId) || null;
+}
+
+const NON_SPECIALIZATIONS = new Set(['Class-wide', 'General']);
+
+function specializationsForChanges(changes) {
+  return [...new Set(changes.map((change) => change.spec))]
+    .filter((spec) => !NON_SPECIALIZATIONS.has(spec))
+    .sort((a, b) => a.localeCompare(b));
+}
+
+function visibleChanges() {
+  const query = state.query.toLocaleLowerCase();
+  return allChanges().filter(({ classInfo, ...change }) => {
+    if (state.classId !== 'all' && classInfo.id !== state.classId) return false;
+    if (state.spec !== 'all' && change.spec !== state.spec) return false;
+    if (state.direction !== 'all' && change.direction !== state.direction) return false;
+    if (state.revisedOnly && change.history.length < 2) return false;
+    if (query) {
+      const haystack = [classInfo.name, change.spec, change.category, change.subject, change.text]
+        .filter(Boolean)
+        .join(' ')
+        .toLocaleLowerCase();
+      if (!haystack.includes(query)) return false;
+    }
+    return true;
+  });
+}
+
+function updateUrl() {
+  const params = new URLSearchParams(location.search);
+  params.set('patch', state.patch.id);
+  history.replaceState(null, '', `${location.pathname}?${params}${location.hash}`);
+}
+
+function renderPatchMeta() {
+  $('#patch-ghost').textContent = state.patch.id;
+  $('#patch-status').textContent = `${state.patch.status} snapshot · ${state.patch.label}`;
+  $('#stat-classes').textContent = state.patch.stats.classes;
+  $('#stat-changes').textContent = state.patch.stats.changes.toLocaleString();
+  $('#stat-revised').textContent = state.patch.stats.revised.toLocaleString();
+  $('#stat-date').textContent = formatDate(state.patch.lastUpdated, true);
+  $('#class-count').textContent = `${state.patch.classes.length}`;
+  for (const selector of ['#header-source', '#footer-source']) $(selector).href = state.patch.source;
+}
+
+function renderClassNav() {
+  const total = state.patch.stats.changes;
+  const options = [
+    { id: 'all', name: 'Every class', mark: 'ALL', color: '#73b7ff', changes: Array(total) },
+    ...state.patch.classes,
+  ];
+
+  elements.classNav.replaceChildren(...options.map((classInfo) => {
+    const mark = node('span', { className: `class-mark${classInfo.icon ? ' has-icon' : ''}` });
+    if (classInfo.icon) {
+      mark.append(node('img', {
+        attrs: { src: classInfo.icon, alt: '', width: '30', height: '30' },
+      }));
+    } else {
+      mark.textContent = classInfo.mark;
+      mark.style.setProperty('--class-color', classInfo.color);
+    }
+
+    const specs = classInfo.id === 'all' ? [] : specializationsForChanges(classInfo.changes);
+    const isOpen = state.openClassMenu === classInfo.id && specs.length > 0;
+    const submenuId = `class-submenu-${classInfo.id}`;
+    const tail = node('span', { className: 'class-tail' }, [
+      node('span', { className: 'count', text: classInfo.id === 'all' ? total : classInfo.changes.length }),
+      ...(specs.length ? [node('span', { className: 'class-expand', text: '›', attrs: { 'aria-hidden': 'true' } })] : []),
+    ]);
+    const buttonAttrs = {
+      type: 'button',
+      'data-class': classInfo.id,
+      'aria-pressed': String(state.classId === classInfo.id),
+    };
+    if (specs.length) {
+      buttonAttrs['aria-expanded'] = String(isOpen);
+      buttonAttrs['aria-controls'] = submenuId;
+    }
+    const button = node('button', {
+      className: `class-button${state.classId === classInfo.id ? ' is-active' : ''}${isOpen ? ' is-expanded' : ''}`,
+      attrs: buttonAttrs,
+    }, [mark, node('span', { text: classInfo.name }), tail]);
+
+    const item = node('div', { className: 'class-nav-item' }, button);
+    if (isOpen) {
+      item.append(node('div', {
+        className: 'class-submenu',
+        attrs: { id: submenuId, 'aria-label': `${classInfo.name} specializations` },
+      }, [
+        node('button', {
+          className: `class-spec-button${state.spec === 'all' ? ' is-active' : ''}`,
+          text: 'All specializations',
+          attrs: { type: 'button', 'data-class-spec': 'all', 'aria-pressed': String(state.spec === 'all') },
+        }),
+        ...specs.map((spec) => node('button', {
+          className: `class-spec-button${state.spec === spec ? ' is-active' : ''}`,
+          text: spec,
+          attrs: { type: 'button', 'data-class-spec': spec, 'aria-pressed': String(state.spec === spec) },
+        })),
+      ]));
+    }
+    return item;
+  }));
+}
+
+function renderSpecOptions() {
+  const source = selectedClass()?.changes || allChanges();
+  const specs = specializationsForChanges(source);
+  if (state.spec !== 'all' && !specs.includes(state.spec)) state.spec = 'all';
+
+  elements.specFilter.replaceChildren(
+    node('option', { text: 'All specializations', attrs: { value: 'all' } }),
+    ...specs.map((spec) => node('option', { text: spec, attrs: { value: spec } })),
+  );
+  elements.specFilter.value = state.spec;
+}
+
+function timeline(change) {
+  const items = change.history.map((item, index) => {
+    const copy = node('div', { className: 'timeline-copy' }, [
+      node('p', { text: item.text }),
+      node('a', {
+        text: `Open note ${index + 1} ↗`,
+        attrs: { href: item.source, target: '_blank', rel: 'noreferrer' },
+      }),
+    ]);
+    return node('div', { className: 'timeline-item' }, [
+      node('time', { className: 'timeline-date', text: formatDate(item.date), attrs: { datetime: item.date } }),
+      copy,
+    ]);
+  });
+  return node('div', { className: 'timeline' }, items);
+}
+
+function changeCard(change) {
+  const directionLabels = { buff: 'Buff', nerf: 'Nerf', changed: 'Changed' };
+  const metadata = [node('span', { className: 'direction-label', text: directionLabels[change.direction] })];
+  if (change.category) metadata.push(node('span', { className: 'category-label', text: `· ${change.category}` }));
+
+  const name = node('div', { className: 'change-name' }, [
+    node('div', { className: 'change-meta' }, metadata),
+    node('h3', { text: change.subject }),
+  ]);
+
+  const live = node('div', { className: 'value-block' }, [
+    node('small', { text: 'Live' }),
+    node('b', { text: change.baseline || 'Baseline' }),
+  ]);
+  const ptr = node('div', { className: 'value-block ptr' }, [
+    node('small', { text: state.patch.status }),
+    node('b', { text: change.value }),
+  ]);
+  const note = node('p', { className: 'current-note' });
+  note.append(highlightedText(change.text));
+  const content = node('div', {}, [
+    node('div', { className: 'comparison' }, [live, node('span', { className: 'comparison-arrow', text: '→' }), ptr]),
+    note,
+  ]);
+
+  let footer;
+  if (change.history.length > 1) {
+    const details = node('details', { className: 'history-disclosure' }, [
+      node('summary', {}, [
+        node('span', { text: `Revision trail · ${change.history.length} checkpoints` }),
+        node('span', { text: '+' }),
+      ]),
+      timeline(change),
+    ]);
+    footer = node('div', { className: 'card-footer' }, details);
+  } else {
+    const source = change.history[0]?.source || state.patch.source;
+    footer = node('div', { className: 'card-footer source-only' }, node('a', {
+      text: 'Official note ↗',
+      attrs: { href: source, target: '_blank', rel: 'noreferrer' },
+    }));
+  }
+
+  return node('article', {
+    className: 'change-card',
+    attrs: { 'data-direction': change.direction },
+  }, [node('div', { className: 'card-main' }, [name, content]), footer]);
+}
+
+function renderChanges() {
+  const visible = visibleChanges();
+  const classInfo = selectedClass();
+  const selectedName = classInfo?.name || 'Every class';
+  $('#result-kicker').textContent = state.spec === 'all' ? selectedName : `${selectedName} · ${state.spec}`;
+  $('#result-title').textContent = state.revisedOnly ? 'Revised changes' : 'Current changes';
+  $('#result-count').textContent = `${visible.length.toLocaleString()} ${visible.length === 1 ? 'change' : 'changes'}`;
+
+  const groups = new Map();
+  for (const change of visible) {
+    const group = state.classId === 'all' ? change.classInfo.name : change.spec;
+    if (!groups.has(group)) groups.set(group, []);
+    groups.get(group).push(change);
+  }
+
+  const sections = [...groups].map(([name, changes]) => node('section', { className: 'spec-section' }, [
+    node('h2', { className: 'spec-heading' }, [
+      node('span', { text: name }),
+      node('span', { text: changes.length }),
+    ]),
+    ...changes.map(changeCard),
+  ]));
+
+  elements.list.replaceChildren(...sections);
+  elements.empty.hidden = visible.length > 0;
+  armClassMenuDismissal();
+}
+
+function renderRounds() {
+  elements.roundList.replaceChildren(...state.patch.rounds.map((round) => node('li', { className: 'round-item' }, [
+    node('span', { className: 'round-pip', attrs: { 'aria-hidden': 'true' } }),
+    node('div', {}, [
+      node('a', { text: `${round.label} · ${round.changes} notes`, attrs: { href: round.source, target: '_blank', rel: 'noreferrer' } }),
+      node('time', { text: formatDate(round.date), attrs: { datetime: round.date } }),
+    ]),
+  ])));
+}
+
+function renderAll() {
+  renderPatchMeta();
+  renderClassNav();
+  renderSpecOptions();
+  renderChanges();
+  renderRounds();
+  updateUrl();
+}
+
+function selectPatch(id) {
+  state.patch = state.data.patches.find((patch) => patch.id === id)
+    || state.data.patches.find((patch) => patch.current)
+    || state.data.patches[0];
+  state.classId = 'all';
+  state.spec = 'all';
+  state.openClassMenu = null;
+  state.menuCloseScrollY = null;
+  elements.patchSelect.value = state.patch.id;
+  renderAll();
+}
+
+function resetFilters() {
+  state.classId = 'all';
+  state.spec = 'all';
+  state.direction = 'all';
+  state.query = '';
+  state.revisedOnly = false;
+  state.openClassMenu = null;
+  state.menuCloseScrollY = null;
+  elements.search.value = '';
+  elements.revisedOnly.checked = false;
+  elements.directionFilter.querySelectorAll('button').forEach((button) => {
+    button.classList.toggle('is-active', button.dataset.direction === 'all');
+  });
+  renderClassNav();
+  renderSpecOptions();
+  renderChanges();
+}
+
+let menuScrollFrame = null;
+
+function armClassMenuDismissal() {
+  if (!state.openClassMenu || window.innerWidth <= 860) {
+    state.menuCloseScrollY = null;
+    return;
+  }
+  requestAnimationFrame(() => {
+    if (!state.openClassMenu) return;
+    const listBottom = window.scrollY + elements.list.getBoundingClientRect().bottom;
+    state.menuCloseScrollY = Math.max(
+      window.scrollY + 160,
+      listBottom - window.innerHeight + 24,
+    );
+  });
+}
+
+function dismissClassMenuAfterSection() {
+  if (menuScrollFrame || !state.openClassMenu || state.menuCloseScrollY === null) return;
+  menuScrollFrame = requestAnimationFrame(() => {
+    menuScrollFrame = null;
+    if (window.innerWidth <= 860 || window.scrollY < state.menuCloseScrollY) return;
+    state.openClassMenu = null;
+    state.menuCloseScrollY = null;
+    renderClassNav();
+  });
+}
+
+function bindEvents() {
+  elements.patchSelect.addEventListener('change', (event) => selectPatch(event.target.value));
+  elements.classNav.addEventListener('click', (event) => {
+    const specButton = event.target.closest('[data-class-spec]');
+    if (specButton) {
+      state.spec = specButton.dataset.classSpec;
+      renderClassNav();
+      renderSpecOptions();
+      renderChanges();
+      return;
+    }
+
+    const button = event.target.closest('[data-class]');
+    if (!button) return;
+    state.classId = button.dataset.class;
+    state.spec = 'all';
+    state.openClassMenu = specializationsForChanges(selectedClass()?.changes || []).length
+      ? state.classId
+      : null;
+    renderClassNav();
+    renderSpecOptions();
+    renderChanges();
+  });
+  elements.specFilter.addEventListener('change', (event) => {
+    state.spec = event.target.value;
+    renderClassNav();
+    renderChanges();
+  });
+  elements.directionFilter.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-direction]');
+    if (!button) return;
+    state.direction = button.dataset.direction;
+    elements.directionFilter.querySelectorAll('button').forEach((item) => item.classList.toggle('is-active', item === button));
+    renderChanges();
+  });
+  elements.search.addEventListener('input', (event) => {
+    state.query = event.target.value.trim();
+    renderChanges();
+  });
+  elements.revisedOnly.addEventListener('change', (event) => {
+    state.revisedOnly = event.target.checked;
+    renderChanges();
+  });
+  $('#clear-filters').addEventListener('click', resetFilters);
+  window.addEventListener('scroll', dismissClassMenuAfterSection, { passive: true });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === '/' && !/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName)) {
+      event.preventDefault();
+      elements.search.focus();
+    }
+  });
+}
+
+async function start() {
+  try {
+    const response = await fetch(DATA_URL);
+    if (!response.ok) throw new Error(`Data request failed (${response.status})`);
+    state.data = await response.json();
+    if (!state.data.patches?.length) throw new Error('No patches are configured');
+
+    elements.patchSelect.replaceChildren(...state.data.patches.map((patch) => node('option', {
+      text: patch.label,
+      attrs: { value: patch.id },
+    })));
+    bindEvents();
+    const requested = new URLSearchParams(location.search).get('patch');
+    selectPatch(requested);
+  } catch (error) {
+    console.error(error);
+    elements.list.replaceChildren(node('div', { className: 'empty-state' }, [
+      node('span', { text: '!' }),
+      node('h2', { text: 'The ledger could not be opened.' }),
+      node('p', { text: 'The generated patch data is missing or invalid.' }),
+    ]));
+  } finally {
+    requestAnimationFrame(() => $('#loading-screen').classList.add('is-hidden'));
+  }
+}
+
+start();

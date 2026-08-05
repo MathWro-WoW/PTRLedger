@@ -1,0 +1,12 @@
+{
+  "patches": [
+    {
+      "id": "12.1",
+      "name": "Curse of Ula'tek",
+      "topicId": 621832,
+      "region": "eu",
+      "status": "PTR",
+      "current": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "name": "wow-ptr-ledger",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "update": "node scripts/update-data.mjs",
+    "test": "node --test",
+    "serve": "npx --yes serve site"
+  },
+  "dependencies": {
+    "cheerio": "1.1.2"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

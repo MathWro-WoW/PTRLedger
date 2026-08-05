@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A living ledger of World of Warcraft PTR class changes, compared with live values and tracked across every update.">
+  <meta name="theme-color" content="#09111c">
+  <title>PTR Ledger — World of Warcraft class tuning</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#changes">Skip to changes</a>
+  <div class="page-grid" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="PTR Ledger home">
+      <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
+        <circle cx="22" cy="22" r="18"></circle>
+        <path d="M22 8v28M8 22h28M12.1 12.1l19.8 19.8M31.9 12.1 12.1 31.9"></path>
+        <circle cx="22" cy="22" r="4"></circle>
+      </svg>
+      <span><b>PTR</b> Ledger</span>
+    </a>
+
+    <div class="patch-control">
+      <label for="patch-select">Tracking</label>
+      <select id="patch-select" aria-label="Choose patch"></select>
+    </div>
+
+    <a class="source-link" id="header-source" href="#" target="_blank" rel="noreferrer">
+      Official notes
+      <span aria-hidden="true">↗</span>
+    </a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="patch-ghost" id="patch-ghost" aria-hidden="true">12.1</div>
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="live-dot"></span><span id="patch-status">PTR snapshot</span></p>
+        <h1 id="hero-title">Know what survived<br>the PTR.</h1>
+        <p class="hero-deck">Current class tuning against live, with every revision kept in the margins.</p>
+      </div>
+      <dl class="snapshot" aria-label="Current snapshot statistics">
+        <div><dt>Classes</dt><dd id="stat-classes">—</dd></div>
+        <div><dt>Changes</dt><dd id="stat-changes">—</dd></div>
+        <div><dt>Revised</dt><dd id="stat-revised">—</dd></div>
+        <div class="snapshot-date"><dt>Notes updated</dt><dd id="stat-date">—</dd></div>
+      </dl>
+    </section>
+
+    <section class="workspace" aria-label="Patch changes">
+      <aside class="class-rail">
+        <div class="rail-heading">
+          <span>Class index</span>
+          <span id="class-count"></span>
+        </div>
+        <nav id="class-nav" aria-label="Filter by class"></nav>
+      </aside>
+
+      <div class="ledger" id="changes">
+        <div class="toolbar">
+          <div class="search-field">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
+            <label class="sr-only" for="search">Search abilities and changes</label>
+            <input id="search" type="search" placeholder="Search talents, spells, notes…" autocomplete="off">
+            <kbd>/</kbd>
+          </div>
+          <label class="select-field">
+            <span class="sr-only">Filter by specialization</span>
+            <select id="spec-filter"><option value="all">All specializations</option></select>
+          </label>
+        </div>
+
+        <div class="filter-row" aria-label="Change filters">
+          <div class="segmented" id="direction-filter">
+            <button class="is-active" type="button" data-direction="all">All</button>
+            <button type="button" data-direction="buff"><span class="filter-mark buff"></span>Buffs</button>
+            <button type="button" data-direction="nerf"><span class="filter-mark nerf"></span>Nerfs</button>
+            <button type="button" data-direction="changed"><span class="filter-mark changed"></span>Redesigns</button>
+          </div>
+          <label class="revised-toggle">
+            <input id="revised-only" type="checkbox">
+            <span></span>
+            Revised more than once
+          </label>
+        </div>
+
+        <div class="result-heading">
+          <div>
+            <p id="result-kicker">All classes</p>
+            <h2 id="result-title">Current changes</h2>
+          </div>
+          <p id="result-count" aria-live="polite"></p>
+        </div>
+
+        <div id="change-list"></div>
+        <div class="empty-state" id="empty-state" hidden>
+          <span>Ø</span>
+          <h2>No notes match these filters.</h2>
+          <p>Clear a filter or try another spell name.</p>
+          <button type="button" id="clear-filters">Clear filters</button>
+        </div>
+      </div>
+
+      <aside class="rounds-rail">
+        <div class="rounds-sticky">
+          <p class="rail-heading">Note rounds</p>
+          <ol id="round-list"></ol>
+          <p class="rounds-note">Each official class-note post becomes a checkpoint. Repeated abilities are folded into their latest value.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <p>Community-made tracker. World of Warcraft and Blizzard Entertainment are trademarks of Blizzard Entertainment, Inc.</p>
+    <a id="footer-source" href="#" target="_blank" rel="noreferrer">Verify against the official development notes ↗</a>
+  </footer>
+
+  <div class="loading-screen" id="loading-screen" role="status">
+    <div class="loading-rune"></div>
+    <p>Opening the ledger…</p>
+  </div>
+</body>
+</html>
