@@ -39,6 +39,12 @@ Node.js 22 or newer is required.
 - Keep the browser application framework-free unless the project requirements materially change.
 - Do not commit `node_modules/` or local tooling output.
 
+## Publishing approval
+
+- Never push commits or tags to a remote, manually dispatch a deployment, or rerun a deployment workflow without the user's explicit confirmation immediately before publishing.
+- A request to implement or commit changes does not authorize a push to the live build. Keep the work local, report the completed changes and verification, then ask whether to publish.
+- After approval, push only the reviewed commits described to the user. New changes require new approval.
+
 ## Verification
 
 - Parser, classifier, or updater changes: run `npm test`, then `npm run update` and inspect the affected generated entry.
