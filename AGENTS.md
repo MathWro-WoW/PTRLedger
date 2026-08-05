@@ -42,6 +42,7 @@ Node.js 22 or newer is required.
 ## Publishing approval
 
 - Never push commits or tags to a remote, manually dispatch a deployment, or rerun a deployment workflow without the user's explicit confirmation immediately before publishing.
+- Always create a local commit after completing a feature or any other repository change; do not wait for the user to request the commit. A local commit does not authorize a push.
 - A request to implement or commit changes does not authorize a push to the live build. Keep the work local, report the completed changes and verification, then ask whether to publish.
 - After approval, push only the reviewed commits described to the user. New changes require new approval.
 
