@@ -212,20 +212,26 @@ function changeCard(change) {
     node('h3', { text: change.subject }),
   ]);
 
-  const live = node('div', { className: 'value-block' }, [
-    node('small', { text: 'Live' }),
-    node('b', { text: change.baseline || 'Baseline' }),
-  ]);
-  const ptr = node('div', { className: 'value-block ptr' }, [
-    node('small', { text: state.patch.status }),
-    node('b', { text: change.value }),
-  ]);
+  const hasNumericComparison = /\d/.test(change.value);
+  let comparison = null;
+  if (hasNumericComparison) {
+    const live = node('div', { className: 'value-block' }, [
+      node('small', { text: 'Live' }),
+      node('b', { text: change.baseline || 'Baseline' }),
+    ]);
+    const ptr = node('div', { className: 'value-block ptr' }, [
+      node('small', { text: state.patch.status }),
+      node('b', { text: change.value }),
+    ]);
+    comparison = node('div', { className: 'comparison' }, [
+      live,
+      node('span', { className: 'comparison-arrow', text: '→' }),
+      ptr,
+    ]);
+  }
   const note = node('p', { className: 'current-note' });
   note.append(highlightedText(change.text));
-  const content = node('div', {}, [
-    node('div', { className: 'comparison' }, [live, node('span', { className: 'comparison-arrow', text: '→' }), ptr]),
-    note,
-  ]);
+  const content = node('div', {}, [comparison, note]);
 
   let footer;
   if (change.history.length > 1) {
@@ -247,7 +253,7 @@ function changeCard(change) {
 
   return node('article', {
     className: 'change-card',
-    attrs: { 'data-direction': change.direction },
+    attrs: { 'data-direction': change.direction, 'data-value-kind': hasNumericComparison ? 'numeric' : 'qualitative' },
   }, [node('div', { className: 'card-main' }, [name, content]), footer]);
 }
 
