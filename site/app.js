@@ -5,6 +5,7 @@ const state = {
   classId: 'all',
   spec: 'all',
   direction: 'all',
+  round: 'all',
   query: '',
   revisedOnly: false,
   openClassMenu: null,
@@ -15,7 +16,7 @@ const $ = (selector) => document.querySelector(selector);
 const elements = {
   patchSelect: $('#patch-select'),
   classNav: $('#class-nav'),
-  specFilter: $('#spec-filter'),
+  roundFilter: $('#round-filter'),
   directionFilter: $('#direction-filter'),
   search: $('#search'),
   revisedOnly: $('#revised-only'),
@@ -80,6 +81,7 @@ function visibleChanges() {
     if (state.classId !== 'all' && classInfo.id !== state.classId) return false;
     if (state.spec !== 'all' && change.spec !== state.spec) return false;
     if (state.direction !== 'all' && change.direction !== state.direction) return false;
+    if (state.round !== 'all' && !change.history.some((item) => String(item.round) === state.round)) return false;
     if (state.revisedOnly && change.history.length < 2) return false;
     if (query) {
       const haystack = [classInfo.name, change.spec, change.category, change.subject, change.text]
@@ -116,6 +118,7 @@ function renderClassNav() {
     ...state.patch.classes,
   ];
 
+  const scrollLeft = elements.classNav.scrollLeft;
   elements.classNav.replaceChildren(...options.map((classInfo) => {
     const mark = node('span', { className: `class-mark${classInfo.icon ? ' has-icon' : ''}` });
     if (classInfo.icon) {
@@ -168,18 +171,18 @@ function renderClassNav() {
     }
     return item;
   }));
+  elements.classNav.scrollLeft = scrollLeft;
 }
 
-function renderSpecOptions() {
-  const source = selectedClass()?.changes || allChanges();
-  const specs = specializationsForChanges(source);
-  if (state.spec !== 'all' && !specs.includes(state.spec)) state.spec = 'all';
-
-  elements.specFilter.replaceChildren(
-    node('option', { text: 'All specializations', attrs: { value: 'all' } }),
-    ...specs.map((spec) => node('option', { text: spec, attrs: { value: spec } })),
+function renderRoundOptions() {
+  elements.roundFilter.replaceChildren(
+    node('option', { text: 'All update rounds', attrs: { value: 'all' } }),
+    ...state.patch.rounds.map((round) => node('option', {
+      text: `${round.label} · ${formatDate(round.date)}`,
+      attrs: { value: round.number },
+    })),
   );
-  elements.specFilter.value = state.spec;
+  elements.roundFilter.value = state.round;
 }
 
 function timeline(change) {
@@ -253,7 +256,10 @@ function renderChanges() {
   const classInfo = selectedClass();
   const selectedName = classInfo?.name || 'Every class';
   $('#result-kicker').textContent = state.spec === 'all' ? selectedName : `${selectedName} · ${state.spec}`;
-  $('#result-title').textContent = state.revisedOnly ? 'Revised changes' : 'Current changes';
+  const selectedRound = state.patch.rounds.find((round) => String(round.number) === state.round);
+  $('#result-title').textContent = selectedRound
+    ? `${selectedRound.label}${state.revisedOnly ? ' · revised changes' : ' changes'}`
+    : state.revisedOnly ? 'Revised changes' : 'Current changes';
   $('#result-count').textContent = `${visible.length.toLocaleString()} ${visible.length === 1 ? 'change' : 'changes'}`;
 
   const groups = new Map();
@@ -289,7 +295,7 @@ function renderRounds() {
 function renderAll() {
   renderPatchMeta();
   renderClassNav();
-  renderSpecOptions();
+  renderRoundOptions();
   renderChanges();
   renderRounds();
   updateUrl();
@@ -301,6 +307,7 @@ function selectPatch(id) {
     || state.data.patches[0];
   state.classId = 'all';
   state.spec = 'all';
+  state.round = 'all';
   state.openClassMenu = null;
   state.menuCloseScrollY = null;
   elements.patchSelect.value = state.patch.id;
@@ -313,22 +320,24 @@ function resetFilters() {
   state.direction = 'all';
   state.query = '';
   state.revisedOnly = false;
+  state.round = 'all';
   state.openClassMenu = null;
   state.menuCloseScrollY = null;
   elements.search.value = '';
   elements.revisedOnly.checked = false;
+  elements.roundFilter.value = 'all';
   elements.directionFilter.querySelectorAll('button').forEach((button) => {
     button.classList.toggle('is-active', button.dataset.direction === 'all');
   });
   renderClassNav();
-  renderSpecOptions();
+  renderRoundOptions();
   renderChanges();
 }
 
 let menuScrollFrame = null;
 
 function armClassMenuDismissal() {
-  if (!state.openClassMenu || window.innerWidth <= 860) {
+  if (!state.openClassMenu) {
     state.menuCloseScrollY = null;
     return;
   }
@@ -346,7 +355,7 @@ function dismissClassMenuAfterSection() {
   if (menuScrollFrame || !state.openClassMenu || state.menuCloseScrollY === null) return;
   menuScrollFrame = requestAnimationFrame(() => {
     menuScrollFrame = null;
-    if (window.innerWidth <= 860 || window.scrollY < state.menuCloseScrollY) return;
+    if (window.scrollY < state.menuCloseScrollY) return;
     state.openClassMenu = null;
     state.menuCloseScrollY = null;
     renderClassNav();
@@ -360,7 +369,6 @@ function bindEvents() {
     if (specButton) {
       state.spec = specButton.dataset.classSpec;
       renderClassNav();
-      renderSpecOptions();
       renderChanges();
       return;
     }
@@ -373,12 +381,10 @@ function bindEvents() {
       ? state.classId
       : null;
     renderClassNav();
-    renderSpecOptions();
     renderChanges();
   });
-  elements.specFilter.addEventListener('change', (event) => {
-    state.spec = event.target.value;
-    renderClassNav();
+  elements.roundFilter.addEventListener('change', (event) => {
+    state.round = event.target.value;
     renderChanges();
   });
   elements.directionFilter.addEventListener('click', (event) => {

@@ -68,10 +68,6 @@
             <input id="search" type="search" placeholder="Search talents, spells, notes…" autocomplete="off">
             <kbd>/</kbd>
           </div>
-          <label class="select-field">
-            <span class="sr-only">Filter by specialization</span>
-            <select id="spec-filter"><option value="all">All specializations</option></select>
-          </label>
         </div>
 
         <div class="filter-row" aria-label="Change filters">
@@ -81,11 +77,17 @@
             <button type="button" data-direction="nerf"><span class="filter-mark nerf"></span>Nerfs</button>
             <button type="button" data-direction="changed"><span class="filter-mark changed"></span>Redesigns</button>
           </div>
-          <label class="revised-toggle">
-            <input id="revised-only" type="checkbox">
-            <span></span>
-            Revised more than once
-          </label>
+          <div class="filter-options">
+            <label class="round-filter">
+              <span>Update round</span>
+              <select id="round-filter" aria-label="Filter by update round"></select>
+            </label>
+            <label class="revised-toggle">
+              <input id="revised-only" type="checkbox">
+              <span></span>
+              Revised more than once
+            </label>
+          </div>
         </div>
 
         <div class="result-heading">
