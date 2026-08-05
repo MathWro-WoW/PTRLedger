@@ -79,14 +79,12 @@ The workflow at [`.github/workflows/pages.yml`](.github/workflows/pages.yml) run
 
 It installs dependencies, runs the tests, refreshes the official notes, commits changed generated data, uploads `site/` as the Pages artifact, and deploys it.
 
-To enable the deployment:
+GitHub Pages is configured to deploy through this workflow with HTTPS enforced. For a fork or a new repository:
 
 1. Open the repository's **Settings → Pages**.
 2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
 3. Open **Actions** and run **Update PTR ledger and deploy**, or let a push to `main` trigger it.
 4. The deployment URL appears in the workflow's `github-pages` environment.
-
-The repository is currently private. GitHub Pages availability for a private organization repository depends on the organization's GitHub plan. If Pages is unavailable under the current plan, make the repository public or upgrade the organization plan.
 
 The workflow requests repository contents write access for generated data, Pages write access, and an OpenID Connect token for deployment. See [GitHub's custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
 
