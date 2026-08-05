@@ -249,9 +249,11 @@ function parseList($, list, classKey, context, output) {
     const childLists = $(li).children('ul, ol');
     const strong = cleanText($(li).children('strong').first().text());
     const isContainer = childLists.length > 0 && strong && text === strong;
+    const isGenericChangeParent = childLists.length > 0 && /\bhas been updated:\s*$/i.test(text);
 
-    if (isContainer) {
-      childLists.each((__, child) => parseList($, child, classKey, [...context, strong], output));
+    if (isContainer || isGenericChangeParent) {
+      const childContext = isContainer ? [...context, strong] : context;
+      childLists.each((__, child) => parseList($, child, classKey, childContext, output));
       return;
     }
 

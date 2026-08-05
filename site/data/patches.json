@@ -16,7 +16,7 @@
           "number": 1,
           "date": "2026-06-18T20:07:26.932Z",
           "updatedAt": "2026-06-25T19:43:02.523Z",
-          "changes": 414,
+          "changes": 411,
           "source": "https://eu.forums.blizzard.com/en/wow/t/621832/1",
           "label": "Initial notes"
         },
@@ -32,7 +32,7 @@
           "number": 11,
           "date": "2026-06-30T22:30:44.435Z",
           "updatedAt": "2026-06-30T22:30:44.435Z",
-          "changes": 97,
+          "changes": 96,
           "source": "https://eu.forums.blizzard.com/en/wow/t/621832/11",
           "label": "Update 2"
         },
@@ -12763,28 +12763,6 @@
               ]
             },
             {
-              "id": "afef62597e69",
-              "classKey": "PALADIN",
-              "spec": "Protection",
-              "category": null,
-              "subject": "The talent tree",
-              "text": "The talent tree has been updated:",
-              "value": "Changed",
-              "baseline": null,
-              "direction": "changed",
-              "firstSeen": "2026-06-30T22:30:44.435Z",
-              "lastChanged": "2026-06-30T22:30:44.435Z",
-              "history": [
-                {
-                  "round": 11,
-                  "date": "2026-06-30T22:30:44.435Z",
-                  "text": "The talent tree has been updated:",
-                  "value": "Changed",
-                  "source": "https://eu.forums.blizzard.com/en/wow/t/621832/11"
-                }
-              ]
-            },
-            {
               "id": "61068703fa6d",
               "classKey": "PALADIN",
               "spec": "Protection",
@@ -18865,28 +18843,6 @@
               "spec": "Arms",
               "category": null,
               "subject": "Ravager",
-              "text": "Ravager has been updated:",
-              "value": "Changed",
-              "baseline": null,
-              "direction": "changed",
-              "firstSeen": "2026-06-18T20:07:26.932Z",
-              "lastChanged": "2026-06-18T20:07:26.932Z",
-              "history": [
-                {
-                  "round": 1,
-                  "date": "2026-06-18T20:07:26.932Z",
-                  "text": "Ravager has been updated:",
-                  "value": "Changed",
-                  "source": "https://eu.forums.blizzard.com/en/wow/t/621832/1"
-                }
-              ]
-            },
-            {
-              "id": "3f98c5264bd0-2",
-              "classKey": "WARRIOR",
-              "spec": "Arms",
-              "category": null,
-              "subject": "Ravager",
               "text": "Ravager damage increased by 50%.",
               "value": "+50%",
               "baseline": null,
@@ -18904,7 +18860,7 @@
               ]
             },
             {
-              "id": "3f98c5264bd0-3",
+              "id": "3f98c5264bd0-2",
               "classKey": "WARRIOR",
               "spec": "Arms",
               "category": null,
@@ -19532,28 +19488,6 @@
               "spec": "Fury",
               "category": null,
               "subject": "Whirlwind",
-              "text": "Whirlwind has been updated:",
-              "value": "Changed",
-              "baseline": null,
-              "direction": "changed",
-              "firstSeen": "2026-06-18T20:07:26.932Z",
-              "lastChanged": "2026-06-18T20:07:26.932Z",
-              "history": [
-                {
-                  "round": 1,
-                  "date": "2026-06-18T20:07:26.932Z",
-                  "text": "Whirlwind has been updated:",
-                  "value": "Changed",
-                  "source": "https://eu.forums.blizzard.com/en/wow/t/621832/1"
-                }
-              ]
-            },
-            {
-              "id": "d5423ff035df-2",
-              "classKey": "WARRIOR",
-              "spec": "Fury",
-              "category": null,
-              "subject": "Whirlwind",
               "text": "Whirlwind now generates 3 Rage innately.",
               "value": "3 Rage",
               "baseline": null,
@@ -19818,28 +19752,6 @@
               "spec": "Protection",
               "category": null,
               "subject": "Ravager",
-              "text": "Ravager has been updated:",
-              "value": "Changed",
-              "baseline": null,
-              "direction": "changed",
-              "firstSeen": "2026-06-18T20:07:26.932Z",
-              "lastChanged": "2026-06-18T20:07:26.932Z",
-              "history": [
-                {
-                  "round": 1,
-                  "date": "2026-06-18T20:07:26.932Z",
-                  "text": "Ravager has been updated:",
-                  "value": "Changed",
-                  "source": "https://eu.forums.blizzard.com/en/wow/t/621832/1"
-                }
-              ]
-            },
-            {
-              "id": "b7576f0b85ae-2",
-              "classKey": "WARRIOR",
-              "spec": "Protection",
-              "category": null,
-              "subject": "Ravager",
               "text": "Ravager damage increased by 50%.",
               "value": "+50%",
               "baseline": null,
@@ -19857,7 +19769,7 @@
               ]
             },
             {
-              "id": "b7576f0b85ae-3",
+              "id": "b7576f0b85ae-2",
               "classKey": "WARRIOR",
               "spec": "Protection",
               "category": null,
@@ -20066,7 +19978,7 @@
       ],
       "stats": {
         "classes": 13,
-        "changes": 881,
+        "changes": 877,
         "revised": 60
       }
     }

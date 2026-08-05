@@ -43,6 +43,23 @@ test('parses nested class and specialization notes', () => {
   });
 });
 
+test('skips generic parent notes while retaining their nested changes', () => {
+  const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
+    <li>Ravager has been updated:
+      <ul>
+        <li><em>Developers’ notes: Context for the nested changes.</em></li>
+        <li>Ravager damage increased by 50%.</li>
+        <li>Ravager no longer increases Cleave damage while active.</li>
+      </ul>
+    </li>
+  `).cooked);
+
+  assert.deepEqual(changes.map((change) => change.text), [
+    'Ravager damage increased by 50%.',
+    'Ravager no longer increases Cleave damage while active.',
+  ]);
+});
+
 test('parses class headings that precede separate lists', () => {
   const changes = parseClassChanges(`
     <h2>CLASSES</h2>
