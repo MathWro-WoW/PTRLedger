@@ -312,19 +312,25 @@ function renderChanges() {
     groups.get(group).push(change);
   }
 
-  const sections = [...groups].map(([name, changes]) => node('section', {
-    className: 'spec-section',
-    attrs: { style: `--section-color: ${changes[0].classInfo.color}` },
-  }, [
-    node('h2', { className: 'spec-heading' }, [
-      node('span', { className: 'spec-name', text: name }),
-      node('span', {
-        className: 'spec-count',
-        text: `${changes.length.toLocaleString()} ${changes.length === 1 ? 'change' : 'changes'}`,
-      }),
-    ]),
-    ...changes.map(changeCard),
-  ]));
+  const sections = [...groups]
+    .sort(([left], [right]) => {
+      if (left === 'Class-wide') return -1;
+      if (right === 'Class-wide') return 1;
+      return left.localeCompare(right, 'en');
+    })
+    .map(([name, changes]) => node('section', {
+      className: 'spec-section',
+      attrs: { style: `--section-color: ${changes[0].classInfo.color}` },
+    }, [
+      node('h2', { className: 'spec-heading' }, [
+        node('span', { className: 'spec-name', text: name }),
+        node('span', {
+          className: 'spec-count',
+          text: `${changes.length.toLocaleString()} ${changes.length === 1 ? 'change' : 'changes'}`,
+        }),
+      ]),
+      ...changes.map(changeCard),
+    ]));
 
   elements.list.replaceChildren(...sections);
   elements.empty.hidden = visible.length > 0;
