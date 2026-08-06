@@ -71,12 +71,17 @@
         </div>
 
         <div class="filter-row">
-          <div class="segmented" id="direction-filter" role="group" aria-label="Filter by change direction">
+          <div class="segmented" id="direction-filter" role="group" aria-label="Filter changes">
             <button class="is-active" type="button" data-direction="all" aria-pressed="true">All</button>
             <button type="button" data-direction="buff" aria-pressed="false"><span class="filter-mark buff"></span>Buffs</button>
             <button type="button" data-direction="nerf" aria-pressed="false"><span class="filter-mark nerf"></span>Nerfs</button>
             <button type="button" data-direction="fixed" aria-pressed="false"><span class="filter-mark fixed"></span>Fixes</button>
             <button type="button" data-direction="changed" aria-pressed="false"><span class="filter-mark changed"></span>Changed</button>
+            <label class="filter-toggle filter-toggle-chip" title="Hide changes with no PvP effect">
+              <input id="pvp-filter" type="checkbox" aria-label="Hide changes with no PvP effect">
+              <span></span>
+              PvP
+            </label>
           </div>
           <div class="filter-options">
             <label class="round-filter">
@@ -92,11 +97,6 @@
               <input id="revised-only" type="checkbox">
               <span></span>
               Has revision history
-            </label>
-            <label class="filter-toggle">
-              <input id="pvp-filter" type="checkbox">
-              <span></span>
-              Hide changes with no PvP effect
             </label>
           </div>
         </div>

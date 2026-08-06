@@ -380,6 +380,31 @@ h1 {
 .filter-toggle input { position: absolute; opacity: 0; pointer-events: none; }
 .filter-toggle span { width: 27px; height: 15px; position: relative; border: 1px solid var(--line); border-radius: 20px; background: var(--deep-blue); }
 .filter-toggle span::after { content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%; left: 2px; top: 2px; background: var(--muted); transition: transform .18s, background .18s; }
+.segmented .filter-toggle-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  flex: 0 0 auto;
+  min-height: 0;
+  padding: .45rem .7rem;
+  color: var(--muted);
+  font-size: .72rem;
+  white-space: nowrap;
+}
+.segmented .filter-toggle-chip:hover,
+.segmented .filter-toggle-chip:has(input:checked) {
+  color: var(--vellum);
+  background: var(--map-blue);
+}
+.segmented .filter-toggle-chip span {
+  width: 6px;
+  height: 6px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--muted);
+}
+.segmented .filter-toggle-chip span::after { display: none; }
+.segmented .filter-toggle-chip input:checked + span { background: var(--arcane); }
 .filter-toggle input:checked + span::after { transform: translateX(12px); background: var(--arcane); }
 .filter-toggle input:focus-visible + span { outline: 2px solid var(--arcane); outline-offset: 3px; }
 
