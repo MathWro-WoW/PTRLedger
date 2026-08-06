@@ -3,6 +3,12 @@ name: Update PTR ledger and deploy
 on:
   push:
     branches: [main]
+    paths:
+      - 'site/**'
+      - 'scripts/**'
+      - 'config/**'
+      - 'package.json'
+      - 'package-lock.json'
   schedule:
     - cron: '17 */6 * * *'
   workflow_dispatch:
@@ -17,11 +23,10 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  update-and-deploy:
+  update:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      should_deploy: ${{ steps.plan.outputs.should_deploy }}
 
     steps:
       - name: Check out repository
@@ -43,27 +48,53 @@ jobs:
         run: npm run update
 
       - name: Preserve new ledger data
+        id: data
         run: |
           if [ -z "$(git status --porcelain -- site/data/patches.json site/data/ability-metadata.json site/assets/abilities)" ]; then
             echo "Official notes and ability metadata are unchanged."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add site/data/patches.json site/data/ability-metadata.json site/assets/abilities
             git commit -m "data: update PTR notes [skip ci]"
             git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Decide whether to deploy
+        id: plan
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          DATA_CHANGED: ${{ steps.data.outputs.changed }}
+        run: |
+          if [ "$EVENT_NAME" = "schedule" ] && [ "$DATA_CHANGED" != "true" ]; then
+            echo "No official data changes; skipping Pages deployment."
+            echo "should_deploy=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "Pages deployment required for $EVENT_NAME."
+            echo "should_deploy=true" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Configure GitHub Pages
+        if: steps.plan.outputs.should_deploy == 'true'
         uses: actions/configure-pages@v5
 
       - name: Upload site
+        if: steps.plan.outputs.should_deploy == 'true'
         uses: actions/upload-pages-artifact@v4
         with:
           path: site
 
+  deploy:
+    needs: update
+    if: needs.update.outputs.should_deploy == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
       - name: Deploy GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
-        with:
-          timeout: 900000
+        uses: actions/deploy-pages@v5

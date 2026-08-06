@@ -117,17 +117,17 @@ Set the older patch's `current` field to `false`, run `npm run update`, and veri
 
 The workflow at [`.github/workflows/pages.yml`](.github/workflows/pages.yml) runs on:
 
-- Every push to `main`
+- Pushes to `main` that change `site/`, updater scripts or configuration, or the npm manifests
 - A six-hour schedule
 - Manual workflow dispatch
 
-It installs dependencies, runs the tests, refreshes the official notes, commits changed generated data, uploads `site/` as the Pages artifact, and deploys it.
+It installs dependencies, runs the tests, refreshes the official notes, and commits changed generated data. Scheduled runs with no generated-data difference stop before Pages configuration, artifact upload, and deployment; qualifying pushes and manual dispatches deploy `site/`.
 
 GitHub Pages is configured to deploy through this workflow with HTTPS enforced. For a fork or a new repository:
 
 1. Open the repository's **Settings → Pages**.
 2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
-3. Open **Actions** and run **Update PTR ledger and deploy**, or let a push to `main` trigger it.
+3. Open **Actions** and run **Update PTR ledger and deploy**, or push a matching website or updater change to `main`.
 4. The deployment URL appears in the workflow's `github-pages` environment.
 
 The workflow requests repository contents write access for generated data, Pages write access, and an OpenID Connect token for deployment. See [GitHub's custom Pages workflow documentation](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages).
