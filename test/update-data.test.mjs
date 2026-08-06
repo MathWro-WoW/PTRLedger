@@ -18,6 +18,15 @@ const source = {
   current: true,
 };
 
+const finalSource = {
+  id: '12.1-live',
+  name: "Curse of Ula'tek — Live",
+  type: 'article',
+  url: 'https://worldofwarcraft.blizzard.com/en-us/news/24293281',
+  status: 'LIVE',
+  current: true,
+};
+
 const post = (postNumber, date, note) => ({
   post_number: postNumber,
   created_at: date,
@@ -687,6 +696,31 @@ test('compounds sequential relative tuning while preserving each announced adjus
   assert.deepEqual(change.history.map((item) => item.value), ['+20%', '+10%']);
   assert.deepEqual(change.history.map((item) => item.effectiveValue), ['+20%', '+32%']);
   assert.equal(change.history[1].source, 'https://eu.forums.blizzard.com/en/wow/t/example-patch/123/2');
+});
+
+test('keeps final article checkpoints independent from PTR cumulative history', () => {
+  const patch = buildPatch(finalSource, [{
+    post_number: 'final',
+    created_at: '2026-08-06T17:11:00Z',
+    updated_at: '2026-08-06T17:19:26Z',
+    cooked: `<h2><strong>CLASSES</strong></h2>
+      <ul><li><details><summary><strong><span>▶</span> DEMON HUNTER</strong></summary>
+        <ul><li><strong>Devourer</strong>
+          <ul><li>All ability damage increased by 32%.</li></ul>
+        </li></ul>
+      </details></li></ul>`,
+  }]);
+  const change = patch.classes.find((classInfo) => classInfo.id === 'demon-hunter').changes[0];
+
+  assert.equal(change.spec, 'Devourer');
+  assert.equal(change.subject, 'Overall damage');
+  assert.equal(change.value, '+32%');
+  assert.equal(change.history.length, 1);
+  assert.equal(change.cumulative, undefined);
+  assert.equal(change.latestAdjustment, undefined);
+  assert.equal(change.history[0].effectiveValue, undefined);
+  assert.equal(patch.rounds[0].label, 'Final notes');
+  assert.equal(patch.rounds[0].source, finalSource.url);
 });
 
 test('compounds mixed buffs and nerfs from the live baseline', () => {

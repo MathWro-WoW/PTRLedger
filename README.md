@@ -22,9 +22,9 @@ After Pages is enabled and the first workflow succeeds, the site will be availab
 
 ## Data source
 
-Patch sources are configured in [`config/sources.json`](config/sources.json). The updater fetches Blizzard's official Discourse topic API rather than scraping the Wowhead presentation layer.
+Patch sources are configured in [`config/sources.json`](config/sources.json). PTR history uses Blizzard's official Discourse topic API. Final release snapshots may use Blizzard's official news article HTML; neither path uses Wowhead's presentation layer as the source of truth.
 
-The current source is the [Midnight 12.1 — Curse of Ula'tek PTR development notes](https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832).
+The tracked sources are the [Midnight 12.1 — Curse of Ula'tek PTR development notes](https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832) and Blizzard's [Curse of Ula'tek Content Update Notes](https://worldofwarcraft.blizzard.com/en-us/news/24293281).
 
 Generated output is stored in `site/data/patches.json`. Do not edit that file manually; run the updater instead.
 
@@ -66,6 +66,7 @@ The updater follows these folding rules:
 - Explicit values such as `increased to 10% (was 8%)` or `adjusted from 8% to 3%` are absolute replacements, not additional multipliers.
 - A qualitative replacement clears an obsolete numeric baseline.
 - A cumulative overall-damage card describes only that blanket modifier. Separate ability, talent, Mastery, cooldown, and set-bonus changes still affect actual specialization DPS.
+- Final release-note articles are configured as separate `LIVE` patch sources, so their values are built from that article alone. A final value such as Devourer's `+32%` is not compounded again with the earlier PTR checkpoints; the older `PTR` source remains available for its revision history.
 
 Regression coverage for these rules lives in [`test/update-data.test.mjs`](test/update-data.test.mjs).
 
@@ -95,9 +96,11 @@ npm run serve
 | `npm run update` | Fetch configured Blizzard topics and regenerate `site/data/patches.json` |
 | `npm run serve` | Preview the static site locally |
 
-## Adding another PTR patch
+## Adding another patch source
 
-Retain existing entries in `config/sources.json` so their history remains available, then append the new source:
+Retain existing entries in `config/sources.json` so their history remains available, then append either a PTR forum source or an independent final article source.
+
+PTR forum source:
 
 ```json
 {
@@ -111,7 +114,21 @@ Retain existing entries in `config/sources.json` so their history remains availa
 }
 ```
 
-Set the older patch's `current` field to `false`, run `npm run update`, and verify the generated patch selector and class data locally.
+Final release article:
+
+```json
+{
+  "id": "12.2-live",
+  "name": "Patch name — Live",
+  "type": "article",
+  "url": "https://worldofwarcraft.blizzard.com/en-us/news/123456789",
+  "checkpoint": "final",
+  "status": "LIVE",
+  "current": true
+}
+```
+
+Use a separate `*-live` ID for a final article. Set the older snapshot's `current` field to `false`, run `npm run update`, and verify the generated patch selector and class data locally. This keeps final article values independent from earlier PTR cumulative checkpoints.
 
 ## GitHub Pages deployment
 

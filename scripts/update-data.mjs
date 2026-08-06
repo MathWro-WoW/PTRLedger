@@ -138,7 +138,7 @@ const CLASS_SPECS = {
   WARRIOR: ['Arms', 'Fury', 'Protection'],
 };
 
-const normalizeHeading = (value) => cleanText(value).toUpperCase();
+const normalizeHeading = (value) => cleanText(value).replace(/^[▶►]\s*/u, '').toUpperCase();
 const slug = (value) => value
   .normalize('NFKD')
   .replace(/[\u0300-\u036f]/g, '')
@@ -519,9 +519,11 @@ export function parseClassChanges(cooked) {
           pendingClass = null;
         } else {
           sibling.children('li').each((__, li) => {
-            const text = directText($, li);
+            const details = $(li).children('details').first();
+            const summary = details.children('summary').first();
+            const text = summary.length ? cleanText(summary.text()) : directText($, li);
             const classKey = normalizeHeading(text);
-            const classList = $(li).children('ul, ol').first();
+            const classList = (details.length ? details.children('ul, ol') : $(li).children('ul, ol')).first();
 
             if (CLASS_META[classKey] && classList.length) {
               parseList($, classList, classKey, [], output);
@@ -1010,6 +1012,51 @@ function topicUrl(source) {
   return `https://${source.region}.forums.blizzard.com/en/wow/t/${topicPath}`;
 }
 
+function sourceUrl(source) {
+  return source.type === 'article' ? source.url : topicUrl(source);
+}
+
+function articleMetadata($) {
+  for (const script of $('script[type="application/ld+json"]').toArray()) {
+    try {
+      const value = JSON.parse($(script).text());
+      const candidates = Array.isArray(value) ? value : value?.['@graph'] || [value];
+      const article = candidates.find((item) => item?.datePublished || item?.dateModified);
+      if (article) return article;
+    } catch {
+      // Ignore unrelated or malformed structured data and try the next block.
+    }
+  }
+  return {};
+}
+
+async function fetchArticle(source) {
+  const response = await fetch(source.url, {
+  headers: {
+    Accept: 'text/html',
+    'User-Agent': 'WoW-PTR-Ledger/1.0 (+https://github.com/)',
+  },
+});
+  if (!response.ok) throw new Error(`${response.status} ${response.statusText} for ${source.url}`);
+  const html = await response.text();
+  const $ = cheerio.load(html);
+  const article = $('#blog .detail').first();
+  if (!article.length) throw new Error(`No article body found for ${source.url}`);
+  const metadata = articleMetadata($);
+  const date = source.date || metadata.datePublished;
+  if (!date) throw new Error(`No publication date found for ${source.url}`);
+  return [{
+    post_number: source.checkpoint || 'final',
+    created_at: date,
+    updated_at: source.updatedAt || metadata.dateModified || date,
+    cooked: article.html(),
+  }];
+}
+
+async function fetchSourcePosts(source) {
+  return source.type === 'article' ? fetchArticle(source) : fetchAllPosts(source);
+}
+
 async function fetchAllPosts(source) {
   const base = topicUrl(source);
   const topic = await fetchJson(`${base}.json`);
@@ -1033,14 +1080,13 @@ async function fetchAllPosts(source) {
 export function buildPatch(source, posts) {
   const changes = new Map();
   const rounds = [];
-  const baseUrl = topicUrl(source);
-
+  const baseUrl = sourceUrl(source);
   for (const post of posts) {
     const parsed = parseClassChanges(post.cooked);
     if (!parsed.length) continue;
 
     const date = post.created_at;
-    const url = `${baseUrl}/${post.post_number}`;
+    const url = source.type === 'article' ? source.url : `${baseUrl}/${post.post_number}`;
     const seenInRound = new Map();
 
     for (const raw of parsed) {
@@ -1102,7 +1148,7 @@ export function buildPatch(source, posts) {
       updatedAt: post.updated_at,
       changes: parsed.length,
       source: url,
-      label: rounds.length === 0 ? 'Initial notes' : `Update ${rounds.length}`,
+      label: source.roundLabel || (source.type === 'article' ? 'Final notes' : rounds.length === 0 ? 'Initial notes' : `Update ${rounds.length}`),
     });
   }
 
@@ -1175,7 +1221,7 @@ async function main() {
 
   for (const source of config.patches) {
     try {
-      const posts = await fetchAllPosts(source);
+      const posts = await fetchSourcePosts(source);
       const patch = buildPatch(source, posts);
       if (!patch.rounds.length) throw new Error(`No class notes found for ${source.id}`);
       enrichPatchWithAbilities(patch, abilityCatalog, previousById.get(source.id));

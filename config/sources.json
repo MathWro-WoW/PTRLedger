@@ -7,6 +7,15 @@
       "slug": "midnight-curse-of-ulatek-ptr-development-notes",
       "region": "eu",
       "status": "PTR",
+      "current": false
+    },
+    {
+      "id": "12.1-live",
+      "name": "Curse of Ula'tek — Live",
+      "type": "article",
+      "url": "https://worldofwarcraft.blizzard.com/en-us/news/24293281",
+      "checkpoint": "final",
+      "status": "LIVE",
       "current": true
     }
   ]
