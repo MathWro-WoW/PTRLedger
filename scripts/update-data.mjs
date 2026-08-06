@@ -292,6 +292,12 @@ function isBugFixNote(text) {
   return /(?:^|[:–—-]\s+)(?:fixed|resolved|corrected)\b|\bbug\s*fix(?:es)?\b/i.test(text);
 }
 
+function pvpImpact(text) {
+  if (/\b(?:does not|doesn’t|doesn't) (?:apply to|affect) PvP(?: combat)?\b|\bPvP(?: combat)? (?:is|remains) unaffected\b/i.test(text)) return 'excluded';
+  if (/\b(?:remains?|stays?) unchanged in PvP(?: combat)?\b/i.test(text)) return 'unchanged';
+  return null;
+}
+
 function classifyDirection(text, currentValue = null, baseline = null) {
   if (isBugFixNote(text)) return 'fixed';
   const positiveWord = /\b(increased|increases|additional|new (?:passive )?talent|can now|grants?|improved)\b/i.test(text);
@@ -1054,6 +1060,7 @@ export function buildPatch(source, posts) {
         value: currentValue,
         baseline,
         direction,
+        pvpImpact: pvpImpact(raw.text),
         source: url,
       };
       const existing = changes.get(key);
@@ -1064,6 +1071,7 @@ export function buildPatch(source, posts) {
         existing.text = raw.text;
         existing.value = historyItem.value;
         existing.direction = direction;
+        existing.pvpImpact = historyItem.pvpImpact;
         existing.baseline = baseline ?? (numericVector(currentValue).length ? existing.baseline : null);
         existing.isTalent ||= raw.isTalent;
         existing.lastChanged = date;
@@ -1080,6 +1088,7 @@ export function buildPatch(source, posts) {
           value: historyItem.value,
           baseline,
           direction,
+          pvpImpact: historyItem.pvpImpact,
           firstSeen: date,
           lastChanged: date,
           history: [historyItem],

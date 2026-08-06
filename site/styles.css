@@ -478,6 +478,16 @@ h1 {
   transform: rotate(45deg);
 }
 .category-label { color: var(--muted); font-size: .65rem; }
+.pvp-scope-label {
+  padding: .08rem .35rem;
+  border: 1px solid color-mix(in srgb, var(--arcane) 34%, var(--line));
+  color: var(--arcane-pale);
+  font-family: var(--utility);
+  font-size: .54rem;
+  letter-spacing: .08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
 .ability-tooltip-hint {
   color: color-mix(in srgb, var(--arcane) 72%, var(--muted));
   font-family: var(--utility);

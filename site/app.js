@@ -19,6 +19,7 @@ const state = {
   query: '',
   talentsOnly: false,
   revisedOnly: false,
+  hidePvpExcluded: false,
   openClassMenu: null,
   menuCloseScrollY: null,
 };
@@ -32,6 +33,7 @@ const elements = {
   search: $('#search'),
   talentsOnly: $('#talents-only'),
   revisedOnly: $('#revised-only'),
+  pvpFilter: $('#pvp-filter'),
   list: $('#change-list'),
   empty: $('#empty-state'),
   roundList: $('#round-list'),
@@ -353,6 +355,7 @@ function visibleChanges() {
       latestAdjustment: checkpoint.value,
       baseline: checkpoint.baseline,
       direction: checkpoint.direction,
+      pvpImpact: checkpoint.pvpImpact,
       classInfo,
     };
   }).filter((change) => {
@@ -360,6 +363,7 @@ function visibleChanges() {
     if (state.classId !== 'all' && change.classInfo.id !== state.classId) return false;
     if (state.spec !== 'all' && change.spec !== state.spec) return false;
     if (state.direction !== 'all' && change.direction !== state.direction) return false;
+    if (state.hidePvpExcluded && change.pvpImpact) return false;
     if (state.talentsOnly && !change.isTalent) return false;
     if (state.revisedOnly && change.history.length < 2) return false;
     if (query) {
@@ -539,6 +543,13 @@ function timeline(change) {
 function changeCard(change) {
   const directionLabels = { buff: 'Buff', nerf: 'Nerf', fixed: 'Fix', changed: 'Changed' };
   const metadata = [node('span', { className: 'direction-label', text: directionLabels[change.direction] })];
+  const pvpLabels = { excluded: 'PvP excluded', unchanged: 'PvP unchanged' };
+  if (change.pvpImpact) {
+    metadata.push(node('span', {
+      className: 'pvp-scope-label',
+      text: pvpLabels[change.pvpImpact],
+    }));
+  }
   const abilityType = change.abilityType || (change.isTalent ? 'talent' : null);
   if (abilityType) {
     metadata.push(node('span', {
@@ -743,12 +754,14 @@ function resetFilters() {
   state.query = '';
   state.revisedOnly = false;
   state.talentsOnly = false;
+  state.hidePvpExcluded = false;
   state.round = 'all';
   state.openClassMenu = null;
   state.menuCloseScrollY = null;
   elements.search.value = '';
   elements.revisedOnly.checked = false;
   elements.talentsOnly.checked = false;
+  elements.pvpFilter.checked = false;
   elements.roundFilter.value = 'all';
   elements.directionFilter.querySelectorAll('button').forEach((button) => {
     const isActive = button.dataset.direction === 'all';
@@ -873,6 +886,10 @@ function bindEvents() {
   });
   elements.revisedOnly.addEventListener('change', (event) => {
     state.revisedOnly = event.target.checked;
+    renderChanges();
+  });
+  elements.pvpFilter.addEventListener('change', (event) => {
+    state.hidePvpExcluded = event.target.checked;
     renderChanges();
   });
   $('#clear-filters').addEventListener('click', resetFilters);

@@ -554,6 +554,30 @@ test('classifies bugfix notes separately from tuning direction', () => {
   assert.equal(valueFor('The Example bonus'), 'Fixed');
 });
 
+test('records explicit PvP exclusions without inferring unspecified scope', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', `
+      <li>Frostbolt damage increased by 10%. This does not apply to PvP combat.</li>
+      <li>Ice Barrier duration increased to 12 seconds (was 10 seconds). Duration remains unchanged in PvP combat.</li>
+      <li>Blizzard damage increased by 5%.</li>
+    `),
+  ]);
+  const impactFor = (start) => patch.classes[0].changes.find((change) => change.text.startsWith(start)).pvpImpact;
+  assert.equal(impactFor('Frostbolt'), 'excluded');
+  assert.equal(impactFor('Ice Barrier'), 'unchanged');
+  assert.equal(impactFor('Blizzard'), null);
+});
+
+
+test('updates PvP scope when a later revision changes the qualifier', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', '<li>Frostbolt damage increased by 10%. This does not apply to PvP combat.</li>'),
+    post(2, '2026-01-08T00:00:00Z', '<li>Frostbolt damage increased by 12%.</li>'),
+  ]);
+  const change = patch.classes[0].changes[0];
+  assert.deepEqual(change.history.map((item) => item.pvpImpact), ['excluded', null]);
+  assert.equal(change.pvpImpact, null);
+});
 test('infers buffs and nerfs from live-to-PTR value movement', () => {
   const patch = buildPatch(source, [
     post(1, '2026-01-01T00:00:00Z', `
