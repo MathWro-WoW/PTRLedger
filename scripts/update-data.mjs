@@ -1194,14 +1194,23 @@ export function buildPatch(source, posts) {
 }
 
 function updatePatchStats(patch) {
+  const currentChanges = patch.classes.flatMap((classInfo) => classInfo.changes)
+    .filter((change) => !patch.finalRound || change.finalCheckpoint);
+  const currentClasses = patch.classes.filter((classInfo) => (
+    !patch.finalRound || classInfo.changes.some((change) => change.finalCheckpoint)
+  ));
   patch.stats = {
-    classes: patch.classes.filter((item) => item.id !== 'all-classes').length,
-    changes: patch.classes.reduce((sum, item) => sum + item.changes.length, 0),
-    revised: patch.classes.reduce((sum, item) => sum + item.changes.filter((change) => change.history.length > 1).length, 0),
+    classes: currentClasses.filter((item) => item.id !== 'all-classes').length,
+    changes: currentChanges.length,
+    revised: currentChanges.filter((change) => change.history.length > 1).length,
   };
 }
 
 export function mergeFinalCheckpoint(patch, finalPatch) {
+  for (const classInfo of patch.classes) {
+    for (const change of classInfo.changes) change.finalCheckpoint = false;
+  }
+  patch.finalRound = finalPatch.rounds.at(-1)?.number || null;
   const classesById = new Map(patch.classes.map((classInfo) => [classInfo.id, classInfo]));
   const changesById = new Map(patch.classes.flatMap((classInfo) => (
     classInfo.changes.map((change) => [change.id, change])

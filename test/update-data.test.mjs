@@ -738,6 +738,8 @@ test('keeps final article checkpoints independent from PTR cumulative history', 
   assert.equal(change.finalCheckpoint, true);
   assert.deepEqual(patch.rounds.map((round) => round.label), ['Initial notes', 'Update 1', 'Final notes']);
   assert.equal(patch.rounds.at(-1).source, finalSource.url);
+  assert.equal(patch.finalRound, 'final');
+  assert.equal(patch.stats.changes, 1);
 });
 
 test('compounds mixed buffs and nerfs from the live baseline', () => {

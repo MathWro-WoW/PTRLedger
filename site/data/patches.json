@@ -323,6 +323,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Blood Beast",
               "spellId": 434237,
@@ -389,6 +390,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Blood-Soaked Ground",
               "spellId": 434033,
@@ -1040,6 +1042,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "The Blood is Life",
               "spellId": 434260,
@@ -1071,6 +1074,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Frenzied Bloodthirst",
               "spellId": 434075,
@@ -1102,6 +1106,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Visceral Strength",
               "spellId": 434157,
@@ -1178,6 +1183,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -1219,6 +1225,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -1260,6 +1267,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -2528,6 +2536,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -2739,6 +2748,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Blood Beast",
               "spellId": 434237,
@@ -2770,6 +2780,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Blood-Soaked Ground",
               "spellId": 434033,
@@ -3179,6 +3190,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Graveyard",
               "spellId": 383269,
@@ -3300,6 +3312,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Lord of the Dead",
               "spellId": 1256813,
@@ -3482,6 +3495,7 @@
               ],
               "cumulative": true,
               "latestAdjustment": "−18%",
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Necrotic Coil",
               "spellId": 1242174,
@@ -3840,6 +3854,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/13"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -4006,6 +4021,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -4297,6 +4313,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Final Hour",
               "spellId": 1253805,
@@ -5340,6 +5357,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Inertia",
               "spellId": 427640,
@@ -5477,6 +5495,7 @@
               ],
               "cumulative": true,
               "latestAdjustment": "+5%",
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -5598,6 +5617,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -6079,6 +6099,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Roaring Fire",
               "spellId": 391178,
@@ -6325,6 +6346,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Sigil of Silence",
               "spellId": 202137,
@@ -6410,6 +6432,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -6521,6 +6544,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Ascendant Eclipses",
               "spellId": 1261564,
@@ -6552,6 +6576,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Ascendant Eclipses",
               "spellId": 1261564,
@@ -6808,6 +6833,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -6884,6 +6910,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Lunar Calling",
               "spellId": 429523,
@@ -7993,6 +8020,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Lunar Calling",
               "spellId": 429523,
@@ -8024,6 +8052,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -8055,6 +8084,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -8176,6 +8206,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Umbral Intensity",
               "spellId": 383195,
@@ -9197,6 +9228,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -9228,6 +9260,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -9439,6 +9472,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -9470,6 +9504,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -9716,6 +9751,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -9747,6 +9783,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -9813,6 +9850,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -9844,6 +9882,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -9910,6 +9949,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -10031,6 +10071,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Wild Guardian",
               "spellId": 1269614,
@@ -10277,6 +10318,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -10308,6 +10350,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -10983,6 +11026,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -11024,6 +11068,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -11235,6 +11280,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Wild Growth",
               "spellId": 48438,
@@ -11455,6 +11501,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Double-time",
               "spellId": 431874,
@@ -12390,6 +12437,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -13664,6 +13712,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Beast Cleave",
               "spellId": 115939,
@@ -13946,6 +13995,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -14292,6 +14342,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -14458,6 +14509,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Hunter's Mark",
               "spellId": 257284,
@@ -14489,6 +14541,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Auto Shot",
               "spellId": 75,
@@ -15237,6 +15290,7 @@
               ],
               "cumulative": true,
               "latestAdjustment": "−33%",
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Explosive Shot",
               "spellId": 212431,
@@ -15403,6 +15457,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -15434,6 +15489,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -15465,6 +15521,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -15496,6 +15553,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -15527,6 +15585,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -15558,6 +15617,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -15589,6 +15649,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -15620,6 +15681,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -15651,6 +15713,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -15772,6 +15835,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -15803,6 +15867,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Incendiary Ammunition",
               "spellId": 471428,
@@ -15834,6 +15899,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Incendiary Ammunition",
               "spellId": 471428,
@@ -16238,6 +16304,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Shrapnel Shot",
               "spellId": 473520,
@@ -16314,6 +16381,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -16515,6 +16583,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -16546,6 +16615,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -16892,6 +16962,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -16968,6 +17039,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -17134,6 +17206,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Grenade Juggler",
               "spellId": 459843,
@@ -17525,6 +17598,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -17691,6 +17765,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -17722,6 +17797,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -18052,6 +18128,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -18433,6 +18510,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -18464,6 +18542,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Prismatic Bolt",
               "spellId": 1295923,
@@ -18720,6 +18799,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Splintering Orbs",
               "spellId": 444256,
@@ -18786,6 +18866,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Sunfury",
               "spellId": null,
@@ -19087,6 +19168,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Improved Prismatic Barrier",
               "spellId": 321745,
@@ -19807,6 +19889,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -20024,6 +20107,7 @@
               ],
               "cumulative": true,
               "latestAdjustment": "+3%",
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -20055,6 +20139,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -20086,6 +20171,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Shatter",
               "spellId": 12982,
@@ -20162,6 +20248,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -20193,6 +20280,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -20224,6 +20312,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -20354,6 +20443,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -20950,6 +21040,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -21640,6 +21731,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Tigereye Brew",
               "spellId": 1261703,
@@ -22825,6 +22917,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -22856,6 +22949,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -23081,6 +23175,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -23282,6 +23377,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Blessed Word",
               "spellId": 1301732,
@@ -23358,6 +23454,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Bulwark of Order",
               "spellId": 209389,
@@ -23479,6 +23576,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Consecration in Flame",
               "spellId": 379022,
@@ -23690,6 +23788,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -23856,6 +23955,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -23887,6 +23987,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -23918,6 +24019,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -23949,6 +24051,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -23980,6 +24083,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -24011,6 +24115,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -24042,6 +24147,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -24073,6 +24179,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Focused Enmity",
               "spellId": 378845,
@@ -24239,6 +24346,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Guardian of Ancient Kings",
               "spellId": 86659,
@@ -24360,6 +24468,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -24471,6 +24580,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Imbued Shield / Redoubt",
               "spellId": 1276945,
@@ -24592,6 +24702,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Instrument of the Divine",
               "spellId": 1277162,
@@ -24623,6 +24734,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Instrument of the Divine",
               "spellId": 1277162,
@@ -24824,6 +24936,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Refining Fire",
               "spellId": 469883,
@@ -24900,6 +25013,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Relentless Inquisitor",
               "spellId": 383388,
@@ -25021,6 +25135,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Sanctuary",
               "spellId": 379021,
@@ -25052,6 +25167,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Seal of Charity",
               "spellId": 384815,
@@ -25128,6 +25244,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Seal of Reprisal",
               "spellId": 377053,
@@ -25159,6 +25276,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Searing Sunlight",
               "spellId": 1244070,
@@ -25370,6 +25488,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Solace",
               "spellId": 1245891,
@@ -25401,6 +25520,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Strength in Adversity",
               "spellId": 393071,
@@ -25432,6 +25552,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -25463,6 +25584,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Tyr's Enforcer",
               "spellId": 378285,
@@ -25539,6 +25661,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Uther's Counsel",
               "spellId": 378425,
@@ -25615,6 +25738,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Valiant Crusade / Blessed Word",
               "spellId": 1245979,
@@ -26605,6 +26729,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -26726,6 +26851,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -26767,6 +26893,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -27187,6 +27314,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Master the Darkness",
               "spellId": 1253827,
@@ -27578,6 +27706,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -28042,6 +28171,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -28118,6 +28248,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Focused Outburst",
               "spellId": 1272320,
@@ -28239,6 +28370,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Focused Outburst",
               "spellId": 1272320,
@@ -28630,6 +28762,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -28661,6 +28794,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -29582,6 +29716,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -30627,6 +30762,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -30658,6 +30794,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -30869,6 +31006,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Goremaw's Bite",
               "spellId": 426591,
@@ -31239,6 +31377,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Shadowcraft",
               "spellId": 426594,
@@ -31270,6 +31409,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Shadowcraft",
               "spellId": 426594,
@@ -31785,6 +31925,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
@@ -31906,6 +32047,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Farseer",
               "spellId": null,
@@ -31937,6 +32079,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Farseer",
               "spellId": null,
@@ -32508,6 +32651,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/7"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Stormkeeper",
               "spellId": 191634,
@@ -32539,6 +32683,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Stormkeeper",
               "spellId": 191634,
@@ -32830,6 +32975,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -32896,6 +33042,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -33447,6 +33594,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -33478,6 +33626,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -33679,6 +33828,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Chain Heal",
               "spellId": 1064,
@@ -33800,6 +33950,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -33831,6 +33982,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -33862,6 +34014,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -34263,6 +34416,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -34294,6 +34448,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -34325,6 +34480,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -34760,6 +34916,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -34791,6 +34948,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -34867,6 +35025,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Blackened Soul",
               "spellId": 440043,
@@ -36023,6 +36182,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -36608,6 +36768,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -36648,6 +36809,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Battlelord",
               "spellId": 386630,
@@ -36814,6 +36976,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Demolish",
               "spellId": 436358,
@@ -36845,6 +37008,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Dominance of the Colossus",
               "spellId": 429636,
@@ -36876,6 +37040,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Dreadnaught",
               "spellId": 262150,
@@ -36997,6 +37162,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -37118,6 +37284,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Mass Execution",
               "spellId": 1273075,
@@ -37464,6 +37631,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Ravager",
               "spellId": 228920,
@@ -37575,6 +37743,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -37696,6 +37865,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -37727,6 +37897,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -37873,6 +38044,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Dominance of the Colossus",
               "spellId": 429636,
@@ -38074,6 +38246,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "No Stranger to Pain",
               "spellId": 429644,
@@ -38265,6 +38438,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -38296,6 +38470,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -38407,6 +38582,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Crashing Thunder",
               "spellId": 436707,
@@ -38573,6 +38749,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Rampaging Ruin",
               "spellId": 1265357,
@@ -38665,6 +38842,7 @@
               ],
               "cumulative": true,
               "latestAdjustment": "+10%",
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Thunder Blast",
               "spellId": 435607,
@@ -38696,6 +38874,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "spell",
               "abilityName": "Whirlwind",
               "spellId": 190411,
@@ -38852,6 +39031,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Crashing Thunder",
               "spellId": 436707,
@@ -38883,6 +39063,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Demolish",
               "spellId": 436358,
@@ -38959,6 +39140,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Dominance of the Colossus",
               "spellId": 429636,
@@ -39274,6 +39456,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Ravager",
               "spellId": 228920,
@@ -39305,6 +39488,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Ravager",
               "spellId": 228920,
@@ -39336,6 +39520,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Revenge",
               "spellId": 6572,
@@ -39412,6 +39597,7 @@
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
+              "finalCheckpoint": false,
               "abilityType": null,
               "abilityName": null,
               "spellId": null,
@@ -39459,6 +39645,7 @@
               ],
               "cumulative": true,
               "latestAdjustment": "+10%",
+              "finalCheckpoint": false,
               "abilityType": "talent",
               "abilityName": "Thunder Blast",
               "spellId": 435607,
@@ -39559,9 +39746,10 @@
       ],
       "stats": {
         "classes": 13,
-        "changes": 925,
-        "revised": 691
-      }
+        "changes": 738,
+        "revised": 679
+      },
+      "finalRound": "final"
     }
   ]
 }

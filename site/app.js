@@ -328,11 +328,18 @@ function closeAbilityTooltip() {
 }
 
 function allChanges() {
-  return state.patch.classes.flatMap((classInfo) => classInfo.changes.map((change) => ({ ...change, classInfo })));
+  const changes = state.patch.classes.flatMap((classInfo) => classInfo.changes.map((change) => ({ ...change, classInfo })));
+  return changesForCurrentCheckpoint(changes);
 }
 
 function selectedClass() {
   return state.patch.classes.find((classInfo) => classInfo.id === state.classId) || null;
+}
+function changesForCurrentCheckpoint(changes) {
+  if (state.round === 'all' && state.patch.finalRound) {
+    return changes.filter((change) => change.finalCheckpoint);
+  }
+  return changes;
 }
 
 const NON_SPECIALIZATIONS = new Set(['Class-wide', 'General']);
@@ -442,7 +449,10 @@ function renderClassNav() {
   const total = state.patch.stats.changes;
   const options = [
     { id: 'all', name: 'Every class', mark: 'ALL', color: '#73b7ff', icon: './assets/classes/everyclass.svg', changes: Array(total) },
-    ...state.patch.classes,
+    ...state.patch.classes.map((classInfo) => ({
+      ...classInfo,
+      changes: changesForCurrentCheckpoint(classInfo.changes),
+    })),
   ];
 
   const scrollLeft = elements.classNav.scrollLeft;
@@ -818,6 +828,7 @@ function setRound(value) {
   state.round = value;
   elements.roundFilter.value = value;
   elements.mobileRoundFilter.value = value;
+  renderClassNav();
   renderChanges();
 }
 
