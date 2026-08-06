@@ -13211,7 +13211,7 @@
               "abilityType": "talent",
               "abilityName": "Hand of Frost",
               "spellId": 1262981,
-              "icon": null
+              "icon": "./assets/abilities/spell_frost_piercing-chill.jpg"
             },
             {
               "id": "e8ac0d2ecec8",
@@ -13342,7 +13342,7 @@
               "abilityType": "talent",
               "abilityName": "Splitting Ice",
               "spellId": 56377,
-              "icon": null
+              "icon": "./assets/abilities/spell_frost_ice-shards.jpg"
             },
             {
               "id": "342404795586",
@@ -16592,7 +16592,7 @@
               "abilityType": "talent",
               "abilityName": "Seal of Charity",
               "spellId": 384815,
-              "icon": null
+              "icon": "./assets/abilities/spell_priest_power-word.jpg"
             },
             {
               "id": "5a4f92cd44c8",
@@ -18703,7 +18703,7 @@
               "abilityType": "talent",
               "abilityName": "Ancient Madness",
               "spellId": 1231346,
-              "icon": null
+              "icon": "./assets/abilities/spell_priest_void-flay.jpg"
             },
             {
               "id": "5670256be21b",
@@ -18906,7 +18906,7 @@
               "abilityType": "talent",
               "abilityName": "Improved Voidform",
               "spellId": 341240,
-              "icon": null
+              "icon": "./assets/abilities/spell_priest_void-blast.jpg"
             },
             {
               "id": "b1773e0eef6e",
@@ -19167,7 +19167,7 @@
               "abilityType": "talent",
               "abilityName": "Voidform",
               "spellId": 228260,
-              "icon": null
+              "icon": "./assets/abilities/spell_priest_void-blast.jpg"
             }
           ]
         },

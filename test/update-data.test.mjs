@@ -92,12 +92,21 @@ test('classifies normal talent-tree entries and enriches resolved abilities', ()
           icon: 'spell_frost_frostbolt02',
         }],
       },
+      {
+        name: 'Splitting Ice',
+        entries: [{
+          name: 'Splitting Ice',
+          spellId: 56377,
+          icon: 'spell_frost_ice_shards',
+        }],
+      },
     ],
   }]);
   const patch = buildPatch(source, [
     post(1, '2026-01-01T00:00:00Z', `
       <li>Frozen Orb damage increased by 12% (was 8%).</li>
       <li>Frostbolt damage increased by 10%.</li>
+      <li>Splitting Ice damage increased by 10%.</li>
       <li>Ice Lance damage increased by 8%.</li>
     `),
   ]);
@@ -105,6 +114,7 @@ test('classifies normal talent-tree entries and enriches resolved abilities', ()
   enrichPatchWithAbilities(patch, catalog);
   const frozenOrb = patch.classes[0].changes.find((change) => change.subject === 'Frozen Orb');
   const frostbolt = patch.classes[0].changes.find((change) => change.subject === 'Frostbolt');
+  const splittingIce = patch.classes[0].changes.find((change) => change.subject === 'Splitting Ice');
   const unresolved = patch.classes[0].changes.find((change) => change.subject === 'Ice Lance');
 
   assert.equal(frozenOrb.isTalent, true);
@@ -116,6 +126,7 @@ test('classifies normal talent-tree entries and enriches resolved abilities', ()
   assert.equal(frostbolt.abilityType, 'spell');
   assert.equal(frostbolt.spellId, 116);
   assert.equal(frostbolt.icon, './assets/abilities/spell_frost_frostbolt02.jpg');
+  assert.equal(splittingIce.icon, './assets/abilities/spell_frost_ice-shards.jpg');
   assert.equal(unresolved.isTalent, false);
   assert.equal(unresolved.abilityType, null);
   assert.equal(unresolved.abilityName, null);

@@ -15,6 +15,14 @@ const ABILITY_ICON_URL = 'https://render.worldofwarcraft.com/eu/icons/56';
 const ABILITY_ICON_FALLBACK_URL = 'https://wow.zamimg.com/images/wow/icons/large';
 const ABILITY_SEARCH_URL = 'https://www.wowhead.com/search/suggestions-template';
 const ABILITY_METADATA_SCHEMA_VERSION = 3;
+// Raidbots exports these canonical CDN hyphens as underscores.
+const ABILITY_ICON_ALIASES = new Map([
+  ['spell_frost_piercing_chill', 'spell_frost_piercing-chill'],
+  ['spell_frost_ice_shards', 'spell_frost_ice-shards'],
+  ['spell_priest_power_word', 'spell_priest_power-word'],
+  ['spell_priest_void_flay', 'spell_priest_void-flay'],
+  ['spell_priest_void_blast', 'spell_priest_void-blast'],
+]);
 const SUPPLEMENTAL_ABILITIES = [
   {
     classKey: 'DEATH KNIGHT',
@@ -556,7 +564,8 @@ function normalizeAbilityName(value) {
 
 function normalizeIconName(value) {
   const icon = cleanText(value).toLowerCase().replace(/\.(?:blp|tga|jpe?g|png)$/i, '');
-  return /^[a-z0-9_-]+$/.test(icon) ? icon : null;
+  if (!/^[a-z0-9_-]+$/.test(icon)) return null;
+  return ABILITY_ICON_ALIASES.get(icon) || icon;
 }
 
 export function createAbilityCatalog(trees) {
