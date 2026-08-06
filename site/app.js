@@ -39,6 +39,9 @@ const elements = {
   empty: $('#empty-state'),
   roundList: $('#round-list'),
 };
+function defaultRound(patch) {
+  return patch?.finalRound == null ? 'all' : String(patch.finalRound);
+}
 
 function node(tag, options = {}, children = []) {
   const element = document.createElement(tag);
@@ -754,7 +757,7 @@ function selectPatch(id) {
     || state.data.patches[0];
   state.classId = 'all';
   state.spec = 'all';
-  state.round = 'all';
+  state.round = defaultRound(state.patch);
   state.openClassMenu = null;
   state.menuCloseScrollY = null;
   elements.patchSelect.value = state.patch.id;
@@ -769,15 +772,15 @@ function resetFilters() {
   state.revisedOnly = false;
   state.talentsOnly = false;
   state.hidePvpExcluded = false;
-  state.round = 'all';
+  state.round = defaultRound(state.patch);
   state.openClassMenu = null;
   state.menuCloseScrollY = null;
   elements.search.value = '';
   elements.revisedOnly.checked = false;
   elements.talentsOnly.checked = false;
   elements.pvpFilter.checked = false;
-  elements.roundFilter.value = 'all';
-  elements.mobileRoundFilter.value = 'all';
+  elements.roundFilter.value = state.round;
+  elements.mobileRoundFilter.value = state.round;
   elements.directionFilter.querySelectorAll('button').forEach((button) => {
     const isActive = button.dataset.direction === 'all';
     button.classList.toggle('is-active', isActive);
