@@ -102,7 +102,7 @@ function updateUrl() {
 
 function renderPatchMeta() {
   $('#patch-ghost').textContent = state.patch.id;
-  $('#patch-status').textContent = `${state.patch.status} snapshot · ${state.patch.label}`;
+  $('#patch-status').textContent = `${state.patch.status} snapshot · ${state.patch.rounds.length} rounds consolidated`;
   $('#stat-classes').textContent = state.patch.stats.classes;
   $('#stat-changes').textContent = state.patch.stats.changes.toLocaleString();
   $('#stat-revised').textContent = state.patch.stats.revised.toLocaleString();
@@ -176,7 +176,7 @@ function renderClassNav() {
 
 function renderRoundOptions() {
   elements.roundFilter.replaceChildren(
-    node('option', { text: 'All update rounds', attrs: { value: 'all' } }),
+    node('option', { text: 'All rounds · latest effective values', attrs: { value: 'all' } }),
     ...state.patch.rounds.map((round) => node('option', {
       text: `${round.label} · ${formatDate(round.date)}`,
       attrs: { value: round.number },
@@ -265,7 +265,7 @@ function renderChanges() {
   const selectedRound = state.patch.rounds.find((round) => String(round.number) === state.round);
   $('#result-title').textContent = selectedRound
     ? `${selectedRound.label}${state.revisedOnly ? ' · revised changes' : ' changes'}`
-    : state.revisedOnly ? 'Revised changes' : 'Current changes';
+    : state.revisedOnly ? 'Revised effective changes' : 'Latest effective changes';
   $('#result-count').textContent = `${visible.length.toLocaleString()} ${visible.length === 1 ? 'change' : 'changes'}`;
 
   const groups = new Map();

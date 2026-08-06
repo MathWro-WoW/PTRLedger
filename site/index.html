@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A living ledger of World of Warcraft PTR class changes, compared with live values and tracked across every update.">
+  <meta name="description" content="World of Warcraft PTR class changes consolidated across every official update round, compared with live values, with each revision preserved.">
   <meta name="theme-color" content="#09111c">
   <title>PTR Ledger — World of Warcraft class tuning</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
@@ -41,12 +41,12 @@
       <div class="hero-copy">
         <p class="eyebrow"><span class="live-dot"></span><span id="patch-status">PTR snapshot</span></p>
         <h1 id="hero-title">Know what survived<br>the PTR.</h1>
-        <p class="hero-deck">Current class tuning against live, with every revision kept in the margins.</p>
+        <p class="hero-deck">By default, every official update round is folded into one latest-effective summary against live. Each revision remains available on its change card.</p>
       </div>
       <dl class="snapshot" aria-label="Current snapshot statistics">
         <div><dt>Classes</dt><dd id="stat-classes">—</dd></div>
-        <div><dt>Changes</dt><dd id="stat-changes">—</dd></div>
-        <div><dt>Revised</dt><dd id="stat-revised">—</dd></div>
+        <div><dt>Effective changes</dt><dd id="stat-changes">—</dd></div>
+        <div><dt>Revised entries</dt><dd id="stat-revised">—</dd></div>
         <div class="snapshot-date"><dt>Notes updated</dt><dd id="stat-date">—</dd></div>
       </dl>
     </section>
@@ -79,8 +79,8 @@
           </div>
           <div class="filter-options">
             <label class="round-filter">
-              <span>Update round</span>
-              <select id="round-filter" aria-label="Filter by update round"></select>
+              <span>Show changes from</span>
+              <select id="round-filter" aria-label="Show changes from an official update round"></select>
             </label>
             <label class="revised-toggle">
               <input id="revised-only" type="checkbox">
@@ -93,7 +93,7 @@
         <div class="result-heading">
           <div>
             <p id="result-kicker">All classes</p>
-            <h2 id="result-title">Current changes</h2>
+            <h2 id="result-title">Latest effective changes</h2>
           </div>
           <p id="result-count" aria-live="polite"></p>
         </div>
@@ -109,9 +109,9 @@
 
       <aside class="rounds-rail">
         <div class="rounds-sticky">
-          <p class="rail-heading">Note rounds</p>
+          <p class="rail-heading">Official update rounds</p>
           <ol id="round-list"></ol>
-          <p class="rounds-note">Each official class-note post becomes a checkpoint. Repeated abilities are folded into their latest value.</p>
+          <p class="rounds-note">The default view folds every round into one latest-effective summary. Choose a round to see only changes recorded in that checkpoint.</p>
         </div>
       </aside>
     </section>
