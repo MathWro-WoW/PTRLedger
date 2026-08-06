@@ -177,21 +177,33 @@ function renderClassNav() {
 
     const item = node('div', { className: 'class-nav-item' }, button);
     if (isOpen) {
+      const specOptions = [
+        { id: 'all', label: 'All specializations', count: classInfo.changes.length },
+        ...specs.map((spec) => ({
+          id: spec,
+          label: spec,
+          count: classInfo.changes.filter((change) => change.spec === spec).length,
+        })),
+      ];
       item.append(node('div', {
         className: 'class-submenu',
         attrs: { id: submenuId, 'aria-label': `${classInfo.name} specializations` },
+      }, specOptions.map((specOption) => node('button', {
+        className: `class-spec-button${state.spec === specOption.id ? ' is-active' : ''}`,
+        attrs: {
+          type: 'button',
+          'data-class-spec': specOption.id,
+          'aria-label': `${specOption.label}, ${specOption.count.toLocaleString()} changes`,
+          'aria-pressed': String(state.spec === specOption.id),
+        },
       }, [
-        node('button', {
-          className: `class-spec-button${state.spec === 'all' ? ' is-active' : ''}`,
-          text: 'All specializations',
-          attrs: { type: 'button', 'data-class-spec': 'all', 'aria-pressed': String(state.spec === 'all') },
+        node('span', { className: 'class-spec-label', text: specOption.label }),
+        node('span', {
+          className: 'class-spec-count',
+          text: specOption.count.toLocaleString(),
+          attrs: { 'aria-hidden': 'true' },
         }),
-        ...specs.map((spec) => node('button', {
-          className: `class-spec-button${state.spec === spec ? ' is-active' : ''}`,
-          text: spec,
-          attrs: { type: 'button', 'data-class-spec': spec, 'aria-pressed': String(state.spec === spec) },
-        })),
-      ]));
+      ]))));
     }
     return item;
   }));
