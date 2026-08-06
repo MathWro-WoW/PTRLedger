@@ -127,16 +127,17 @@ function renderPatchMeta() {
 function renderClassNav() {
   const total = state.patch.stats.changes;
   const options = [
-    { id: 'all', name: 'Every class', mark: 'ALL', color: '#73b7ff', changes: Array(total) },
+    { id: 'all', name: 'Every class', mark: 'ALL', color: '#73b7ff', icon: './assets/classes/everyclass.svg', changes: Array(total) },
     ...state.patch.classes,
   ];
 
   const scrollLeft = elements.classNav.scrollLeft;
   elements.classNav.replaceChildren(...options.map((classInfo) => {
-    const mark = node('span', { className: `class-mark${classInfo.icon ? ' has-icon' : ''}` });
-    if (classInfo.icon) {
+    const icon = classInfo.icon || (classInfo.id === 'all-classes' ? './assets/classes/allclasses.svg' : null);
+    const mark = node('span', { className: `class-mark${icon ? ' has-icon' : ''}` });
+    if (icon) {
       mark.append(node('img', {
-        attrs: { src: classInfo.icon, alt: '', width: '30', height: '30' },
+        attrs: { src: icon, alt: '', width: '30', height: '30' },
       }));
     } else {
       mark.textContent = classInfo.mark;
