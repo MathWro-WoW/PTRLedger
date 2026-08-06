@@ -641,7 +641,14 @@ footer a { color: var(--silver); text-decoration: none; }
   letter-spacing: .1em;
   text-transform: uppercase;
 }
-.ability-tooltip-source { color: var(--muted); font-size: .46rem; font-weight: 400; }
+.ability-tooltip-source { color: var(--muted); font-size: .5rem; font-weight: 400; }
+a.ability-tooltip-source {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--arcane) 40%, transparent);
+  text-underline-offset: 3px;
+}
+a.ability-tooltip-source:hover,
+a.ability-tooltip-source:focus-visible { color: var(--arcane-pale); text-decoration-color: var(--arcane); }
 .ability-tooltip-pane.is-unavailable .ability-tooltip-environment { color: var(--muted); }
 .ability-tooltip-loading,
 .ability-tooltip-unavailable {

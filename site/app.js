@@ -173,17 +173,31 @@ function tooltipHeader(abilityName, statusText = 'Loading tooltip data…') {
   ]);
 }
 
-function loadingTooltipPane(label) {
+function wowheadSourceLink(label, spellId, environment) {
+  const domain = environment === 'ptr' ? '/ptr' : '';
+  return node('a', {
+    className: 'ability-tooltip-source',
+    text: 'Wowhead ↗',
+    attrs: {
+      href: `https://www.wowhead.com${domain}/spell=${spellId}`,
+      target: '_blank',
+      rel: 'noreferrer',
+      'aria-label': `Open the ${label} spell page on Wowhead`,
+    },
+  });
+}
+
+function loadingTooltipPane(label, spellId, environment) {
   return node('section', { className: 'ability-tooltip-pane is-loading' }, [
     node('div', { className: 'ability-tooltip-environment' }, [
       node('span', { text: label }),
-      node('span', { className: 'ability-tooltip-source', text: 'Wowhead' }),
+      wowheadSourceLink(label, spellId, environment),
     ]),
     node('div', { className: 'ability-tooltip-loading', text: 'Retrieving tooltip…' }),
   ]);
 }
 
-function loadedTooltipPane(label, result) {
+function loadedTooltipPane(label, result, spellId, environment) {
   if (!result.ok) {
     return {
       element: node('section', { className: 'ability-tooltip-pane is-unavailable' }, [
@@ -205,7 +219,7 @@ function loadedTooltipPane(label, result) {
     element: node('section', { className: 'ability-tooltip-pane' }, [
       node('div', { className: 'ability-tooltip-environment' }, [
         node('span', { text: label }),
-        node('span', { className: 'ability-tooltip-source', text: 'Wowhead' }),
+        wowheadSourceLink(label, spellId, environment),
       ]),
       content,
     ]),
@@ -249,12 +263,13 @@ async function showAbilityTooltip(trigger, pinned = false) {
   setTooltipExpanded(trigger, true);
 
   const abilityName = trigger.dataset.tooltipName || 'Ability';
+  const spellId = trigger.dataset.tooltipSpell;
   const ptrLabel = `${state.patch?.status || 'PTR'} ${state.patch?.id || ''}`.trim();
   tooltip.replaceChildren(
     tooltipHeader(abilityName),
     node('div', { className: 'ability-tooltip-grid' }, [
-      loadingTooltipPane('Live'),
-      loadingTooltipPane(ptrLabel),
+      loadingTooltipPane('Live', spellId, 'live'),
+      loadingTooltipPane(ptrLabel, spellId, 'ptr'),
     ]),
     node('p', { className: 'ability-tooltip-footnote', text: TOOLTIP_DISCLAIMER }),
   );
@@ -269,8 +284,8 @@ async function showAbilityTooltip(trigger, pinned = false) {
   ]);
   if (tooltipView.request !== request || tooltipView.activeTrigger !== trigger) return;
 
-  const live = loadedTooltipPane('Live', liveResult);
-  const ptr = loadedTooltipPane(ptrLabel, ptrResult);
+  const live = loadedTooltipPane('Live', liveResult, spellId, 'live');
+  const ptr = loadedTooltipPane(ptrLabel, ptrResult, spellId, 'ptr');
   let status = 'Tooltip unavailable';
   if (live.text && ptr.text) status = live.text === ptr.text ? 'Tooltip text matches' : 'Tooltip text differs';
   else if (live.text || ptr.text) status = 'One environment is unavailable';
