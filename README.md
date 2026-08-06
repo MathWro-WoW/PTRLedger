@@ -65,8 +65,7 @@ The updater follows these folding rules:
 - The announced percentage remains in each history checkpoint as `value`. Its compounded result through that checkpoint is stored as `effectiveValue`. The current card displays the latest effective result, rounded to one decimal place when needed.
 - Explicit values such as `increased to 10% (was 8%)` or `adjusted from 8% to 3%` are absolute replacements, not additional multipliers.
 - A qualitative replacement clears an obsolete numeric baseline.
-- A cumulative overall-damage card describes only that blanket modifier. Separate ability, talent, Mastery, cooldown, and set-bonus changes still affect actual specialization DPS.
-- Final release-note articles are configured as separate `LIVE` patch sources, so their values are built from that article alone. A final value such as Devourer's `+32%` is not compounded again with the earlier PTR checkpoints; the older `PTR` source remains available for its revision history.
+- A final release-note article is configured under the same patch entry as `finalSource` and merged as a clearly labeled final checkpoint. Its values are independent of earlier PTR cumulative math: Devourer's final `+32%` is recorded as `+32%`, not compounded again with the PTR checkpoints.
 
 Regression coverage for these rules lives in [`test/update-data.test.mjs`](test/update-data.test.mjs).
 
@@ -98,9 +97,7 @@ npm run serve
 
 ## Adding another patch source
 
-Retain existing entries in `config/sources.json` so their history remains available, then append either a PTR forum source or an independent final article source.
-
-PTR forum source:
+Retain existing entries in `config/sources.json` so their history remains available. A patch can track PTR forum rounds and, once released, add a final Blizzard article under the same entry:
 
 ```json
 {
@@ -109,26 +106,18 @@ PTR forum source:
   "topicId": 123456,
   "slug": "canonical-forum-topic-slug",
   "region": "eu",
-  "status": "PTR",
-  "current": true
-}
-```
-
-Final release article:
-
-```json
-{
-  "id": "12.2-live",
-  "name": "Patch name — Live",
-  "type": "article",
-  "url": "https://worldofwarcraft.blizzard.com/en-us/news/123456789",
-  "checkpoint": "final",
   "status": "LIVE",
-  "current": true
+  "current": true,
+  "finalSource": {
+    "type": "article",
+    "url": "https://worldofwarcraft.blizzard.com/en-us/news/123456789",
+    "checkpoint": "final",
+    "roundLabel": "Final notes · LIVE"
+  }
 }
 ```
 
-Use a separate `*-live` ID for a final article. Set the older snapshot's `current` field to `false`, run `npm run update`, and verify the generated patch selector and class data locally. This keeps final article values independent from earlier PTR cumulative checkpoints.
+Keep the final source nested under the existing patch ID. Run `npm run update` and verify the single patch selector, the final round in the official-update rail, and the final values locally. The final checkpoint is never fed back into the preceding PTR cumulative calculations.
 
 ## GitHub Pages deployment
 

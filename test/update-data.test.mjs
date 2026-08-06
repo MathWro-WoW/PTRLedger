@@ -4,6 +4,7 @@ import {
   buildPatch,
   createAbilityCatalog,
   enrichPatchWithAbilities,
+  mergeFinalCheckpoint,
   parseClassChanges,
   selectAbilitySearchResult,
 } from '../scripts/update-data.mjs';
@@ -699,7 +700,20 @@ test('compounds sequential relative tuning while preserving each announced adjus
 });
 
 test('keeps final article checkpoints independent from PTR cumulative history', () => {
-  const patch = buildPatch(finalSource, [{
+  const classPost = (postNumber, date, note) => ({
+    post_number: postNumber,
+    created_at: date,
+    updated_at: date,
+    cooked: `<h2><strong>CLASSES</strong></h2>
+      <ul><li><strong>DEMON HUNTER</strong>
+        <ul><li><strong>Devourer</strong><ul>${note}</ul></li></ul>
+      </li></ul>`,
+  });
+  const patch = buildPatch(source, [
+    classPost(1, '2026-01-01T00:00:00Z', '<li>All ability damage increased by 20%.</li>'),
+    classPost(2, '2026-01-08T00:00:00Z', '<li>All ability damage increased by 10%.</li>'),
+  ]);
+  const finalPatch = buildPatch(finalSource, [{
     post_number: 'final',
     created_at: '2026-08-06T17:11:00Z',
     updated_at: '2026-08-06T17:19:26Z',
@@ -710,17 +724,20 @@ test('keeps final article checkpoints independent from PTR cumulative history', 
         </li></ul>
       </details></li></ul>`,
   }]);
+
+  mergeFinalCheckpoint(patch, finalPatch);
   const change = patch.classes.find((classInfo) => classInfo.id === 'demon-hunter').changes[0];
 
   assert.equal(change.spec, 'Devourer');
   assert.equal(change.subject, 'Overall damage');
   assert.equal(change.value, '+32%');
-  assert.equal(change.history.length, 1);
+  assert.equal(change.history.length, 3);
+  assert.deepEqual(change.history.map((item) => item.value), ['+20%', '+10%', '+32%']);
+  assert.deepEqual(change.history.map((item) => item.effectiveValue), ['+20%', '+32%', '+32%']);
   assert.equal(change.cumulative, undefined);
-  assert.equal(change.latestAdjustment, undefined);
-  assert.equal(change.history[0].effectiveValue, undefined);
-  assert.equal(patch.rounds[0].label, 'Final notes');
-  assert.equal(patch.rounds[0].source, finalSource.url);
+  assert.equal(change.finalCheckpoint, true);
+  assert.deepEqual(patch.rounds.map((round) => round.label), ['Initial notes', 'Update 1', 'Final notes']);
+  assert.equal(patch.rounds.at(-1).source, finalSource.url);
 });
 
 test('compounds mixed buffs and nerfs from the live baseline', () => {

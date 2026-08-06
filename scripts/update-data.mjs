@@ -1032,11 +1032,11 @@ function articleMetadata($) {
 
 async function fetchArticle(source) {
   const response = await fetch(source.url, {
-  headers: {
-    Accept: 'text/html',
-    'User-Agent': 'WoW-PTR-Ledger/1.0 (+https://github.com/)',
-  },
-});
+    headers: {
+      Accept: 'text/html',
+      'User-Agent': 'WoW-PTR-Ledger/1.0 (+https://github.com/)',
+    },
+  });
   if (!response.ok) throw new Error(`${response.status} ${response.statusText} for ${source.url}`);
   const html = await response.text();
   const $ = cheerio.load(html);
@@ -1193,6 +1193,72 @@ export function buildPatch(source, posts) {
   };
 }
 
+function updatePatchStats(patch) {
+  patch.stats = {
+    classes: patch.classes.filter((item) => item.id !== 'all-classes').length,
+    changes: patch.classes.reduce((sum, item) => sum + item.changes.length, 0),
+    revised: patch.classes.reduce((sum, item) => sum + item.changes.filter((change) => change.history.length > 1).length, 0),
+  };
+}
+
+export function mergeFinalCheckpoint(patch, finalPatch) {
+  const classesById = new Map(patch.classes.map((classInfo) => [classInfo.id, classInfo]));
+  const changesById = new Map(patch.classes.flatMap((classInfo) => (
+    classInfo.changes.map((change) => [change.id, change])
+  )));
+
+  for (const finalClass of finalPatch.classes) {
+    let classInfo = classesById.get(finalClass.id);
+    if (!classInfo) {
+      classInfo = { ...finalClass, changes: [] };
+      patch.classes.push(classInfo);
+      classesById.set(classInfo.id, classInfo);
+    }
+
+    for (const finalChange of finalClass.changes) {
+      const finalHistory = finalChange.history.map((item) => ({
+        ...item,
+        effectiveValue: finalChange.value,
+        effectiveDirection: finalChange.direction,
+        finalCheckpoint: true,
+      }));
+      const existing = changesById.get(finalChange.id);
+
+      if (existing) {
+        existing.history.push(...finalHistory);
+        existing.text = finalChange.text;
+        existing.value = finalChange.value;
+        existing.baseline = finalChange.baseline;
+        existing.direction = finalChange.direction;
+        existing.pvpImpact = finalChange.pvpImpact;
+        existing.lastChanged = finalChange.lastChanged;
+        existing.isTalent ||= finalChange.isTalent;
+        existing.finalCheckpoint = true;
+        delete existing.cumulative;
+        delete existing.latestAdjustment;
+      } else {
+        const merged = {
+          ...finalChange,
+          finalCheckpoint: true,
+          history: finalHistory,
+        };
+        classInfo.changes.push(merged);
+        changesById.set(merged.id, merged);
+      }
+    }
+  }
+
+  patch.rounds.push(...finalPatch.rounds);
+  patch.source = finalPatch.source;
+  patch.lastUpdated = finalPatch.lastUpdated;
+  patch.classes.sort((left, right) => left.id.localeCompare(right.id));
+  for (const classInfo of patch.classes) {
+    classInfo.changes.sort((left, right) => left.spec.localeCompare(right.spec) || left.subject.localeCompare(right.subject));
+  }
+  updatePatchStats(patch);
+  return patch;
+}
+
 async function readExisting() {
   try {
     return JSON.parse(await readFile(OUTPUT_PATH, 'utf8'));
@@ -1224,6 +1290,13 @@ async function main() {
       const posts = await fetchSourcePosts(source);
       const patch = buildPatch(source, posts);
       if (!patch.rounds.length) throw new Error(`No class notes found for ${source.id}`);
+      if (source.finalSource) {
+        const finalSource = { ...source, ...source.finalSource };
+        const finalPosts = await fetchSourcePosts(finalSource);
+        const finalPatch = buildPatch(finalSource, finalPosts);
+        if (!finalPatch.rounds.length) throw new Error(`No final class notes found for ${source.id}`);
+        mergeFinalCheckpoint(patch, finalPatch);
+      }
       enrichPatchWithAbilities(patch, abilityCatalog, previousById.get(source.id));
       patches.push(patch);
       console.log(`${source.id}: ${patch.stats.changes} current changes across ${patch.rounds.length} note rounds`);
