@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "generatedAt": "2026-08-06T17:19:26+00:00",
+  "generatedAt": "2026-08-06T21:57:14+00:00",
   "entries": {
     "DEATH KNIGHT|Frost|glacial advance": {
       "abilityName": "Glacial Advance",
@@ -674,51 +674,51 @@
     },
     "ALL CLASSES|General|all class interrupts such as kick pummel counterspell etc": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ALL CLASSES|General|diminishing return categories": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ALL CLASSES|General|in curse of ula tek we re going to be lowering throughput for major dps": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ALL CLASSES|General|player health and creature": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Blood|melee": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Blood|the previously announced blood death knight tier set designs": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Blood|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Blood|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Frost|melee": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Frost|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Frost|whitemane s undeath": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|all lesser ghoul": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|infected claw": {
       "missing": true,
@@ -726,11 +726,11 @@
     },
     "DEATH KNIGHT|Unholy|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|players other than the death knight": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|resolved an issue causing nazgrim s conquest to": {
       "missing": true,
@@ -738,55 +738,55 @@
     },
     "DEATH KNIGHT|Unholy|runic power spenders": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|the venomous abyss set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|whitemane death coil": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|whitemane undeath": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEMON HUNTER|Class-wide|demon hunters": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEMON HUNTER|Devourer|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEMON HUNTER|Havoc|demon blades blade dance and chaos strike": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEMON HUNTER|Havoc|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEMON HUNTER|Havoc|the venomous abyss 4 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEMON HUNTER|Vengeance|fracture and soul cleave": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEMON HUNTER|Vengeance|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Balance|a counter aura for orbit breaker": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Balance|fixed an issue causing full moons launched by orbit breaker to have 100": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Balance|fixed an issue causing some": {
       "missing": true,
@@ -794,11 +794,11 @@
     },
     "DRUID|Balance|stellar protection": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Balance|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Balance|the counter aura for orbit breaker can": {
       "missing": true,
@@ -806,7 +806,7 @@
     },
     "DRUID|Balance|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Balance|wrath": {
       "abilityName": "Wrath",
@@ -815,7 +815,7 @@
     },
     "DRUID|Class-wide|shred and cat form swipe": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Feral|cooldown manager updated so elements show the empowered icon versions for instances of dots like r": {
       "missing": true,
@@ -823,15 +823,15 @@
     },
     "DRUID|Feral|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|base": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|bonus rage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|fixed an issue where dream guide was incorrectly being consumed by regrowths cast via rein": {
       "missing": true,
@@ -839,15 +839,15 @@
     },
     "DRUID|Guardian|fixed an issue where mangle was consuming ravage procs": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|fixed an issue where wild guardian was not correctly increasing thrash and mangle": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|rank 1 spending rage has a": {
       "missing": true,
@@ -855,55 +855,55 @@
     },
     "DRUID|Guardian|rank 2 mangle and maul deal 20 40 additional nature": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|rank 3": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|rank 3 when a spirit is awakened the cooldowns of thrash and mangle are reset": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|spirit rage generation increased to 8": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Restoration|all spell and ability": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Restoration|fixed an issue where abundance": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Restoration|fixed an issue where the abundance effect would not properly be extended by flourish": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Restoration|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Restoration|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "EVOKER|Augmentation|all ability and pet": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "EVOKER|Augmentation|the midnight season 1 2 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "EVOKER|Devastation|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "EVOKER|Preservation|emerald blossom and fluttering seedlings": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "EVOKER|Preservation|fixed an issue that could": {
       "missing": true,
@@ -911,19 +911,19 @@
     },
     "EVOKER|Preservation|fixed an issue where consume flame": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Beast Mastery|dark hound summons": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Beast Mastery|fixed an issue where through the eyes was not properly increasing withering fire": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Beast Mastery|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Class-wide|ranged auto shot": {
       "missing": true,
@@ -931,7 +931,7 @@
     },
     "HUNTER|Marksmanship|dark minion summons": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue that caused deathblow to not trigger at the expected rates when casting aim": {
       "missing": true,
@@ -951,7 +951,7 @@
     },
     "HUNTER|Marksmanship|fixed an issue where explosive shot would potentially not deal area": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue where secondary aimed shots from the aspect of the hydra talent would incor": {
       "missing": true,
@@ -959,23 +959,23 @@
     },
     "HUNTER|Marksmanship|fixed an issue where small game hunter did not properly": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue where the area": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue where through the eyes was not properly increasing withering fire": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|incendiary ammunition and unstable trigger": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|some talents have changed locations in the second gate of the talent tree to make explosiv": {
       "missing": true,
@@ -983,15 +983,15 @@
     },
     "HUNTER|Marksmanship|the tenacious cunning talent node": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|the venomous abyss 2 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Survival|fixed an issue where mastery spirit bond incorrectly affected some summons from the pack": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Survival|fixed an issue where outland venom was not properly applied by various periodic effects fr": {
       "missing": true,
@@ -999,7 +999,7 @@
     },
     "HUNTER|Survival|fixed an issue where raptor swipe benefitted from the razor s edge talent twice": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Survival|fixed an issue where raptor swipe could": {
       "missing": true,
@@ -1007,19 +1007,19 @@
     },
     "HUNTER|Survival|fixed an issue where wildfire bomb benefitted from the bombardier talent twice": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Survival|references to flamefang pitch": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Survival|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Survival|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|fixed an issue that could": {
       "missing": true,
@@ -1027,7 +1027,7 @@
     },
     "MAGE|Arcane|fixed an issue with how the tooltip calculated clearcasting": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|positioned above arcane surge in the talent tree where improved clearcasting was previous": {
       "missing": true,
@@ -1035,15 +1035,15 @@
     },
     "MAGE|Arcane|rank 1 arcane barrage has a 1": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|rank 2 prismatic bolt has a 50 100": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|rank 3 arcane salvo": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|sunfury": {
       "missing": true,
@@ -1055,79 +1055,79 @@
     },
     "MAGE|Fire|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Fire|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Frost|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Frost|rppm increased to 2": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Frost|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Frost|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MONK|Brewmaster|fixed an issue where flurry strikes physical": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MONK|Brewmaster|the following buffs": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MONK|Mistweaver|mastery gust of mist": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MONK|Mistweaver|overall healing": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MONK|Mistweaver|resolved an issue that caused temple training s spinning crane kick": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Holy|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Holy|overall healing": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Holy|pillar of light s beacon of virtue": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Holy|shield of the righteous mana return increased by 25": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Holy|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Holy|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Holy|unworthy debuff": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|adjusted many talent locations": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where abilities that knocked enemies into the air could": {
       "missing": true,
@@ -1135,11 +1135,11 @@
     },
     "PALADIN|Protection|fixed an issue where authoritative rebuke was incorrectly reducing rebuke": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where blessed word": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where casting hammer of light in between direct casts of consecration could": {
       "missing": true,
@@ -1155,11 +1155,11 @@
     },
     "PALADIN|Protection|fixed an issue where sacred weapon and holy bulwark were extending": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where seal of reprisal was reducing": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where sentinel s critical strike was not being displayed on the character s": {
       "missing": true,
@@ -1167,11 +1167,11 @@
     },
     "PALADIN|Protection|fixed an issue where sentinel s stacks were beginning to decay too soon": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where some of consecration s effects were not benefiting from its increased": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where the": {
       "missing": true,
@@ -1179,7 +1179,7 @@
     },
     "PALADIN|Protection|fixed an issue where the 4 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|hammer of light divine resonance sacrosanct crusade bulwark of order blessed word empyreal ward": {
       "missing": true,
@@ -1191,19 +1191,19 @@
     },
     "PALADIN|Protection|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Retribution|additional skyfury attacks": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Retribution|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Retribution|radiance of the concentrated flame 4 set bonus effect updated": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Retribution|templar": {
       "missing": true,
@@ -1211,27 +1211,27 @@
     },
     "PALADIN|Retribution|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Discipline|overall healing and absorption": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Discipline|void shield absorption reduced by 30": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Holy|overall healing": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Holy|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Shadow|fixed an issue causing improved voidform to generate insanity when casting voidform": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Shadow|fixed an issue causing tentacle slam to apply extra stacks of horrific visions when talent": {
       "missing": true,
@@ -1239,63 +1239,63 @@
     },
     "PRIEST|Shadow|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Shadow|the venomous abyss 4 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Shadow|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Assassination|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Assassination|several talents have changed positions in the talent tree": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Assassination|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Outlaw|new connectors": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Outlaw|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Outlaw|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Subtlety|fixed an issue that caused secret technique": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Subtlety|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Subtlety|shadow techniques base effect frequency": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Subtlety|shadow techniques energy generation": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Subtlety|some talents have changed positions in the talent tree": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Elemental|bonus lava bursts when activating ascendance": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Elemental|developes notes supercharge and power of the maelstrom both were extra random elemental overloads": {
       "missing": true,
@@ -1307,7 +1307,7 @@
     },
     "SHAMAN|Elemental|fixed an issue that caused elemental resonance to not affect periodic elemental": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Elemental|fixed an issue that caused voltaic blaze to not be properly affected by elemental fury s critical": {
       "missing": true,
@@ -1315,31 +1315,31 @@
     },
     "SHAMAN|Elemental|fixed an issue where apex talent feedback loop did not properly": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Enhancement|fixed an issue causing crash lightning unleashed to only strike a single target": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Enhancement|fixed an issue causing the venomous abyss 4 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Enhancement|melee": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Enhancement|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Enhancement|the venomous abyss 4 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Restoration|chain": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Restoration|fixed an issue where": {
       "missing": true,
@@ -1355,103 +1355,103 @@
     },
     "SHAMAN|Restoration|midnight season 1 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Restoration|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Restoration|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Affliction|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Class-wide|demonic tyrant s demonfire": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Class-wide|gloomhound s gloom slash": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Class-wide|imp lord s greater felbolt": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Class-wide|summon demonic gateway": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Class-wide|vilefiend s headbutt and bile spit": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Class-wide|wild imp and imp gang boss s fel firebolt": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Demonology|fixed a tooltip issue where the venomous abyss 4 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Destruction|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Destruction|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Arms|fixed an issue with the venomous abyss 2 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Arms|midnight season 1 2 set": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Arms|stacks of sweeping strikes from the sweeping strikes ability and broad strokes": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Arms|the venomous abyss 2 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Arms|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Class-wide|storm of blood": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Fury|bloodbath bleed": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Fury|bloodbath initial damaged reduced by 12": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Protection|overall damage": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Protection|the venomous abyss 4 set bonus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Protection|unyielding": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|sunfury fixed an issue that prevented meteorites from granting clearcasting": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Retribution|templar slash": {
       "abilityName": "Templar Slash",
@@ -1465,231 +1465,231 @@
     },
     "SHAMAN|Elemental|ancestors chain lightning": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Elemental|ancestors lava burst": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|resolved an issue causing nazgrim s conquest to grant additional strength when magus": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Balance|fixed an issue causing some cooldown manager elements such as damage over time timers": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Balance|the counter aura for orbit breaker can no longer be manually cancelled to reset your orbit": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Feral|cooldown manager updated so elements show the empowered icon versions for instances": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|fixed an issue where dream guide was incorrectly being consumed by regrowths cast": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|rank 1 spending rage has a chance to awaken a guardian spirit for 8 seconds which": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "EVOKER|Preservation|fixed an issue that could cause time dilation to not clear its stored damage on death": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue that caused deathblow to not trigger at the expected rates when casting": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue where applying spotter s mark rapid fire after rapid fire had finished": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue where casting aimed shot twice in a row while talented into aspect of": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue where explosive shot was incorrectly damaging the primary target": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|fixed an issue where secondary aimed shots from the aspect of the hydra talent": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|some talents have changed locations in the second gate of the talent tree to make": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Survival|fixed an issue where outland venom was not properly applied by various periodic effects": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Survival|fixed an issue where raptor swipe could cause sentinel s mark to be applied to a target": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|fixed an issue that could cause refractive images to not clear its stored damage on death": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|positioned above arcane surge in the talent tree where improved clearcasting": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Class-wide|fixed an issue for arcane that caused mana cascade to be gained from some unintended": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where abilities that knocked enemies into the air could cause glory of": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where casting hammer of light in between direct casts of consecration": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where instrument of the divine was causing shield of the righteous": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where quickened invocation was incorrectly reducing the cooldown of holy": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where sentinel s critical strike was not being displayed on the character": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|fixed an issue where the damage from the 4 set bonus was scaling with target damage taken": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|hammer of light divine resonance sacrosanct crusade bulwark of order blessed word": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|sacred weapon and holy bulwark extend their duration when reapplied by the same caster": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PRIEST|Shadow|fixed an issue causing tentacle slam to apply extra stacks of horrific visions": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Elemental|developes notes supercharge and power of the maelstrom both were extra random elemental": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Elemental|fixed an issue that caused voltaic blaze to not be properly affected by elemental fury s": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Restoration|fixed an issue where both acid rain and healing rain were not properly granting a patrial": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Restoration|fixed an issue where healing rain was not causing immediate healing when casting the spell": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Restoration|fixed an issue with overflowing shores not healing units inside of the healing rain": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEATH KNIGHT|Unholy|fixed an issue causing nazgrim s conquest to grant additional strength when magus of": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DEMON HUNTER|Vengeance|several talents have changed locations in the talent tree": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|rank 1 spending rage has a 10": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|rank 2 mangle ravage raze and maul deal 20 40 additional nature": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "DRUID|Guardian|rank 3 when a spirit is awakened the cooldowns of thrash and mangle are reset and they": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "EVOKER|Devastation|fixed an issue where twin flame was not scaling with mastery": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "EVOKER|Preservation|fixed an issue where twin flame was not scaling with mastery": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Class-wide|fixed an issue where through the eyes was not properly increasing withering fire": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "HUNTER|Marksmanship|some talents have changed positions in the talent tree": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Arcane|fixed an issue that prevented meteorites from granting clearcasting": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MAGE|Frost|all ability and pet": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MONK|Mistweaver|fixed an issue that caused temple training s spinning crane kick": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "MONK|Windwalker|spinning crane kick": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|hammer of light divine resonance sacrosanct crusade bulwark of order empyreal ward": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "PALADIN|Protection|many talents have changed position in the talent tree": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Class-wide|fixed an issue that caused unshakable drive": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "ROGUE|Class-wide|fixed an issue that often caused unshakable drive to remove more than one stack per": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Enhancement|fixed an issue causing the elemental tempo to incorrectly": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Enhancement|fixed an issue where a single arc discharge effect could increase the damage of multiple": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "SHAMAN|Enhancement|fixed an issue where surging bolts from surging totem that were created from casting chain": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARLOCK|Affliction|the following talents": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Arms|several talents have changed locations in the talent tree": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     },
     "WARRIOR|Fury|bloodbath initial damaged reduced by 12 and bleed": {
       "missing": true,
-      "checkedFor": "2026-08-06T17:19:26+00:00"
+      "checkedFor": "2026-08-06T21:57:14+00:00"
     }
   }
 }
