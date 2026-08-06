@@ -288,7 +288,12 @@ function lowerIsBetterMetric(text) {
   return /\b(?:every \d|costs?\s+\d|loses?\b[^.]{0,30}\bhealing|decreases? the duration|(?:cast time|cooldown|(?:mana|energy|focus|rage|holy power|astral power|insanity|resource) cost|damage taken)\b[^.]{0,40}\b(?:increased|reduced|decreased) to|increases?\s+(?:your\s+)?damage taken by)\b/i.test(text);
 }
 
+function isBugFixNote(text) {
+  return /(?:^|[:–—-]\s+)(?:fixed|resolved|corrected)\b|\bbug\s*fix(?:es)?\b/i.test(text);
+}
+
 function classifyDirection(text, currentValue = null, baseline = null) {
+  if (isBugFixNote(text)) return 'fixed';
   const positiveWord = /\b(increased|increases|additional|new (?:passive )?talent|can now|grants?|improved)\b/i.test(text);
   const hardNegativeWord = /\b(reduced|decreased|removed|no longer|less damage)\b/i.test(text);
   const mechanicReduction = /\b(reduces|decreases)\b/i.test(text);
@@ -397,6 +402,7 @@ function inferDirectionFromBaselinePairs(text) {
 }
 
 function extractCurrentValue(text, direction) {
+  if (direction === 'fixed') return 'Fixed';
   const inlineRevision = parseFromToRevision(text);
   if (inlineRevision) return inlineRevision.to;
   const pairedValues = extractValuesPairedWithBaseline(text);
@@ -426,7 +432,7 @@ function extractCurrentValue(text, direction) {
     /\b\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?(?:\s*\/\s*\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?)?(?:\s+(?:additional\s+)?(?:seconds?|minutes?|yards?|targets?|charges?|stacks?|times?|points?|Fury|Rage|Energy|Focus|Holy Power|Astral Power|Insanity|Icicles?|orbs?|uses?|enemies?|allies?|casts?|Ghouls?))?/i,
   );
   if (value) return cleanText(value[0]).replace(/\s*\/\s*/g, '/');
-  return direction === 'changed' ? 'Changed' : direction === 'buff' ? 'Buffed' : 'Nerfed';
+  return { buff: 'Buffed', nerf: 'Nerfed', fixed: 'Fixed', changed: 'Changed' }[direction] || 'Changed';
 }
 
 function isBareListLabel(text) {

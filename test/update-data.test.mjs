@@ -534,6 +534,26 @@ test('preserves units for current values paired with live values', () => {
   assert.equal(patch.classes[0].changes.find((change) => change.text.startsWith('Inertia')).value, '12% · 6 seconds');
 });
 
+test('classifies bugfix notes separately from tuning direction', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', `
+      <li>Fixed an issue causing Improved Voidform to generate Insanity when casting Voidform.</li>
+      <li>The Example bonus – Fixed an issue that caused Fireball to have 100% critical strike chance instead of 50%.</li>
+      <li>Resolved an issue causing Nazgrim’s Conquest to grant additional Strength.</li>
+      <li>Crusader’s Resolved moved to row 8.</li>
+    `),
+  ]);
+  const directionFor = (start) => patch.classes[0].changes.find((change) => change.text.startsWith(start)).direction;
+  const valueFor = (start) => patch.classes[0].changes.find((change) => change.text.startsWith(start)).value;
+
+  assert.equal(directionFor('Fixed an issue'), 'fixed');
+  assert.equal(directionFor('The Example bonus'), 'fixed');
+  assert.equal(directionFor('Resolved an issue'), 'fixed');
+  assert.equal(directionFor('Crusader’s Resolved'), 'changed');
+  assert.equal(valueFor('Fixed an issue'), 'Fixed');
+  assert.equal(valueFor('The Example bonus'), 'Fixed');
+});
+
 test('infers buffs and nerfs from live-to-PTR value movement', () => {
   const patch = buildPatch(source, [
     post(1, '2026-01-01T00:00:00Z', `

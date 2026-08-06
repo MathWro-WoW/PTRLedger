@@ -537,7 +537,7 @@ function timeline(change) {
 }
 
 function changeCard(change) {
-  const directionLabels = { buff: 'Buff', nerf: 'Nerf', changed: 'Changed' };
+  const directionLabels = { buff: 'Buff', nerf: 'Nerf', fixed: 'Fix', changed: 'Changed' };
   const metadata = [node('span', { className: 'direction-label', text: directionLabels[change.direction] })];
   const abilityType = change.abilityType || (change.isTalent ? 'talent' : null);
   if (abilityType) {

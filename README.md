@@ -5,7 +5,7 @@ A static, GitHub Pages-ready ledger of World of Warcraft PTR class tuning. PTR L
 ## Features
 
 - Current PTR changes grouped by class and specialization
-- Buff, nerf, and changed classifications based on live-to-PTR values
+- Distinct buff, nerf, fix, and changed classifications using official bugfix wording and live-to-PTR values
 - Revision trails that preserve each announced adjustment and its resulting value versus live
 - Cumulative folding for sequential percentage tuning, without confusing a later adjustment with an absolute replacement
 - Class submenus; specialization, direction, and source-confirmed talent filters; revised-only filtering; and text search
@@ -36,7 +36,7 @@ Resolved entries include their canonical ability name, spell ID, and icon identi
 
 Cards with a resolved spell ID expose an on-demand **Live ↔ PTR** comparison using [Wowhead tooltip data](https://www.wowhead.com/tooltips). Each pane's **Wowhead ↗** label opens the corresponding Live or PTR spell page. The browser requests tooltip JSON only when the user hovers, focuses, or opens an ability name; no Wowhead script or advertising is embedded. Tooltip data is supplementary and may lag behind Blizzard's latest PTR notes. The linked official-note text and revision history remain authoritative.
 
-The **Talents only** filter can be combined with class, specialization, buff, nerf, changed, round, revision-history, and text filters.
+The **Talents only** filter can be combined with class, specialization, buff, nerf, fix, changed, round, revision-history, and text filters.
 
 ## How sequential tuning is calculated
 

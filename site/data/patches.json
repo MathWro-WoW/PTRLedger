@@ -2536,9 +2536,9 @@
               "isTalent": false,
               "subject": "Resolved an issue causing Nazgrim’s Conquest to grant additional Strength when Magus…",
               "text": "Resolved an issue causing Nazgrim’s Conquest to grant additional Strength when Magus of the Dead is sacrificed for Lord of the Dead.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-08T21:19:20.251Z",
               "lastChanged": "2026-07-08T21:19:20.251Z",
               "history": [
@@ -2546,9 +2546,9 @@
                   "round": 13,
                   "date": "2026-07-08T21:19:20.251Z",
                   "text": "Resolved an issue causing Nazgrim’s Conquest to grant additional Strength when Magus of the Dead is sacrificed for Lord of the Dead.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/13"
                 }
               ],
@@ -4476,9 +4476,9 @@
               "isTalent": false,
               "subject": "Fixed an issue causing Full Moons launched by Orbit Breaker to have 100%",
               "text": "Fixed an issue causing Full Moons launched by Orbit Breaker to have 100% effectiveness instead of 50%.",
-              "value": "100%",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -4486,9 +4486,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue causing Full Moons launched by Orbit Breaker to have 100% effectiveness instead of 50%.",
-                  "value": "100%",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -4505,9 +4505,9 @@
               "isTalent": false,
               "subject": "Fixed an issue causing some Cooldown Manager elements such as damage-over-time timers…",
               "text": "Fixed an issue causing some Cooldown Manager elements such as damage-over-time timers and buff trackers to sometimes not show accurate information.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -4515,9 +4515,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue causing some Cooldown Manager elements such as damage-over-time timers and buff trackers to sometimes not show accurate information.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -6234,9 +6234,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Dream Guide was incorrectly being consumed by Regrowths cast…",
               "text": "Fixed an issue where Dream Guide was incorrectly being consumed by Regrowths cast via Reinvigoration.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -6244,9 +6244,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where Dream Guide was incorrectly being consumed by Regrowths cast via Reinvigoration.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -6263,9 +6263,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Mangle was consuming Ravage procs",
               "text": "Fixed an issue where Mangle was consuming Ravage procs.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -6273,9 +6273,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where Mangle was consuming Ravage procs.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -6292,9 +6292,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Wild Guardian was not correctly increasing Thrash and Mangle",
               "text": "Fixed an issue where Wild Guardian was not correctly increasing Thrash and Mangle damage while a spirit was active.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -6302,9 +6302,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where Wild Guardian was not correctly increasing Thrash and Mangle damage while a spirit was active.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -6785,9 +6785,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Abundance",
               "text": "Fixed an issue where Abundance’s bonus critical strike chance to Regrowth was not working correctly.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -6795,9 +6795,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Abundance’s bonus critical strike chance to Regrowth was not working correctly.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -6814,9 +6814,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where the Abundance effect would not properly be extended by Flourish",
               "text": "Fixed an issue where the Abundance effect would not properly be extended by Flourish.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -6824,9 +6824,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where the Abundance effect would not properly be extended by Flourish.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -8495,9 +8495,9 @@
               "isTalent": false,
               "subject": "Fixed an issue that could cause Time Dilation to not clear its stored damage on death",
               "text": "Fixed an issue that could cause Time Dilation to not clear its stored damage on death.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -8505,9 +8505,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue that could cause Time Dilation to not clear its stored damage on death.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -8524,9 +8524,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Consume Flame",
               "text": "Fixed an issue where Consume Flame healing was not being increased by Grace Period or similar effects.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -8534,9 +8534,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Consume Flame healing was not being increased by Grace Period or similar effects.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -9105,9 +9105,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where Through The Eyes was not properly increasing Withering Fire",
               "text": "Fixed an issue where Through The Eyes was not properly increasing Withering Fire’s damage.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -9115,9 +9115,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Through The Eyes was not properly increasing Withering Fire’s damage.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -10063,9 +10063,9 @@
               "isTalent": false,
               "subject": "Fixed an issue that caused Deathblow to not trigger at the expected rates when casting…",
               "text": "Fixed an issue that caused Deathblow to not trigger at the expected rates when casting Aimed Shot.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-18T20:07:26.932Z",
               "lastChanged": "2026-06-18T20:07:26.932Z",
               "history": [
@@ -10073,9 +10073,9 @@
                   "round": 1,
                   "date": "2026-06-18T20:07:26.932Z",
                   "text": "Fixed an issue that caused Deathblow to not trigger at the expected rates when casting Aimed Shot.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
@@ -10092,9 +10092,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where applying Spotter’s Mark: Rapid Fire after Rapid Fire had finished…",
               "text": "Fixed an issue where applying Spotter’s Mark: Rapid Fire after Rapid Fire had finished channeling but before all of its projectiles had reached the target would improperly consume the Spotter’s Mark: Rapid Fire debuff.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -10102,9 +10102,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where applying Spotter’s Mark: Rapid Fire after Rapid Fire had finished channeling but before all of its projectiles had reached the target would improperly consume the Spotter’s Mark: Rapid Fire debuff.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -10121,9 +10121,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where casting Aimed Shot twice in a row while talented into Aspect of…",
               "text": "Fixed an issue where casting Aimed Shot twice in a row while talented into Aspect of the Hydra incorrectly prevented the second cast of Aimed Shot from being able to cause a Deathbringer proc from the Deathblow talent.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -10131,9 +10131,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where casting Aimed Shot twice in a row while talented into Aspect of the Hydra incorrectly prevented the second cast of Aimed Shot from being able to cause a Deathbringer proc from the Deathblow talent.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -10150,9 +10150,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Explosive Shot was incorrectly damaging the primary target…",
               "text": "Fixed an issue where Explosive Shot was incorrectly damaging the primary target of Explosive Shot with the explosion damage.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -10160,9 +10160,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Explosive Shot was incorrectly damaging the primary target of Explosive Shot with the explosion damage.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -10179,9 +10179,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Explosive Shot would potentially not deal area",
               "text": "Fixed an issue where Explosive Shot would potentially not deal area damage if the primary target died from Explosive Shot.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -10189,9 +10189,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where Explosive Shot would potentially not deal area damage if the primary target died from Explosive Shot.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -10208,9 +10208,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where secondary Aimed Shots from the Aspect of the Hydra talent…",
               "text": "Fixed an issue where secondary Aimed Shots from the Aspect of the Hydra talent would incorrectly consume the Deathbringer buff from the Deathblow talent.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -10218,9 +10218,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where secondary Aimed Shots from the Aspect of the Hydra talent would incorrectly consume the Deathbringer buff from the Deathblow talent.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -10237,9 +10237,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Small Game Hunter did not properly",
               "text": "Fixed an issue where Small Game Hunter did not properly increase the damage of Explosive Shot.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -10247,9 +10247,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where Small Game Hunter did not properly increase the damage of Explosive Shot.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -10266,9 +10266,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where the area",
               "text": "Fixed an issue where the area damage of Explosive Shot was benefitting from Mastery, critical damage bonuses, and the Take Aim talent twice.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -10276,9 +10276,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where the area damage of Explosive Shot was benefitting from Mastery, critical damage bonuses, and the Take Aim talent twice.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -10295,9 +10295,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where Through The Eyes was not properly increasing Withering Fire",
               "text": "Fixed an issue where Through The Eyes was not properly increasing Withering Fire’s damage.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -10305,9 +10305,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Through The Eyes was not properly increasing Withering Fire’s damage.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -11091,9 +11091,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where Mastery: Spirit Bond incorrectly affected some summons from the Pack…",
               "text": "Fixed an issue where Mastery: Spirit Bond incorrectly affected some summons from the Pack Leader Hero Talents twice.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -11101,9 +11101,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Mastery: Spirit Bond incorrectly affected some summons from the Pack Leader Hero Talents twice.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -11120,9 +11120,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where Outland Venom was not properly applied by various periodic effects…",
               "text": "Fixed an issue where Outland Venom was not properly applied by various periodic effects from either the Hunter, their current pet, or other summons from the Pack Leader Hero Talents.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -11130,9 +11130,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Outland Venom was not properly applied by various periodic effects from either the Hunter, their current pet, or other summons from the Pack Leader Hero Talents.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -11149,9 +11149,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where Raptor Swipe benefitted from the Razor’s Edge talent twice",
               "text": "Fixed an issue where Raptor Swipe benefitted from the Razor’s Edge talent twice.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -11159,9 +11159,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where Raptor Swipe benefitted from the Razor’s Edge talent twice.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -11178,9 +11178,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Raptor Swipe could cause Sentinel’s Mark to be applied to a target…",
               "text": "Fixed an issue where Raptor Swipe could cause Sentinel’s Mark to be applied to a target that was not your currently selected target. If you do not have a target selected when using Raptor Swipe, a target hit by Raptor Swipe will be chosen.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -11188,9 +11188,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Raptor Swipe could cause Sentinel’s Mark to be applied to a target that was not your currently selected target. If you do not have a target selected when using Raptor Swipe, a target hit by Raptor Swipe will be chosen.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -11207,9 +11207,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where Wildfire Bomb benefitted from the Bombardier talent twice",
               "text": "Fixed an issue where Wildfire Bomb benefitted from the Bombardier talent twice.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -11217,9 +11217,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where Wildfire Bomb benefitted from the Bombardier talent twice.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -11959,9 +11959,9 @@
               "isTalent": false,
               "subject": "Fixed an issue that could cause Refractive Images to not clear its stored damage on death",
               "text": "Fixed an issue that could cause Refractive Images to not clear its stored damage on death.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -11969,9 +11969,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue that could cause Refractive Images to not clear its stored damage on death.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -11988,9 +11988,9 @@
               "isTalent": true,
               "subject": "Fixed an issue with how the tooltip calculated Clearcasting",
               "text": "Fixed an issue with how the tooltip calculated Clearcasting’s chance to occur with different talent selections. Clearcasting’s functionality is unchanged.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -11998,9 +11998,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue with how the tooltip calculated Clearcasting’s chance to occur with different talent selections. Clearcasting’s functionality is unchanged.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -12423,9 +12423,9 @@
               "isTalent": true,
               "subject": "Sunfury: Fixed an issue that prevented Meteorites from granting Clearcasting",
               "text": "Sunfury: Fixed an issue that prevented Meteorites from granting Clearcasting.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-31T18:49:29.860Z",
               "lastChanged": "2026-07-31T18:49:29.860Z",
               "history": [
@@ -12433,9 +12433,9 @@
                   "round": 20,
                   "date": "2026-07-31T18:49:29.860Z",
                   "text": "Sunfury: Fixed an issue that prevented Meteorites from granting Clearcasting.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
@@ -12510,9 +12510,9 @@
               "isTalent": true,
               "subject": "Fixed an issue for Arcane that caused Mana Cascade to be gained from some unintended…",
               "text": "Fixed an issue for Arcane that caused Mana Cascade to be gained from some unintended spells.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-18T20:07:26.932Z",
               "lastChanged": "2026-06-18T20:07:26.932Z",
               "history": [
@@ -12520,9 +12520,9 @@
                   "round": 1,
                   "date": "2026-06-18T20:07:26.932Z",
                   "text": "Fixed an issue for Arcane that caused Mana Cascade to be gained from some unintended spells.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
@@ -13105,9 +13105,9 @@
               "isTalent": false,
               "subject": "The Venomous Abyss 2-set bonus",
               "text": "The Venomous Abyss 2-set bonus – Fixed an issue that caused a Pyroblast affected by Hot Streak! to gain a bonus to their critical strike chance while Pyroclasm was active.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -13115,9 +13115,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "The Venomous Abyss 2-set bonus – Fixed an issue that caused a Pyroblast affected by Hot Streak! to gain a bonus to their critical strike chance while Pyroclasm was active.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -13506,9 +13506,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Flurry Strikes’ Physical",
               "text": "Fixed an issue where Flurry Strikes’ Physical damage was not being correctly increased by Bring Me Another or the Venomous Abyss 4-set bonus.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-23T23:05:15.810Z",
               "lastChanged": "2026-07-23T23:05:15.810Z",
               "history": [
@@ -13516,9 +13516,9 @@
                   "round": 19,
                   "date": "2026-07-23T23:05:15.810Z",
                   "text": "Fixed an issue where Flurry Strikes’ Physical damage was not being correctly increased by Bring Me Another or the Venomous Abyss 4-set bonus.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/19"
                 }
               ],
@@ -13854,9 +13854,9 @@
               "isTalent": false,
               "subject": "Resolved an issue that caused Temple Training’s Spinning Crane Kick",
               "text": "Resolved an issue that caused Temple Training’s Spinning Crane Kick damage increase to apply to Mistweaver.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-08T17:22:44.876Z",
               "lastChanged": "2026-07-08T17:22:44.876Z",
               "history": [
@@ -13864,9 +13864,9 @@
                   "round": 12,
                   "date": "2026-07-08T17:22:44.876Z",
                   "text": "Resolved an issue that caused Temple Training’s Spinning Crane Kick damage increase to apply to Mistweaver.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
@@ -15529,9 +15529,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where abilities that knocked enemies into the air could cause Glory of…",
               "text": "Fixed an issue where abilities that knocked enemies into the air could cause Glory of the Vanguard to deal its damage additional times.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -15539,9 +15539,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where abilities that knocked enemies into the air could cause Glory of the Vanguard to deal its damage additional times.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -15558,9 +15558,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Authoritative Rebuke was incorrectly reducing Rebuke",
               "text": "Fixed an issue where Authoritative Rebuke was incorrectly reducing Rebuke’s cooldown from Avenger’s Shield casts.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -15568,9 +15568,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where Authoritative Rebuke was incorrectly reducing Rebuke’s cooldown from Avenger’s Shield casts.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -15587,9 +15587,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Blessed Word",
               "text": "Fixed an issue where Blessed Word’s increase to Word of Glory healing was incorrectly applying without being talented.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-08T17:22:44.876Z",
               "lastChanged": "2026-07-08T17:22:44.876Z",
               "history": [
@@ -15597,9 +15597,9 @@
                   "round": 12,
                   "date": "2026-07-08T17:22:44.876Z",
                   "text": "Fixed an issue where Blessed Word’s increase to Word of Glory healing was incorrectly applying without being talented.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
@@ -15616,9 +15616,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where casting Hammer of Light in between direct casts of Consecration…",
               "text": "Fixed an issue where casting Hammer of Light in between direct casts of Consecration could allow Consecration to exceed its limit.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -15626,9 +15626,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where casting Hammer of Light in between direct casts of Consecration could allow Consecration to exceed its limit.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -15645,9 +15645,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Instrument of the Divine was causing Shield of the Righteous…",
               "text": "Fixed an issue where Instrument of the Divine was causing Shield of the Righteous to extend Sentinel’s stacks by an incorrect amount.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -15655,9 +15655,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where Instrument of the Divine was causing Shield of the Righteous to extend Sentinel’s stacks by an incorrect amount.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -15674,9 +15674,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Quickened Invocation was incorrectly reducing the cooldown of Holy…",
               "text": "Fixed an issue where Quickened Invocation was incorrectly reducing the cooldown of Holy Armaments.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -15684,9 +15684,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where Quickened Invocation was incorrectly reducing the cooldown of Holy Armaments.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -15703,9 +15703,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Sacred Weapon and Holy Bulwark were extending",
               "text": "Fixed an issue where Sacred Weapon and Holy Bulwark were extending duration by an incorrect amount.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -15713,9 +15713,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where Sacred Weapon and Holy Bulwark were extending duration by an incorrect amount.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -15732,9 +15732,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Seal of Reprisal was reducing",
               "text": "Fixed an issue where Seal of Reprisal was reducing damage dealt to the target, not reducing damage dealt to the caster.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -15742,9 +15742,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where Seal of Reprisal was reducing damage dealt to the target, not reducing damage dealt to the caster.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -15761,9 +15761,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Sentinel’s critical strike was not being displayed on the character…",
               "text": "Fixed an issue where Sentinel’s critical strike was not being displayed on the character sheet.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -15771,9 +15771,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where Sentinel’s critical strike was not being displayed on the character sheet.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -15790,9 +15790,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Sentinel’s stacks were beginning to decay too soon",
               "text": "Fixed an issue where Sentinel’s stacks were beginning to decay too soon.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -15800,9 +15800,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue where Sentinel’s stacks were beginning to decay too soon.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
@@ -15819,9 +15819,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where some of Consecration’s effects were not benefiting from its increased…",
               "text": "Fixed an issue where some of Consecration’s effects were not benefiting from its increased radius.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -15829,9 +15829,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where some of Consecration’s effects were not benefiting from its increased radius.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -15848,9 +15848,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where the 4-set",
               "text": "Fixed an issue where the 4-set bonus was not activated by Hammer of Wrath.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -15858,9 +15858,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where the 4-set bonus was not activated by Hammer of Wrath.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -15877,9 +15877,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where the damage from the 4-set bonus was scaling with target damage taken…",
               "text": "Fixed an issue where the damage from the 4-set bonus was scaling with target damage taken modifiers.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -15887,9 +15887,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where the damage from the 4-set bonus was scaling with target damage taken modifiers.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -18742,9 +18742,9 @@
               "isTalent": false,
               "subject": "Fixed an issue causing Improved Voidform to generate Insanity when casting Voidform",
               "text": "Fixed an issue causing Improved Voidform to generate Insanity when casting Voidform.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -18752,9 +18752,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue causing Improved Voidform to generate Insanity when casting Voidform.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -18771,9 +18771,9 @@
               "isTalent": false,
               "subject": "Fixed an issue causing Tentacle Slam to apply extra stacks of Horrific Visions…",
               "text": "Fixed an issue causing Tentacle Slam to apply extra stacks of Horrific Visions when talented for Maddening Tentacles and Idol of N’Zoth.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -18781,9 +18781,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue causing Tentacle Slam to apply extra stacks of Horrific Visions when talented for Maddening Tentacles and Idol of N’Zoth.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -20472,9 +20472,9 @@
               "isTalent": false,
               "subject": "Fixed an issue that caused Secret Technique",
               "text": "Fixed an issue that caused Secret Technique damage from secondary hits to be attributed to summoned pets instead of the attacking Rogue.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-18T20:07:26.932Z",
               "lastChanged": "2026-06-18T20:07:26.932Z",
               "history": [
@@ -20482,9 +20482,9 @@
                   "round": 1,
                   "date": "2026-06-18T20:07:26.932Z",
                   "text": "Fixed an issue that caused Secret Technique damage from secondary hits to be attributed to summoned pets instead of the attacking Rogue.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
@@ -21317,9 +21317,9 @@
               "isTalent": false,
               "subject": "Fixed an issue that caused Elemental Resonance to not affect periodic Elemental",
               "text": "Fixed an issue that caused Elemental Resonance to not affect periodic Elemental damage.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-18T20:07:26.932Z",
               "lastChanged": "2026-06-18T20:07:26.932Z",
               "history": [
@@ -21327,9 +21327,9 @@
                   "round": 1,
                   "date": "2026-06-18T20:07:26.932Z",
                   "text": "Fixed an issue that caused Elemental Resonance to not affect periodic Elemental damage.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
@@ -21346,9 +21346,9 @@
               "isTalent": false,
               "subject": "Fixed an issue that caused Voltaic Blaze to not be properly affected by Elemental Fury’s…",
               "text": "Fixed an issue that caused Voltaic Blaze to not be properly affected by Elemental Fury’s critical damage bonus.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-18T20:07:26.932Z",
               "lastChanged": "2026-06-18T20:07:26.932Z",
               "history": [
@@ -21356,9 +21356,9 @@
                   "round": 1,
                   "date": "2026-06-18T20:07:26.932Z",
                   "text": "Fixed an issue that caused Voltaic Blaze to not be properly affected by Elemental Fury’s critical damage bonus.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
@@ -21375,9 +21375,9 @@
               "isTalent": true,
               "subject": "Fixed an issue where Apex Talent: Feedback Loop (Rank 2) did not properly",
               "text": "Fixed an issue where Apex Talent: Feedback Loop (Rank 2) did not properly increase the critical damage of several Elemental Shaman spells.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-18T20:07:26.932Z",
               "lastChanged": "2026-06-18T20:07:26.932Z",
               "history": [
@@ -21385,9 +21385,9 @@
                   "round": 1,
                   "date": "2026-06-18T20:07:26.932Z",
                   "text": "Fixed an issue where Apex Talent: Feedback Loop (Rank 2) did not properly increase the critical damage of several Elemental Shaman spells.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1"
                 }
               ],
@@ -21810,9 +21810,9 @@
               "isTalent": false,
               "subject": "Fixed an issue causing Crash Lightning (Unleashed) to only strike a single target",
               "text": "Fixed an issue causing Crash Lightning (Unleashed) to only strike a single target.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-08T17:22:44.876Z",
               "lastChanged": "2026-07-08T17:22:44.876Z",
               "history": [
@@ -21820,9 +21820,9 @@
                   "round": 12,
                   "date": "2026-07-08T17:22:44.876Z",
                   "text": "Fixed an issue causing Crash Lightning (Unleashed) to only strike a single target.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
@@ -21839,9 +21839,9 @@
               "isTalent": false,
               "subject": "Fixed an issue causing the Venomous Abyss 4-set",
               "text": "Fixed an issue causing the Venomous Abyss 4-set bonus aura Short Circuit to not be consumed.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-08T17:22:44.876Z",
               "lastChanged": "2026-07-08T17:22:44.876Z",
               "history": [
@@ -21849,9 +21849,9 @@
                   "round": 12,
                   "date": "2026-07-08T17:22:44.876Z",
                   "text": "Fixed an issue causing the Venomous Abyss 4-set bonus aura Short Circuit to not be consumed.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
@@ -22390,9 +22390,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where both Acid Rain and Healing Rain were not properly granting a “patrial…",
               "text": "Fixed an issue where both Acid Rain and Healing Rain were not properly granting a “patrial tick” when a Healing Rain naturally expired.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-08T17:22:44.876Z",
               "lastChanged": "2026-07-08T17:22:44.876Z",
               "history": [
@@ -22400,9 +22400,9 @@
                   "round": 12,
                   "date": "2026-07-08T17:22:44.876Z",
                   "text": "Fixed an issue where both Acid Rain and Healing Rain were not properly granting a “patrial tick” when a Healing Rain naturally expired.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
@@ -22419,9 +22419,9 @@
               "isTalent": false,
               "subject": "Fixed an issue where Healing Rain was not causing immediate healing when casting the spell",
               "text": "Fixed an issue where Healing Rain was not causing immediate healing when casting the spell.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-08T17:22:44.876Z",
               "lastChanged": "2026-07-08T17:22:44.876Z",
               "history": [
@@ -22429,9 +22429,9 @@
                   "round": 12,
                   "date": "2026-07-08T17:22:44.876Z",
                   "text": "Fixed an issue where Healing Rain was not causing immediate healing when casting the spell.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
                 }
               ],
@@ -22448,9 +22448,9 @@
               "isTalent": false,
               "subject": "Fixed an issue with Overflowing Shores not healing units inside of the Healing Rain…",
               "text": "Fixed an issue with Overflowing Shores not healing units inside of the Healing Rain when the The Venomous Abyss 2-set bonus creates a Healing Rain.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-06-30T22:30:44.435Z",
               "lastChanged": "2026-06-30T22:30:44.435Z",
               "history": [
@@ -22458,9 +22458,9 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue with Overflowing Shores not healing units inside of the Healing Rain when the The Venomous Abyss 2-set bonus creates a Healing Rain.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -23084,9 +23084,9 @@
               "isTalent": true,
               "subject": "Avatar of Destruction’s Chaos Bolt",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Avatar of Destruction’s Chaos Bolt.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23094,9 +23094,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Avatar of Destruction’s Chaos Bolt.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23142,9 +23142,9 @@
               "isTalent": true,
               "subject": "Blackened Soul",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Blackened Soul.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23152,9 +23152,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Blackened Soul.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23200,9 +23200,9 @@
               "isTalent": true,
               "subject": "Channel Demonfire",
               "text": "Fixed an issue where several abilities erroneously granted Soul Leech: Channel Demonfire.",
-              "value": "Nerfed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "nerf",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23210,9 +23210,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities erroneously granted Soul Leech: Channel Demonfire.",
-                  "value": "Nerfed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "nerf",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23229,9 +23229,9 @@
               "isTalent": true,
               "subject": "Cunning Cruelty",
               "text": "Fixed an issue where several abilities erroneously granted Soul Leech: Cunning Cruelty.",
-              "value": "Nerfed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "nerf",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23239,9 +23239,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities erroneously granted Soul Leech: Cunning Cruelty.",
-                  "value": "Nerfed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "nerf",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23258,9 +23258,9 @@
               "isTalent": false,
               "subject": "Demonic Tyrant’s Demonfire",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Demonic Tyrant’s Demonfire.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23268,9 +23268,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Demonic Tyrant’s Demonfire.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23316,9 +23316,9 @@
               "isTalent": false,
               "subject": "Gloomhound’s Gloom Slash",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Gloomhound’s Gloom Slash.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23326,9 +23326,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Gloomhound’s Gloom Slash.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23345,9 +23345,9 @@
               "isTalent": false,
               "subject": "Imp Lord’s Greater Felbolt",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Imp Lord’s Greater Felbolt.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23355,9 +23355,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Imp Lord’s Greater Felbolt.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23374,9 +23374,9 @@
               "isTalent": false,
               "subject": "Infernal Bolt",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Infernal Bolt.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23384,9 +23384,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Infernal Bolt.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23403,9 +23403,9 @@
               "isTalent": false,
               "subject": "Legion Strike",
               "text": "Fixed an issue where several abilities erroneously granted Soul Leech: Legion Strike.",
-              "value": "Nerfed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "nerf",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23413,9 +23413,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities erroneously granted Soul Leech: Legion Strike.",
-                  "value": "Nerfed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "nerf",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23432,9 +23432,9 @@
               "isTalent": true,
               "subject": "Malefic Grasp",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Malefic Grasp.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23442,9 +23442,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Malefic Grasp.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23490,9 +23490,9 @@
               "isTalent": true,
               "subject": "Soul Anathema",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Soul Anathema.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23500,9 +23500,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Soul Anathema.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23548,9 +23548,9 @@
               "isTalent": true,
               "subject": "Unstable Affliction",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Unstable Affliction.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23558,9 +23558,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Unstable Affliction.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23577,9 +23577,9 @@
               "isTalent": false,
               "subject": "Vilefiend’s Headbutt and Bile Spit",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Vilefiend’s Headbutt and Bile Spit.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23587,9 +23587,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Vilefiend’s Headbutt and Bile Spit.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23606,9 +23606,9 @@
               "isTalent": true,
               "subject": "Wicked Reaping",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Wicked Reaping.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23616,9 +23616,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Wicked Reaping.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23635,9 +23635,9 @@
               "isTalent": false,
               "subject": "Wild Imp and Imp Gang Boss’s Fel Firebolt",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Wild Imp and Imp Gang Boss’s Fel Firebolt.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23645,9 +23645,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Wild Imp and Imp Gang Boss’s Fel Firebolt.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23693,9 +23693,9 @@
               "isTalent": false,
               "subject": "Wither",
               "text": "Fixed an issue where several abilities would not grant Soul Leech: Wither.",
-              "value": "Buffed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "buff",
+              "direction": "fixed",
               "firstSeen": "2026-07-14T21:56:58.048Z",
               "lastChanged": "2026-07-14T21:56:58.048Z",
               "history": [
@@ -23703,9 +23703,9 @@
                   "round": 16,
                   "date": "2026-07-14T21:56:58.048Z",
                   "text": "Fixed an issue where several abilities would not grant Soul Leech: Wither.",
-                  "value": "Buffed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "buff",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/16"
                 }
               ],
@@ -23867,9 +23867,9 @@
               "isTalent": false,
               "subject": "Fixed a tooltip issue where the Venomous Abyss 4-set",
               "text": "Fixed a tooltip issue where the Venomous Abyss 4-set bonus stated it would cast Implosion at 125% and 150% effectiveness rather than the intended 225% and 250% effectiveness.",
-              "value": "125%",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-31T18:49:29.860Z",
               "lastChanged": "2026-07-31T18:49:29.860Z",
               "history": [
@@ -23877,9 +23877,9 @@
                   "round": 20,
                   "date": "2026-07-31T18:49:29.860Z",
                   "text": "Fixed a tooltip issue where the Venomous Abyss 4-set bonus stated it would cast Implosion at 125% and 150% effectiveness rather than the intended 225% and 250% effectiveness.",
-                  "value": "125%",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/20"
                 }
               ],
@@ -24558,9 +24558,9 @@
               "isTalent": false,
               "subject": "Fixed an issue with the Venomous Abyss 2-set",
               "text": "Fixed an issue with the Venomous Abyss 2-set bonus causing Concussive Slam to trigger Mortal Wounds.",
-              "value": "Changed",
+              "value": "Fixed",
               "baseline": null,
-              "direction": "changed",
+              "direction": "fixed",
               "firstSeen": "2026-07-21T23:27:56.541Z",
               "lastChanged": "2026-07-21T23:27:56.541Z",
               "history": [
@@ -24568,9 +24568,9 @@
                   "round": 18,
                   "date": "2026-07-21T23:27:56.541Z",
                   "text": "Fixed an issue with the Venomous Abyss 2-set bonus causing Concussive Slam to trigger Mortal Wounds.",
-                  "value": "Changed",
+                  "value": "Fixed",
                   "baseline": null,
-                  "direction": "changed",
+                  "direction": "fixed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/18"
                 }
               ],
