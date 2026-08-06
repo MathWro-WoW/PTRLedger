@@ -77,16 +77,11 @@
             <button type="button" data-direction="nerf" aria-pressed="false"><span class="filter-mark nerf"></span>Nerfs</button>
             <button type="button" data-direction="fixed" aria-pressed="false"><span class="filter-mark fixed"></span>Fixes</button>
             <button type="button" data-direction="changed" aria-pressed="false"><span class="filter-mark changed"></span>Changed</button>
-            <label class="filter-toggle filter-toggle-chip" title="Hide changes with no PvP effect">
-              <input id="pvp-filter" type="checkbox" aria-label="Hide changes with no PvP effect">
-              <span></span>
-              PvP
-            </label>
           </div>
           <div class="filter-options">
-            <label class="round-filter">
+            <label class="round-filter mobile-round-filter">
               <span>Show changes from</span>
-              <select id="round-filter" aria-label="Show changes from an official update round"></select>
+              <select id="round-filter-mobile" aria-label="Show changes from an official update round"></select>
             </label>
             <label class="filter-toggle">
               <input id="talents-only" type="checkbox">
@@ -97,6 +92,11 @@
               <input id="revised-only" type="checkbox">
               <span></span>
               Has revision history
+            </label>
+            <label class="filter-toggle">
+              <input id="pvp-filter" type="checkbox" aria-label="Hide changes with no PvP effect">
+              <span></span>
+              Hide changes with no PvP effect
             </label>
           </div>
         </div>
@@ -120,6 +120,10 @@
 
       <aside class="rounds-rail">
         <div class="rounds-sticky">
+          <label class="round-filter rail-round-filter">
+            <span>Show changes from</span>
+            <select id="round-filter" aria-label="Show changes from an official update round"></select>
+          </label>
           <p class="rail-heading">Official update rounds</p>
           <ol id="round-list"></ol>
           <p class="rounds-note">The default view folds every round into one latest-effective summary. Choose a round to see only changes recorded in that checkpoint.</p>

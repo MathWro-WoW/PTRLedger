@@ -357,6 +357,15 @@ h1 {
 .filter-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .85rem 0 1.75rem; border-bottom: 1px solid var(--line); }
 .filter-options { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 1rem; }
 .round-filter { display: flex; align-items: center; gap: .55rem; color: var(--muted); font-size: .68rem; }
+.mobile-round-filter { display: none; }
+.rail-round-filter {
+  align-items: stretch;
+  flex-direction: column;
+  gap: .45rem;
+  margin-bottom: 1.6rem;
+}
+.rail-round-filter > span { color: var(--muted); }
+.rail-round-filter select { width: 100%; min-width: 0; }
 .round-filter > span { font-family: var(--utility); letter-spacing: .06em; text-transform: uppercase; }
 .segmented { display: flex; align-items: center; gap: .25rem; }
 .segmented button {
@@ -380,31 +389,6 @@ h1 {
 .filter-toggle input { position: absolute; opacity: 0; pointer-events: none; }
 .filter-toggle span { width: 27px; height: 15px; position: relative; border: 1px solid var(--line); border-radius: 20px; background: var(--deep-blue); }
 .filter-toggle span::after { content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%; left: 2px; top: 2px; background: var(--muted); transition: transform .18s, background .18s; }
-.segmented .filter-toggle-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: .4rem;
-  flex: 0 0 auto;
-  min-height: 0;
-  padding: .45rem .7rem;
-  color: var(--muted);
-  font-size: .72rem;
-  white-space: nowrap;
-}
-.segmented .filter-toggle-chip:hover,
-.segmented .filter-toggle-chip:has(input:checked) {
-  color: var(--vellum);
-  background: var(--map-blue);
-}
-.segmented .filter-toggle-chip span {
-  width: 6px;
-  height: 6px;
-  border: 0;
-  border-radius: 50%;
-  background: var(--muted);
-}
-.segmented .filter-toggle-chip span::after { display: none; }
-.segmented .filter-toggle-chip input:checked + span { background: var(--arcane); }
 .filter-toggle input:checked + span::after { transform: translateX(12px); background: var(--arcane); }
 .filter-toggle input:focus-visible + span { outline: 2px solid var(--arcane); outline-offset: 3px; }
 
@@ -745,6 +729,7 @@ a.ability-tooltip-source:focus-visible { color: var(--arcane-pale); text-decorat
 @media (max-width: 1180px) {
   .workspace { grid-template-columns: 270px minmax(0, 1fr); }
   .rounds-rail { display: none; }
+  .mobile-round-filter { display: flex; }
   .hero { grid-template-columns: 1fr 420px; }
 }
 @media (max-width: 860px) {

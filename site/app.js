@@ -29,6 +29,7 @@ const elements = {
   patchSelect: $('#patch-select'),
   classNav: $('#class-nav'),
   roundFilter: $('#round-filter'),
+  mobileRoundFilter: $('#round-filter-mobile'),
   directionFilter: $('#direction-filter'),
   search: $('#search'),
   talentsOnly: $('#talents-only'),
@@ -506,14 +507,17 @@ function renderClassNav() {
 }
 
 function renderRoundOptions() {
-  elements.roundFilter.replaceChildren(
+  const createOptions = () => [
     node('option', { text: 'All rounds · latest effective values', attrs: { value: 'all' } }),
     ...state.patch.rounds.map((round) => node('option', {
       text: `${round.label} · ${formatDate(round.date)}`,
       attrs: { value: round.number },
     })),
-  );
-  elements.roundFilter.value = state.round;
+  ];
+  for (const filter of [elements.roundFilter, elements.mobileRoundFilter]) {
+    filter.replaceChildren(...createOptions());
+    filter.value = state.round;
+  }
 }
 
 function timeline(change) {
@@ -763,6 +767,7 @@ function resetFilters() {
   elements.talentsOnly.checked = false;
   elements.pvpFilter.checked = false;
   elements.roundFilter.value = 'all';
+  elements.mobileRoundFilter.value = 'all';
   elements.directionFilter.querySelectorAll('button').forEach((button) => {
     const isActive = button.dataset.direction === 'all';
     button.classList.toggle('is-active', isActive);
@@ -807,6 +812,13 @@ function scrollToResultsTop() {
   const top = window.scrollY + ledger.getBoundingClientRect().top - headerHeight;
   const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
   window.scrollTo({ top: Math.max(0, top), behavior });
+}
+
+function setRound(value) {
+  state.round = value;
+  elements.roundFilter.value = value;
+  elements.mobileRoundFilter.value = value;
+  renderChanges();
 }
 
 function bindEvents() {
@@ -861,10 +873,8 @@ function bindEvents() {
     renderChanges();
     scrollToResultsTop();
   });
-  elements.roundFilter.addEventListener('change', (event) => {
-    state.round = event.target.value;
-    renderChanges();
-  });
+  elements.roundFilter.addEventListener('change', (event) => setRound(event.target.value));
+  elements.mobileRoundFilter.addEventListener('change', (event) => setRound(event.target.value));
   elements.directionFilter.addEventListener('click', (event) => {
     const button = event.target.closest('[data-direction]');
     if (!button) return;
