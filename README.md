@@ -8,7 +8,7 @@ A static, GitHub Pages-ready ledger of World of Warcraft PTR class tuning. PTR L
 - Buff, nerf, and changed classifications based on live-to-PTR values
 - Revision trails that preserve each announced adjustment and its resulting value versus live
 - Cumulative folding for sequential percentage tuning, without confusing a later adjustment with an absolute replacement
-- Class submenus, specialization and direction filters, revised-only filtering, and text search
+- Class submenus; specialization, direction, and source-confirmed talent filters; revised-only filtering; and text search
 - Links from every change and revision to the official Blizzard forum note
 - Responsive static HTML, CSS, and JavaScript with no runtime backend
 - Automated refresh and GitHub Pages deployment every six hours
@@ -26,6 +26,12 @@ Patch sources are configured in [`config/sources.json`](config/sources.json). Th
 The current source is the [Midnight 12.1 — Curse of Ula'tek PTR development notes](https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832).
 
 Generated output is stored in `site/data/patches.json`. Do not edit that file manually; run the updater instead.
+
+## Talent classification
+
+A change receives the **Talent** tag when Blizzard's note explicitly uses “talent” or “talents,” or when the change is nested beneath an official **Hero Talents** or **Apex Talents** heading. The **Talents only** filter can be combined with class, specialization, buff, nerf, changed, round, revision-history, and text filters.
+
+The updater does not guess from an ability name alone. An unlabelled talent may remain untagged if Blizzard's note supplies neither explicit wording nor a talent container; this conservative rule avoids presenting ordinary spell changes as talents. Once a revision establishes that a change is a talent, later checkpoints retain that classification even if they omit the word.
 
 ## How sequential tuning is calculated
 

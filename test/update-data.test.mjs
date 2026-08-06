@@ -38,10 +38,29 @@ test('parses nested class and specialization notes', () => {
   assert.deepEqual(changes[0], {
     classKey: 'MAGE',
     spec: 'Frost',
+    isTalent: false,
     category: null,
     subject: 'Frozen Orb',
     text: 'Frozen Orb damage increased by 12% (was 8%).',
   });
+});
+
+test('marks source-confirmed talent changes without guessing ordinary abilities', () => {
+  const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
+    <li>New Talent: Glacial Current – Frozen Orb damage increased by 20%.</li>
+    <li>Frostbolt damage increased by 10%.</li>
+    <li><strong>Hero Talents</strong>
+      <ul><li><strong>Spellslinger</strong>
+        <ul><li>Splinterstorm damage increased by 15%.</li></ul>
+      </li></ul>
+    </li>
+  `).cooked);
+
+  assert.deepEqual(changes.map(({ subject, category, isTalent }) => ({ subject, category, isTalent })), [
+    { subject: 'Glacial Current', category: null, isTalent: true },
+    { subject: 'Frostbolt', category: null, isTalent: false },
+    { subject: 'Splinterstorm', category: 'Spellslinger', isTalent: true },
+  ]);
 });
 
 test('skips generic parent notes while retaining their nested changes', () => {
@@ -303,6 +322,17 @@ test('folds later tuning into the current value while retaining history', () => 
   assert.deepEqual(change.history.map((item) => item.baseline), ['8%', '8%']);
   assert.deepEqual(change.history.map((item) => item.direction), ['buff', 'buff']);
   assert.equal(patch.stats.revised, 1);
+});
+
+test('retains talent classification when a later revision omits the talent label', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', '<li>New Talent: Frozen Orb – Damage increased by 12% (was 8%).</li>'),
+    post(2, '2026-01-08T00:00:00Z', '<li>Frozen Orb damage increased by 10% (was 8%).</li>'),
+  ]);
+  const change = patch.classes[0].changes[0];
+
+  assert.equal(change.isTalent, true);
+  assert.equal(change.history.length, 2);
 });
 
 test('compounds sequential relative tuning while preserving each announced adjustment', () => {

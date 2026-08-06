@@ -7,6 +7,7 @@ const state = {
   direction: 'all',
   round: 'all',
   query: '',
+  talentsOnly: false,
   revisedOnly: false,
   openClassMenu: null,
   menuCloseScrollY: null,
@@ -19,6 +20,7 @@ const elements = {
   roundFilter: $('#round-filter'),
   directionFilter: $('#direction-filter'),
   search: $('#search'),
+  talentsOnly: $('#talents-only'),
   revisedOnly: $('#revised-only'),
   list: $('#change-list'),
   empty: $('#empty-state'),
@@ -95,9 +97,17 @@ function visibleChanges() {
     if (state.classId !== 'all' && change.classInfo.id !== state.classId) return false;
     if (state.spec !== 'all' && change.spec !== state.spec) return false;
     if (state.direction !== 'all' && change.direction !== state.direction) return false;
+    if (state.talentsOnly && !change.isTalent) return false;
     if (state.revisedOnly && change.history.length < 2) return false;
     if (query) {
-      const haystack = [change.classInfo.name, change.spec, change.category, change.subject, change.text]
+      const haystack = [
+        change.classInfo.name,
+        change.spec,
+        change.category,
+        change.isTalent ? 'talent' : null,
+        change.subject,
+        change.text,
+      ]
         .filter(Boolean)
         .join(' ')
         .toLocaleLowerCase();
@@ -226,6 +236,7 @@ function timeline(change) {
 function changeCard(change) {
   const directionLabels = { buff: 'Buff', nerf: 'Nerf', changed: 'Changed' };
   const metadata = [node('span', { className: 'direction-label', text: directionLabels[change.direction] })];
+  if (change.isTalent) metadata.push(node('span', { className: 'talent-label', text: 'Talent' }));
   if (state.classId === 'all' && !NON_SPECIALIZATIONS.has(change.spec)) {
     metadata.push(node('span', { className: 'category-label', text: `· ${change.spec}` }));
   }
@@ -291,7 +302,11 @@ function changeCard(change) {
 
   return node('article', {
     className: 'change-card',
-    attrs: { 'data-direction': change.direction, 'data-value-kind': hasNumericComparison ? 'numeric' : 'qualitative' },
+    attrs: {
+      'data-direction': change.direction,
+      'data-value-kind': hasNumericComparison ? 'numeric' : 'qualitative',
+      'data-change-type': change.isTalent ? 'talent' : 'other',
+    },
   }, [node('div', { className: 'card-main' }, [name, content]), footer]);
 }
 
@@ -376,11 +391,13 @@ function resetFilters() {
   state.direction = 'all';
   state.query = '';
   state.revisedOnly = false;
+  state.talentsOnly = false;
   state.round = 'all';
   state.openClassMenu = null;
   state.menuCloseScrollY = null;
   elements.search.value = '';
   elements.revisedOnly.checked = false;
+  elements.talentsOnly.checked = false;
   elements.roundFilter.value = 'all';
   elements.directionFilter.querySelectorAll('button').forEach((button) => {
     const isActive = button.dataset.direction === 'all';
@@ -468,6 +485,10 @@ function bindEvents() {
   });
   elements.search.addEventListener('input', (event) => {
     state.query = event.target.value.trim();
+    renderChanges();
+  });
+  elements.talentsOnly.addEventListener('change', (event) => {
+    state.talentsOnly = event.target.checked;
     renderChanges();
   });
   elements.revisedOnly.addEventListener('change', (event) => {

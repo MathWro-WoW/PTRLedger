@@ -33,8 +33,9 @@ Node.js 22 or newer is required.
 - Use Blizzard's official forum topic API as the source of truth. Do not replace it with scraped Wowhead markup.
 - Never hand-edit `site/data/patches.json`; update `config/sources.json` or `scripts/update-data.mjs`, then run `npm run update`.
 - Keep older patch-source entries so historical patch data and revision trails remain available.
-- Treat class, specialization, category, subject, current value, latest adjustment, baseline, direction, cumulative state, effective checkpoint value, and history as one data contract. Parser changes must preserve all affected fields.
+- Treat class, specialization, category, talent classification, subject, current value, latest adjustment, baseline, direction, cumulative state, effective checkpoint value, and history as one data contract. Parser changes must preserve all affected fields.
 - Fold a later note into the same card only when its class, specialization, category, and subject identity match. Always append its official history checkpoint.
+- Mark a change as a talent only when Blizzard's text explicitly says `talent`/`talents` or its source structure places the change under `Hero Talents` or `Apex Talents`. Do not infer talent status from an ability name alone. Once established, preserve the classification through later revisions that omit the label.
 - Treat a baseline-free single percentage stated as `increased by`, `reduced by`, or `decreased by` as relative to that PTR build. When every checkpoint for an identity has this form, calculate the value versus live by multiplying the factors: `combined = product(1 + signed adjustment) - 1`. Never add the announced percentages.
 - Preserve each announced delta as the history item's `value`; store the compounded result through that checkpoint as `effectiveValue`. The current card uses the latest effective result, rounded to one decimal place when necessary.
 - Treat explicit `increased to … (was …)`, `reduced to … (was …)`, and `adjusted from … to …` wording as an absolute replacement, not a cumulative multiplier. A qualitative replacement clears an obsolete numeric baseline.
@@ -53,7 +54,7 @@ Node.js 22 or newer is required.
 
 ## Verification
 
-- Parser, classifier, or updater changes: run `npm test`, then `npm run update` and inspect the affected generated entry.
+- Parser, classifier, or updater changes: run `npm test`, then `npm run update` and inspect the affected generated entry. Talent-classification changes must include explicit-wording, structural-container, ordinary-ability, and later-revision coverage.
 - UI behavior changes: run `npm run serve` and exercise the changed flow in a browser at desktop and relevant mobile widths.
 - Cumulative-folding changes: test at least buff→buff and buff→nerf sequences, confirm explicit `was` replacements still replace, run `npm run update`, and inspect `value`, `latestAdjustment`, `effectiveValue`, and canonical history links in the generated entry.
 - Workflow changes: validate the YAML structure and preserve `pages: write`, `id-token: write`, the `github-pages` environment, artifact upload, and deployment steps.

@@ -62,6 +62,10 @@ function isDeveloperNote(text) {
   return /^(?:developer[’']s|developers[’']|developer) notes?\b:?\s*/i.test(text);
 }
 
+function isTalentChange(context, text) {
+  return context.some((part) => /\btalents?\b/i.test(part)) || /\btalents?\b/i.test(text);
+}
+
 function stableSubject(text) {
   if (/^(?:the )?overall damage reduction\b|^all (?:ability )?damage\b/i.test(text)) {
     return 'Overall damage';
@@ -355,6 +359,7 @@ function parseList($, list, classKey, context, output, textPrefix = null, parent
       output.push({
         classKey,
         spec,
+        isTalent: isTalentChange(context, presentedText),
         category: categoryParts.join(' · ') || null,
         subject: dependsOnParent ? `${parentSubject} · ${dependentLabel}` : stableSubject(text),
         text: presentedText,
@@ -391,7 +396,14 @@ export function parseClassChanges(cooked) {
             if (CLASS_META[classKey] && classList.length) {
               parseList($, classList, classKey, [], output);
             } else if (text && !isDeveloperNote(text)) {
-              output.push({ classKey: 'ALL CLASSES', spec: 'General', category: null, subject: stableSubject(text), text });
+              output.push({
+                classKey: 'ALL CLASSES',
+                spec: 'General',
+                category: null,
+                isTalent: isTalentChange([], text),
+                subject: stableSubject(text),
+                text,
+              });
             }
           });
         }
@@ -487,6 +499,7 @@ export function buildPatch(source, posts) {
         existing.value = historyItem.value;
         existing.direction = direction;
         existing.baseline = baseline ?? (numericVector(currentValue).length ? existing.baseline : null);
+        existing.isTalent ||= raw.isTalent;
         existing.lastChanged = date;
         applyCumulativeTuning(existing);
       } else {
@@ -495,6 +508,7 @@ export function buildPatch(source, posts) {
           classKey: raw.classKey,
           spec: raw.spec,
           category: raw.category,
+          isTalent: raw.isTalent,
           subject: raw.subject,
           text: raw.text,
           value: historyItem.value,
