@@ -59,13 +59,16 @@ function directText($, element) {
 }
 
 function isDeveloperNote(text) {
-  return /^(developers?[’'] notes?|developer notes?):/i.test(text);
+  return /^(?:developer[’']s|developers[’']|developer) notes?\b:?\s*/i.test(text);
 }
 
 function stableSubject(text) {
-  if (/^(?:the )?overall damage reduction\b|^all damage (?:dealt )?(?:increased|reduced)\b/i.test(text)) {
+  if (/^(?:the )?overall damage reduction\b|^all (?:ability )?damage\b/i.test(text)) {
     return 'Overall damage';
   }
+  if (/^all healing and absorption\b/i.test(text)) return 'Overall healing and absorption';
+  if (/^all healing\b/i.test(text)) return 'Overall healing';
+
   const stripped = text
     .replace(/^(new (?:passive )?talent|apex talents?|pvp talent):\s*/i, '')
     .replace(/\s*\([^)]*not yet implemented[^)]*\)/i, '')
@@ -73,8 +76,11 @@ function stableSubject(text) {
   const dash = stripped.search(/\s[–—]\s/);
   if (dash > 0) return cleanText(stripped.slice(0, dash));
 
-  const predicate = stripped.match(/^(.+?)(?=\s(?:now|has been|have been|is now|are now|can now|no longer|renamed|damage|healing|absorb|effectiveness|chance|base chance|grants?|increases?|reduces?|cooldown|duration|mana cost|health drain|cast and|main target|secondary target|bonus)\b)/i);
-  if (predicate?.[1]) return cleanText(predicate[1]);
+  const namedProperty = stripped.match(/^((?:[A-Z][\p{L}\d’'():-]*(?:\s+(?:of|the|and|for|from|[A-Z][\p{L}\d’'():-]*))*))\s+(?=(?:damage|healing|absorb|effectiveness|chance|base chance|cooldown|duration|mana cost|health drain|bonus)\b)/u);
+  if (namedProperty?.[1]) return cleanText(namedProperty[1]).replace(/[’']s$/, '');
+
+  const predicate = stripped.match(/^(.+?)(?=\s(?:now|has been|has a new icon|has moved|have been|is now|are now|can now|will|no longer|renamed|causes?|damage|heals?|healing|absorb|effectiveness|chance|base chance|grants?|increases?|reduces?|cooldown|duration|mana cost|health drain|cast and|main target|secondary target|bonus)\b)/i);
+  if (predicate?.[1]) return cleanText(predicate[1]).replace(/\s+also$/i, '').replace(/[’']s$/, '');
 
   return cleanText(stripped.split(/[.;]/, 1)[0]).slice(0, 90);
 }
@@ -111,17 +117,23 @@ function compareNumericValues(currentValue, baseline) {
 }
 
 function hasBenefitMetric(text) {
-  return /\b(damage|healing|heals?|absorbs?|shield|leech|effectiveness|chance|duration|lasts?|persists?|stores?|accumulates?|transfers?|refunds?|generates?|fury|rage|extends?|faster|frequently|cleaves?|strikes?|hits?|parry|cooldown|mana cost|resource cost|cast time|costs?|value|yards?|targets?|reduces?\b[^.]{0,50}\b(?:damage taken|cost)|summons?)\b/i.test(text);
+  return /\b(damage|healing|heals?|absorbs?|shield|leech|effectiveness|chance|duration|lasts?|persists?|stores?|accumulates?|transfers?|refunds?|generates?|fury|rage|energy|focus|holy power|astral power|insanity|extends?|faster|frequently|cleaves?|strikes?|hits?|parry|cooldown|(?:mana|energy|focus|rage|holy power|astral power|insanity|resource) cost|cast time|costs?|value|yards?|targets?|reduces?\b[^.]{0,50}\b(?:damage taken|cost)|summons?)\b/i.test(text);
 }
 
 function lowerIsBetterMetric(text) {
-  return /\b(?:every \d|costs?\s+\d|loses?\b[^.]{0,30}\bhealing|decreases? the duration|(?:cast time|cooldown|mana cost|resource cost|damage taken)\b[^.]{0,40}\b(?:increased|reduced|decreased) to|increases?\s+(?:your\s+)?damage taken by)\b/i.test(text);
+  return /\b(?:every \d|costs?\s+\d|loses?\b[^.]{0,30}\bhealing|decreases? the duration|(?:cast time|cooldown|(?:mana|energy|focus|rage|holy power|astral power|insanity|resource) cost|damage taken)\b[^.]{0,40}\b(?:increased|reduced|decreased) to|increases?\s+(?:your\s+)?damage taken by)\b/i.test(text);
 }
 
 function classifyDirection(text, currentValue = null, baseline = null) {
   const positiveWord = /\b(increased|increases|additional|new (?:passive )?talent|can now|grants?|improved)\b/i.test(text);
   const hardNegativeWord = /\b(reduced|decreased|removed|no longer|less damage)\b/i.test(text);
   const mechanicReduction = /\b(reduces|decreases)\b/i.test(text);
+  if (/\bcan now only see\b/i.test(text)) return 'changed';
+  if (/\berroneously granted\b/i.test(text)) return 'nerf';
+  if (/\bduration\b[^.]{0,30}\bno longer reduced\b/i.test(text)) return 'buff';
+  const lostBenefit = /\bno longer (?:grants?|increases?|causes?\b[^.]{0,60}\b(?:generate|grant|increase|deal|duplicate))\b/i.test(text);
+  const laterBenefit = /\.\s*[^.]*\b(?:increased|increases|additional|grants?|generates?|causes?\b[^.]{0,40}\b(?:damage|healing))\b/i.test(text);
+  if (lostBenefit && !laterBenefit) return 'nerf';
   if (positiveWord && hardNegativeWord) return 'changed';
   const inlineRevision = parseFromToRevision(text);
   if (inlineRevision) {
@@ -142,8 +154,9 @@ function classifyDirection(text, currentValue = null, baseline = null) {
     return effectiveComparison > 0 ? 'buff' : 'nerf';
   }
 
-  const beneficialReduction = /(?:\b(?:reduces?|decreases?|reduced|decreased)\b[^.]{0,40}\b(?:cooldown|damage taken|mana cost|resource cost|cast time)\b|\b(?:cooldown|damage taken|mana cost|resource cost|cast time)\b[^.]{0,40}\b(?:reduced|decreased)\b)/i.test(text);
-  const harmfulIncrease = /(?:\b(?:increases?|increased)\b[^.]{0,40}\b(?:cooldown|damage taken|mana cost|resource cost|cast time)\b|\b(?:cooldown|damage taken|mana cost|resource cost|cast time)\b[^.]{0,40}\b(?:increases?|increased)\b)/i.test(text);
+  const costMetric = '(?:mana|energy|focus|rage|holy power|astral power|insanity|resource) cost';
+  const beneficialReduction = new RegExp(`(?:\\b(?:reduces?|decreases?|reduced|decreased)\\b[^.]{0,40}\\b(?:cooldown|damage taken|${costMetric}|cast time)\\b|\\b(?:cooldown|damage taken|${costMetric}|cast time)\\b[^.]{0,40}\\b(?:reduced|decreased)\\b)`, 'i').test(text);
+  const harmfulIncrease = new RegExp(`(?:\\b(?:increases?|increased)\\b[^.]{0,40}\\b(?:cooldown|damage taken|${costMetric}|cast time)\\b|\\b(?:cooldown|damage taken|${costMetric}|cast time)\\b[^.]{0,40}\\b(?:increases?|increased)\\b)`, 'i').test(text);
   if (positiveWord && !hardNegativeWord) return harmfulIncrease ? 'nerf' : 'buff';
   if (hardNegativeWord && !positiveWord) return beneficialReduction ? 'buff' : 'nerf';
   if (mechanicReduction) return beneficialReduction ? 'buff' : 'nerf';
@@ -157,15 +170,15 @@ function extractBaseline(text) {
 
 function extractValueTokens(value) {
   return [...value.matchAll(
-    /\b\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?(?:\s*\/\s*\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?)?(?:\s+(?:seconds?|minutes?|yards?|targets?|charges?|stacks?|times?|points?|Fury|Rage|Astral Power))?/gi,
+    /\b\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?(?:\s*\/\s*\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?)?(?:\s+(?:additional\s+)?(?:seconds?|minutes?|yards?|targets?|charges?|stacks?|times?|points?|Fury|Rage|Energy|Focus|Holy Power|Astral Power|Insanity|Icicles?|orbs?|uses?|enemies?|allies?|casts?|Ghouls?))?/gi,
   )].map((match) => cleanText(match[0]).replace(/\s*\/\s*/g, '/'));
 }
 function valueKind(value) {
   if (value.includes('%')) return 'percent';
   if (/seconds?|minutes?/i.test(value)) return 'time';
   if (/yards?/i.test(value)) return 'distance';
-  if (/Fury|Rage|Astral Power/i.test(value)) return 'resource';
-  if (/targets?|charges?|stacks?|times?|points?/i.test(value)) return 'count';
+  if (/Fury|Rage|Energy|Focus|Holy Power|Astral Power|Insanity/i.test(value)) return 'resource';
+  if (/targets?|charges?|stacks?|times?|points?|Icicles?|orbs?|uses?|enemies?|allies?|casts?|Ghouls?/i.test(value)) return 'count';
   return 'number';
 }
 
@@ -226,50 +239,83 @@ function extractCurrentValue(text, direction) {
   if (pairedValues.length) return pairedValues.join(' · ');
 
   const change = text.match(
-    /\b(increased|reduced|decreased) (to|by) (\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?(?:\s*\/\s*\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?)?(?:\s+(?:seconds?|minutes?|yards?|targets?|charges?|stacks?|times?|points?|Fury|Rage|Astral Power))?)/i,
+    /\b(increased|reduced|decreased) (to|by) (\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?(?:\s*\/\s*\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?)?(?:\s+(?:additional\s+)?(?:seconds?|minutes?|yards?|targets?|charges?|stacks?|times?|points?|Fury|Rage|Energy|Focus|Holy Power|Astral Power|Insanity|Icicles?|orbs?|uses?|enemies?|allies?|casts?|Ghouls?))?)/i,
   );
   if (change) {
     const sign = change[2].toLowerCase() === 'by'
       ? (/increased/i.test(change[1]) ? '+' : '−')
       : '';
-    return `${sign}${cleanText(change[3]).replace(/\s*\/\s*/g, '/')}`;
+    let value = cleanText(change[3]).replace(/\s*\/\s*/g, '/');
+    const resourceCost = text.slice(0, change.index).match(/\b(Fury|Rage|Energy|Focus|Holy Power|Astral Power|Insanity)\s+cost\b[^.]*$/i);
+    if (resourceCost && !value.includes('%') && !/[A-Za-z]/.test(value)) {
+      value = `${value} ${resourceCost[1]}`;
+    }
+    return `${sign}${value}`;
   }
 
-  const beforeBaseline = text.replace(/\s*\(was [^)]+\)/gi, '');
+  const beforeBaseline = text
+    .replace(/\s*\(was [^)]+\)/gi, '')
+    .replace(/\b(?:rank|row|tier|level)\s+\d+\b/gi, '')
+    .replace(/\bseason\s+\d+\b/gi, '')
+    .replace(/\b(?:2|4)[- ]set\b/gi, '');
   const value = beforeBaseline.match(
-    /\b\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?(?:\s*\/\s*\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?)?(?:\s+(?:seconds?|minutes?|yards?|targets?|charges?|stacks?|times?|points?|Fury|Rage|Astral Power))?/i,
+    /\b\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?(?:\s*\/\s*\d+(?:\.\d+)?(?:-\d+(?:\.\d+)?)?%?)?(?:\s+(?:additional\s+)?(?:seconds?|minutes?|yards?|targets?|charges?|stacks?|times?|points?|Fury|Rage|Energy|Focus|Holy Power|Astral Power|Insanity|Icicles?|orbs?|uses?|enemies?|allies?|casts?|Ghouls?))?/i,
   );
   if (value) return cleanText(value[0]).replace(/\s*\/\s*/g, '/');
   return direction === 'changed' ? 'Changed' : direction === 'buff' ? 'Buffed' : 'Nerfed';
 }
 
-function parseList($, list, classKey, context, output) {
+function isBareListLabel(text) {
+  return text.length <= 120 && !/[.!?:]$/.test(text);
+}
+
+function parseList($, list, classKey, context, output, textPrefix = null, parentSubject = null) {
   $(list).children('li').each((_, li) => {
     const text = directText($, li);
     const childLists = $(li).children('ul, ol');
+    const childItems = childLists.children('li').toArray();
     const strong = cleanText($(li).children('strong').first().text());
     const isContainer = childLists.length > 0 && strong && text === strong;
-    const isGenericChangeParent = childLists.length > 0 && /\bhas been updated:\s*$/i.test(text);
+    const isGenericChangeParent = childLists.length > 0 && /\bhas been updated\s*[–—:]?\s*$/i.test(text);
+    const isContextParent = childItems.length > 0
+      && /:\s*$/.test(text)
+      && childItems.every((child) => (
+        $(child).children('ul, ol').length === 0 && isBareListLabel(directText($, child))
+      ));
 
-    if (isContainer || isGenericChangeParent) {
+    if (isContainer || isGenericChangeParent || isContextParent) {
       const childContext = isContainer ? [...context, strong] : context;
-      childLists.each((__, child) => parseList($, child, classKey, childContext, output));
+      const childPrefix = isContextParent || isGenericChangeParent ? text : null;
+      const childParentSubject = isGenericChangeParent
+        ? cleanText(text.replace(/\s+has been updated\s*[–—:]?\s*$/i, ''))
+        : null;
+      childLists.each((__, child) => (
+        parseList($, child, classKey, childContext, output, childPrefix, childParentSubject)
+      ));
       return;
     }
 
     if (text && !isDeveloperNote(text)) {
       const validSpecs = new Set((CLASS_SPECS[classKey] || []).map(normalizeHeading));
-      const specIndex = context.findIndex((part) => validSpecs.has(normalizeHeading(part)));
+      const specIndex = context.findLastIndex((part) => validSpecs.has(normalizeHeading(part)));
       const spec = specIndex >= 0 ? context[specIndex] : 'Class-wide';
-      const categoryParts = context.filter((part, index) => (
-        index !== specIndex && normalizeHeading(part) !== 'HERO TALENTS'
+      const categoryParts = context.filter((part) => (
+        !validSpecs.has(normalizeHeading(part)) && normalizeHeading(part) !== 'HERO TALENTS'
       ));
+      const dependsOnParent = Boolean(parentSubject)
+        && /^(?:Now|No longer|Also|Additionally|This|Its|When)\b/i.test(text);
+      const shouldPrefix = Boolean(textPrefix) && (!parentSubject || dependsOnParent);
+      const normalizedPrefix = textPrefix?.replace(/\s*[–—:]\s*$/, ':');
+      const presentedText = shouldPrefix
+        ? `${normalizedPrefix} ${text}${/[.!?]$/.test(text) ? '' : '.'}`
+        : text;
+      const dependentLabel = cleanText(text.split(/[.;]/, 1)[0]).slice(0, 60);
       output.push({
         classKey,
         spec,
         category: categoryParts.join(' · ') || null,
-        subject: stableSubject(text),
-        text,
+        subject: dependsOnParent ? `${parentSubject} · ${dependentLabel}` : stableSubject(text),
+        text: presentedText,
       });
     }
 
@@ -381,17 +427,19 @@ export function buildPatch(source, posts) {
         date,
         text: raw.text,
         value: currentValue,
+        baseline,
+        direction,
         source: url,
       };
       const existing = changes.get(key);
 
       if (existing) {
         const previous = existing.history.at(-1);
-        if (previous.text !== raw.text) existing.history.push(historyItem);
+        if (previous.round !== post.post_number || previous.text !== raw.text) existing.history.push(historyItem);
         existing.text = raw.text;
         existing.value = historyItem.value;
         existing.direction = direction;
-        existing.baseline = baseline || existing.baseline;
+        existing.baseline = baseline ?? (numericVector(currentValue).length ? existing.baseline : null);
         existing.lastChanged = date;
       } else {
         changes.set(key, {

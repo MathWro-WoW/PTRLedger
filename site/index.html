@@ -60,7 +60,7 @@
         <nav id="class-nav" aria-label="Filter by class"></nav>
       </aside>
 
-      <div class="ledger" id="changes">
+      <div class="ledger" id="changes" tabindex="-1">
         <div class="toolbar">
           <div class="search-field">
             <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="m16 16 4 4"></path></svg>
@@ -70,12 +70,12 @@
           </div>
         </div>
 
-        <div class="filter-row" aria-label="Change filters">
-          <div class="segmented" id="direction-filter">
-            <button class="is-active" type="button" data-direction="all">All</button>
-            <button type="button" data-direction="buff"><span class="filter-mark buff"></span>Buffs</button>
-            <button type="button" data-direction="nerf"><span class="filter-mark nerf"></span>Nerfs</button>
-            <button type="button" data-direction="changed"><span class="filter-mark changed"></span>Redesigns</button>
+        <div class="filter-row">
+          <div class="segmented" id="direction-filter" role="group" aria-label="Filter by change direction">
+            <button class="is-active" type="button" data-direction="all" aria-pressed="true">All</button>
+            <button type="button" data-direction="buff" aria-pressed="false"><span class="filter-mark buff"></span>Buffs</button>
+            <button type="button" data-direction="nerf" aria-pressed="false"><span class="filter-mark nerf"></span>Nerfs</button>
+            <button type="button" data-direction="changed" aria-pressed="false"><span class="filter-mark changed"></span>Changed</button>
           </div>
           <div class="filter-options">
             <label class="round-filter">
@@ -85,7 +85,7 @@
             <label class="revised-toggle">
               <input id="revised-only" type="checkbox">
               <span></span>
-              Revised more than once
+              Has revision history
             </label>
           </div>
         </div>

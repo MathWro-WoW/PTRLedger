@@ -60,6 +60,76 @@ test('skips generic parent notes while retaining their nested changes', () => {
   ]);
 });
 
+test('adds a generic parent subject only when a nested note depends on it', () => {
+  const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
+    <li>The Venomous Abyss 4-Set Bonus has been updated –
+      <ul>
+        <li>Now generates 5 Icicles over 1 second.</li>
+        <li>Shatter damage bonus reduced to 10% (was 15%).</li>
+      </ul>
+    </li>
+  `).cooked);
+
+  assert.deepEqual(changes.map(({ subject, text }) => ({ subject, text })), [
+    {
+      subject: 'The Venomous Abyss 4-Set Bonus · Now generates 5 Icicles over 1 second',
+      text: 'The Venomous Abyss 4-Set Bonus has been updated: Now generates 5 Icicles over 1 second.',
+    },
+    {
+      subject: 'Shatter',
+      text: 'Shatter damage bonus reduced to 10% (was 15%).',
+    },
+  ]);
+});
+
+test('excludes singular possessive and unpunctuated developer notes', () => {
+  const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
+    <li><em>Developer’s notes: Singular context.</em></li>
+    <li><em>Developers’ notes Plural context without a colon.</em></li>
+    <li>Frozen Orb damage increased by 12%.</li>
+  `).cooked);
+
+  assert.deepEqual(changes.map((change) => change.subject), ['Frozen Orb']);
+});
+
+test('retains parent context for bare nested change labels', () => {
+  const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
+    <li>Fixed an issue where several abilities would not grant Soul Leech:
+      <ul>
+        <li>Wither</li>
+        <li>Blackened Soul</li>
+      </ul>
+    </li>
+  `).cooked);
+
+  assert.deepEqual(changes.map(({ subject, text }) => ({ subject, text })), [
+    {
+      subject: 'Wither',
+      text: 'Fixed an issue where several abilities would not grant Soul Leech: Wither.',
+    },
+    {
+      subject: 'Blackened Soul',
+      text: 'Fixed an issue where several abilities would not grant Soul Leech: Blackened Soul.',
+    },
+  ]);
+});
+
+test('uses concise subjects for broad and possessive changes', () => {
+  const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
+    <li>All healing increased by 5%.</li>
+    <li>All ability damage reduced by 5%.</li>
+    <li>Demolish’s cooldown reduced to 30 seconds (was 45 seconds).</li>
+    <li>Aimed Shot has a new icon.</li>
+  `).cooked);
+
+  assert.deepEqual(changes.map((change) => change.subject), [
+    'Overall healing',
+    'Overall damage',
+    'Demolish',
+    'Aimed Shot',
+  ]);
+});
+
 test('parses class headings that precede separate lists', () => {
   const changes = parseClassChanges(`
     <h2>CLASSES</h2>
@@ -108,6 +178,27 @@ test('recognizes split class headings and keeps non-spec containers as categorie
   ]);
 });
 
+test('uses the deepest specialization when source lists are accidentally nested', () => {
+  const changes = parseClassChanges(`
+    <h2>CLASSES</h2>
+    <ul>
+      <li><strong>EVOKER</strong>
+        <ul><li><strong>Augmentation</strong>
+          <ul><li><strong>Preservation</strong>
+            <ul><li><strong>Flameshaper</strong>
+              <ul><li>Consume Flame healing increased by 50%.</li></ul>
+            </li></ul>
+          </li></ul>
+        </li></ul>
+      </li>
+    </ul>
+  `);
+
+  assert.deepEqual(changes.map(({ spec, category }) => ({ spec, category })), [
+    { spec: 'Preservation', category: 'Flameshaper' },
+  ]);
+});
+
 test('preserves units for current values paired with live values', () => {
   const patch = buildPatch(source, [
     post(1, '2026-01-01T00:00:00Z', `
@@ -149,6 +240,10 @@ test('infers buffs and nerfs from live-to-PTR value movement', () => {
       <li>Chain Lightning now hits up to 5 targets (was 3).</li>
       <li>Bonus Lava Bursts are now 50% of their normal value (was 100%).</li>
       <li>Chain Heal now bounces to 5 targets (was 3), loses 10% healing per jump (was 30%), and has a 20 yard range (was 15 yards).</li>
+      <li>The Rend ability’s Rage cost is reduced to 10.</li>
+      <li>Ravager’s duration is no longer reduced by Haste.</li>
+      <li>Stormkeeper no longer causes Lightning Bolt to generate an additional Elemental Overload.</li>
+      <li>Players can now only see up to 3 Lesser Ghouls.</li>
     `),
   ]);
   const directionFor = (start) => patch.classes[0].changes.find((change) => change.text.startsWith(start)).direction;
@@ -170,7 +265,12 @@ test('infers buffs and nerfs from live-to-PTR value movement', () => {
   assert.equal(directionFor('Chain Lightning'), 'buff');
   assert.equal(directionFor('Bonus Lava Bursts'), 'nerf');
   assert.equal(directionFor('Chain Heal'), 'buff');
+  assert.equal(directionFor('The Rend ability'), 'buff');
+  assert.equal(directionFor('Ravager'), 'buff');
+  assert.equal(directionFor('Stormkeeper'), 'nerf');
+  assert.equal(directionFor('Players'), 'changed');
   assert.equal(patch.classes[0].changes.find((change) => change.text.startsWith('Demon Blades')).value, '10-16 Fury');
+  assert.equal(patch.classes[0].changes.find((change) => change.text.startsWith('The Rend ability')).value, '10 Rage');
 });
 
 test('folds an overall tuning correction into its original change', () => {
@@ -199,5 +299,50 @@ test('folds later tuning into the current value while retaining history', () => 
   assert.equal(change.baseline, '8%');
   assert.equal(change.history.length, 2);
   assert.deepEqual(change.history.map((item) => item.value), ['12%', '10%']);
+  assert.deepEqual(change.history.map((item) => item.baseline), ['8%', '8%']);
+  assert.deepEqual(change.history.map((item) => item.direction), ['buff', 'buff']);
+  assert.equal(patch.stats.revised, 1);
+});
+
+test('clears an obsolete numeric baseline after a qualitative replacement', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', '<li>Frozen Orb damage increased to 12% (was 8%).</li>'),
+    post(2, '2026-01-08T00:00:00Z', '<li>Frozen Orb no longer deals splash damage.</li>'),
+  ]);
+  const change = patch.classes[0].changes[0];
+
+  assert.equal(change.value, 'Nerfed');
+  assert.equal(change.baseline, null);
+  assert.equal(change.history.at(-1).baseline, null);
+  assert.equal(change.history.at(-1).direction, 'nerf');
+});
+
+test('does not display structural rank, row, or set identifiers as values', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', `
+      <li>Bonus rage moved from rank 1 to rank 3.</li>
+      <li>Rank 1: Spending Rage has a chance to awaken a Guardian Spirit for 8 seconds.</li>
+      <li>The Venomous Abyss 2-set Bonus – Strength increased by 0.5%, up to 5%.</li>
+      <li>The Midnight Season 1 2-set bonus no longer extends Ebon Might.</li>
+      <li>Precision Detonation lasts for 1 additional second.</li>
+    `),
+  ]);
+  const valueFor = (start) => patch.classes[0].changes.find((change) => change.text.startsWith(start)).value;
+
+  assert.equal(valueFor('Bonus rage'), 'Changed');
+  assert.equal(valueFor('Rank 1'), '8 seconds');
+  assert.equal(valueFor('The Venomous Abyss'), '+0.5%');
+  assert.equal(valueFor('The Midnight Season'), 'Nerfed');
+  assert.equal(valueFor('Precision Detonation'), '1 additional second');
+});
+
+test('retains an official checkpoint when its text repeats in a later round', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', '<li>Frozen Orb damage increased by 12% (was 8%).</li>'),
+    post(2, '2026-01-08T00:00:00Z', '<li>Frozen Orb damage increased by 12% (was 8%).</li>'),
+  ]);
+  const change = patch.classes[0].changes[0];
+
+  assert.deepEqual(change.history.map((item) => item.round), [1, 2]);
   assert.equal(patch.stats.revised, 1);
 });

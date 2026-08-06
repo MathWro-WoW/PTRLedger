@@ -48,7 +48,7 @@ function formatDate(value, long = false) {
 
 function highlightedText(text) {
   const fragment = document.createDocumentFragment();
-  const expression = /(\b\d+(?:\.\d+)?%?(?:\s*\/\s*\d+(?:\.\d+)?%?)?(?:\s+(?:seconds?|yards?|targets?|charges?|stacks?|Fury|Rage|Astral Power))?\b)/gi;
+  const expression = /(\b\d+(?:\.\d+)?%?(?:\s*\/\s*\d+(?:\.\d+)?%?)?(?:\s+(?:additional\s+)?(?:seconds?|minutes?|yards?|targets?|charges?|stacks?|times?|points?|Fury|Rage|Energy|Focus|Holy Power|Astral Power|Insanity|Icicles?|orbs?|uses?|enemies?|allies?|casts?|Ghouls?))?\b)/gi;
   let cursor = 0;
   for (const match of text.matchAll(expression)) {
     fragment.append(document.createTextNode(text.slice(cursor, match.index)));
@@ -77,14 +77,26 @@ function specializationsForChanges(changes) {
 
 function visibleChanges() {
   const query = state.query.toLocaleLowerCase();
-  return allChanges().filter(({ classInfo, ...change }) => {
-    if (state.classId !== 'all' && classInfo.id !== state.classId) return false;
+  return allChanges().map(({ classInfo, ...change }) => {
+    if (state.round === 'all') return { ...change, classInfo };
+    const checkpoint = change.history.find((item) => String(item.round) === state.round);
+    if (!checkpoint) return null;
+    return {
+      ...change,
+      text: checkpoint.text,
+      value: checkpoint.value,
+      baseline: checkpoint.baseline,
+      direction: checkpoint.direction,
+      classInfo,
+    };
+  }).filter((change) => {
+    if (!change) return false;
+    if (state.classId !== 'all' && change.classInfo.id !== state.classId) return false;
     if (state.spec !== 'all' && change.spec !== state.spec) return false;
     if (state.direction !== 'all' && change.direction !== state.direction) return false;
-    if (state.round !== 'all' && !change.history.some((item) => String(item.round) === state.round)) return false;
     if (state.revisedOnly && change.history.length < 2) return false;
     if (query) {
-      const haystack = [classInfo.name, change.spec, change.category, change.subject, change.text]
+      const haystack = [change.classInfo.name, change.spec, change.category, change.subject, change.text]
         .filter(Boolean)
         .join(' ')
         .toLocaleLowerCase();
@@ -107,7 +119,7 @@ function renderPatchMeta() {
   $('#stat-changes').textContent = state.patch.stats.changes.toLocaleString();
   $('#stat-revised').textContent = state.patch.stats.revised.toLocaleString();
   $('#stat-date').textContent = formatDate(state.patch.lastUpdated, true);
-  $('#class-count').textContent = `${state.patch.classes.length}`;
+  $('#class-count').textContent = `${state.patch.stats.classes}`;
   for (const selector of ['#header-source', '#footer-source']) $(selector).href = state.patch.source;
 }
 
@@ -205,6 +217,9 @@ function timeline(change) {
 function changeCard(change) {
   const directionLabels = { buff: 'Buff', nerf: 'Nerf', changed: 'Changed' };
   const metadata = [node('span', { className: 'direction-label', text: directionLabels[change.direction] })];
+  if (state.classId === 'all' && !NON_SPECIALIZATIONS.has(change.spec)) {
+    metadata.push(node('span', { className: 'category-label', text: `· ${change.spec}` }));
+  }
   if (change.category) metadata.push(node('span', { className: 'category-label', text: `· ${change.category}` }));
 
   const name = node('div', { className: 'change-name' }, [
@@ -215,19 +230,21 @@ function changeCard(change) {
   const hasNumericComparison = /\d/.test(change.value);
   let comparison = null;
   if (hasNumericComparison) {
-    const live = node('div', { className: 'value-block' }, [
-      node('small', { text: 'Live' }),
-      node('b', { text: change.baseline || 'Baseline' }),
-    ]);
     const ptr = node('div', { className: 'value-block ptr' }, [
-      node('small', { text: state.patch.status }),
+      node('small', { text: change.baseline ? state.patch.status : `${state.patch.status} change` }),
       node('b', { text: change.value }),
     ]);
-    comparison = node('div', { className: 'comparison' }, [
-      live,
-      node('span', { className: 'comparison-arrow', text: '→' }),
-      ptr,
-    ]);
+    const values = change.baseline
+      ? [
+          node('div', { className: 'value-block' }, [
+            node('small', { text: 'Live' }),
+            node('b', { text: change.baseline }),
+          ]),
+          node('span', { className: 'comparison-arrow', text: '→', attrs: { 'aria-hidden': 'true' } }),
+          ptr,
+        ]
+      : [ptr];
+    comparison = node('div', { className: `comparison${change.baseline ? '' : ' is-single'}` }, values);
   }
   const note = node('p', { className: 'current-note' });
   note.append(highlightedText(change.text));
@@ -238,7 +255,7 @@ function changeCard(change) {
     const details = node('details', { className: 'history-disclosure' }, [
       node('summary', {}, [
         node('span', { text: `Revision trail · ${change.history.length} checkpoints` }),
-        node('span', { text: '+' }),
+        node('span', { text: '+', attrs: { 'aria-hidden': 'true' } }),
       ]),
       timeline(change),
     ]);
@@ -292,7 +309,7 @@ function renderRounds() {
   elements.roundList.replaceChildren(...state.patch.rounds.map((round) => node('li', { className: 'round-item' }, [
     node('span', { className: 'round-pip', attrs: { 'aria-hidden': 'true' } }),
     node('div', {}, [
-      node('a', { text: `${round.label} · ${round.changes} notes`, attrs: { href: round.source, target: '_blank', rel: 'noreferrer' } }),
+      node('a', { text: `${round.label} · ${round.changes} changes`, attrs: { href: round.source, target: '_blank', rel: 'noreferrer' } }),
       node('time', { text: formatDate(round.date), attrs: { datetime: round.date } }),
     ]),
   ])));
@@ -333,7 +350,9 @@ function resetFilters() {
   elements.revisedOnly.checked = false;
   elements.roundFilter.value = 'all';
   elements.directionFilter.querySelectorAll('button').forEach((button) => {
-    button.classList.toggle('is-active', button.dataset.direction === 'all');
+    const isActive = button.dataset.direction === 'all';
+    button.classList.toggle('is-active', isActive);
+    button.setAttribute('aria-pressed', String(isActive));
   });
   renderClassNav();
   renderRoundOptions();
@@ -397,7 +416,11 @@ function bindEvents() {
     const button = event.target.closest('[data-direction]');
     if (!button) return;
     state.direction = button.dataset.direction;
-    elements.directionFilter.querySelectorAll('button').forEach((item) => item.classList.toggle('is-active', item === button));
+    elements.directionFilter.querySelectorAll('button').forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle('is-active', isActive);
+      item.setAttribute('aria-pressed', String(isActive));
+    });
     renderChanges();
   });
   elements.search.addEventListener('input', (event) => {

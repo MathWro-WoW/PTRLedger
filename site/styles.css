@@ -409,6 +409,7 @@ h1 {
 .category-label { color: var(--muted); font-size: .65rem; }
 .change-name h3 { margin: 0; color: var(--vellum); font-size: .91rem; line-height: 1.35; font-weight: 600; }
 .comparison { display: grid; grid-template-columns: minmax(72px, auto) 22px minmax(80px, auto); justify-content: start; align-items: center; gap: .4rem; margin-bottom: .55rem; }
+.comparison.is-single { grid-template-columns: minmax(80px, auto); }
 .value-block { display: grid; gap: .05rem; }
 .value-block small { color: var(--muted); font-family: var(--utility); font-size: .52rem; text-transform: uppercase; letter-spacing: .1em; }
 .value-block b { color: var(--silver); font-family: var(--utility); font-size: .8rem; font-weight: 500; }
@@ -508,6 +509,7 @@ footer a { color: var(--silver); text-decoration: none; }
   .class-button { width: auto; flex: 0 0 auto; grid-template-columns: 28px auto auto; }
   .class-button .count { display: none; }
   .ledger { padding-top: 1.3rem; }
+  .segmented button, .round-filter select, .revised-toggle { min-height: 44px; }
 }
 @media (max-width: 620px) {
   .brand span { font-size: 1rem; }
