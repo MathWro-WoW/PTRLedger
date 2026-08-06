@@ -42,14 +42,14 @@ jobs:
       - name: Fetch official PTR notes
         run: npm run update
 
-      - name: Preserve new note history
+      - name: Preserve new ledger data
         run: |
-          if git diff --quiet -- site/data/patches.json; then
-            echo "Official notes are unchanged."
+          if [ -z "$(git status --porcelain -- site/data/patches.json site/assets/abilities)" ]; then
+            echo "Official notes and ability metadata are unchanged."
           else
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git add site/data/patches.json
+            git add site/data/patches.json site/assets/abilities
             git commit -m "data: update PTR notes [skip ci]"
             git push
           fi

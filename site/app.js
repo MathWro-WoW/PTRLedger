@@ -236,15 +236,36 @@ function timeline(change) {
 function changeCard(change) {
   const directionLabels = { buff: 'Buff', nerf: 'Nerf', changed: 'Changed' };
   const metadata = [node('span', { className: 'direction-label', text: directionLabels[change.direction] })];
-  if (change.isTalent) metadata.push(node('span', { className: 'talent-label', text: 'Talent' }));
+  const abilityType = change.abilityType || (change.isTalent ? 'talent' : null);
+  if (abilityType) {
+    metadata.push(node('span', {
+      className: `ability-type-label is-${abilityType}`,
+      text: abilityType === 'talent' ? 'Talent' : 'Spell',
+    }));
+  }
   if (state.classId === 'all' && !NON_SPECIALIZATIONS.has(change.spec)) {
     metadata.push(node('span', { className: 'category-label', text: `· ${change.spec}` }));
   }
   if (change.category) metadata.push(node('span', { className: 'category-label', text: `· ${change.category}` }));
 
+  const icon = change.icon ? node('img', {
+    className: 'ability-icon',
+    attrs: {
+      src: change.icon,
+      alt: '',
+      width: '44',
+      height: '44',
+      loading: 'lazy',
+      decoding: 'async',
+      'aria-hidden': 'true',
+    },
+  }) : null;
   const name = node('div', { className: 'change-name' }, [
-    node('div', { className: 'change-meta' }, metadata),
-    node('h3', { text: change.subject }),
+    icon,
+    node('div', { className: 'change-name-copy' }, [
+      node('div', { className: 'change-meta' }, metadata),
+      node('h3', { text: change.subject }),
+    ]),
   ]);
 
   const hasNumericComparison = /\d/.test(change.value);
@@ -305,7 +326,7 @@ function changeCard(change) {
     attrs: {
       'data-direction': change.direction,
       'data-value-kind': hasNumericComparison ? 'numeric' : 'qualitative',
-      'data-change-type': change.isTalent ? 'talent' : 'other',
+      'data-change-type': abilityType || 'other',
     },
   }, [node('div', { className: 'card-main' }, [name, content]), footer]);
 }

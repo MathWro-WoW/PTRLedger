@@ -1,6 +1,11 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { buildPatch, parseClassChanges } from '../scripts/update-data.mjs';
+import {
+  buildPatch,
+  createAbilityCatalog,
+  enrichPatchWithAbilities,
+  parseClassChanges,
+} from '../scripts/update-data.mjs';
 
 const source = {
   id: '12.2',
@@ -61,6 +66,98 @@ test('marks source-confirmed talent changes without guessing ordinary abilities'
     { subject: 'Frostbolt', category: null, isTalent: false },
     { subject: 'Splinterstorm', category: 'Spellslinger', isTalent: true },
   ]);
+});
+
+test('classifies normal talent-tree entries and enriches resolved abilities', () => {
+  const catalog = createAbilityCatalog([{
+    className: 'Mage',
+    specName: 'Frost',
+    classNodes: [],
+    specNodes: [
+      {
+        name: 'Frozen Orb',
+        entries: [{
+          name: 'Frozen Orb',
+          spellId: 84714,
+          icon: 'spell_frost_frozenorb',
+        }],
+      },
+      {
+        name: 'Frostbolt',
+        freeNode: true,
+        entries: [{
+          name: 'Frostbolt',
+          spellId: 116,
+          icon: 'spell_frost_frostbolt02',
+        }],
+      },
+    ],
+  }]);
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', `
+      <li>Frozen Orb damage increased by 12% (was 8%).</li>
+      <li>Frostbolt damage increased by 10%.</li>
+      <li>Ice Lance damage increased by 8%.</li>
+    `),
+  ]);
+
+  enrichPatchWithAbilities(patch, catalog);
+  const frozenOrb = patch.classes[0].changes.find((change) => change.subject === 'Frozen Orb');
+  const frostbolt = patch.classes[0].changes.find((change) => change.subject === 'Frostbolt');
+  const unresolved = patch.classes[0].changes.find((change) => change.subject === 'Ice Lance');
+
+  assert.equal(frozenOrb.isTalent, true);
+  assert.equal(frozenOrb.abilityType, 'talent');
+  assert.equal(frozenOrb.abilityName, 'Frozen Orb');
+  assert.equal(frozenOrb.spellId, 84714);
+  assert.equal(frozenOrb.icon, './assets/abilities/spell_frost_frozenorb.jpg');
+  assert.equal(frostbolt.isTalent, false);
+  assert.equal(frostbolt.abilityType, 'spell');
+  assert.equal(frostbolt.spellId, 116);
+  assert.equal(frostbolt.icon, './assets/abilities/spell_frost_frostbolt02.jpg');
+  assert.equal(unresolved.isTalent, false);
+  assert.equal(unresolved.abilityType, null);
+  assert.equal(unresolved.abilityName, null);
+  assert.equal(unresolved.spellId, null);
+  assert.equal(unresolved.icon, null);
+});
+
+test('source-confirmed talents override free ability metadata', () => {
+  const catalog = createAbilityCatalog([{
+    className: 'Mage',
+    specName: 'Frost',
+    specNodes: [{
+      name: 'Glacial Current',
+      freeNode: true,
+      entries: [{
+        name: 'Glacial Current',
+        spellId: 123456,
+        icon: 'spell_frost_icefloes',
+      }],
+    }],
+  }]);
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', `
+      <li>New Talent: Glacial Current – Damage increased by 20%.</li>
+      <li><strong>Hero Talents</strong>
+        <ul><li><strong>Spellslinger</strong>
+          <ul><li>Splinterstorm damage increased by 15%.</li></ul>
+        </li></ul>
+      </li>
+    `),
+  ]);
+
+  enrichPatchWithAbilities(patch, catalog);
+  const changes = patch.classes[0].changes;
+  const glacialCurrent = changes.find((change) => change.subject === 'Glacial Current');
+  const splinterstorm = changes.find((change) => change.subject === 'Splinterstorm');
+
+  assert.equal(glacialCurrent.isTalent, true);
+  assert.equal(glacialCurrent.abilityType, 'talent');
+  assert.equal(glacialCurrent.icon, './assets/abilities/spell_frost_icefloes.jpg');
+  assert.equal(splinterstorm.isTalent, true);
+  assert.equal(splinterstorm.abilityType, 'talent');
+  assert.equal(splinterstorm.icon, null);
 });
 
 test('skips generic parent notes while retaining their nested changes', () => {

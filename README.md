@@ -27,11 +27,13 @@ The current source is the [Midnight 12.1 — Curse of Ula'tek PTR development no
 
 Generated output is stored in `site/data/patches.json`. Do not edit that file manually; run the updater instead.
 
-## Talent classification
+## Talent and ability metadata
 
-A change receives the **Talent** tag when Blizzard's note explicitly uses “talent” or “talents,” or when the change is nested beneath an official **Hero Talents** or **Apex Talents** heading. The **Talents only** filter can be combined with class, specialization, buff, nerf, changed, round, revision-history, and text filters.
+Blizzard's official note structure remains authoritative: explicit “talent” wording and changes beneath **Hero Talents** or **Apex Talents** are always tagged **Talent**. The updater supplements that signal with Raidbots' current [PTR talent-tree dataset](https://www.raidbots.com/static/data/ptr/talents.json), which is generated from World of Warcraft client data. A class and specialization-scoped subject that equals a tree-node name—or starts with the longest matching name for a property-specific note—is resolved to that node. Selectable nodes are tagged **Talent**; a node marked free for that specialization is tagged **Spell** instead.
 
-The updater does not guess from an ability name alone. An unlabelled talent may remain untagged if Blizzard's note supplies neither explicit wording nor a talent container; this conservative rule avoids presenting ordinary spell changes as talents. Once a revision establishes that a change is a talent, later checkpoints retain that classification even if they omit the word.
+Resolved entries include their canonical ability name, spell ID, and icon identifier. Icons are downloaded from Blizzard's render service into `site/assets/abilities/`, so the published page does not depend on a runtime metadata request. Source-confirmed talent classification overrides a free-node classification. Ambiguous or unresolved names remain untyped and iconless rather than receiving a guessed match. Once a revision establishes that a change is a talent, later checkpoints retain that classification even if they omit the word.
+
+The **Talents only** filter can be combined with class, specialization, buff, nerf, changed, round, revision-history, and text filters.
 
 ## How sequential tuning is calculated
 

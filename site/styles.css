@@ -420,24 +420,42 @@ h1 {
 .change-card[data-direction="buff"] { --change-color: var(--buff); }
 .change-card[data-direction="nerf"] { --change-color: var(--nerf); }
 .card-main { display: grid; grid-template-columns: minmax(160px, .8fr) minmax(270px, 1.4fr); gap: 1.4rem; padding: 1rem 1.2rem 1rem 1.35rem; }
-.change-name { min-width: 0; }
+.change-name { display: flex; align-items: flex-start; gap: .72rem; min-width: 0; }
+.change-name-copy { min-width: 0; }
+.ability-icon {
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid color-mix(in srgb, var(--arcane) 38%, var(--line));
+  border-radius: 4px;
+  background: var(--midnight);
+  box-shadow: 0 0 0 2px rgba(5, 10, 17, .72), 0 7px 16px rgba(0, 0, 0, .28);
+  object-fit: cover;
+}
 .change-meta { display: flex; align-items: center; flex-wrap: wrap; gap: .45rem; margin-bottom: .3rem; }
 .direction-label { color: var(--change-color); font-family: var(--utility); font-size: .58rem; text-transform: uppercase; letter-spacing: .12em; }
-.talent-label {
+.ability-type-label {
   display: inline-flex;
   align-items: center;
   gap: .32rem;
   padding: .08rem .35rem;
-  border: 1px solid color-mix(in srgb, var(--ember) 38%, var(--line));
-  color: var(--ember);
-  background: color-mix(in srgb, var(--ember) 7%, transparent);
   font-family: var(--utility);
   font-size: .54rem;
   letter-spacing: .1em;
   line-height: 1.2;
   text-transform: uppercase;
 }
-.talent-label::before {
+.ability-type-label.is-talent {
+  border: 1px solid color-mix(in srgb, var(--ember) 38%, var(--line));
+  color: var(--ember);
+  background: color-mix(in srgb, var(--ember) 7%, transparent);
+}
+.ability-type-label.is-spell {
+  border: 1px solid color-mix(in srgb, var(--arcane) 42%, var(--line));
+  color: var(--arcane-pale);
+  background: color-mix(in srgb, var(--arcane) 7%, transparent);
+}
+.ability-type-label::before {
   content: '';
   width: 5px;
   height: 5px;
