@@ -6,7 +6,8 @@ A static, GitHub Pages-ready ledger of World of Warcraft PTR class tuning. PTR L
 
 - Current PTR changes grouped by class and specialization
 - Buff, nerf, and changed classifications based on live-to-PTR values
-- Revision trails when Blizzard adjusts a change in a later note round
+- Revision trails that preserve each announced adjustment and its resulting value versus live
+- Cumulative folding for sequential percentage tuning, without confusing a later adjustment with an absolute replacement
 - Class submenus, specialization and direction filters, revised-only filtering, and text search
 - Links from every change and revision to the official Blizzard forum note
 - Responsive static HTML, CSS, and JavaScript with no runtime backend
@@ -25,6 +26,37 @@ Patch sources are configured in [`config/sources.json`](config/sources.json). Th
 The current source is the [Midnight 12.1 — Curse of Ula'tek PTR development notes](https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832).
 
 Generated output is stored in `site/data/patches.json`. Do not edit that file manually; run the updater instead.
+
+## How sequential tuning is calculated
+
+Blizzard's weekly PTR posts describe changes applied by that build. PTR Ledger therefore treats a baseline-free statement such as “All ability damage increased by 10%” as a relative adjustment to the current PTR value, not a new absolute value versus live. Sequential relative percentages compound:
+
+```text
+combined factor = (1 + adjustment 1) × (1 + adjustment 2) × …
+```
+
+For Devourer Demon Hunter, Blizzard first announced [“All ability damage increased by 20%”](https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/1), then included [“All ability damage increased by 10%” in the July 8 weekly tuning update](https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12). The second note is an additional adjustment:
+
+```text
+Live baseline       100
+Initial +20%        100 × 1.20 = 120
+Later +10%          120 × 1.10 = 132
+Combined vs live    +32%
+```
+
+A later nerf uses the same rule: `1.20 × 0.90 = 1.08`, so a +20% buff followed by a −10% nerf remains +8% versus live even though the latest adjustment itself is a nerf.
+
+Wowhead also records the July line in its [coverage of that week's separate PTR update](https://www.wowhead.com/news/patch-12-1-ptr-official-development-notes-protection-paladin-talent-adjustments-382118). An [independent Demon Hunter review published after the update](https://www.youtube.com/watch?v=uqwHR7xXGeI) explicitly describes the 10% as “additional”; its “30% flat” description is community shorthand, while applying the two percentages in sequence produces 32%. Blizzard does not publish that cumulative 32% figure directly—it is the ledger's arithmetic result from the two official adjustments.
+
+The updater follows these folding rules:
+
+- Repeated baseline-free `increased by`, `reduced by`, or `decreased by` percentages for the same class, specialization, category, and subject are applied in sequence. Buffs use a positive factor and nerfs a negative factor.
+- The announced percentage remains in each history checkpoint as `value`. Its compounded result through that checkpoint is stored as `effectiveValue`. The current card displays the latest effective result, rounded to one decimal place when needed.
+- Explicit values such as `increased to 10% (was 8%)` or `adjusted from 8% to 3%` are absolute replacements, not additional multipliers.
+- A qualitative replacement clears an obsolete numeric baseline.
+- A cumulative overall-damage card describes only that blanket modifier. Separate ability, talent, Mastery, cooldown, and set-bonus changes still affect actual specialization DPS.
+
+Regression coverage for these rules lives in [`test/update-data.test.mjs`](test/update-data.test.mjs).
 
 ## Local development
 
@@ -61,6 +93,7 @@ Retain existing entries in `config/sources.json` so their history remains availa
   "id": "12.2",
   "name": "Patch name",
   "topicId": 123456,
+  "slug": "canonical-forum-topic-slug",
   "region": "eu",
   "status": "PTR",
   "current": true
