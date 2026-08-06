@@ -146,3 +146,9 @@ test/update-data.test.mjs    Parser and tuning regression tests
 ## Data and attribution
 
 World of Warcraft and related names and imagery are trademarks of Blizzard Entertainment. PTR Ledger is an unofficial change-tracking interface. Change text is linked back to Blizzard's official forum posts.
+
+## License
+
+The original PTR Ledger source code, site code, tests, configuration, and documentation are licensed under the [MIT License](LICENSE) © 2026 Mathias Wrobel.
+
+The MIT License does not grant rights to Blizzard Entertainment's World of Warcraft names, trademarks, game content, official note text, or imagery, including the locally served class icons. Those materials remain subject to their respective owners' terms. PTR Ledger is an unofficial tracker and is not endorsed by or affiliated with Blizzard Entertainment. External dependencies and linked data services retain their own licenses and terms.
