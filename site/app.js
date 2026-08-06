@@ -199,18 +199,18 @@ function renderRoundOptions() {
 }
 
 function timeline(change) {
-  const items = change.history.map((item, index) => {
+  const items = change.history.map((item) => {
     const checkpointMath = item.effectiveValue
-      ? node('p', {
-          className: 'timeline-math',
-          text: `Adjustment ${item.value} · Combined ${item.effectiveValue} vs live`,
-        })
+      ? node('p', { className: 'timeline-result' }, [
+          node('span', { text: 'Result vs live' }),
+          node('strong', { text: item.effectiveValue }),
+        ])
       : null;
     const copy = node('div', { className: 'timeline-copy' }, [
       node('p', { text: item.text }),
       checkpointMath,
       node('a', {
-        text: `Open note ${index + 1} ↗`,
+        text: 'Official note ↗',
         attrs: { href: item.source, target: '_blank', rel: 'noreferrer' },
       }),
     ]);
@@ -241,7 +241,7 @@ function changeCard(change) {
     const ptr = node('div', { className: 'value-block ptr' }, [
       node('small', {
         text: change.cumulative
-          ? 'Combined change vs live'
+          ? 'Cumulative vs live'
           : change.baseline ? state.patch.status : `${state.patch.status} change`,
       }),
       node('b', { text: change.value }),
@@ -264,8 +264,8 @@ function changeCard(change) {
     ? node('p', {
         className: 'cumulative-note',
         text: state.round === 'all'
-          ? `Latest update ${change.latestAdjustment}. Sequential percentage adjustments compound to ${change.value} versus live.${change.subject === 'Overall damage' ? ' Targeted changes remain separate.' : ''}`
-          : `This update ${change.latestAdjustment}. Combined through this round: ${change.value} versus live.`,
+          ? `Includes all adjustments shown below.${change.subject === 'Overall damage' ? ' Targeted changes are tracked separately.' : ''}`
+          : 'Includes adjustments made up to this update.',
       })
     : null;
   const content = node('div', {}, [comparison, note, cumulativeNote]);

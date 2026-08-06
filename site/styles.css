@@ -421,6 +421,7 @@ h1 {
 .card-footer { border-top: 1px solid var(--line); background: rgba(9,17,28,.34); }
 .history-disclosure summary {
   list-style: none;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -439,7 +440,8 @@ h1 {
 .timeline-item::before { content: ''; position: absolute; width: 7px; height: 7px; left: calc(-1.1rem - 4px); top: .75rem; border: 1px solid var(--arcane); background: var(--midnight); transform: rotate(45deg); }
 .timeline-date { color: var(--muted); font-family: var(--utility); font-size: .6rem; }
 .timeline-copy p { margin: 0 0 .2rem; color: var(--silver); font-size: .7rem; }
-.timeline-copy .timeline-math { color: var(--arcane-pale); font-family: var(--utility); font-size: .6rem; letter-spacing: .02em; }
+.timeline-copy .timeline-result { display: flex; align-items: baseline; gap: .45rem; color: var(--muted); font-size: .64rem; }
+.timeline-result strong { color: var(--arcane-pale); font-family: var(--utility); font-size: .62rem; font-weight: 500; }
 .timeline-copy a { color: var(--arcane); font-size: .65rem; text-decoration: none; }
 .timeline-copy a:hover { text-decoration: underline; }
 .source-only { display: flex; justify-content: flex-end; padding: .55rem 1rem; }
