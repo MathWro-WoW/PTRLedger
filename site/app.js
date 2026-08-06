@@ -397,6 +397,42 @@ function renderPatchMeta() {
   for (const selector of ['#header-source', '#footer-source']) $(selector).href = state.patch.source;
 }
 
+function classMark(classInfo, icon) {
+  const mark = node('span', { className: `class-mark${icon ? ' has-icon' : ''}` });
+  const showFallback = () => {
+    mark.classList.remove('has-icon');
+    mark.textContent = classInfo.mark;
+    mark.style.setProperty('--class-color', classInfo.color);
+  };
+
+  if (!icon) {
+    showFallback();
+    return mark;
+  }
+
+  const image = node('img', {
+    attrs: { src: icon, alt: '', width: '30', height: '30' },
+  });
+  let retried = false;
+  image.addEventListener('load', () => {
+    mark.classList.add('has-icon');
+    mark.style.removeProperty('--class-color');
+    mark.replaceChildren(image);
+  });
+  image.addEventListener('error', () => {
+    showFallback();
+    if (retried) return;
+    retried = true;
+    const retryUrl = new URL(icon, location.href);
+    retryUrl.searchParams.set('retry', '1');
+    window.setTimeout(() => {
+      image.src = retryUrl.href;
+    }, 250);
+  });
+  mark.append(image);
+  return mark;
+}
+
 function renderClassNav() {
   const total = state.patch.stats.changes;
   const options = [
@@ -407,15 +443,7 @@ function renderClassNav() {
   const scrollLeft = elements.classNav.scrollLeft;
   elements.classNav.replaceChildren(...options.map((classInfo) => {
     const icon = classInfo.icon || (classInfo.id === 'all-classes' ? './assets/classes/allclasses.svg' : null);
-    const mark = node('span', { className: `class-mark${icon ? ' has-icon' : ''}` });
-    if (icon) {
-      mark.append(node('img', {
-        attrs: { src: icon, alt: '', width: '30', height: '30' },
-      }));
-    } else {
-      mark.textContent = classInfo.mark;
-      mark.style.setProperty('--class-color', classInfo.color);
-    }
+    const mark = classMark(classInfo, icon);
 
     const specs = classInfo.id === 'all' ? [] : specializationsForChanges(classInfo.changes);
     const isOpen = state.openClassMenu === classInfo.id && specs.length > 0;
