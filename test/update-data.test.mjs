@@ -419,6 +419,20 @@ test('uses concise subjects for broad and possessive changes', () => {
   ]);
 });
 
+test('truncates text-based subjects at readable word boundaries', () => {
+  const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
+    <li>Fixed an issue causing Full Moons launched by Orbit Breaker to have 100% effectiveness instead of 50%.</li>
+    <li>Fixed an issue causing some Cooldown Manager elements such as damage-over-time timers and buff trackers to sometimes not show accurate information.</li>
+    <li>Fixed an issue where Dream Guide was incorrectly being consumed by Regrowths cast via Reinvigoration.</li>
+  `).cooked);
+
+  assert.deepEqual(changes.map((change) => change.subject), [
+    'Fixed an issue causing Full Moons launched by Orbit Breaker to have 100%',
+    'Fixed an issue causing some Cooldown Manager elements such as damage-over-time timers…',
+    'Fixed an issue where Dream Guide was incorrectly being consumed by Regrowths cast…',
+  ]);
+});
+
 test('parses class headings that precede separate lists', () => {
   const changes = parseClassChanges(`
     <h2>CLASSES</h2>

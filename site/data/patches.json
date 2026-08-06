@@ -2529,12 +2529,12 @@
               "icon": "./assets/abilities/achievement_dungeon_thenecroticwake_amarth.jpg"
             },
             {
-              "id": "ce5c35ecd27e",
+              "id": "bb2482973986",
               "classKey": "DEATH KNIGHT",
               "spec": "Unholy",
               "category": null,
               "isTalent": false,
-              "subject": "Resolved an issue causing Nazgrim’s Conquest to",
+              "subject": "Resolved an issue causing Nazgrim’s Conquest to grant additional Strength when Magus…",
               "text": "Resolved an issue causing Nazgrim’s Conquest to grant additional Strength when Magus of the Dead is sacrificed for Lord of the Dead.",
               "value": "Buffed",
               "baseline": null,
@@ -4498,12 +4498,12 @@
               "icon": null
             },
             {
-              "id": "f975ff273575",
+              "id": "95b0889a4db1",
               "classKey": "DRUID",
               "spec": "Balance",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue causing some",
+              "subject": "Fixed an issue causing some Cooldown Manager elements such as damage-over-time timers…",
               "text": "Fixed an issue causing some Cooldown Manager elements such as damage-over-time timers and buff trackers to sometimes not show accurate information.",
               "value": "Changed",
               "baseline": null,
@@ -5299,12 +5299,12 @@
               "icon": "./assets/abilities/ability_druid_cresentburn.jpg"
             },
             {
-              "id": "095fb40cef5c",
+              "id": "127e6648a541",
               "classKey": "DRUID",
               "spec": "Balance",
               "category": null,
               "isTalent": false,
-              "subject": "The counter aura for Orbit Breaker can",
+              "subject": "The counter aura for Orbit Breaker can no longer be manually cancelled to reset your Orbit…",
               "text": "The counter aura for Orbit Breaker can no longer be manually cancelled to reset your Orbit Breaker progress.",
               "value": "Nerfed",
               "baseline": null,
@@ -5705,12 +5705,12 @@
               "icon": "./assets/abilities/inv_1115_druid_jaguar.jpg"
             },
             {
-              "id": "c997782731be",
+              "id": "1ca467d897e8",
               "classKey": "DRUID",
               "spec": "Feral",
               "category": null,
               "isTalent": false,
-              "subject": "Cooldown Manager updated so elements show the “empowered” icon versions for instances of DoTs like Rake and Rip that",
+              "subject": "Cooldown Manager updated so elements show the “empowered” icon versions for instances…",
               "text": "Cooldown Manager updated so elements show the “empowered” icon versions for instances of DoTs like Rake and Rip that have been enhanced by Tiger’s Fury.",
               "value": "Changed",
               "baseline": null,
@@ -6227,12 +6227,12 @@
               "icon": "./assets/abilities/spell_holy_elunesgrace.jpg"
             },
             {
-              "id": "a87e6a842634",
+              "id": "e4c233515113",
               "classKey": "DRUID",
               "spec": "Guardian",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where Dream Guide was incorrectly being consumed by Regrowths cast via Rein",
+              "subject": "Fixed an issue where Dream Guide was incorrectly being consumed by Regrowths cast…",
               "text": "Fixed an issue where Dream Guide was incorrectly being consumed by Regrowths cast via Reinvigoration.",
               "value": "Changed",
               "baseline": null,
@@ -6430,12 +6430,12 @@
               "icon": null
             },
             {
-              "id": "b026c42dc0b4",
+              "id": "6e7b42f3619c",
               "classKey": "DRUID",
               "spec": "Guardian",
               "category": null,
               "isTalent": false,
-              "subject": "Rank 1: Spending Rage has a",
+              "subject": "Rank 1: Spending Rage has a chance to awaken a Guardian Spirit for 8 seconds, which…",
               "text": "Rank 1: Spending Rage has a chance to awaken a Guardian Spirit for 8 seconds, which attacks a nearby enemy and generates 3 Rage when you cast Thrash or Mangle.",
               "value": "8 seconds",
               "baseline": null,
@@ -8488,12 +8488,12 @@
               "icon": "./assets/abilities/inv_fyrakk_dragonbreath.jpg"
             },
             {
-              "id": "40887874d485",
+              "id": "3d6dee838f1c",
               "classKey": "EVOKER",
               "spec": "Preservation",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue that could",
+              "subject": "Fixed an issue that could cause Time Dilation to not clear its stored damage on death",
               "text": "Fixed an issue that could cause Time Dilation to not clear its stored damage on death.",
               "value": "Changed",
               "baseline": null,
@@ -8898,12 +8898,12 @@
               "icon": "./assets/abilities/ability_hunter_sickem.jpg"
             },
             {
-              "id": "35ee683ee949",
+              "id": "9b97b6038238",
               "classKey": "HUNTER",
               "spec": "Beast Mastery",
               "category": null,
               "isTalent": true,
-              "subject": "Beast Cleave can",
+              "subject": "Beast Cleave can no longer be cancelled",
               "text": "Beast Cleave can no longer be cancelled.",
               "value": "Nerfed",
               "baseline": null,
@@ -10056,12 +10056,12 @@
               "icon": "./assets/abilities/ability_hunter_explosiveshot.jpg"
             },
             {
-              "id": "24964db78d4e",
+              "id": "04012a81cf93",
               "classKey": "HUNTER",
               "spec": "Marksmanship",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue that caused Deathblow to not trigger at the expected rates when casting Aim",
+              "subject": "Fixed an issue that caused Deathblow to not trigger at the expected rates when casting…",
               "text": "Fixed an issue that caused Deathblow to not trigger at the expected rates when casting Aimed Shot.",
               "value": "Changed",
               "baseline": null,
@@ -10085,12 +10085,12 @@
               "icon": null
             },
             {
-              "id": "1b9e8c32123c",
+              "id": "fc51534bb291",
               "classKey": "HUNTER",
               "spec": "Marksmanship",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where applying Spotter’s Mark: Rapid Fire after Rapid Fire had finished cha",
+              "subject": "Fixed an issue where applying Spotter’s Mark: Rapid Fire after Rapid Fire had finished…",
               "text": "Fixed an issue where applying Spotter’s Mark: Rapid Fire after Rapid Fire had finished channeling but before all of its projectiles had reached the target would improperly consume the Spotter’s Mark: Rapid Fire debuff.",
               "value": "Changed",
               "baseline": null,
@@ -10114,12 +10114,12 @@
               "icon": null
             },
             {
-              "id": "03f65bb0f31a",
+              "id": "29de5c93703e",
               "classKey": "HUNTER",
               "spec": "Marksmanship",
               "category": null,
               "isTalent": true,
-              "subject": "Fixed an issue where casting Aimed Shot twice in a row while talented into Aspect of the Hydra incorrectly prevented the second cast of Aimed Shot from being able to",
+              "subject": "Fixed an issue where casting Aimed Shot twice in a row while talented into Aspect of…",
               "text": "Fixed an issue where casting Aimed Shot twice in a row while talented into Aspect of the Hydra incorrectly prevented the second cast of Aimed Shot from being able to cause a Deathbringer proc from the Deathblow talent.",
               "value": "Changed",
               "baseline": null,
@@ -10143,12 +10143,12 @@
               "icon": null
             },
             {
-              "id": "1ee3da673809",
+              "id": "bbfb9434f0a7",
               "classKey": "HUNTER",
               "spec": "Marksmanship",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where Explosive Shot was incorrectly damaging the primary target of Explosive Shot with the explosion",
+              "subject": "Fixed an issue where Explosive Shot was incorrectly damaging the primary target…",
               "text": "Fixed an issue where Explosive Shot was incorrectly damaging the primary target of Explosive Shot with the explosion damage.",
               "value": "Changed",
               "baseline": null,
@@ -10201,12 +10201,12 @@
               "icon": null
             },
             {
-              "id": "440d55132f07",
+              "id": "71f1032764e5",
               "classKey": "HUNTER",
               "spec": "Marksmanship",
               "category": null,
               "isTalent": true,
-              "subject": "Fixed an issue where secondary Aimed Shots from the Aspect of the Hydra talent would incor",
+              "subject": "Fixed an issue where secondary Aimed Shots from the Aspect of the Hydra talent…",
               "text": "Fixed an issue where secondary Aimed Shots from the Aspect of the Hydra talent would incorrectly consume the Deathbringer buff from the Deathblow talent.",
               "value": "Changed",
               "baseline": null,
@@ -10765,12 +10765,12 @@
               "icon": "./assets/abilities/inv_rabbit2_darkmoon.jpg"
             },
             {
-              "id": "8c868ecb6ff7",
+              "id": "87138706c318",
               "classKey": "HUNTER",
               "spec": "Marksmanship",
               "category": null,
               "isTalent": true,
-              "subject": "Some talents have changed locations in the second gate of the talent tree to make Explosiv",
+              "subject": "Some talents have changed locations in the second gate of the talent tree to make…",
               "text": "Some talents have changed locations in the second gate of the talent tree to make Explosive Shot more easily obtained.",
               "value": "Changed",
               "baseline": null,
@@ -11089,7 +11089,7 @@
               "spec": "Survival",
               "category": null,
               "isTalent": true,
-              "subject": "Fixed an issue where Mastery: Spirit Bond incorrectly affected some summons from the Pack ",
+              "subject": "Fixed an issue where Mastery: Spirit Bond incorrectly affected some summons from the Pack…",
               "text": "Fixed an issue where Mastery: Spirit Bond incorrectly affected some summons from the Pack Leader Hero Talents twice.",
               "value": "Changed",
               "baseline": null,
@@ -11113,12 +11113,12 @@
               "icon": null
             },
             {
-              "id": "093c8c8ea452",
+              "id": "c4de2ecb9e2f",
               "classKey": "HUNTER",
               "spec": "Survival",
               "category": null,
               "isTalent": true,
-              "subject": "Fixed an issue where Outland Venom was not properly applied by various periodic effects fr",
+              "subject": "Fixed an issue where Outland Venom was not properly applied by various periodic effects…",
               "text": "Fixed an issue where Outland Venom was not properly applied by various periodic effects from either the Hunter, their current pet, or other summons from the Pack Leader Hero Talents.",
               "value": "Changed",
               "baseline": null,
@@ -11171,12 +11171,12 @@
               "icon": null
             },
             {
-              "id": "c5dfe687e6fd",
+              "id": "e5e1203051e2",
               "classKey": "HUNTER",
               "spec": "Survival",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where Raptor Swipe could",
+              "subject": "Fixed an issue where Raptor Swipe could cause Sentinel’s Mark to be applied to a target…",
               "text": "Fixed an issue where Raptor Swipe could cause Sentinel’s Mark to be applied to a target that was not your currently selected target. If you do not have a target selected when using Raptor Swipe, a target hit by Raptor Swipe will be chosen.",
               "value": "Changed",
               "baseline": null,
@@ -11952,12 +11952,12 @@
               "icon": "./assets/abilities/inv_helmet_101.jpg"
             },
             {
-              "id": "10f25a0b638f",
+              "id": "edf6471031f6",
               "classKey": "MAGE",
               "spec": "Arcane",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue that could",
+              "subject": "Fixed an issue that could cause Refractive Images to not clear its stored damage on death",
               "text": "Fixed an issue that could cause Refractive Images to not clear its stored damage on death.",
               "value": "Changed",
               "baseline": null,
@@ -12068,12 +12068,12 @@
               "icon": "./assets/abilities/spell_arcane_arcanetorrent.jpg"
             },
             {
-              "id": "55d1e50a56c8",
+              "id": "070087f215d4",
               "classKey": "MAGE",
               "spec": "Arcane",
               "category": null,
               "isTalent": true,
-              "subject": "Improved Clearcasting moved above Arcane Pulse in the talent tree, where Amplification was",
+              "subject": "Improved Clearcasting moved above Arcane Pulse in the talent tree, where Amplification…",
               "text": "Improved Clearcasting moved above Arcane Pulse in the talent tree, where Amplification was previously located.",
               "value": "Buffed",
               "baseline": null,
@@ -12184,12 +12184,12 @@
               "icon": "./assets/abilities/inv_misc_orb_blue.jpg"
             },
             {
-              "id": "aea4c08fe449",
+              "id": "12d0b3336490",
               "classKey": "MAGE",
               "spec": "Arcane",
               "category": null,
               "isTalent": true,
-              "subject": "Positioned above Arcane Surge in the talent tree, where Improved Clearcasting was previous",
+              "subject": "Positioned above Arcane Surge in the talent tree, where Improved Clearcasting…",
               "text": "Positioned above Arcane Surge in the talent tree, where Improved Clearcasting was previously located.",
               "value": "Buffed",
               "baseline": null,
@@ -12503,12 +12503,12 @@
               "icon": "./assets/abilities/inv_misc_powder_copper.jpg"
             },
             {
-              "id": "c02e18e0bcf2",
+              "id": "b0091d483e6d",
               "classKey": "MAGE",
               "spec": "Class-wide",
               "category": "Sunfury",
               "isTalent": true,
-              "subject": "Fixed an issue for Arcane that caused Mana Cascade to be gained from some unintended spell",
+              "subject": "Fixed an issue for Arcane that caused Mana Cascade to be gained from some unintended…",
               "text": "Fixed an issue for Arcane that caused Mana Cascade to be gained from some unintended spells.",
               "value": "Changed",
               "baseline": null,
@@ -13403,12 +13403,12 @@
               "icon": null
             },
             {
-              "id": "c931af13d204",
+              "id": "7e7ff93e5528",
               "classKey": "MAGE",
               "spec": "Frost",
               "category": null,
               "isTalent": false,
-              "subject": "The Venomous Abyss 4-Set Bonus · Now generates 5 Icicles over 1 second when it triggers, rath",
+              "subject": "The Venomous Abyss 4-Set Bonus · Now generates 5 Icicles over 1 second when it triggers…",
               "text": "The Venomous Abyss 4-Set Bonus has been updated: Now generates 5 Icicles over 1 second when it triggers, rather than immediately granting the Glacial Spike! effect. Tooltip updated to match.",
               "value": "5 Icicles",
               "baseline": null,
@@ -15522,12 +15522,12 @@
               "icon": "./assets/abilities/ability_paladin_judgementofthepure.jpg"
             },
             {
-              "id": "97b45176832c",
+              "id": "c5924d8ab3b2",
               "classKey": "PALADIN",
               "spec": "Protection",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where abilities that knocked enemies into the air could",
+              "subject": "Fixed an issue where abilities that knocked enemies into the air could cause Glory of…",
               "text": "Fixed an issue where abilities that knocked enemies into the air could cause Glory of the Vanguard to deal its damage additional times.",
               "value": "Buffed",
               "baseline": null,
@@ -15609,12 +15609,12 @@
               "icon": null
             },
             {
-              "id": "95b64c83f548",
+              "id": "c99a0311ce04",
               "classKey": "PALADIN",
               "spec": "Protection",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where casting Hammer of Light in between direct casts of Consecration could",
+              "subject": "Fixed an issue where casting Hammer of Light in between direct casts of Consecration…",
               "text": "Fixed an issue where casting Hammer of Light in between direct casts of Consecration could allow Consecration to exceed its limit.",
               "value": "Changed",
               "baseline": null,
@@ -15638,12 +15638,12 @@
               "icon": null
             },
             {
-              "id": "b552144edc86",
+              "id": "60b99cbcc59a",
               "classKey": "PALADIN",
               "spec": "Protection",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where Instrument of the Divine was causing Shield of the Righteous to exten",
+              "subject": "Fixed an issue where Instrument of the Divine was causing Shield of the Righteous…",
               "text": "Fixed an issue where Instrument of the Divine was causing Shield of the Righteous to extend Sentinel’s stacks by an incorrect amount.",
               "value": "Changed",
               "baseline": null,
@@ -15667,12 +15667,12 @@
               "icon": null
             },
             {
-              "id": "4664c7a749a4",
+              "id": "2878f73ae675",
               "classKey": "PALADIN",
               "spec": "Protection",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where Quickened Invocation was incorrectly reducing the",
+              "subject": "Fixed an issue where Quickened Invocation was incorrectly reducing the cooldown of Holy…",
               "text": "Fixed an issue where Quickened Invocation was incorrectly reducing the cooldown of Holy Armaments.",
               "value": "Changed",
               "baseline": null,
@@ -15754,12 +15754,12 @@
               "icon": null
             },
             {
-              "id": "5369297a847f",
+              "id": "cd7f51c78c35",
               "classKey": "PALADIN",
               "spec": "Protection",
               "category": "The Venomous Abyss Set Bonus",
               "isTalent": false,
-              "subject": "Fixed an issue where Sentinel’s critical strike was not being displayed on the character s",
+              "subject": "Fixed an issue where Sentinel’s critical strike was not being displayed on the character…",
               "text": "Fixed an issue where Sentinel’s critical strike was not being displayed on the character sheet.",
               "value": "Changed",
               "baseline": null,
@@ -15817,7 +15817,7 @@
               "spec": "Protection",
               "category": "The Venomous Abyss Set Bonus",
               "isTalent": false,
-              "subject": "Fixed an issue where some of Consecration’s effects were not benefiting from its increased",
+              "subject": "Fixed an issue where some of Consecration’s effects were not benefiting from its increased…",
               "text": "Fixed an issue where some of Consecration’s effects were not benefiting from its increased radius.",
               "value": "Buffed",
               "baseline": null,
@@ -15832,35 +15832,6 @@
                   "value": "Buffed",
                   "baseline": null,
                   "direction": "buff",
-                  "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
-                }
-              ],
-              "abilityType": null,
-              "abilityName": null,
-              "spellId": null,
-              "icon": null
-            },
-            {
-              "id": "19119e2f8b80",
-              "classKey": "PALADIN",
-              "spec": "Protection",
-              "category": "The Venomous Abyss Set Bonus",
-              "isTalent": false,
-              "subject": "Fixed an issue where the",
-              "text": "Fixed an issue where the damage from the 4-set bonus was scaling with target damage taken modifiers.",
-              "value": "Changed",
-              "baseline": null,
-              "direction": "changed",
-              "firstSeen": "2026-06-30T22:30:44.435Z",
-              "lastChanged": "2026-06-30T22:30:44.435Z",
-              "history": [
-                {
-                  "round": 11,
-                  "date": "2026-06-30T22:30:44.435Z",
-                  "text": "Fixed an issue where the damage from the 4-set bonus was scaling with target damage taken modifiers.",
-                  "value": "Changed",
-                  "baseline": null,
-                  "direction": "changed",
                   "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
                 }
               ],
@@ -15887,6 +15858,35 @@
                   "round": 11,
                   "date": "2026-06-30T22:30:44.435Z",
                   "text": "Fixed an issue where the 4-set bonus was not activated by Hammer of Wrath.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/11"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "9f1a4aa27daa",
+              "classKey": "PALADIN",
+              "spec": "Protection",
+              "category": "The Venomous Abyss Set Bonus",
+              "isTalent": false,
+              "subject": "Fixed an issue where the damage from the 4-set bonus was scaling with target damage taken…",
+              "text": "Fixed an issue where the damage from the 4-set bonus was scaling with target damage taken modifiers.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "firstSeen": "2026-06-30T22:30:44.435Z",
+              "lastChanged": "2026-06-30T22:30:44.435Z",
+              "history": [
+                {
+                  "round": 11,
+                  "date": "2026-06-30T22:30:44.435Z",
+                  "text": "Fixed an issue where the damage from the 4-set bonus was scaling with target damage taken modifiers.",
                   "value": "Changed",
                   "baseline": null,
                   "direction": "changed",
@@ -16102,12 +16102,12 @@
               "icon": "./assets/abilities/inv_mace_1h_gryphonrider_d_02_silver.jpg"
             },
             {
-              "id": "e1aaa4d4cfcc",
+              "id": "4be4ed5edff5",
               "classKey": "PALADIN",
               "spec": "Protection",
               "category": null,
               "isTalent": false,
-              "subject": "Hammer of Light, Divine Resonance, Sacrosanct Crusade, Bulwark of Order, Blessed Word, Empyreal Ward, Strength in Adversity, and Seal of Reprisal",
+              "subject": "Hammer of Light, Divine Resonance, Sacrosanct Crusade, Bulwark of Order, Blessed Word…",
               "text": "Hammer of Light, Divine Resonance, Sacrosanct Crusade, Bulwark of Order, Blessed Word, Empyreal Ward, Strength in Adversity, and Seal of Reprisal can now be tracked with the Cooldown Manager.",
               "value": "Buffed",
               "baseline": null,
@@ -16479,12 +16479,12 @@
               "icon": "./assets/abilities/spell_holy_mindvision.jpg"
             },
             {
-              "id": "cf101d9d48c5",
+              "id": "2646e8f60e08",
               "classKey": "PALADIN",
               "spec": "Protection",
               "category": null,
               "isTalent": false,
-              "subject": "Sacred Weapon and Holy Bulwark extend their",
+              "subject": "Sacred Weapon and Holy Bulwark extend their duration when reapplied by the same caster",
               "text": "Sacred Weapon and Holy Bulwark extend their duration when reapplied by the same caster.",
               "value": "Changed",
               "baseline": null,
@@ -17335,12 +17335,12 @@
               "icon": "./assets/abilities/inv_torch_thrown.jpg"
             },
             {
-              "id": "4a69d4935d26",
+              "id": "82bbb273d621",
               "classKey": "PALADIN",
               "spec": "Retribution",
               "category": null,
               "isTalent": true,
-              "subject": "Execution Sentence area of effect radius increased to 10 yards and",
+              "subject": "Execution Sentence area of effect radius increased to 10 yards and now includes…",
               "text": "Execution Sentence area of effect radius increased to 10 yards and now includes the bounding radius of the target (was 8 yards).",
               "value": "10 yards",
               "baseline": "8 yards",
@@ -18764,12 +18764,12 @@
               "icon": null
             },
             {
-              "id": "b040d3dca5d1",
+              "id": "5e3e440a945c",
               "classKey": "PRIEST",
               "spec": "Shadow",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue causing Tentacle Slam to apply extra stacks of Horrific Visions when talent",
+              "subject": "Fixed an issue causing Tentacle Slam to apply extra stacks of Horrific Visions…",
               "text": "Fixed an issue causing Tentacle Slam to apply extra stacks of Horrific Visions when talented for Maddening Tentacles and Idol of N’Zoth.",
               "value": "Changed",
               "baseline": null,
@@ -20180,12 +20180,12 @@
               "icon": "./assets/abilities/inv_112_rogue_betweentheeyes.jpg"
             },
             {
-              "id": "1bf89b7f65c2",
+              "id": "5a5588cbd3b0",
               "classKey": "ROGUE",
               "spec": "Outlaw",
               "category": null,
               "isTalent": true,
-              "subject": "Killing Spree prefers targets that are not immune to",
+              "subject": "Killing Spree prefers targets that are not immune to damage or taking less than 5%…",
               "text": "Killing Spree prefers targets that are not immune to damage or taking less than 5% physical damage.",
               "value": "5%",
               "baseline": null,
@@ -21107,12 +21107,12 @@
               "icon": "./assets/abilities/spell_nature_chainlightning.jpg"
             },
             {
-              "id": "24a7c3362b1b",
+              "id": "313d48df9571",
               "classKey": "SHAMAN",
               "spec": "Elemental",
               "category": null,
               "isTalent": true,
-              "subject": "Developes’ notes: Supercharge and Power of the Maelstrom both were extra, random Elemental Overloads. We feel that the other changes",
+              "subject": "Developes’ notes: Supercharge and Power of the Maelstrom both were extra, random Elemental…",
               "text": "Developes’ notes: Supercharge and Power of the Maelstrom both were extra, random Elemental Overloads. We feel that the other changes will make your damage more consistent, while still allowing other parts of your talent tree to still increase the quantity or power of Elemental Overload spells.",
               "value": "Changed",
               "baseline": null,
@@ -21339,12 +21339,12 @@
               "icon": null
             },
             {
-              "id": "5c26a0656e3b",
+              "id": "eb63b55663ff",
               "classKey": "SHAMAN",
               "spec": "Elemental",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue that caused Voltaic Blaze to not be properly affected by Elemental Fury’s critical",
+              "subject": "Fixed an issue that caused Voltaic Blaze to not be properly affected by Elemental Fury’s…",
               "text": "Fixed an issue that caused Voltaic Blaze to not be properly affected by Elemental Fury’s critical damage bonus.",
               "value": "Changed",
               "baseline": null,
@@ -22383,41 +22383,12 @@
               "icon": "./assets/abilities/ability_evoker_earthensky.jpg"
             },
             {
-              "id": "36f7e0c69152",
+              "id": "cd4b28a7e872",
               "classKey": "SHAMAN",
               "spec": "Restoration",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue where",
-              "text": "Fixed an issue where Healing Rain was not causing immediate healing when casting the spell.",
-              "value": "Changed",
-              "baseline": null,
-              "direction": "changed",
-              "firstSeen": "2026-07-08T17:22:44.876Z",
-              "lastChanged": "2026-07-08T17:22:44.876Z",
-              "history": [
-                {
-                  "round": 12,
-                  "date": "2026-07-08T17:22:44.876Z",
-                  "text": "Fixed an issue where Healing Rain was not causing immediate healing when casting the spell.",
-                  "value": "Changed",
-                  "baseline": null,
-                  "direction": "changed",
-                  "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
-                }
-              ],
-              "abilityType": null,
-              "abilityName": null,
-              "spellId": null,
-              "icon": null
-            },
-            {
-              "id": "52e3cbc23723",
-              "classKey": "SHAMAN",
-              "spec": "Restoration",
-              "category": null,
-              "isTalent": false,
-              "subject": "Fixed an issue where both Acid Rain and",
+              "subject": "Fixed an issue where both Acid Rain and Healing Rain were not properly granting a “patrial…",
               "text": "Fixed an issue where both Acid Rain and Healing Rain were not properly granting a “patrial tick” when a Healing Rain naturally expired.",
               "value": "Changed",
               "baseline": null,
@@ -22441,12 +22412,41 @@
               "icon": null
             },
             {
-              "id": "de124fd967ef",
+              "id": "c146652087d0",
               "classKey": "SHAMAN",
               "spec": "Restoration",
               "category": null,
               "isTalent": false,
-              "subject": "Fixed an issue with Overflowing Shores not",
+              "subject": "Fixed an issue where Healing Rain was not causing immediate healing when casting the spell",
+              "text": "Fixed an issue where Healing Rain was not causing immediate healing when casting the spell.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "firstSeen": "2026-07-08T17:22:44.876Z",
+              "lastChanged": "2026-07-08T17:22:44.876Z",
+              "history": [
+                {
+                  "round": 12,
+                  "date": "2026-07-08T17:22:44.876Z",
+                  "text": "Fixed an issue where Healing Rain was not causing immediate healing when casting the spell.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "source": "https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832/12"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "14793da98272",
+              "classKey": "SHAMAN",
+              "spec": "Restoration",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue with Overflowing Shores not healing units inside of the Healing Rain…",
               "text": "Fixed an issue with Overflowing Shores not healing units inside of the Healing Rain when the The Venomous Abyss 2-set bonus creates a Healing Rain.",
               "value": "Changed",
               "baseline": null,
@@ -24194,12 +24194,12 @@
               "icon": null
             },
             {
-              "id": "259ae2bf16e7",
+              "id": "f1024bcbbf9b",
               "classKey": "WARLOCK",
               "spec": "Destruction",
               "category": null,
               "isTalent": true,
-              "subject": "Shadowburn added as a tracked buff in the",
+              "subject": "Shadowburn added as a tracked buff in the Cooldown Manager",
               "text": "Shadowburn added as a tracked buff in the Cooldown Manager.",
               "value": "Changed",
               "baseline": null,
@@ -25668,12 +25668,12 @@
               "icon": "./assets/abilities/inv_artifact_bloodoftheassassinated.jpg"
             },
             {
-              "id": "eb81e4027401",
+              "id": "7c66153ca6fc",
               "classKey": "WARRIOR",
               "spec": "Protection",
               "category": null,
               "isTalent": true,
-              "subject": "Brutal Vitality adds 10% of",
+              "subject": "Brutal Vitality adds 10% of damage dealt to Ignore Pain (was 8%)",
               "text": "Brutal Vitality adds 10% of damage dealt to Ignore Pain (was 8%).",
               "value": "10%",
               "baseline": "8%",

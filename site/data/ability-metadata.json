@@ -1470,6 +1470,134 @@
     "SHAMAN|Elemental|ancestors lava burst": {
       "missing": true,
       "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|resolved an issue causing nazgrim s conquest to grant additional strength when magus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|fixed an issue causing some cooldown manager elements such as damage over time timers": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|the counter aura for orbit breaker can no longer be manually cancelled to reset your orbit": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Feral|cooldown manager updated so elements show the empowered icon versions for instances": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|fixed an issue where dream guide was incorrectly being consumed by regrowths cast": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|rank 1 spending rage has a chance to awaken a guardian spirit for 8 seconds which": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "EVOKER|Preservation|fixed an issue that could cause time dilation to not clear its stored damage on death": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue that caused deathblow to not trigger at the expected rates when casting": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where applying spotter s mark rapid fire after rapid fire had finished": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where casting aimed shot twice in a row while talented into aspect of": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where explosive shot was incorrectly damaging the primary target": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where secondary aimed shots from the aspect of the hydra talent": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|some talents have changed locations in the second gate of the talent tree to make": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|fixed an issue where outland venom was not properly applied by various periodic effects": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|fixed an issue where raptor swipe could cause sentinel s mark to be applied to a target": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|fixed an issue that could cause refractive images to not clear its stored damage on death": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|positioned above arcane surge in the talent tree where improved clearcasting": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Class-wide|fixed an issue for arcane that caused mana cascade to be gained from some unintended": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where abilities that knocked enemies into the air could cause glory of": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where casting hammer of light in between direct casts of consecration": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where instrument of the divine was causing shield of the righteous": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where quickened invocation was incorrectly reducing the cooldown of holy": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where sentinel s critical strike was not being displayed on the character": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where the damage from the 4 set bonus was scaling with target damage taken": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|hammer of light divine resonance sacrosanct crusade bulwark of order blessed word": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|sacred weapon and holy bulwark extend their duration when reapplied by the same caster": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Shadow|fixed an issue causing tentacle slam to apply extra stacks of horrific visions": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|developes notes supercharge and power of the maelstrom both were extra random elemental": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|fixed an issue that caused voltaic blaze to not be properly affected by elemental fury s": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|fixed an issue where both acid rain and healing rain were not properly granting a patrial": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|fixed an issue where healing rain was not causing immediate healing when casting the spell": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|fixed an issue with overflowing shores not healing units inside of the healing rain": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
     }
   }
 }

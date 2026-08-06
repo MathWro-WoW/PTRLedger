@@ -156,6 +156,23 @@ function isTalentChange(context, text) {
   return context.some((part) => /\btalents?\b/i.test(part)) || /\btalents?\b/i.test(text);
 }
 
+function readableSubject(value, maxLength = 90) {
+  const subject = cleanText(value);
+  if (subject.length <= maxLength) return subject;
+
+  const candidate = subject.slice(0, maxLength + 1);
+  const wordBoundary = candidate.lastIndexOf(' ');
+  const cutoff = wordBoundary >= Math.floor(maxLength / 2) ? wordBoundary : maxLength;
+  return `${subject
+    .slice(0, cutoff)
+    .replace(/[\s,:;–—-]+$/u, '')
+    .replace(/\s+(?:a|an|and|as|at|by|can|could|for|from|has|have|in|into|is|not|of|on|or|some|that|the|their|to|via|was|were|when|where|while|with|would)$/i, '')}…`;
+}
+
+function hasIncompleteEnding(value) {
+  return /\b(?:a|an|and|as|at|by|can|causing|could|for|from|has|have|in|into|is|not|of|on|or|some|that|the|their|to|via|was|were|when|where|while|with|would)$/i.test(value);
+}
+
 function stableSubject(text) {
   if (/^(?:the )?overall damage reduction\b|^all (?:ability )?damage\b/i.test(text)) {
     return 'Overall damage';
@@ -174,9 +191,12 @@ function stableSubject(text) {
   if (namedProperty?.[1]) return cleanText(namedProperty[1]).replace(/[’']s$/, '');
 
   const predicate = stripped.match(/^(.+?)(?=\s(?:now|has been|has a new icon|has moved|have been|is now|are now|can now|will|no longer|renamed|causes?|damage|heals?|healing|absorb|effectiveness|chance|base chance|grants?|increases?|reduces?|cooldown|duration|mana cost|health drain|cast and|main target|secondary target|bonus)\b)/i);
-  if (predicate?.[1]) return cleanText(predicate[1]).replace(/\s+also$/i, '').replace(/[’']s$/, '');
+  if (predicate?.[1]) {
+    const subject = cleanText(predicate[1]).replace(/\s+also$/i, '').replace(/[’']s$/, '');
+    if (!hasIncompleteEnding(subject)) return readableSubject(subject);
+  }
 
-  return cleanText(stripped.split(/[.;]/, 1)[0]).slice(0, 90);
+  return readableSubject(cleanText(stripped.split(/[.;]/, 1)[0]));
 }
 
 function parseFromToRevision(text) {
@@ -445,7 +465,7 @@ function parseList($, list, classKey, context, output, textPrefix = null, parent
       const presentedText = shouldPrefix
         ? `${normalizedPrefix} ${text}${/[.!?]$/.test(text) ? '' : '.'}`
         : text;
-      const dependentLabel = cleanText(text.split(/[.;]/, 1)[0]).slice(0, 60);
+      const dependentLabel = readableSubject(cleanText(text.split(/[.;]/, 1)[0]), 60);
       output.push({
         classKey,
         spec,
