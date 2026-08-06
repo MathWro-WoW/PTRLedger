@@ -1,0 +1,1475 @@
+{
+  "schemaVersion": 3,
+  "generatedAt": "2026-07-31T18:49:29.860Z",
+  "entries": {
+    "DEATH KNIGHT|Frost|glacial advance": {
+      "abilityName": "Glacial Advance",
+      "spellId": 194913,
+      "iconName": "ability_hunter_glacialtrap"
+    },
+    "DEATH KNIGHT|Frost|remorseless winter": {
+      "abilityName": "Remorseless Winter",
+      "spellId": 196770,
+      "iconName": "ability_deathknight_remorselesswinters2"
+    },
+    "DEATH KNIGHT|Unholy|graveyard": {
+      "abilityName": "Graveyard",
+      "spellId": 383269,
+      "iconName": "spell_necro_deathall"
+    },
+    "DEATH KNIGHT|Unholy|lesser ghoul": {
+      "abilityName": "Lesser Ghoul",
+      "spellId": 1254252,
+      "iconName": "spell_deathknight_festering_strike"
+    },
+    "DEATH KNIGHT|Unholy|necrotic coil": {
+      "abilityName": "Necrotic Coil",
+      "spellId": 1242174,
+      "iconName": "spell_animamaldraxxus_missile"
+    },
+    "DEATH KNIGHT|Unholy|pestilence": {
+      "abilityName": "Pestilence",
+      "spellId": 277234,
+      "iconName": "spell_deathknight_necroticplague"
+    },
+    "DEATH KNIGHT|Unholy|reanimation": {
+      "abilityName": "Reanimation",
+      "spellId": 1256813,
+      "iconName": "achievement_dungeon_thenecroticwake_amarth"
+    },
+    "DEATH KNIGHT|Unholy|ruptured viscera": {
+      "abilityName": "Ruptured Viscera",
+      "spellId": 390236,
+      "iconName": "artifactability_unholydeathknight_flagellation"
+    },
+    "DEATH KNIGHT|Unholy|virulent plague": {
+      "abilityName": "Virulent Plague",
+      "spellId": 191587,
+      "iconName": "ability_creature_disease_02"
+    },
+    "DEMON HUNTER|Devourer|consume": {
+      "abilityName": "Consume",
+      "spellId": 473662,
+      "iconName": "inv_12_dh_void_ability_consume"
+    },
+    "DEMON HUNTER|Devourer|mastery monster within": {
+      "abilityName": "Mastery: Monster Within",
+      "spellId": 1238855,
+      "iconName": "ability_demonhunter_reversemagic"
+    },
+    "DEMON HUNTER|Havoc|annihilation": {
+      "abilityName": "Annihilation",
+      "spellId": 201427,
+      "iconName": "inv_glaive_1h_npc_d_02"
+    },
+    "DEMON HUNTER|Havoc|blade dance": {
+      "abilityName": "Blade Dance",
+      "spellId": 188499,
+      "iconName": "ability_demonhunter_bladedance"
+    },
+    "DEMON HUNTER|Havoc|chaos strike": {
+      "abilityName": "Chaos Strike",
+      "spellId": 162794,
+      "iconName": "ability_demonhunter_chaosstrike"
+    },
+    "DEMON HUNTER|Havoc|dash of chaos": {
+      "abilityName": "Dash of Chaos",
+      "spellId": 427794,
+      "iconName": "inv_boots_cloth_35v3"
+    },
+    "DEMON HUNTER|Havoc|death sweep": {
+      "abilityName": "Death Sweep",
+      "spellId": 210152,
+      "iconName": "inv_glaive_1h_artifactaldrochi_d_02dual"
+    },
+    "DEMON HUNTER|Havoc|demon blades": {
+      "abilityName": "Demon Blades",
+      "spellId": 203555,
+      "iconName": "inv_weapon_shortblade_92"
+    },
+    "DEMON HUNTER|Havoc|immolation aura": {
+      "abilityName": "Immolation Aura",
+      "spellId": 258920,
+      "iconName": "ability_demonhunter_immolation"
+    },
+    "DEMON HUNTER|Vengeance|sigil of chains": {
+      "abilityName": "Sigil of Chains",
+      "spellId": 202138,
+      "iconName": "ability_demonhunter_sigilofchains"
+    },
+    "DEMON HUNTER|Vengeance|soul cleave": {
+      "abilityName": "Soul Cleave",
+      "spellId": 228477,
+      "iconName": "ability_demonhunter_soulcleave"
+    },
+    "DRUID|Balance|dream burst": {
+      "abilityName": "Dream Burst",
+      "spellId": 433850,
+      "iconName": "inv_ability_keeperofthegrovedruid_dreamsurge_hostile"
+    },
+    "DRUID|Balance|moonfire": {
+      "abilityName": "Moonfire",
+      "spellId": 8921,
+      "iconName": "spell_nature_starfall"
+    },
+    "DRUID|Balance|regrowth": {
+      "abilityName": "Regrowth",
+      "spellId": 8936,
+      "iconName": "spell_nature_resistnature"
+    },
+    "DRUID|Balance|starfall": {
+      "abilityName": "Starfall",
+      "spellId": 191034,
+      "iconName": "ability_druid_starfall"
+    },
+    "DRUID|Balance|lunar calling": {
+      "abilityName": "Lunar Calling",
+      "spellId": 429523,
+      "iconName": "ability_druid_cresentburn"
+    },
+    "DRUID|Feral|regrowth": {
+      "abilityName": "Regrowth",
+      "spellId": 8936,
+      "iconName": "spell_nature_resistnature"
+    },
+    "DRUID|Restoration|mastery harmony": {
+      "abilityName": "Mastery: Harmony",
+      "spellId": 77495,
+      "iconName": "spell_nature_healingway"
+    },
+    "DRUID|Restoration|nature s splendor": {
+      "abilityName": "Nature's Splendor",
+      "spellId": 392288,
+      "iconName": "spell_nature_spiritarmor"
+    },
+    "DRUID|Restoration|regrowth": {
+      "abilityName": "Regrowth",
+      "spellId": 8936,
+      "iconName": "spell_nature_resistnature"
+    },
+    "EVOKER|Augmentation|emerald blossom": {
+      "abilityName": "Emerald Blossom",
+      "spellId": 355913,
+      "iconName": "ability_evoker_emeraldblossom"
+    },
+    "EVOKER|Augmentation|living flame": {
+      "abilityName": "Living Flame",
+      "spellId": 361469,
+      "iconName": "ability_evoker_livingflame"
+    },
+    "EVOKER|Class-wide|maneuverability": {
+      "abilityName": "Maneuverability",
+      "spellId": 433871,
+      "iconName": "ability_evoker_deepbreath"
+    },
+    "EVOKER|Class-wide|wingleader": {
+      "abilityName": "Wingleader",
+      "spellId": 441206,
+      "iconName": "ability_racial_soar"
+    },
+    "EVOKER|Devastation|deep breath": {
+      "abilityName": "Deep Breath",
+      "spellId": 357210,
+      "iconName": "ability_evoker_deepbreath"
+    },
+    "EVOKER|Devastation|disintegrate": {
+      "abilityName": "Disintegrate",
+      "spellId": 356995,
+      "iconName": "ability_evoker_disintegrate"
+    },
+    "EVOKER|Devastation|emerald blossom": {
+      "abilityName": "Emerald Blossom",
+      "spellId": 355913,
+      "iconName": "ability_evoker_emeraldblossom"
+    },
+    "EVOKER|Devastation|living flame": {
+      "abilityName": "Living Flame",
+      "spellId": 361469,
+      "iconName": "ability_evoker_livingflame"
+    },
+    "EVOKER|Devastation|risen fury": {
+      "abilityName": "Risen Fury",
+      "spellId": 1271799,
+      "iconName": "ability_evoker_oppressingroar2"
+    },
+    "EVOKER|Devastation|unbound flame": {
+      "abilityName": "Unbound Flame",
+      "spellId": 1292322,
+      "iconName": "inv_ability_flameshaperevoker_engulf"
+    },
+    "HUNTER|Beast Mastery|auto shot": {
+      "abilityName": "Auto Shot",
+      "spellId": 75,
+      "iconName": "ability_whirlwind"
+    },
+    "HUNTER|Beast Mastery|heart of the pack": {
+      "abilityName": "Heart of the Pack",
+      "spellId": 1265052,
+      "iconName": "ability_druid_berserk"
+    },
+    "HUNTER|Beast Mastery|wild instincts": {
+      "abilityName": "Wild Instincts",
+      "spellId": 378442,
+      "iconName": "ability_hunter_beastwithin"
+    },
+    "HUNTER|Class-wide|bleak arrows": {
+      "abilityName": "Bleak Arrows",
+      "spellId": 467749,
+      "iconName": "inv_quiver_1h_mawraid_d_01"
+    },
+    "HUNTER|Class-wide|hunter s mark": {
+      "abilityName": "Hunter's Mark",
+      "spellId": 257284,
+      "iconName": "ability_hunter_markedfordeath"
+    },
+    "HUNTER|Marksmanship|aimed shot": {
+      "abilityName": "Aimed Shot",
+      "spellId": 19434,
+      "iconName": "inv_spear_07"
+    },
+    "HUNTER|Marksmanship|arcane shot": {
+      "abilityName": "Arcane Shot",
+      "spellId": 185358,
+      "iconName": "ability_impalingbolt"
+    },
+    "HUNTER|Marksmanship|auto shot": {
+      "abilityName": "Auto Shot",
+      "spellId": 75,
+      "iconName": "ability_whirlwind"
+    },
+    "HUNTER|Marksmanship|double tap": {
+      "abilityName": "Double Tap",
+      "spellId": 260402,
+      "iconName": "ability_hunter_crossfire"
+    },
+    "HUNTER|Marksmanship|headshot": {
+      "abilityName": "Headshot",
+      "spellId": 471363,
+      "iconName": "ability_marksmanship"
+    },
+    "HUNTER|Marksmanship|incendiary ammunition": {
+      "abilityName": "Incendiary Ammunition",
+      "spellId": 471428,
+      "iconName": "inv12_ability_hunter_fierymunitions"
+    },
+    "HUNTER|Marksmanship|multi shot": {
+      "abilityName": "Multi-Shot",
+      "spellId": 2643,
+      "iconName": "ability_upgrademoonglaive"
+    },
+    "HUNTER|Marksmanship|shrapnel shot": {
+      "abilityName": "Shrapnel Shot",
+      "spellId": 473520,
+      "iconName": "spell_sandexplosion"
+    },
+    "HUNTER|Marksmanship|steady shot": {
+      "abilityName": "Steady Shot",
+      "spellId": 56641,
+      "iconName": "ability_hunter_steadyshot"
+    },
+    "HUNTER|Survival|flamefang pitch": {
+      "abilityName": "Flamefang Pitch",
+      "spellId": 1251592,
+      "iconName": "inv_10_blacksmithing_craftedoptional_blacksmithdye_fire"
+    },
+    "HUNTER|Survival|shower of blood": {
+      "abilityName": "Shower of Blood",
+      "spellId": 1253053,
+      "iconName": "spell_druid_bloodythrash"
+    },
+    "MAGE|Arcane|arcane blast": {
+      "abilityName": "Arcane Blast",
+      "spellId": 30451,
+      "iconName": "spell_arcane_blast"
+    },
+    "MAGE|Arcane|touch of the archmage": {
+      "abilityName": "Touch of the Archmage",
+      "spellId": 1257942,
+      "iconName": "inv12_apextalent_mage_touchofthearchmage"
+    },
+    "MAGE|Class-wide|ashes of inspiration": {
+      "abilityName": "Ashes of Inspiration",
+      "spellId": 1260272,
+      "iconName": "inv_misc_powder_copper"
+    },
+    "MAGE|Class-wide|mana cascade": {
+      "abilityName": "Mana Cascade",
+      "spellId": 449293,
+      "iconName": "spell_frost_manarecharge"
+    },
+    "MAGE|Class-wide|rondurmancy": {
+      "abilityName": "Rondurmancy",
+      "spellId": 449596,
+      "iconName": "spell_arcane_focusedpower"
+    },
+    "MAGE|Frost|shatter": {
+      "abilityName": "Shatter",
+      "spellId": 12982,
+      "iconName": "spell_frost_frostshock"
+    },
+    "MONK|Mistweaver|spinning crane kick": {
+      "abilityName": "Spinning Crane Kick",
+      "spellId": 101546,
+      "iconName": "ability_monk_cranekick_new"
+    },
+    "MONK|Windwalker|blackout kick": {
+      "abilityName": "Blackout Kick",
+      "spellId": 100784,
+      "iconName": "ability_monk_roundhousekick"
+    },
+    "MONK|Windwalker|expel harm": {
+      "abilityName": "Expel Harm",
+      "spellId": 322101,
+      "iconName": "ability_monk_expelharm"
+    },
+    "MONK|Windwalker|tiger palm": {
+      "abilityName": "Tiger Palm",
+      "spellId": 100780,
+      "iconName": "ability_monk_tigerpalm"
+    },
+    "MONK|Windwalker|vivify": {
+      "abilityName": "Vivify",
+      "spellId": 116670,
+      "iconName": "ability_monk_vivify"
+    },
+    "PALADIN|Class-wide|divine guidance": {
+      "abilityName": "Divine Guidance",
+      "spellId": 433106,
+      "iconName": "spell_holy_lightsgrace"
+    },
+    "PALADIN|Class-wide|rite of adjuration": {
+      "abilityName": "Rite of Adjuration",
+      "spellId": 433583,
+      "iconName": "inv_inscription_armorscroll02"
+    },
+    "PALADIN|Holy|judgment": {
+      "abilityName": "Judgment",
+      "spellId": 20271,
+      "iconName": "spell_holy_righteousfury"
+    },
+    "PALADIN|Holy|word of glory": {
+      "abilityName": "Word of Glory",
+      "spellId": 85673,
+      "iconName": "inv_helmet_96"
+    },
+    "PALADIN|Protection|consecration": {
+      "abilityName": "Consecration",
+      "spellId": 26573,
+      "iconName": "spell_holy_innerfire"
+    },
+    "PALADIN|Protection|empyrean hammer": {
+      "abilityName": "Empyrean Hammer",
+      "spellId": 431398,
+      "iconName": "ability_paladin_judgementofthepure"
+    },
+    "PALADIN|Protection|hammer of light": {
+      "abilityName": "Hammer of Light",
+      "spellId": 429826,
+      "iconName": "inv_mace_1h_gryphonrider_d_02_silver"
+    },
+    "PALADIN|Protection|judgment": {
+      "abilityName": "Judgment",
+      "spellId": 20271,
+      "iconName": "spell_holy_righteousfury"
+    },
+    "PALADIN|Protection|lesser weapon": {
+      "abilityName": "Lesser Weapon",
+      "spellId": 1239282,
+      "iconName": "inv_sword_2h_lightforged_c_01"
+    },
+    "PALADIN|Protection|sanctified wrath": {
+      "abilityName": "Sanctified Wrath",
+      "spellId": 53376,
+      "iconName": "ability_paladin_judgementsofthejust"
+    },
+    "PALADIN|Protection|shield of the righteous": {
+      "abilityName": "Shield of the Righteous",
+      "spellId": 53600,
+      "iconName": "ability_paladin_shieldofvengeance"
+    },
+    "PALADIN|Retribution|divine arbiter": {
+      "abilityName": "Divine Arbiter",
+      "spellId": 404306,
+      "iconName": "spell_holy_eyeforaneye"
+    },
+    "PALADIN|Retribution|flash of light": {
+      "abilityName": "Flash of Light",
+      "spellId": 19750,
+      "iconName": "spell_holy_flashheal"
+    },
+    "PALADIN|Retribution|hammer of light": {
+      "abilityName": "Hammer of Light",
+      "spellId": 429826,
+      "iconName": "inv_mace_1h_gryphonrider_d_02_silver"
+    },
+    "PALADIN|Retribution|judgment": {
+      "abilityName": "Judgment",
+      "spellId": 20271,
+      "iconName": "spell_holy_righteousfury"
+    },
+    "PALADIN|Retribution|word of glory": {
+      "abilityName": "Word of Glory",
+      "spellId": 85673,
+      "iconName": "inv_helmet_96"
+    },
+    "PRIEST|Discipline|flash heal": {
+      "abilityName": "Flash Heal",
+      "spellId": 2061,
+      "iconName": "spell_holy_flashheal"
+    },
+    "PRIEST|Discipline|penance": {
+      "abilityName": "Penance",
+      "spellId": 47540,
+      "iconName": "spell_holy_penance"
+    },
+    "PRIEST|Discipline|smite": {
+      "abilityName": "Smite",
+      "spellId": 585,
+      "iconName": "spell_holy_holysmite"
+    },
+    "PRIEST|Holy|flash heal": {
+      "abilityName": "Flash Heal",
+      "spellId": 2061,
+      "iconName": "spell_holy_flashheal"
+    },
+    "PRIEST|Shadow|phantom menace": {
+      "abilityName": "Phantom Menace",
+      "spellId": 1242779,
+      "iconName": "spell_priest_spectralguise"
+    },
+    "PRIEST|Shadow|power word shield": {
+      "abilityName": "Power Word: Shield",
+      "spellId": 17,
+      "iconName": "spell_holy_powerwordshield"
+    },
+    "PRIEST|Shadow|void volley": {
+      "abilityName": "Void Volley",
+      "spellId": 1240401,
+      "iconName": "inv12_ability_priest_voidvolley"
+    },
+    "ROGUE|Assassination|deadly momentum": {
+      "abilityName": "Deadly Momentum",
+      "spellId": 1250271,
+      "iconName": "ability_rogue_deadlymomentum"
+    },
+    "ROGUE|Class-wide|deal fate": {
+      "abilityName": "Deal Fate",
+      "spellId": 454419,
+      "iconName": "ability_rogue_preparation"
+    },
+    "SHAMAN|Class-wide|ascendance": {
+      "abilityName": "Ascendance",
+      "spellId": 114050,
+      "iconName": "spell_fire_elementaldevastation"
+    },
+    "SHAMAN|Elemental|ascendance": {
+      "abilityName": "Ascendance",
+      "spellId": 114050,
+      "iconName": "spell_fire_elementaldevastation"
+    },
+    "SHAMAN|Elemental|flame shock": {
+      "abilityName": "Flame Shock",
+      "spellId": 188389,
+      "iconName": "spell_fire_flameshock"
+    },
+    "SHAMAN|Elemental|healing surge": {
+      "abilityName": "Healing Surge",
+      "spellId": 8004,
+      "iconName": "spell_nature_healingway"
+    },
+    "SHAMAN|Elemental|lightning bolt": {
+      "abilityName": "Lightning Bolt",
+      "spellId": 188196,
+      "iconName": "spell_nature_lightning"
+    },
+    "SHAMAN|Enhancement|healing surge": {
+      "abilityName": "Healing Surge",
+      "spellId": 8004,
+      "iconName": "spell_nature_healingway"
+    },
+    "SHAMAN|Enhancement|lightning bolt": {
+      "abilityName": "Lightning Bolt",
+      "spellId": 188196,
+      "iconName": "spell_nature_lightning"
+    },
+    "SHAMAN|Enhancement|stormstrike": {
+      "abilityName": "Stormstrike",
+      "spellId": 17364,
+      "iconName": "ability_shaman_stormstrike"
+    },
+    "SHAMAN|Restoration|calm waters": {
+      "abilityName": "Calm Waters",
+      "spellId": 1252841,
+      "iconName": "inv_10_elementalshardfoozles_water"
+    },
+    "SHAMAN|Restoration|healing wave": {
+      "abilityName": "Healing Wave",
+      "spellId": 77472,
+      "iconName": "spell_nature_healingwavelesser"
+    },
+    "WARLOCK|Affliction|nocturnal yield": {
+      "abilityName": "Nocturnal Yield",
+      "spellId": 1260271,
+      "iconName": "inv_nulllotus_shadow"
+    },
+    "WARLOCK|Affliction|patient zero": {
+      "abilityName": "Patient Zero",
+      "spellId": 1260285,
+      "iconName": "ability_warlock_soulswap"
+    },
+    "WARLOCK|Class-wide|blackened soul": {
+      "abilityName": "Blackened Soul",
+      "spellId": 440043,
+      "iconName": "spell_nzinsanity_chasedbyshadows"
+    },
+    "WARLOCK|Class-wide|channel demonfire": {
+      "abilityName": "Channel Demonfire",
+      "spellId": 196447,
+      "iconName": "spell_fire_ragnaros_lavaboltgreen"
+    },
+    "WARLOCK|Class-wide|cunning cruelty": {
+      "abilityName": "Cunning Cruelty",
+      "spellId": 453172,
+      "iconName": "inv_misc_coin_09"
+    },
+    "WARLOCK|Class-wide|drain life": {
+      "abilityName": "Drain Life",
+      "spellId": 234153,
+      "iconName": "spell_shadow_lifedrain02"
+    },
+    "WARLOCK|Class-wide|infernal bolt": {
+      "abilityName": "Infernal Bolt",
+      "spellId": 433891,
+      "iconName": "spell_fel_firebolt"
+    },
+    "WARLOCK|Class-wide|legion strike": {
+      "abilityName": "Legion Strike",
+      "spellId": 30213,
+      "iconName": "inv_axe_09"
+    },
+    "WARLOCK|Class-wide|malefic grasp": {
+      "abilityName": "Malefic Grasp",
+      "spellId": 1261149,
+      "iconName": "ability_warlock_everlastingaffliction"
+    },
+    "WARLOCK|Class-wide|mark of peroth arn": {
+      "abilityName": "Mark of Peroth'arn",
+      "spellId": 440045,
+      "iconName": "70_inscription_vantus_rune_tomb"
+    },
+    "WARLOCK|Class-wide|soul anathema": {
+      "abilityName": "Soul Anathema",
+      "spellId": 449624,
+      "iconName": "spell_necro_inevitableend"
+    },
+    "WARLOCK|Class-wide|unstable affliction": {
+      "abilityName": "Unstable Affliction",
+      "spellId": 30108,
+      "iconName": "spell_shadow_unstableaffliction_3"
+    },
+    "WARLOCK|Class-wide|wicked reaping": {
+      "abilityName": "Wicked Reaping",
+      "spellId": 449826,
+      "iconName": "inv_staff_2h_artifactdeadwind_d_05"
+    },
+    "WARLOCK|Class-wide|wither": {
+      "abilityName": "Wither",
+      "spellId": 445465,
+      "iconName": "inv_ability_hellcallerwarlock_wither"
+    },
+    "WARLOCK|Class-wide|zevrim s resilience": {
+      "abilityName": "Zevrim's Resilience",
+      "spellId": 440065,
+      "iconName": "ability_warrior_intensifyrage"
+    },
+    "WARLOCK|Demonology|chaos salvo": {
+      "abilityName": "Chaos Salvo",
+      "spellId": 432596,
+      "iconName": "spell_fire_felpyroblast"
+    },
+    "WARLOCK|Demonology|demonbolt": {
+      "abilityName": "Demonbolt",
+      "spellId": 264178,
+      "iconName": "inv__demonbolt"
+    },
+    "WARLOCK|Demonology|eye explosion": {
+      "abilityName": "Eye Explosion",
+      "spellId": 1269800,
+      "iconName": "spell_fire_felfirenova"
+    },
+    "WARLOCK|Demonology|felseeker": {
+      "abilityName": "Felseeker",
+      "spellId": 434404,
+      "iconName": "spell_fel_elementaldevastation"
+    },
+    "WARLOCK|Demonology|shadow bolt": {
+      "abilityName": "Shadow Bolt",
+      "spellId": 686,
+      "iconName": "spell_shadow_shadowbolt"
+    },
+    "WARLOCK|Demonology|summon gloomhound": {
+      "abilityName": "Summon Gloomhound",
+      "spellId": 455465,
+      "iconName": "inv_felhound3_shadow_mount"
+    },
+    "WARLOCK|Demonology|wicked cleave": {
+      "abilityName": "Wicked Cleave",
+      "spellId": 432120,
+      "iconName": "inv_axe_2h_felfireraid_d_01"
+    },
+    "WARRIOR|Arms|execute": {
+      "abilityName": "Execute",
+      "spellId": 163201,
+      "iconName": "inv_sword_48"
+    },
+    "WARRIOR|Arms|improved sweeping strikes": {
+      "abilityName": "Improved Sweeping Strikes",
+      "spellId": 383155,
+      "iconName": "ability_rogue_slicedice"
+    },
+    "WARRIOR|Arms|sweeping strikes": {
+      "abilityName": "Sweeping Strikes",
+      "spellId": 260708,
+      "iconName": "ability_rogue_slicedice"
+    },
+    "WARRIOR|Class-wide|dominance of the colossus": {
+      "abilityName": "Dominance of the Colossus",
+      "spellId": 429636,
+      "iconName": "ability_warrior_titansgrip"
+    },
+    "WARRIOR|Class-wide|javelineer": {
+      "abilityName": "Javelineer",
+      "spellId": 1271948,
+      "iconName": "inv_spear_01"
+    },
+    "WARRIOR|Class-wide|no stranger to pain": {
+      "abilityName": "No Stranger to Pain",
+      "spellId": 429644,
+      "iconName": "ability_warrior_renewedvigor"
+    },
+    "WARRIOR|Fury|whirlwind": {
+      "abilityName": "Whirlwind",
+      "spellId": 190411,
+      "iconName": "ability_whirlwind"
+    },
+    "MAGE|Arcane|prismatic bolt": {
+      "abilityName": "Prismatic Bolt",
+      "spellId": 1295924,
+      "iconName": "8026694"
+    },
+    "ROGUE|Subtlety|shadow dance": {
+      "abilityName": "Shadow Dance",
+      "spellId": 185313,
+      "iconName": "ability_rogue_shadowdance"
+    },
+    "WARRIOR|Class-wide|blood and thunder": {
+      "abilityName": "Blood and Thunder",
+      "spellId": 384277,
+      "iconName": "warrior_talent_icon_bloodandthunder"
+    },
+    "WARRIOR|Class-wide|rend": {
+      "abilityName": "Rend",
+      "spellId": 772,
+      "iconName": "ability_gouge"
+    },
+    "ALL CLASSES|General|all class interrupts such as kick pummel counterspell etc": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ALL CLASSES|General|diminishing return categories": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ALL CLASSES|General|in curse of ula tek we re going to be lowering throughput for major dps": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ALL CLASSES|General|player health and creature": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Blood|melee": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Blood|the previously announced blood death knight tier set designs": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Blood|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Blood|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Frost|melee": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Frost|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Frost|whitemane s undeath": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|all lesser ghoul": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|infected claw": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|players other than the death knight": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|resolved an issue causing nazgrim s conquest to": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|runic power spenders": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|the venomous abyss set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|whitemane death coil": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEATH KNIGHT|Unholy|whitemane undeath": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEMON HUNTER|Class-wide|demon hunters": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEMON HUNTER|Devourer|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEMON HUNTER|Havoc|demon blades blade dance and chaos strike": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEMON HUNTER|Havoc|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEMON HUNTER|Havoc|the venomous abyss 4 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEMON HUNTER|Vengeance|fracture and soul cleave": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DEMON HUNTER|Vengeance|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|a counter aura for orbit breaker": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|fixed an issue causing full moons launched by orbit breaker to have 100": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|fixed an issue causing some": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|stellar protection": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|the counter aura for orbit breaker can": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Balance|wrath": {
+      "abilityName": "Wrath",
+      "spellId": 190984,
+      "iconName": "spell_nature_wrathv2"
+    },
+    "DRUID|Class-wide|shred and cat form swipe": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Feral|cooldown manager updated so elements show the empowered icon versions for instances of dots like r": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Feral|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|base": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|bonus rage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|fixed an issue where dream guide was incorrectly being consumed by regrowths cast via rein": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|fixed an issue where mangle was consuming ravage procs": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|fixed an issue where wild guardian was not correctly increasing thrash and mangle": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|rank 1 spending rage has a": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|rank 2 mangle and maul deal 20 40 additional nature": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|rank 3": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|rank 3 when a spirit is awakened the cooldowns of thrash and mangle are reset": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Guardian|spirit rage generation increased to 8": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Restoration|all spell and ability": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Restoration|fixed an issue where abundance": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Restoration|fixed an issue where the abundance effect would not properly be extended by flourish": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Restoration|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "DRUID|Restoration|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "EVOKER|Augmentation|all ability and pet": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "EVOKER|Augmentation|the midnight season 1 2 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "EVOKER|Devastation|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "EVOKER|Preservation|emerald blossom and fluttering seedlings": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "EVOKER|Preservation|fixed an issue that could": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "EVOKER|Preservation|fixed an issue where consume flame": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Beast Mastery|dark hound summons": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Beast Mastery|fixed an issue where through the eyes was not properly increasing withering fire": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Beast Mastery|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Class-wide|ranged auto shot": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|dark minion summons": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue that caused deathblow to not trigger at the expected rates when casting aim": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where applying spotter s mark rapid fire after rapid fire had finished cha": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where casting aimed shot twice in a row while talented into aspect of the hydra incor": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where explosive shot was incorrectly damaging the primary target of explosive shot wi": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where explosive shot would potentially not deal area": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where secondary aimed shots from the aspect of the hydra talent would incor": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where small game hunter did not properly": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where the area": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|fixed an issue where through the eyes was not properly increasing withering fire": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|incendiary ammunition and unstable trigger": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|some talents have changed locations in the second gate of the talent tree to make explosiv": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|the tenacious cunning talent node": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Marksmanship|the venomous abyss 2 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|fixed an issue where mastery spirit bond incorrectly affected some summons from the pack": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|fixed an issue where outland venom was not properly applied by various periodic effects fr": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|fixed an issue where raptor swipe benefitted from the razor s edge talent twice": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|fixed an issue where raptor swipe could": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|fixed an issue where wildfire bomb benefitted from the bombardier talent twice": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|references to flamefang pitch": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "HUNTER|Survival|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|fixed an issue that could": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|fixed an issue with how the tooltip calculated clearcasting": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|positioned above arcane surge in the talent tree where improved clearcasting was previous": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|rank 1 arcane barrage has a 1": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|rank 2 prismatic bolt has a 50 100": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|rank 3 arcane salvo": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|sunfury": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Class-wide|fixed an issue for arcane that caused mana cascade to be gained from some unintended spell": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Fire|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Fire|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Frost|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Frost|rppm increased to 2": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Frost|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Frost|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MONK|Brewmaster|fixed an issue where flurry strikes physical": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MONK|Brewmaster|the following buffs": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MONK|Mistweaver|mastery gust of mist": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MONK|Mistweaver|overall healing": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MONK|Mistweaver|resolved an issue that caused temple training s spinning crane kick": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Holy|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Holy|overall healing": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Holy|pillar of light s beacon of virtue": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Holy|shield of the righteous mana return increased by 25": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Holy|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Holy|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Holy|unworthy debuff": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|adjusted many talent locations": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where abilities that knocked enemies into the air could": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where authoritative rebuke was incorrectly reducing rebuke": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where blessed word": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where casting hammer of light in between direct casts of consecration could": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where instrument of the divine was causing shield of the righteous to exten": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where quickened invocation was incorrectly reducing the": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where sacred weapon and holy bulwark were extending": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where seal of reprisal was reducing": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where sentinel s critical strike was not being displayed on the character s": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where sentinel s stacks were beginning to decay too soon": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where some of consecration s effects were not benefiting from its increased": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where the": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|fixed an issue where the 4 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|hammer of light divine resonance sacrosanct crusade bulwark of order blessed word empyreal ward": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|sacred weapon and holy bulwark extend their": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Protection|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Retribution|additional skyfury attacks": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Retribution|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Retribution|radiance of the concentrated flame 4 set bonus effect updated": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Retribution|templar": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Retribution|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Discipline|overall healing and absorption": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Discipline|void shield absorption reduced by 30": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Holy|overall healing": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Holy|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Shadow|fixed an issue causing improved voidform to generate insanity when casting voidform": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Shadow|fixed an issue causing tentacle slam to apply extra stacks of horrific visions when talent": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Shadow|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Shadow|the venomous abyss 4 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PRIEST|Shadow|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Assassination|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Assassination|several talents have changed positions in the talent tree": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Assassination|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Outlaw|new connectors": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Outlaw|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Outlaw|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Subtlety|fixed an issue that caused secret technique": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Subtlety|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Subtlety|shadow techniques base effect frequency": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Subtlety|shadow techniques energy generation": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "ROGUE|Subtlety|some talents have changed positions in the talent tree": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|bonus lava bursts when activating ascendance": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|developes notes supercharge and power of the maelstrom both were extra random elemental overloads": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|farseer": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|fixed an issue that caused elemental resonance to not affect periodic elemental": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|fixed an issue that caused voltaic blaze to not be properly affected by elemental fury s critical": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|fixed an issue where apex talent feedback loop did not properly": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Enhancement|fixed an issue causing crash lightning unleashed to only strike a single target": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Enhancement|fixed an issue causing the venomous abyss 4 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Enhancement|melee": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Enhancement|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Enhancement|the venomous abyss 4 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|chain": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|fixed an issue where": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|fixed an issue where both acid rain and": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|fixed an issue with overflowing shores not": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|midnight season 1 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Restoration|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Affliction|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Class-wide|demonic tyrant s demonfire": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Class-wide|gloomhound s gloom slash": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Class-wide|imp lord s greater felbolt": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Class-wide|summon demonic gateway": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Class-wide|vilefiend s headbutt and bile spit": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Class-wide|wild imp and imp gang boss s fel firebolt": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Demonology|fixed a tooltip issue where the venomous abyss 4 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Destruction|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARLOCK|Destruction|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Arms|fixed an issue with the venomous abyss 2 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Arms|midnight season 1 2 set": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Arms|stacks of sweeping strikes from the sweeping strikes ability and broad strokes": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Arms|the venomous abyss 2 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Arms|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Class-wide|storm of blood": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Fury|bloodbath bleed": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Fury|bloodbath initial damaged reduced by 12": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Protection|overall damage": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Protection|the venomous abyss 4 set bonus": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "WARRIOR|Protection|unyielding": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "MAGE|Arcane|sunfury fixed an issue that prevented meteorites from granting clearcasting": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "PALADIN|Retribution|templar slash": {
+      "abilityName": "Templar Slash",
+      "spellId": 406647,
+      "iconName": "inv_sword_2h_artifactashbringerpurified_d_03"
+    },
+    "PALADIN|Retribution|templar strike": {
+      "abilityName": "Templar Strike",
+      "spellId": 407480,
+      "iconName": "inv_sword_2h_artifactashbringer_d_01"
+    },
+    "SHAMAN|Elemental|ancestors chain lightning": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    },
+    "SHAMAN|Elemental|ancestors lava burst": {
+      "missing": true,
+      "checkedFor": "2026-07-31T18:49:29.860Z"
+    }
+  }
+}

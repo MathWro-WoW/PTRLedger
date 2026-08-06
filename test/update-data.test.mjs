@@ -5,6 +5,7 @@ import {
   createAbilityCatalog,
   enrichPatchWithAbilities,
   parseClassChanges,
+  selectAbilitySearchResult,
 } from '../scripts/update-data.mjs';
 
 const source = {
@@ -158,6 +159,177 @@ test('source-confirmed talents override free ability metadata', () => {
   assert.equal(splinterstorm.isTalent, true);
   assert.equal(splinterstorm.abilityType, 'talent');
   assert.equal(splinterstorm.icon, null);
+});
+
+test('resolves class-wide notes against specialization metadata when unique', () => {
+  const catalog = createAbilityCatalog([{
+    className: 'Mage',
+    specName: 'Arcane',
+    specNodes: [{
+      name: 'Prismatic Bolt',
+      entries: [{
+        name: 'Prismatic Bolt',
+        spellId: 123456,
+        icon: 'spell_arcane_arcanetorrent',
+      }],
+    }],
+  }]);
+  const patch = {
+    classes: [{
+      changes: [{
+        id: 'class-wide-prismatic-bolt',
+        classKey: 'MAGE',
+        spec: 'Class-wide',
+        subject: 'Prismatic Bolt',
+        isTalent: true,
+      }],
+    }],
+  };
+
+  enrichPatchWithAbilities(patch, catalog);
+
+  assert.equal(patch.classes[0].changes[0].abilityName, 'Prismatic Bolt');
+  assert.equal(patch.classes[0].changes[0].spellId, 123456);
+  assert.equal(
+    patch.classes[0].changes[0].icon,
+    './assets/abilities/spell_arcane_arcanetorrent.jpg',
+  );
+});
+
+test('resolves client-backed spells, pet effects, auto-attacks, and ranked talent icons', () => {
+  const catalog = createAbilityCatalog([{
+    className: 'Death Knight',
+    specName: 'Unholy',
+    heroNodes: [{
+      id: 95046,
+      name: 'The Blood is Life',
+      entries: [{
+        name: 'The Blood is Life',
+        spellId: 434260,
+        icon: 'achievement_nazmir_boss_bloodofghuun',
+      }],
+    }],
+    subTreeNodes: [{ id: 999, name: 'San’layn', entries: [] }],
+    specNodes: [{
+      id: 110354,
+      name: 'Forbidden Knowledge / Forbidden Knowledge / Forbidden Knowledge',
+      entries: [
+        {
+          name: 'Forbidden Knowledge',
+          spellId: 1242158,
+          icon: 'inv12_apextalent_deathknight_forbiddenknowledge',
+        },
+        {
+          name: 'Forbidden Knowledge',
+          spellId: 1256565,
+          icon: 'spell_shadow_fingerofdeath',
+        },
+        {
+          name: 'Forbidden Knowledge',
+          spellId: 1256566,
+          icon: 'inv12_apextalent_deathknight_forbiddenknowledge',
+        },
+      ],
+    }],
+  }]);
+  const changes = [
+    { id: 'frost-fever', classKey: 'DEATH KNIGHT', spec: 'Frost', subject: 'Frost Fever', isTalent: false },
+    { id: 'blood-beast', classKey: 'DEATH KNIGHT', spec: 'Blood', subject: 'Blood Beast auto-attack', isTalent: true },
+    { id: 'auto-attack', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'Auto-attack', isTalent: false },
+    { id: 'melee-auto', classKey: 'MONK', spec: 'Windwalker', subject: 'Melee auto-attack', isTalent: false },
+    { id: 'death-order', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'Death Order', isTalent: false },
+    { id: 'dread-plague', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'Dread Plague', isTalent: false },
+    { id: 'epidemic', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'Epidemic', isTalent: false },
+    { id: 'epidemic-order', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'Epidemic Order', isTalent: false },
+    { id: 'infected-claw', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'Infected Claw', isTalent: false },
+    { id: 'ranged-auto', classKey: 'HUNTER', spec: 'Class-wide', subject: 'Ranged auto-shot', isTalent: false },
+    { id: 'blood-is-life', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'San’layn: Blood is Life', isTalent: true },
+    { id: 'apex-base', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'Forbidden Knowledge', isTalent: true },
+    { id: 'apex-rank-3', classKey: 'DEATH KNIGHT', spec: 'Unholy', subject: 'Forbidden Knowledge (Rank 3) has been updated', isTalent: true },
+  ];
+  const patch = { classes: [{ changes }] };
+
+  enrichPatchWithAbilities(patch, catalog);
+  const expected = {
+    'frost-fever': ['spell', 'Frost Fever', 55095, 'spell_deathknight_frostfever'],
+    'blood-beast': ['talent', 'Blood Beast', 434237, 'achievement_nazmir_boss_bloodofghuun'],
+    'auto-attack': ['spell', 'Auto Attack', 6603, 'inv_sword_04'],
+    'melee-auto': ['spell', 'Auto Attack', 6603, 'inv_sword_04'],
+    'death-order': ['spell', 'Death Order', 1294261, 'inv_ghoulnorthrend'],
+    'dread-plague': ['spell', 'Dread Plague', 1240996, 'inv12_ability_deathknight_empowereddreadplague'],
+    epidemic: ['spell', 'Epidemic', 207317, 'spell_nature_nullifydisease'],
+    'epidemic-order': ['spell', 'Epidemic Order', 1294480, 'inv_ghoulnorthrend'],
+    'infected-claw': ['spell', 'Infected Claws', 207272, 'ability_creature_disease_05'],
+    'ranged-auto': ['spell', 'Auto Shot', 75, 'ability_whirlwind'],
+    'blood-is-life': ['talent', 'The Blood is Life', 434260, 'achievement_nazmir_boss_bloodofghuun'],
+    'apex-base': ['talent', 'Forbidden Knowledge', 1242158, 'inv12_apextalent_deathknight_forbiddenknowledge'],
+    'apex-rank-3': ['talent', 'Forbidden Knowledge', 1256566, 'inv12_apextalent_deathknight_forbiddenknowledge'],
+  };
+
+  for (const change of changes) {
+    const [abilityType, abilityName, spellId, iconName] = expected[change.id];
+    assert.equal(change.abilityType, abilityType, change.id);
+    assert.equal(change.abilityName, abilityName, change.id);
+    assert.equal(change.spellId, spellId, change.id);
+    assert.equal(change.icon, `./assets/abilities/${iconName}.jpg`, change.id);
+  }
+});
+
+test('accepts only exact, class-aware spell search metadata', () => {
+  const glacialAdvance = selectAbilitySearchResult({
+    results: [
+      {
+        type: 6,
+        id: 194913,
+        name: 'Glacial Advance',
+        icon: 'ability_hunter_glacialtrap',
+        pinBreadcrumb: ['Specializations', 'Death Knight'],
+      },
+      {
+        type: 6,
+        id: 999999,
+        name: 'Glacial Advance',
+        icon: 'spell_frost_frostbolt02',
+        pinBreadcrumb: ['NPC Abilities'],
+      },
+    ],
+  }, 'DEATH KNIGHT', 'Glacial Advance');
+  const ambiguous = selectAbilitySearchResult({
+    results: [
+      { type: 6, id: 1, name: 'Consume', icon: 'spell_shadow_lifedrain' },
+      { type: 6, id: 2, name: 'Consume', icon: 'ability_demonhunter_consume_soul' },
+    ],
+  }, 'DEMON HUNTER', 'Consume');
+  const partial = selectAbilitySearchResult({
+    results: [
+      { type: 6, id: 3, name: 'Glacial Advance Trigger', icon: 'ability_hunter_glacialtrap' },
+    ],
+  }, 'DEATH KNIGHT', 'Glacial Advance');
+  const databaseOnly = selectAbilitySearchResult({
+    results: [],
+    categories: {
+      database: [{
+        type: 6,
+        id: 5176,
+        name: 'Wrath',
+        icon: 'spell_nature_wrathv2',
+        pinBreadcrumb: ['Abilities', 'Druid'],
+      }],
+    },
+  }, 'DRUID', 'Wrath');
+
+  assert.deepEqual(glacialAdvance, {
+    abilityName: 'Glacial Advance',
+    spellId: 194913,
+    iconName: 'ability_hunter_glacialtrap',
+  });
+  assert.deepEqual(databaseOnly, {
+    abilityName: 'Wrath',
+    spellId: 5176,
+    iconName: 'spell_nature_wrathv2',
+  });
+  assert.equal(ambiguous, null);
+  assert.equal(partial, null);
 });
 
 test('skips generic parent notes while retaining their nested changes', () => {

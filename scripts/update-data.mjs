@@ -7,10 +7,96 @@ import * as cheerio from 'cheerio';
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CONFIG_PATH = path.join(ROOT, 'config', 'sources.json');
 const OUTPUT_PATH = path.join(ROOT, 'site', 'data', 'patches.json');
+const ABILITY_METADATA_PATH = path.join(ROOT, 'site', 'data', 'ability-metadata.json');
 const TALENT_DATA_URL = 'https://www.raidbots.com/static/data/ptr/talents.json';
 const ABILITY_ICON_DIR = path.join(ROOT, 'site', 'assets', 'abilities');
 const ABILITY_ICON_PATH = './assets/abilities';
 const ABILITY_ICON_URL = 'https://render.worldofwarcraft.com/eu/icons/56';
+const ABILITY_ICON_FALLBACK_URL = 'https://wow.zamimg.com/images/wow/icons/large';
+const ABILITY_SEARCH_URL = 'https://www.wowhead.com/search/suggestions-template';
+const ABILITY_METADATA_SCHEMA_VERSION = 3;
+const SUPPLEMENTAL_ABILITIES = [
+  {
+    classKey: 'DEATH KNIGHT',
+    spec: 'Frost',
+    match: 'Frost Fever',
+    name: 'Frost Fever',
+    spellId: 55095,
+    icon: 'spell_deathknight_frostfever',
+  },
+  {
+    classKey: 'DEATH KNIGHT',
+    spec: '*',
+    match: 'Blood Beast auto-attack',
+    name: 'Blood Beast',
+    spellId: 434237,
+    icon: 'achievement_nazmir_boss_bloodofghuun',
+  },
+  {
+    classKey: 'DEATH KNIGHT',
+    spec: 'Unholy',
+    match: 'Death Order',
+    name: 'Death Order',
+    spellId: 1294261,
+    icon: 'inv_ghoulnorthrend',
+  },
+  {
+    classKey: 'DEATH KNIGHT',
+    spec: 'Unholy',
+    match: 'Dread Plague',
+    name: 'Dread Plague',
+    spellId: 1240996,
+    icon: 'inv12_ability_deathknight_empowereddreadplague',
+  },
+  {
+    classKey: 'DEATH KNIGHT',
+    spec: 'Unholy',
+    match: 'Epidemic',
+    name: 'Epidemic',
+    spellId: 207317,
+    icon: 'spell_nature_nullifydisease',
+  },
+  {
+    classKey: 'DEATH KNIGHT',
+    spec: 'Unholy',
+    match: 'Epidemic Order',
+    name: 'Epidemic Order',
+    spellId: 1294480,
+    icon: 'inv_ghoulnorthrend',
+  },
+  {
+    classKey: 'DEATH KNIGHT',
+    spec: 'Unholy',
+    match: 'Infected Claw',
+    name: 'Infected Claws',
+    spellId: 207272,
+    icon: 'ability_creature_disease_05',
+  },
+  {
+    classKey: 'HUNTER',
+    spec: '*',
+    match: 'Ranged auto-shot',
+    name: 'Auto Shot',
+    spellId: 75,
+    icon: 'ability_whirlwind',
+  },
+  {
+    classKey: '*',
+    spec: '*',
+    match: 'Auto-attack',
+    name: 'Auto Attack',
+    spellId: 6603,
+    icon: 'inv_sword_04',
+  },
+  {
+    classKey: '*',
+    spec: '*',
+    match: 'Melee auto-attack',
+    name: 'Auto Attack',
+    spellId: 6603,
+    icon: 'inv_sword_04',
+  },
+];
 
 const CLASS_META = {
   'DEATH KNIGHT': { name: 'Death Knight', color: '#c41e3a', mark: 'DK', icon: './assets/classes/deathknight.jpg' },
@@ -462,6 +548,23 @@ export function createAbilityCatalog(trees) {
     ['hero', 'heroNodes'],
     ['hero', 'subTreeNodes'],
   ];
+  const addEntry = (classKey, entry) => {
+    const dedupeKey = [
+      classKey,
+      entry.spec,
+      entry.scope,
+      entry.nodeId,
+      entry.entryIndex,
+      entry.nameKey,
+      entry.iconName,
+      entry.spellId,
+      entry.isTalent,
+    ].join('|');
+    if (seen.has(dedupeKey)) return;
+    seen.add(dedupeKey);
+    if (!catalog.has(classKey)) catalog.set(classKey, []);
+    catalog.get(classKey).push(entry);
+  };
 
   for (const tree of trees || []) {
     const classKey = normalizeHeading(tree.className || '');
@@ -472,71 +575,114 @@ export function createAbilityCatalog(trees) {
       for (const talentNode of tree[property] || []) {
         const entries = talentNode.entries || [];
         const fallbackEntry = entries.find((entry) => entry.icon || entry.spellId) || {};
-        const names = [
-          {
-            name: talentNode.name,
-            icon: fallbackEntry.icon,
-            spellId: fallbackEntry.spellId,
-          },
-          ...entries,
-        ];
+        const nodeName = cleanText(talentNode.name || '');
+        const nodeNameKey = normalizeAbilityName(nodeName);
+        const entryNames = entries.map((entry, index) => ({
+          ...entry,
+          entryIndex: index + 1,
+        }));
+        const entryNameKeys = new Set(entryNames.map((entry) => (
+          normalizeAbilityName(entry.name || nodeName)
+        )));
+        const names = nodeNameKey && !entryNameKeys.has(nodeNameKey)
+          ? [{
+              name: nodeName,
+              icon: fallbackEntry.icon,
+              spellId: fallbackEntry.spellId,
+              entryIndex: null,
+            }, ...entryNames]
+          : entryNames;
+        const nodeId = `${scope}:${talentNode.id || nodeNameKey}`;
 
         for (const entry of names) {
-          const name = cleanText(entry.name || talentNode.name || '');
+          const name = cleanText(entry.name || nodeName);
           const nameKey = normalizeAbilityName(name);
           if (!nameKey) continue;
-          const iconName = normalizeIconName(entry.icon || fallbackEntry.icon || '');
-          const spellId = Number(entry.spellId || fallbackEntry.spellId) || null;
-          const dedupeKey = [
-            classKey,
-            spec,
-            scope,
-            nameKey,
-            iconName,
-            spellId,
-            Boolean(talentNode.freeNode),
-          ].join('|');
-          if (seen.has(dedupeKey)) continue;
-          seen.add(dedupeKey);
-
-          if (!catalog.has(classKey)) catalog.set(classKey, []);
-          catalog.get(classKey).push({
+          addEntry(classKey, {
             name,
             nameKey,
             spec,
             scope,
+            nodeId,
+            entryIndex: entry.entryIndex,
             isTalent: !talentNode.freeNode,
-            iconName,
-            spellId,
+            iconName: normalizeIconName(entry.icon || fallbackEntry.icon || ''),
+            spellId: Number(entry.spellId || fallbackEntry.spellId) || null,
           });
         }
       }
     }
   }
 
+  for (const ability of SUPPLEMENTAL_ABILITIES) {
+    addEntry(ability.classKey, {
+      name: ability.name,
+      nameKey: normalizeAbilityName(ability.match),
+      spec: ability.spec,
+      scope: 'spell',
+      nodeId: `supplemental:${ability.spellId}`,
+      entryIndex: 1,
+      isTalent: false,
+      iconName: normalizeIconName(ability.icon),
+      spellId: ability.spellId,
+    });
+  }
+
   return catalog;
 }
 
 function resolveAbilityMetadata(change, catalog) {
-  const subject = normalizeAbilityName(change.subject.split(' · ', 1)[0]);
-  if (!subject) return null;
-  const available = (catalog.get(change.classKey) || []).filter((entry) => {
-    if (change.spec === 'Class-wide') return entry.scope === 'class';
-    return entry.spec === change.spec;
+  const available = [
+    ...(catalog.get(change.classKey) || []),
+    ...(catalog.get('*') || []),
+  ].filter((entry) => {
+    if (change.spec === 'Class-wide') return true;
+    return entry.spec === '*' || entry.spec === change.spec;
   });
-  const matches = available.map((entry) => ({
-    entry,
-    exact: entry.nameKey === subject,
-  })).filter(({ entry, exact }) => exact || subject.startsWith(`${entry.nameKey} `));
+  const rawSubject = change.subject.split(' · ', 1)[0];
+  const subjects = [normalizeAbilityName(rawSubject)];
+  const colon = rawSubject.indexOf(':');
+  if (colon > 0) {
+    const prefix = normalizeAbilityName(rawSubject.slice(0, colon));
+    const isHeroTreePrefix = available.some((entry) => (
+      entry.scope === 'hero' && entry.nameKey === prefix
+    ));
+    if (isHeroTreePrefix) subjects.push(normalizeAbilityName(rawSubject.slice(colon + 1)));
+  }
+
+  const matches = [];
+  for (const subject of [...new Set(subjects.filter(Boolean))]) {
+    for (const entry of available) {
+      const matchKeys = entry.nameKey.startsWith('the ')
+        ? [entry.nameKey, entry.nameKey.slice(4)]
+        : [entry.nameKey];
+      for (const matchKey of matchKeys) {
+        const exact = matchKey === subject;
+        if (exact || subject.startsWith(`${matchKey} `)) {
+          matches.push({ entry, exact, matchLength: matchKey.length });
+        }
+      }
+    }
+  }
   if (!matches.length) return null;
 
   const exact = matches.some((match) => match.exact);
   const preferred = matches.filter((match) => match.exact === exact);
-  const longest = Math.max(...preferred.map(({ entry }) => entry.nameKey.length));
-  const resolved = preferred.filter(({ entry }) => entry.nameKey.length === longest).map(({ entry }) => entry);
+  const longest = Math.max(...preferred.map((match) => match.matchLength));
+  let resolved = [...new Set(preferred
+    .filter((match) => match.matchLength === longest)
+    .map((match) => match.entry))];
+  const nodeIds = new Set(resolved.map((entry) => entry.nodeId));
+  const ranked = resolved.filter((entry) => Number.isInteger(entry.entryIndex));
+  if (nodeIds.size === 1 && ranked.length > 1) {
+    const requestedRank = Number(change.subject.match(/\(rank\s+(\d+)\)/i)?.[1]);
+    const selected = ranked.find((entry) => entry.entryIndex === requestedRank)
+      || ranked.sort((a, b) => a.entryIndex - b.entryIndex)[0];
+    resolved = [selected];
+  }
+
   const icons = [...new Set(resolved.map((entry) => entry.iconName).filter(Boolean))];
   const spellIds = [...new Set(resolved.map((entry) => entry.spellId).filter(Boolean))];
-
   return {
     abilityName: resolved[0].name,
     abilityType: resolved.some((entry) => entry.isTalent) ? 'talent' : 'spell',
@@ -577,6 +723,174 @@ export function enrichPatchWithAbilities(patch, catalog, previousPatch = null) {
   return patch;
 }
 
+function abilitySearchCandidate(change) {
+  const rawSubject = cleanText(change.subject.split(' · ', 1)[0]);
+  let candidate = rawSubject
+    .replace(/\s*\(rank\s+\d+\)/gi, '')
+    .replace(/^(?:new (?:passive )?ability learned at level \d+|new (?:passive )?talent(?:\s*\([^)]+\))?|new apex talent|apex talent|pvp talent):\s*/i, '')
+    .replace(/^the change to\s+/i, '')
+    .replace(/\s+(?:has been|have been|is now|are now|renamed|moved)\b.*$/i, '')
+    .replace(/(?:'s|’s)\s+tooltip$/i, '')
+    .replace(/^the\s+(.+?)\s+ability$/i, '$1');
+  const colon = candidate.indexOf(':');
+  if (
+    colon > 0
+    && change.abilityName
+    && normalizeAbilityName(candidate.slice(0, colon)) === normalizeAbilityName(change.abilityName)
+    && !/^fixed\b/i.test(candidate.slice(colon + 1).trim())
+  ) {
+    candidate = candidate.slice(colon + 1);
+  }
+  if ((candidate.length > 100 || /^(?:fixed|resolved)\b/i.test(candidate)) && change.abilityName) {
+    candidate = change.abilityName;
+  }
+  return cleanText(candidate).slice(0, 100);
+}
+
+export function selectAbilitySearchResult(payload, classKey, candidate) {
+  const candidateKey = normalizeAbilityName(candidate);
+  const placeholderIcons = new Set(['trade_engineering', 'inv_misc_questionmark']);
+  const searchResults = [
+    ...(payload?.results || []),
+    ...(payload?.categories?.database || []),
+  ];
+  const exact = searchResults.filter((result) => (
+    Number(result.type) === 6
+    && normalizeAbilityName(result.name || '') === candidateKey
+    && normalizeIconName(result.icon)
+    && !placeholderIcons.has(normalizeIconName(result.icon))
+  ));
+  if (!exact.length) return null;
+
+  const className = normalizeAbilityName(CLASS_META[classKey]?.name || '');
+  const classMatches = className ? exact.filter((result) => {
+    const evidence = normalizeAbilityName([
+      ...(result.pinBreadcrumb || []),
+      result.pinDescription || '',
+    ].join(' '));
+    return evidence.includes(className);
+  }) : [];
+  const candidates = classMatches.length ? classMatches : exact;
+  const icons = new Set(candidates.map((result) => normalizeIconName(result.icon)));
+  if (candidates.length > 1 && icons.size > 1) return null;
+
+  const selected = candidates[0];
+  return {
+    abilityName: cleanText(selected.name),
+    spellId: Number(selected.id) || null,
+    iconName: normalizeIconName(selected.icon),
+  };
+}
+
+function applySearchedAbility(change, metadata) {
+  change.abilityType = change.isTalent ? 'talent' : 'spell';
+  change.abilityName = metadata.abilityName;
+  change.spellId = metadata.spellId;
+  change.icon = `${ABILITY_ICON_PATH}/${metadata.iconName}.jpg`;
+}
+async function readAbilityMetadataCache() {
+  try {
+    const before = await readFile(ABILITY_METADATA_PATH, 'utf8');
+    const data = JSON.parse(before);
+    if (data.schemaVersion !== ABILITY_METADATA_SCHEMA_VERSION) {
+      data.schemaVersion = ABILITY_METADATA_SCHEMA_VERSION;
+      data.entries = Object.fromEntries(
+        Object.entries(data.entries || {}).filter(([, metadata]) => !metadata.missing),
+      );
+    }
+    return { data, before };
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    return {
+      data: {
+        schemaVersion: ABILITY_METADATA_SCHEMA_VERSION,
+        generatedAt: null,
+        entries: {},
+      },
+      before: '',
+    };
+  }
+}
+
+async function writeAbilityMetadataCache(cache, before) {
+  const serialized = `${JSON.stringify(cache, null, 2)}\n`;
+  if (serialized === before) return;
+  await mkdir(path.dirname(ABILITY_METADATA_PATH), { recursive: true });
+  await writeFile(ABILITY_METADATA_PATH, serialized);
+  console.log(`Wrote ${path.relative(ROOT, ABILITY_METADATA_PATH)}`);
+}
+
+async function enrichUnresolvedAbilities(patches, cache) {
+  const pending = new Map();
+  const latest = patches.map((patch) => patch.lastUpdated).filter(Boolean).sort().at(-1) || null;
+
+  for (const patch of patches) {
+    for (const classInfo of patch.classes) {
+      for (const change of classInfo.changes) {
+        if (change.icon) continue;
+        const candidate = abilitySearchCandidate(change);
+        const candidateKey = normalizeAbilityName(candidate);
+        if (!candidateKey) continue;
+        const key = [change.classKey, change.spec, candidateKey].join('|');
+        const cached = cache.entries[key];
+        if (cached && !cached.missing) {
+          applySearchedAbility(change, cached);
+          continue;
+        }
+        if (cached?.missing && cached.checkedFor === latest) continue;
+        if (!pending.has(key)) {
+          pending.set(key, {
+            key,
+            classKey: change.classKey,
+            candidate,
+            changes: [],
+          });
+        }
+        pending.get(key).changes.push(change);
+      }
+    }
+  }
+
+  const tasks = [...pending.values()];
+  let resolved = 0;
+  let unavailable = 0;
+  let failed = 0;
+  for (let index = 0; index < tasks.length; index += 10) {
+    const results = await Promise.all(tasks.slice(index, index + 10).map(async (task) => {
+      try {
+        const params = new URLSearchParams({ q: task.candidate });
+        const payload = await fetchJson(`${ABILITY_SEARCH_URL}?${params}`);
+        return {
+          task,
+          metadata: selectAbilitySearchResult(payload, task.classKey, task.candidate),
+        };
+      } catch (error) {
+        return { task, error };
+      }
+    }));
+
+    for (const result of results) {
+      if (result.error) {
+        failed += 1;
+        continue;
+      }
+      if (!result.metadata) {
+        unavailable += 1;
+        cache.entries[result.task.key] = { missing: true, checkedFor: latest };
+        continue;
+      }
+      resolved += 1;
+      cache.entries[result.task.key] = result.metadata;
+      for (const change of result.task.changes) applySearchedAbility(change, result.metadata);
+    }
+  }
+
+  if (tasks.length) {
+    cache.generatedAt = latest;
+    console.log(`Ability search: ${resolved} resolved, ${unavailable} ambiguous, ${failed} unavailable`);
+  }
+}
+
 async function cacheAbilityIcons(patches) {
   const references = new Map();
   for (const patch of patches) {
@@ -606,16 +920,31 @@ async function cacheAbilityIcons(patches) {
   for (let index = 0; index < missing.length; index += 12) {
     const results = await Promise.all(missing.slice(index, index + 12).map(async (item) => {
       try {
-        const response = await fetch(`${ABILITY_ICON_URL}/${item.filename}`, {
-          headers: {
-            Accept: 'image/jpeg',
-            'User-Agent': 'WoW-PTR-Ledger/1.0 (+https://github.com/)',
-          },
-        });
-        if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
-        const contentType = response.headers.get('content-type') || '';
-        if (!contentType.startsWith('image/')) throw new Error(`unexpected content type ${contentType || 'unknown'}`);
-        await writeFile(path.join(ABILITY_ICON_DIR, item.filename), Buffer.from(await response.arrayBuffer()));
+        const fetchIcon = async (url) => {
+          const response = await fetch(url, {
+            headers: {
+              Accept: 'image/jpeg',
+              'User-Agent': 'WoW-PTR-Ledger/1.0 (+https://github.com/)',
+            },
+          });
+          if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+          const contentType = response.headers.get('content-type') || '';
+          if (!contentType.startsWith('image/')) {
+            throw new Error(`unexpected content type ${contentType || 'unknown'}`);
+          }
+          return Buffer.from(await response.arrayBuffer());
+        };
+        let image;
+        try {
+          image = await fetchIcon(`${ABILITY_ICON_URL}/${item.filename}`);
+        } catch (primaryError) {
+          try {
+            image = await fetchIcon(`${ABILITY_ICON_FALLBACK_URL}/${item.filename}`);
+          } catch (fallbackError) {
+            throw new Error(`${primaryError.message}; fallback ${fallbackError.message}`);
+          }
+        }
+        await writeFile(path.join(ABILITY_ICON_DIR, item.filename), image);
         return { ok: true, item };
       } catch (error) {
         return { ok: false, item, error };
@@ -786,6 +1115,7 @@ async function readExisting() {
 async function main() {
   const config = JSON.parse(await readFile(CONFIG_PATH, 'utf8'));
   const existing = await readExisting();
+  const { data: abilityMetadata, before: abilityMetadataBefore } = await readAbilityMetadataCache();
   const previousById = new Map((existing?.patches || []).map((patch) => [patch.id, patch]));
   const patches = [];
   let abilityCatalog = new Map();
@@ -815,7 +1145,9 @@ async function main() {
     }
   }
 
+  await enrichUnresolvedAbilities(patches, abilityMetadata);
   await cacheAbilityIcons(patches);
+  await writeAbilityMetadataCache(abilityMetadata, abilityMetadataBefore);
 
   const latest = patches.map((patch) => patch.lastUpdated).filter(Boolean).sort().at(-1) || null;
   const output = { schemaVersion: 2, generatedAt: latest, patches };
