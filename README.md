@@ -10,6 +10,7 @@ A static, GitHub Pages-ready ledger of World of Warcraft PTR class tuning. PTR L
 - Cumulative folding for sequential percentage tuning, without confusing a later adjustment with an absolute replacement
 - Class submenus; specialization, direction, and source-confirmed talent filters; revised-only filtering; and text search
 - Links from every change and revision to the official Blizzard forum note
+- On-demand, side-by-side Live and PTR spell tooltips on resolved ability names
 - Responsive static HTML, CSS, and JavaScript with no runtime backend
 - Automated refresh and GitHub Pages deployment every six hours
 
@@ -32,6 +33,8 @@ Generated output is stored in `site/data/patches.json`. Do not edit that file ma
 Blizzard's official note structure remains authoritative: explicit “talent” wording and changes beneath **Hero Talents** or **Apex Talents** are always tagged **Talent**. The updater supplements that signal with Raidbots' current [PTR talent-tree dataset](https://www.raidbots.com/static/data/ptr/talents.json), which is generated from World of Warcraft client data. A class and specialization-scoped subject that equals a tree-node name—or starts with the longest matching name for a property-specific note—is resolved to that node. Selectable nodes are tagged **Talent**; a node marked free for that specialization is tagged **Spell** instead.
 
 Resolved entries include their canonical ability name, spell ID, and icon identifier. Baseline spells and named child effects absent from the talent-tree export use a small class/spec-scoped supplemental table verified against current client `SpellName` and `SpellMisc` data; this also maps the standard Auto Attack spell. Remaining unresolved subjects use Wowhead's JSON search at build time, accepting only exact spell-name matches, preferring class-specific evidence, and rejecting ambiguous icons. Search results and misses for the current note revision are cached in `site/data/ability-metadata.json`; the browser makes no metadata request. Multi-rank nodes select the announced rank, or rank 1 when a note names only the overall talent. Icons are downloaded from Blizzard's render service into `site/assets/abilities/`, with Wowhead's icon CDN used only when a PTR-only icon is unavailable there. Source-confirmed talent classification overrides a free-node classification. Ambiguous or unresolved names remain untyped and iconless rather than receiving a guessed match. Once a revision establishes that a change is a talent, later checkpoints retain that classification even if they omit the word.
+
+Cards with a resolved spell ID expose an on-demand **Live ↔ PTR** comparison using [Wowhead tooltip data](https://www.wowhead.com/tooltips). The browser requests tooltip JSON only when the user hovers, focuses, or opens an ability name; no Wowhead script or advertising is embedded. Tooltip data is supplementary and may lag behind Blizzard's latest PTR notes. The linked official-note text and revision history remain authoritative.
 
 The **Talents only** filter can be combined with class, specialization, buff, nerf, changed, round, revision-history, and text filters.
 

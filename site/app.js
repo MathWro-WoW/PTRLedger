@@ -1,4 +1,14 @@
 const DATA_URL = './data/patches.json';
+const WOWHEAD_TOOLTIP_URL = 'https://nether.wowhead.com';
+const TOOLTIP_DISCLAIMER = 'Fetched on demand from Wowhead. PTR tooltip data may lag behind Blizzard’s latest PTR notes; the official-note history remains authoritative.';
+const tooltipCache = new Map();
+const tooltipView = {
+  element: null,
+  activeTrigger: null,
+  request: null,
+  closeTimer: null,
+  pinned: false,
+};
 const state = {
   data: null,
   patch: null,
@@ -59,6 +69,244 @@ function highlightedText(text) {
   }
   fragment.append(document.createTextNode(text.slice(cursor)));
   return fragment;
+}
+const TOOLTIP_TAGS = new Set(['B', 'BR', 'DIV', 'EM', 'SMALL', 'SPAN', 'STRONG', 'TABLE', 'TBODY', 'TD', 'TH', 'TR']);
+const TOOLTIP_CLASSES = new Set(['q', 'q0', 'q1', 'q2', 'q3', 'q4', 'q5', 'q6', 'q7', 'q8', 'q9', 'whtt-name', 'wowhead-tooltip-requirements']);
+
+function sanitizedTooltip(html) {
+  const template = document.createElement('template');
+  template.innerHTML = html;
+
+  for (let element of [...template.content.querySelectorAll('*')]) {
+    if (element.tagName === 'A') {
+      const replacement = document.createElement('span');
+      replacement.replaceChildren(...element.childNodes);
+      element.replaceWith(replacement);
+      element = replacement;
+    } else if (!TOOLTIP_TAGS.has(element.tagName)) {
+      element.replaceWith(...element.childNodes);
+      continue;
+    }
+
+    const classes = [...element.classList].filter((className) => TOOLTIP_CLASSES.has(className));
+    const color = /^#[0-9a-f]{6}$/i.test(element.style.color) ? element.style.color : '';
+    for (const attribute of [...element.attributes]) element.removeAttribute(attribute.name);
+    if (classes.length) element.className = classes.join(' ');
+    if (color) element.style.color = color;
+  }
+
+  const comments = document.createTreeWalker(template.content, NodeFilter.SHOW_COMMENT);
+  const removable = [];
+  while (comments.nextNode()) removable.push(comments.currentNode);
+  for (const comment of removable) comment.remove();
+
+  return node('div', { className: 'wowhead-tooltip-body' }, [template.content]);
+}
+
+function requestWowheadTooltip(spellId, environment) {
+  const key = `${environment}:${spellId}`;
+  if (tooltipCache.has(key)) return tooltipCache.get(key);
+
+  const domain = environment === 'ptr' ? '/ptr' : '';
+  const request = fetch(`${WOWHEAD_TOOLTIP_URL}${domain}/tooltip/spell/${spellId}?locale=0`)
+    .then(async (response) => {
+      if (!response.ok) throw new Error(`Tooltip request failed (${response.status})`);
+      const payload = await response.json();
+      if (!payload.tooltip) throw new Error('Tooltip is not available');
+      return { ok: true, payload };
+    })
+    .catch((error) => {
+      tooltipCache.delete(key);
+      return { ok: false, error };
+    });
+  tooltipCache.set(key, request);
+  return request;
+}
+
+function ensureTooltipView() {
+  if (tooltipView.element) return tooltipView.element;
+
+  const tooltip = node('aside', {
+    className: 'ability-tooltip',
+    attrs: {
+      id: 'ability-tooltip',
+      role: 'dialog',
+      'aria-label': 'Live and PTR ability tooltips',
+      'aria-live': 'polite',
+    },
+  });
+  tooltip.hidden = true;
+  tooltip.addEventListener('pointerenter', cancelTooltipClose);
+  tooltip.addEventListener('pointerleave', scheduleTooltipClose);
+  tooltip.addEventListener('focusin', cancelTooltipClose);
+  tooltip.addEventListener('focusout', scheduleTooltipClose);
+  document.body.append(tooltip);
+  tooltipView.element = tooltip;
+  return tooltip;
+}
+
+function tooltipAnchor(target) {
+  return target instanceof Element
+    ? target.closest('.change-name[data-tooltip-spell]')
+    : null;
+}
+
+function setTooltipExpanded(trigger, expanded) {
+  trigger?.querySelector('.ability-name-trigger')
+    ?.setAttribute('aria-expanded', String(expanded));
+}
+
+function tooltipHeader(abilityName, statusText = 'Loading tooltip data…') {
+  return node('header', { className: 'ability-tooltip-header' }, [
+    node('div', {}, [
+      node('span', { className: 'ability-tooltip-kicker', text: 'Ability context' }),
+      node('strong', { text: abilityName }),
+    ]),
+    node('div', { className: 'ability-tooltip-actions' }, [
+      node('span', { className: 'ability-tooltip-status', text: statusText }),
+      node('button', {
+        className: 'ability-tooltip-close',
+        text: 'Close',
+        attrs: { type: 'button', 'data-tooltip-close': '', 'aria-label': 'Close tooltip comparison' },
+      }),
+    ]),
+  ]);
+}
+
+function loadingTooltipPane(label) {
+  return node('section', { className: 'ability-tooltip-pane is-loading' }, [
+    node('div', { className: 'ability-tooltip-environment' }, [
+      node('span', { text: label }),
+      node('span', { className: 'ability-tooltip-source', text: 'Wowhead' }),
+    ]),
+    node('div', { className: 'ability-tooltip-loading', text: 'Retrieving tooltip…' }),
+  ]);
+}
+
+function loadedTooltipPane(label, result) {
+  if (!result.ok) {
+    return {
+      element: node('section', { className: 'ability-tooltip-pane is-unavailable' }, [
+        node('div', { className: 'ability-tooltip-environment' }, [
+          node('span', { text: label }),
+          node('span', { className: 'ability-tooltip-source', text: 'Unavailable' }),
+        ]),
+        node('div', { className: 'ability-tooltip-unavailable' }, [
+          node('strong', { text: 'No tooltip available' }),
+          node('p', { text: 'Wowhead has not indexed this spell in this environment, or the request could not be completed.' }),
+        ]),
+      ]),
+      text: null,
+    };
+  }
+
+  const content = sanitizedTooltip(result.payload.tooltip);
+  return {
+    element: node('section', { className: 'ability-tooltip-pane' }, [
+      node('div', { className: 'ability-tooltip-environment' }, [
+        node('span', { text: label }),
+        node('span', { className: 'ability-tooltip-source', text: 'Wowhead' }),
+      ]),
+      content,
+    ]),
+    text: content.textContent.replace(/\s+/g, ' ').trim(),
+  };
+}
+
+function positionAbilityTooltip() {
+  const tooltip = tooltipView.element;
+  const trigger = tooltipView.activeTrigger;
+  if (!tooltip || tooltip.hidden || !trigger?.isConnected) return;
+
+  const margin = 12;
+  const gap = 10;
+  const triggerRect = trigger.getBoundingClientRect();
+  const tooltipRect = tooltip.getBoundingClientRect();
+  const idealLeft = triggerRect.left + Math.min(triggerRect.width * 0.18, 32);
+  const left = Math.max(margin, Math.min(idealLeft, window.innerWidth - tooltipRect.width - margin));
+  const below = triggerRect.bottom + gap;
+  const top = below + tooltipRect.height <= window.innerHeight - margin
+    ? below
+    : Math.max(margin, triggerRect.top - tooltipRect.height - gap);
+  tooltip.style.left = `${Math.round(left)}px`;
+  tooltip.style.top = `${Math.round(top)}px`;
+}
+
+async function showAbilityTooltip(trigger, pinned = false) {
+  if (!trigger?.dataset.tooltipSpell) return;
+  const tooltip = ensureTooltipView();
+  if (tooltipView.pinned && tooltipView.activeTrigger !== trigger) return;
+  cancelTooltipClose();
+
+  if (tooltipView.activeTrigger === trigger && !tooltip.hidden) {
+    tooltipView.pinned ||= pinned;
+    return;
+  }
+
+  setTooltipExpanded(tooltipView.activeTrigger, false);
+  tooltipView.activeTrigger = trigger;
+  tooltipView.pinned = pinned;
+  setTooltipExpanded(trigger, true);
+
+  const abilityName = trigger.dataset.tooltipName || 'Ability';
+  const ptrLabel = `${state.patch?.status || 'PTR'} ${state.patch?.id || ''}`.trim();
+  tooltip.replaceChildren(
+    tooltipHeader(abilityName),
+    node('div', { className: 'ability-tooltip-grid' }, [
+      loadingTooltipPane('Live'),
+      loadingTooltipPane(ptrLabel),
+    ]),
+    node('p', { className: 'ability-tooltip-footnote', text: TOOLTIP_DISCLAIMER }),
+  );
+  tooltip.hidden = false;
+  positionAbilityTooltip();
+
+  const request = Symbol('tooltip-request');
+  tooltipView.request = request;
+  const [liveResult, ptrResult] = await Promise.all([
+    requestWowheadTooltip(trigger.dataset.tooltipSpell, 'live'),
+    requestWowheadTooltip(trigger.dataset.tooltipSpell, 'ptr'),
+  ]);
+  if (tooltipView.request !== request || tooltipView.activeTrigger !== trigger) return;
+
+  const live = loadedTooltipPane('Live', liveResult);
+  const ptr = loadedTooltipPane(ptrLabel, ptrResult);
+  let status = 'Tooltip unavailable';
+  if (live.text && ptr.text) status = live.text === ptr.text ? 'Tooltip text matches' : 'Tooltip text differs';
+  else if (live.text || ptr.text) status = 'One environment is unavailable';
+  tooltip.replaceChildren(
+    tooltipHeader(abilityName, status),
+    node('div', { className: 'ability-tooltip-grid' }, [live.element, ptr.element]),
+    node('p', { className: 'ability-tooltip-footnote', text: TOOLTIP_DISCLAIMER }),
+  );
+  positionAbilityTooltip();
+}
+
+function cancelTooltipClose() {
+  window.clearTimeout(tooltipView.closeTimer);
+  tooltipView.closeTimer = null;
+}
+
+function scheduleTooltipClose() {
+  cancelTooltipClose();
+  if (tooltipView.pinned) return;
+  tooltipView.closeTimer = window.setTimeout(() => hideAbilityTooltip(), 140);
+}
+
+function hideAbilityTooltip(force = false) {
+  if (tooltipView.pinned && !force) return;
+  cancelTooltipClose();
+  setTooltipExpanded(tooltipView.activeTrigger, false);
+  tooltipView.request = null;
+  tooltipView.activeTrigger = null;
+  tooltipView.pinned = false;
+  if (tooltipView.element) tooltipView.element.hidden = true;
+}
+
+function closeAbilityTooltip() {
+  const button = tooltipView.activeTrigger?.querySelector('.ability-name-trigger');
+  button?.focus({ preventScroll: true });
+  hideAbilityTooltip(true);
 }
 
 function allChanges() {
@@ -255,6 +503,13 @@ function changeCard(change) {
       text: abilityType === 'talent' ? 'Talent' : 'Spell',
     }));
   }
+  if (change.spellId) {
+    metadata.push(node('span', {
+      className: 'ability-tooltip-hint',
+      text: 'Live ↔ PTR',
+      attrs: { 'aria-hidden': 'true' },
+    }));
+  }
   if (state.classId === 'all' && !NON_SPECIALIZATIONS.has(change.spec)) {
     metadata.push(node('span', { className: 'category-label', text: `· ${change.spec}` }));
   }
@@ -272,11 +527,30 @@ function changeCard(change) {
       'aria-hidden': 'true',
     },
   }) : null;
-  const name = node('div', { className: 'change-name' }, [
+  const tooltipName = change.subject;
+  const title = change.spellId
+    ? node('button', {
+        className: 'ability-name-trigger',
+        text: change.subject,
+        attrs: {
+          type: 'button',
+          'aria-label': `Compare Live and PTR tooltips for ${tooltipName}`,
+          'aria-controls': 'ability-tooltip',
+          'aria-expanded': 'false',
+        },
+      })
+    : document.createTextNode(change.subject);
+  const name = node('div', {
+    className: `change-name${change.spellId ? ' has-tooltip' : ''}`,
+    attrs: change.spellId ? {
+      'data-tooltip-spell': change.spellId,
+      'data-tooltip-name': tooltipName,
+    } : {},
+  }, [
     icon,
     node('div', { className: 'change-name-copy' }, [
       node('div', { className: 'change-meta' }, metadata),
-      node('h3', { text: change.subject }),
+      node('h3', {}, [title]),
     ]),
   ]);
 
@@ -344,6 +618,7 @@ function changeCard(change) {
 }
 
 function renderChanges() {
+  hideAbilityTooltip(true);
   const visible = visibleChanges();
   const classInfo = selectedClass();
   const selectedName = classInfo?.name || 'Every class';
@@ -479,6 +754,35 @@ function scrollToResultsTop() {
 }
 
 function bindEvents() {
+  elements.list.addEventListener('pointerover', (event) => {
+    if (event.pointerType === 'touch') return;
+    const trigger = tooltipAnchor(event.target);
+    if (!trigger) return;
+    showAbilityTooltip(trigger);
+  });
+  elements.list.addEventListener('pointerout', (event) => {
+    const leaving = tooltipAnchor(event.target);
+    const entering = event.relatedTarget instanceof Element ? tooltipAnchor(event.relatedTarget) : null;
+    if (leaving && leaving !== entering) scheduleTooltipClose();
+  });
+  elements.list.addEventListener('focusin', (event) => {
+    const trigger = tooltipAnchor(event.target);
+    if (trigger) showAbilityTooltip(trigger);
+  });
+  elements.list.addEventListener('focusout', (event) => {
+    const leaving = tooltipAnchor(event.target);
+    const entering = event.relatedTarget instanceof Element ? tooltipAnchor(event.relatedTarget) : null;
+    if (leaving && leaving !== entering) scheduleTooltipClose();
+  });
+  elements.list.addEventListener('click', (event) => {
+    const trigger = tooltipAnchor(event.target);
+    if (!trigger) return;
+    if (tooltipView.activeTrigger === trigger && tooltipView.pinned) {
+      hideAbilityTooltip(true);
+      return;
+    }
+    showAbilityTooltip(trigger, true);
+  });
   elements.patchSelect.addEventListener('change', (event) => selectPatch(event.target.value));
   elements.classNav.addEventListener('click', (event) => {
     const specButton = event.target.closest('[data-class-spec]');
@@ -531,11 +835,24 @@ function bindEvents() {
   $('#clear-filters').addEventListener('click', resetFilters);
   window.addEventListener('scroll', dismissClassMenuAfterSection, { passive: true });
   document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && tooltipView.element && !tooltipView.element.hidden) {
+      closeAbilityTooltip();
+    }
     if (event.key === '/' && !/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName)) {
       event.preventDefault();
       elements.search.focus();
     }
   });
+  document.addEventListener('click', (event) => {
+    if (event.target.closest('[data-tooltip-close]')) {
+      closeAbilityTooltip();
+      return;
+    }
+    if (!tooltipView.pinned || tooltipAnchor(event.target) || tooltipView.element?.contains(event.target)) return;
+    hideAbilityTooltip(true);
+  });
+  window.addEventListener('scroll', positionAbilityTooltip, { passive: true });
+  window.addEventListener('resize', positionAbilityTooltip);
 }
 
 async function start() {
