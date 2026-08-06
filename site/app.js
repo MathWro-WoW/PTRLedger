@@ -312,10 +312,16 @@ function renderChanges() {
     groups.get(group).push(change);
   }
 
-  const sections = [...groups].map(([name, changes]) => node('section', { className: 'spec-section' }, [
+  const sections = [...groups].map(([name, changes]) => node('section', {
+    className: 'spec-section',
+    attrs: { style: `--section-color: ${changes[0].classInfo.color}` },
+  }, [
     node('h2', { className: 'spec-heading' }, [
-      node('span', { text: name }),
-      node('span', { text: changes.length }),
+      node('span', { className: 'spec-name', text: name }),
+      node('span', {
+        className: 'spec-count',
+        text: `${changes.length.toLocaleString()} ${changes.length === 1 ? 'change' : 'changes'}`,
+      }),
     ]),
     ...changes.map(changeCard),
   ]));
@@ -407,6 +413,14 @@ function dismissClassMenuAfterSection() {
   });
 }
 
+function scrollToResultsTop() {
+  const ledger = $('#changes');
+  const headerHeight = $('.site-header')?.getBoundingClientRect().height || 0;
+  const top = window.scrollY + ledger.getBoundingClientRect().top - headerHeight;
+  const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  window.scrollTo({ top: Math.max(0, top), behavior });
+}
+
 function bindEvents() {
   elements.patchSelect.addEventListener('change', (event) => selectPatch(event.target.value));
   elements.classNav.addEventListener('click', (event) => {
@@ -415,6 +429,7 @@ function bindEvents() {
       state.spec = specButton.dataset.classSpec;
       renderClassNav();
       renderChanges();
+      scrollToResultsTop();
       return;
     }
 
@@ -427,6 +442,7 @@ function bindEvents() {
       : null;
     renderClassNav();
     renderChanges();
+    scrollToResultsTop();
   });
   elements.roundFilter.addEventListener('change', (event) => {
     state.round = event.target.value;

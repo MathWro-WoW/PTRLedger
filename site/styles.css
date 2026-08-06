@@ -376,20 +376,37 @@ h1 {
 #result-count { color: var(--muted); font-family: var(--utility); font-size: .7rem; }
 .spec-section { margin-bottom: 2.6rem; }
 .spec-heading {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
-  gap: .8rem;
+  justify-content: space-between;
+  gap: 1rem;
   margin: 0 0 .7rem;
-  color: var(--silver);
+  padding: .7rem .8rem;
+  border: 1px solid var(--line);
+  border-left: 2px solid var(--section-color, var(--arcane));
+  background: rgba(115, 183, 255, .04);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--section-color, var(--arcane)) 14%, transparent), color-mix(in srgb, var(--section-color, var(--arcane)) 3%, transparent));
   font-family: var(--utility);
-  font-size: .68rem;
-  font-weight: 500;
-  letter-spacing: .12em;
   text-transform: uppercase;
 }
-.spec-heading::after { content: ''; height: 1px; background: var(--line); }
-.spec-heading span { color: var(--muted); }
+.spec-name {
+  color: var(--vellum);
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .11em;
+}
+.spec-count {
+  flex: 0 0 auto;
+  padding: .15rem .4rem;
+  border: 1px solid var(--line);
+  border-color: color-mix(in srgb, var(--section-color, var(--arcane)) 30%, var(--line));
+  color: var(--arcane-pale);
+  color: color-mix(in srgb, var(--section-color, var(--arcane)) 68%, white);
+  background: rgba(9, 17, 28, .46);
+  font-size: .58rem;
+  font-weight: 500;
+  letter-spacing: .06em;
+}
 .change-card {
   --change-color: var(--changed);
   position: relative;
