@@ -417,6 +417,7 @@ h1 {
 .comparison-arrow { color: var(--ember); font-family: var(--utility); }
 .current-note { margin: 0; color: var(--silver); font-size: .77rem; line-height: 1.55; }
 .current-note .number { color: var(--vellum); font-family: var(--utility); font-size: .95em; }
+.cumulative-note { margin: .45rem 0 0; color: var(--muted); font-size: .66rem; line-height: 1.5; }
 .card-footer { border-top: 1px solid var(--line); background: rgba(9,17,28,.34); }
 .history-disclosure summary {
   list-style: none;
@@ -438,6 +439,7 @@ h1 {
 .timeline-item::before { content: ''; position: absolute; width: 7px; height: 7px; left: calc(-1.1rem - 4px); top: .75rem; border: 1px solid var(--arcane); background: var(--midnight); transform: rotate(45deg); }
 .timeline-date { color: var(--muted); font-family: var(--utility); font-size: .6rem; }
 .timeline-copy p { margin: 0 0 .2rem; color: var(--silver); font-size: .7rem; }
+.timeline-copy .timeline-math { color: var(--arcane-pale); font-family: var(--utility); font-size: .6rem; letter-spacing: .02em; }
 .timeline-copy a { color: var(--arcane); font-size: .65rem; text-decoration: none; }
 .timeline-copy a:hover { text-decoration: underline; }
 .source-only { display: flex; justify-content: flex-end; padding: .55rem 1rem; }

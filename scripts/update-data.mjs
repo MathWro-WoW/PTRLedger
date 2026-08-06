@@ -116,6 +116,48 @@ function compareNumericValues(currentValue, baseline) {
   return 0;
 }
 
+function parseRelativePercentAdjustment(item) {
+  if (item.baseline !== null) return null;
+  if (!/\b(?:increased|reduced|decreased) by \d+(?:\.\d+)?%/i.test(item.text)) return null;
+  const match = item.value.match(/^([+−-])(\d+(?:\.\d+)?)%$/);
+  if (!match) return null;
+  return (match[1] === '+' ? 1 : -1) * Number(match[2]) / 100;
+}
+
+function formatSignedPercent(value) {
+  const rounded = Math.round(Math.abs(value) * 10) / 10;
+  const amount = Number.isInteger(rounded) ? rounded.toFixed(0) : rounded.toFixed(1);
+  if (Math.abs(value) < 0.05) return '0%';
+  return `${value > 0 ? '+' : '−'}${amount}%`;
+}
+
+function applyCumulativeTuning(change) {
+  delete change.cumulative;
+  delete change.latestAdjustment;
+  for (const item of change.history) {
+    delete item.effectiveValue;
+    delete item.effectiveDirection;
+  }
+  if (change.history.length < 2) return;
+
+  let factor = 1;
+  for (const item of change.history) {
+    const adjustment = parseRelativePercentAdjustment(item);
+    if (adjustment === null) return;
+    factor *= 1 + adjustment;
+    const effectivePercent = (factor - 1) * 100;
+    item.effectiveValue = formatSignedPercent(effectivePercent);
+    item.effectiveDirection = effectivePercent > 0.05 ? 'buff' : effectivePercent < -0.05 ? 'nerf' : 'changed';
+  }
+
+  const latest = change.history.at(-1);
+  change.cumulative = true;
+  change.latestAdjustment = latest.value;
+  change.value = latest.effectiveValue;
+  change.direction = latest.effectiveDirection;
+  change.baseline = null;
+}
+
 function hasBenefitMetric(text) {
   return /\b(damage|healing|heals?|absorbs?|shield|leech|effectiveness|chance|duration|lasts?|persists?|stores?|accumulates?|transfers?|refunds?|generates?|fury|rage|energy|focus|holy power|astral power|insanity|extends?|faster|frequently|cleaves?|strikes?|hits?|parry|cooldown|(?:mana|energy|focus|rage|holy power|astral power|insanity|resource) cost|cast time|costs?|value|yards?|targets?|reduces?\b[^.]{0,50}\b(?:damage taken|cost)|summons?)\b/i.test(text);
 }
@@ -379,8 +421,13 @@ async function fetchJson(url) {
   return response.json();
 }
 
+function topicUrl(source) {
+  const topicPath = source.slug ? `${source.slug}/${source.topicId}` : source.topicId;
+  return `https://${source.region}.forums.blizzard.com/en/wow/t/${topicPath}`;
+}
+
 async function fetchAllPosts(source) {
-  const base = `https://${source.region}.forums.blizzard.com/en/wow/t/${source.topicId}`;
+  const base = topicUrl(source);
   const topic = await fetchJson(`${base}.json`);
   const loaded = topic.post_stream.posts || [];
   const loadedIds = new Set(loaded.map((post) => post.id));
@@ -402,7 +449,7 @@ async function fetchAllPosts(source) {
 export function buildPatch(source, posts) {
   const changes = new Map();
   const rounds = [];
-  const baseUrl = `https://${source.region}.forums.blizzard.com/en/wow/t/${source.topicId}`;
+  const baseUrl = topicUrl(source);
 
   for (const post of posts) {
     const parsed = parseClassChanges(post.cooked);
@@ -441,6 +488,7 @@ export function buildPatch(source, posts) {
         existing.direction = direction;
         existing.baseline = baseline ?? (numericVector(currentValue).length ? existing.baseline : null);
         existing.lastChanged = date;
+        applyCumulativeTuning(existing);
       } else {
         changes.set(key, {
           id: key,

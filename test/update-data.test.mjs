@@ -6,6 +6,7 @@ const source = {
   id: '12.2',
   name: 'Example patch',
   topicId: 123,
+  slug: 'example-patch',
   region: 'eu',
   status: 'PTR',
   current: true,
@@ -302,6 +303,35 @@ test('folds later tuning into the current value while retaining history', () => 
   assert.deepEqual(change.history.map((item) => item.baseline), ['8%', '8%']);
   assert.deepEqual(change.history.map((item) => item.direction), ['buff', 'buff']);
   assert.equal(patch.stats.revised, 1);
+});
+
+test('compounds sequential relative tuning while preserving each announced adjustment', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', '<li>All ability damage increased by 20%.</li>'),
+    post(2, '2026-01-08T00:00:00Z', '<li>All ability damage increased by 10%.</li>'),
+  ]);
+  const change = patch.classes[0].changes[0];
+
+  assert.equal(change.value, '+32%');
+  assert.equal(change.latestAdjustment, '+10%');
+  assert.equal(change.cumulative, true);
+  assert.equal(change.direction, 'buff');
+  assert.deepEqual(change.history.map((item) => item.value), ['+20%', '+10%']);
+  assert.deepEqual(change.history.map((item) => item.effectiveValue), ['+20%', '+32%']);
+  assert.equal(change.history[1].source, 'https://eu.forums.blizzard.com/en/wow/t/example-patch/123/2');
+});
+
+test('compounds mixed buffs and nerfs from the live baseline', () => {
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', '<li>All ability damage increased by 20%.</li>'),
+    post(2, '2026-01-08T00:00:00Z', '<li>All ability damage reduced by 10%.</li>'),
+  ]);
+  const change = patch.classes[0].changes[0];
+
+  assert.equal(change.value, '+8%');
+  assert.equal(change.latestAdjustment, '−10%');
+  assert.equal(change.direction, 'buff');
+  assert.deepEqual(change.history.map((item) => item.effectiveDirection), ['buff', 'buff']);
 });
 
 test('clears an obsolete numeric baseline after a qualitative replacement', () => {

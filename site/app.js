@@ -84,7 +84,8 @@ function visibleChanges() {
     return {
       ...change,
       text: checkpoint.text,
-      value: checkpoint.value,
+      value: checkpoint.effectiveValue || checkpoint.value,
+      latestAdjustment: checkpoint.value,
       baseline: checkpoint.baseline,
       direction: checkpoint.direction,
       classInfo,
@@ -199,8 +200,15 @@ function renderRoundOptions() {
 
 function timeline(change) {
   const items = change.history.map((item, index) => {
+    const checkpointMath = item.effectiveValue
+      ? node('p', {
+          className: 'timeline-math',
+          text: `Adjustment ${item.value} · Combined ${item.effectiveValue} vs live`,
+        })
+      : null;
     const copy = node('div', { className: 'timeline-copy' }, [
       node('p', { text: item.text }),
+      checkpointMath,
       node('a', {
         text: `Open note ${index + 1} ↗`,
         attrs: { href: item.source, target: '_blank', rel: 'noreferrer' },
@@ -231,7 +239,11 @@ function changeCard(change) {
   let comparison = null;
   if (hasNumericComparison) {
     const ptr = node('div', { className: 'value-block ptr' }, [
-      node('small', { text: change.baseline ? state.patch.status : `${state.patch.status} change` }),
+      node('small', {
+        text: change.cumulative
+          ? 'Combined change vs live'
+          : change.baseline ? state.patch.status : `${state.patch.status} change`,
+      }),
       node('b', { text: change.value }),
     ]);
     const values = change.baseline
@@ -248,7 +260,15 @@ function changeCard(change) {
   }
   const note = node('p', { className: 'current-note' });
   note.append(highlightedText(change.text));
-  const content = node('div', {}, [comparison, note]);
+  const cumulativeNote = change.cumulative
+    ? node('p', {
+        className: 'cumulative-note',
+        text: state.round === 'all'
+          ? `Latest update ${change.latestAdjustment}. Sequential percentage adjustments compound to ${change.value} versus live.${change.subject === 'Overall damage' ? ' Targeted changes remain separate.' : ''}`
+          : `This update ${change.latestAdjustment}. Combined through this round: ${change.value} versus live.`,
+      })
+    : null;
+  const content = node('div', {}, [comparison, note, cumulativeNote]);
 
   let footer;
   if (change.history.length > 1) {
