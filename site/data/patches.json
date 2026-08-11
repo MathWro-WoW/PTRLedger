@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-10T18:19:47+00:00",
+  "generatedAt": "2026-08-11T18:03:48+00:00",
   "patches": [
     {
       "id": "12.1",
@@ -10,7 +10,7 @@
       "current": true,
       "topicId": 621832,
       "source": "https://worldofwarcraft.blizzard.com/en-us/news/24293281",
-      "lastUpdated": "2026-08-10T18:19:47+00:00",
+      "lastUpdated": "2026-08-11T18:03:48+00:00",
       "rounds": [
         {
           "number": 1,
@@ -95,7 +95,7 @@
         {
           "number": "final",
           "date": "2026-08-06T17:11:00+00:00",
-          "updatedAt": "2026-08-10T18:19:47+00:00",
+          "updatedAt": "2026-08-11T18:03:48+00:00",
           "changes": 738,
           "source": "https://worldofwarcraft.blizzard.com/en-us/news/24293281",
           "label": "Final notes · LIVE"
@@ -7074,10 +7074,10 @@
                 }
               ],
               "finalCheckpoint": true,
-              "abilityType": null,
-              "abilityName": null,
-              "spellId": null,
-              "icon": null
+              "abilityType": "spell",
+              "abilityName": "Stellar Protection",
+              "spellId": 1297521,
+              "icon": "./assets/abilities/ability_druid_stellarflare.jpg"
             },
             {
               "id": "23048562c870",
@@ -38171,9 +38171,9 @@
               ],
               "finalCheckpoint": true,
               "abilityType": "talent",
-              "abilityName": null,
-              "spellId": null,
-              "icon": null
+              "abilityName": "Storm of Blood",
+              "spellId": 1299025,
+              "icon": "./assets/abilities/ability_ironmaidens_whirlofblood.jpg"
             },
             {
               "id": "0825e14d68e4",
