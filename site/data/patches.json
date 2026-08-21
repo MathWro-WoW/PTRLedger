@@ -14635,7 +14635,7 @@
               "abilityType": "talent",
               "abilityName": "Aimed Shot",
               "spellId": 19434,
-              "icon": "./assets/abilities/inv_spear_07.jpg"
+              "icon": null
             },
             {
               "id": "ce850961b4bb-2",
@@ -14680,7 +14680,7 @@
               "abilityType": "talent",
               "abilityName": "Aimed Shot",
               "spellId": 19434,
-              "icon": "./assets/abilities/inv_spear_07.jpg"
+              "icon": null
             },
             {
               "id": "65586cb11353",
@@ -31807,7 +31807,7 @@
               "abilityType": "talent",
               "abilityName": "Ascendance",
               "spellId": 114050,
-              "icon": "./assets/abilities/spell_fire_elementaldevastation.jpg"
+              "icon": null
             },
             {
               "id": "8502b7d075b2",
@@ -38128,7 +38128,7 @@
               "abilityType": "talent",
               "abilityName": "Javelineer",
               "spellId": 1271948,
-              "icon": "./assets/abilities/inv_spear_01.jpg"
+              "icon": null
             },
             {
               "id": "c2a11a3fb28c",
