@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-11T18:03:48+00:00",
+  "generatedAt": "2026-09-02T17:46:31+00:00",
   "patches": [
     {
       "id": "12.1",
@@ -10,7 +10,7 @@
       "current": true,
       "topicId": 621832,
       "source": "https://worldofwarcraft.blizzard.com/en-us/news/24293281",
-      "lastUpdated": "2026-08-11T18:03:48+00:00",
+      "lastUpdated": "2026-09-02T17:46:31+00:00",
       "rounds": [
         {
           "number": 1,
@@ -95,7 +95,7 @@
         {
           "number": "final",
           "date": "2026-08-06T17:11:00+00:00",
-          "updatedAt": "2026-08-11T18:03:48+00:00",
+          "updatedAt": "2026-09-02T17:46:31+00:00",
           "changes": 738,
           "source": "https://worldofwarcraft.blizzard.com/en-us/news/24293281",
           "label": "Final notes · LIVE"
