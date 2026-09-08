@@ -1,13 +1,13 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-02T17:46:31+00:00",
+  "generatedAt": "2026-09-03T22:48:20.565Z",
   "patches": [
     {
       "id": "12.1",
       "name": "Curse of Ula'tek",
       "label": "12.1 · Curse of Ula'tek",
       "status": "LIVE",
-      "current": true,
+      "current": false,
       "topicId": 621832,
       "source": "https://worldofwarcraft.blizzard.com/en-us/news/24293281",
       "lastUpdated": "2026-09-02T17:46:31+00:00",
@@ -33763,9 +33763,9 @@
               ],
               "finalCheckpoint": true,
               "abilityType": "talent",
-              "abilityName": null,
-              "spellId": null,
-              "icon": null
+              "abilityName": "Chain",
+              "spellId": 154201,
+              "icon": "./assets/abilities/spell_shadow_coneofsilence.jpg"
             },
             {
               "id": "9c5dc79f0e0a",
@@ -39750,6 +39750,587 @@
         "revised": 679
       },
       "finalRound": "final"
+    },
+    {
+      "id": "12.1.5",
+      "name": "The Promise of Tomorrow",
+      "label": "12.1.5 · The Promise of Tomorrow",
+      "status": "PTR",
+      "current": true,
+      "topicId": 2344395,
+      "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395",
+      "lastUpdated": "2026-09-03T22:48:20.565Z",
+      "rounds": [
+        {
+          "number": 1,
+          "date": "2026-09-03T16:42:43.783Z",
+          "updatedAt": "2026-09-03T22:48:20.565Z",
+          "changes": 17,
+          "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1",
+          "label": "Initial notes"
+        }
+      ],
+      "classes": [
+        {
+          "id": "demon-hunter",
+          "name": "Demon Hunter",
+          "color": "#a330c9",
+          "mark": "DH",
+          "icon": "./assets/classes/demonhunter.jpg",
+          "changes": [
+            {
+              "id": "0e0c0eab9b56",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": false,
+              "subject": "After that time limit",
+              "text": "After that time limit has been reached, Fury drain will resume in full regardless of whether or not a cast is interrupted or starts again.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "After that time limit has been reached, Fury drain will resume in full regardless of whether or not a cast is interrupted or starts again.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "33a255fc852c",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": true,
+              "subject": "Collapsing Star",
+              "text": "Collapsing Star now has increased range after it starts casting, reducing the circumstances where it will fail from the target moving out of range.",
+              "value": "Buffed",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Collapsing Star now has increased range after it starts casting, reducing the circumstances where it will fail from the target moving out of range.",
+                  "value": "Buffed",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Collapsing Star",
+              "spellId": 1221167,
+              "icon": "./assets/abilities/inv_12_dh_void_ability_collapsingstar.jpg"
+            },
+            {
+              "id": "33a255fc852c-2",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": true,
+              "subject": "Collapsing Star",
+              "text": "Collapsing Star no longer goes on cooldown for 5 seconds when its cast is cancelled.",
+              "value": "5 seconds",
+              "baseline": null,
+              "direction": "nerf",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Collapsing Star no longer goes on cooldown for 5 seconds when its cast is cancelled.",
+                  "value": "5 seconds",
+                  "baseline": null,
+                  "direction": "nerf",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Collapsing Star",
+              "spellId": 1221167,
+              "icon": "./assets/abilities/inv_12_dh_void_ability_collapsingstar.jpg"
+            },
+            {
+              "id": "33a255fc852c-3",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": true,
+              "subject": "Collapsing Star",
+              "text": "Collapsing Star will now only slow Fury drain during its cast for a limited time.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Collapsing Star will now only slow Fury drain during its cast for a limited time.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Collapsing Star",
+              "spellId": 1221167,
+              "icon": "./assets/abilities/inv_12_dh_void_ability_collapsingstar.jpg"
+            },
+            {
+              "id": "beebc34ce817",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": "Void-Scarred",
+              "isTalent": true,
+              "subject": "Demonic Intensity",
+              "text": "Demonic Intensity now causes Collapsing Star to reset the cooldown of The Hunt.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Demonic Intensity now causes Collapsing Star to reset the cooldown of The Hunt.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Demonic Intensity",
+              "spellId": 452415,
+              "icon": "./assets/abilities/spell_warlock_demonicempowerment.jpg"
+            },
+            {
+              "id": "919df323ff69",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": "Void-Scarred",
+              "isTalent": true,
+              "subject": "Demonic Intensity’s empower effect for The Hunt",
+              "text": "Demonic Intensity’s empower effect for The Hunt now increases its damage by 30%.",
+              "value": "30%",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Demonic Intensity’s empower effect for The Hunt now increases its damage by 30%.",
+                  "value": "30%",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Demonic Intensity",
+              "spellId": 452415,
+              "icon": "./assets/abilities/spell_warlock_demonicempowerment.jpg"
+            },
+            {
+              "id": "90a1a21a2d33",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": false,
+              "subject": "If Collapsing Star’s cast is cancelled then cast again, it",
+              "text": "If Collapsing Star’s cast is cancelled then cast again, it will only be able to slow Fury drain for a total time of approximately 1.5 full casts.",
+              "value": "1.5",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "If Collapsing Star’s cast is cancelled then cast again, it will only be able to slow Fury drain for a total time of approximately 1.5 full casts.",
+                  "value": "1.5",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "adfa7785e17d",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": "Void-Scarred",
+              "isTalent": true,
+              "subject": "Monster Rising",
+              "text": "Monster Rising now increases Intellect by 10% while not in demon form (was 15%).",
+              "value": "10%",
+              "baseline": "15%",
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Monster Rising now increases Intellect by 10% while not in demon form (was 15%).",
+                  "value": "10%",
+                  "baseline": "15%",
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Monster Rising",
+              "spellId": 452414,
+              "icon": "./assets/abilities/ability_warlock_demonicpower.jpg"
+            },
+            {
+              "id": "adfa7785e17d-2",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": "Void-Scarred",
+              "isTalent": true,
+              "subject": "Monster Rising",
+              "text": "Monster Rising now increases Collapsing Star damage by 20% (was 15%).",
+              "value": "20%",
+              "baseline": "15%",
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Monster Rising now increases Collapsing Star damage by 20% (was 15%).",
+                  "value": "20%",
+                  "baseline": "15%",
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Monster Rising",
+              "spellId": 452414,
+              "icon": "./assets/abilities/ability_warlock_demonicpower.jpg"
+            },
+            {
+              "id": "2693f5bb2faf",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": "Void-Scarred",
+              "isTalent": true,
+              "subject": "Violent Transformation",
+              "text": "Violent Transformation now resets the cooldown of Soul Immolation.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Violent Transformation now resets the cooldown of Soul Immolation.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Violent Transformation",
+              "spellId": 452409,
+              "icon": "./assets/abilities/spell_shadow_demoniccirclesummon.jpg"
+            },
+            {
+              "id": "2693f5bb2faf-2",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": "Void-Scarred",
+              "isTalent": true,
+              "subject": "Violent Transformation",
+              "text": "Violent Transformation no longer resets the cooldown of The Hunt.",
+              "value": "Nerfed",
+              "baseline": null,
+              "direction": "nerf",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Violent Transformation no longer resets the cooldown of The Hunt.",
+                  "value": "Nerfed",
+                  "baseline": null,
+                  "direction": "nerf",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Violent Transformation",
+              "spellId": 452409,
+              "icon": "./assets/abilities/spell_shadow_demoniccirclesummon.jpg"
+            },
+            {
+              "id": "2693f5bb2faf-3",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": "Void-Scarred",
+              "isTalent": true,
+              "subject": "Violent Transformation",
+              "text": "Violent Transformation no longer increases the damage of The Hunt (was 25%) or causes it to reset the cooldown of Soul Immolation.",
+              "value": "Nerfed",
+              "baseline": "25%",
+              "direction": "nerf",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Violent Transformation no longer increases the damage of The Hunt (was 25%) or causes it to reset the cooldown of Soul Immolation.",
+                  "value": "Nerfed",
+                  "baseline": "25%",
+                  "direction": "nerf",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Violent Transformation",
+              "spellId": 452409,
+              "icon": "./assets/abilities/spell_shadow_demoniccirclesummon.jpg"
+            }
+          ]
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "color": "#aad372",
+          "mark": "HU",
+          "icon": "./assets/classes/hunter.jpg",
+          "changes": [
+            {
+              "id": "34ff0e6898aa",
+              "classKey": "HUNTER",
+              "spec": "Marksmanship",
+              "category": null,
+              "isTalent": true,
+              "subject": "Blood Fletching",
+              "text": "New Talent: Blood Fletching – Aimed Shot critical strikes now cause the Master Marksman bleed effect at 20% of the damage dealt. For 4 seconds after a critical Aimed Shot, the target will take additional bleed damage any time your abilities damage that target.",
+              "value": "20%",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "New Talent: Blood Fletching – Aimed Shot critical strikes now cause the Master Marksman bleed effect at 20% of the damage dealt. For 4 seconds after a critical Aimed Shot, the target will take additional bleed damage any time your abilities damage that target.",
+                  "value": "20%",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "9da002af5884",
+              "classKey": "HUNTER",
+              "spec": "Marksmanship",
+              "category": null,
+              "isTalent": true,
+              "subject": "Unload",
+              "text": "Unload has been removed.",
+              "value": "Nerfed",
+              "baseline": null,
+              "direction": "nerf",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Unload has been removed.",
+                  "value": "Nerfed",
+                  "baseline": null,
+                  "direction": "nerf",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Unload",
+              "spellId": 1277548,
+              "icon": "./assets/abilities/ability_hunter_efficiency_brown.jpg"
+            }
+          ]
+        },
+        {
+          "id": "warrior",
+          "name": "Warrior",
+          "color": "#c69b6d",
+          "mark": "WA",
+          "icon": "./assets/classes/warrior.jpg",
+          "changes": [
+            {
+              "id": "72140d395fba",
+              "classKey": "WARRIOR",
+              "spec": "Protection",
+              "category": null,
+              "isTalent": false,
+              "subject": "Execute",
+              "text": "Execute no longer consumes additional Rage for additional damage.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Execute no longer consumes additional Rage for additional damage.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "spell",
+              "abilityName": "Execute",
+              "spellId": 163201,
+              "icon": "./assets/abilities/inv_sword_48.jpg"
+            },
+            {
+              "id": "72140d395fba-2",
+              "classKey": "WARRIOR",
+              "spec": "Protection",
+              "category": null,
+              "isTalent": false,
+              "subject": "Execute",
+              "text": "Execute damage increased by 100%.",
+              "value": "+100%",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Execute damage increased by 100%.",
+                  "value": "+100%",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "spell",
+              "abilityName": "Execute",
+              "spellId": 163201,
+              "icon": "./assets/abilities/inv_sword_48.jpg"
+            },
+            {
+              "id": "898e18742fb0",
+              "classKey": "WARRIOR",
+              "spec": "Protection",
+              "category": "Colossus",
+              "isTalent": true,
+              "subject": "Practiced Strikes now has an additional effect",
+              "text": "Practiced Strikes now has an additional effect – Execute and Revenge Rage cost reduced by 10.",
+              "value": "−10 Rage",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "history": [
+                {
+                  "round": 1,
+                  "date": "2026-09-03T16:42:43.783Z",
+                  "text": "Practiced Strikes now has an additional effect – Execute and Revenge Rage cost reduced by 10.",
+                  "value": "−10 Rage",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Practiced Strikes",
+              "spellId": 429647,
+              "icon": "./assets/abilities/spell_warrior_sharpenblade.jpg"
+            }
+          ]
+        }
+      ],
+      "stats": {
+        "classes": 3,
+        "changes": 17,
+        "revised": 0
+      }
     }
   ]
 }

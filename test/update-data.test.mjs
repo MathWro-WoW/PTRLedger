@@ -60,6 +60,25 @@ test('parses nested class and specialization notes', () => {
     text: 'Frozen Orb damage increased by 12% (was 8%).',
   });
 });
+test('parses class notes when the forum uses level-three section headings', () => {
+  const changes = parseClassChanges(`
+    <h3><strong>CLASSES</strong></h3>
+    <ul>
+      <li><strong>HUNTER</strong>
+        <ul><li><strong>Marksmanship</strong>
+          <ul><li>Aimed Shot damage increased by 10%.</li></ul>
+        </li></ul>
+      </li>
+    </ul>
+    <h3><strong>HOUSING</strong></h3>
+    <ul><li>Housing change that is not a class note.</li></ul>
+  `);
+
+  assert.deepEqual(changes.map(({ classKey, spec, subject }) => ({ classKey, spec, subject })), [
+    { classKey: 'HUNTER', spec: 'Marksmanship', subject: 'Aimed Shot' },
+  ]);
+});
+
 
 test('marks source-confirmed talent changes without guessing ordinary abilities', () => {
   const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
