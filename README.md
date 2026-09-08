@@ -36,6 +36,8 @@ Resolved entries include their canonical ability name, spell ID, and icon identi
 
 Cards with a resolved spell ID expose an on-demand **Live ↔ PTR** comparison using [Wowhead tooltip data](https://www.wowhead.com/tooltips). Each pane's **Wowhead ↗** label opens the corresponding Live or PTR spell page. The browser requests tooltip JSON only when the user hovers, focuses, or opens an ability name; no Wowhead script or advertising is embedded. Tooltip data is supplementary and may lag behind Blizzard's latest PTR notes. The linked official-note text and revision history remain authoritative.
 
+Talent cards are labeled **New talent** when an official note introduces one and **Removed talent** when a classified talent is removed.
+
 The **Talents only** filter can be combined with class, specialization, buff, nerf, fix, changed, round, revision-history, PvP-scope, and text filters. The PvP filter hides only notes that explicitly state the change does not apply to or affect PvP, or remains unchanged in PvP; unspecified notes remain visible because the official note does not establish their PvP scope.
 
 ## How sequential tuning is calculated

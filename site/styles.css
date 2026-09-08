@@ -474,6 +474,16 @@ h1 {
   color: var(--ember);
   background: color-mix(in srgb, var(--ember) 7%, transparent);
 }
+.ability-type-label.is-talent.is-new {
+  border-color: color-mix(in srgb, var(--arcane) 42%, var(--line));
+  color: var(--arcane-pale);
+  background: color-mix(in srgb, var(--arcane) 7%, transparent);
+}
+.ability-type-label.is-talent.is-removed {
+  border-color: color-mix(in srgb, var(--nerf) 42%, var(--line));
+  color: var(--nerf);
+  background: color-mix(in srgb, var(--nerf) 7%, transparent);
+}
 .ability-type-label.is-spell {
   border: 1px solid color-mix(in srgb, var(--arcane) 42%, var(--line));
   color: var(--arcane-pale);

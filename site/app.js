@@ -568,10 +568,13 @@ function changeCard(change) {
     }));
   }
   const abilityType = change.abilityType || (change.isTalent ? 'talent' : null);
+  const talentLabel = abilityType === 'talent'
+    ? { new: 'New talent', removed: 'Removed talent' }[change.talentChange]
+    : null;
   if (abilityType) {
     metadata.push(node('span', {
-      className: `ability-type-label is-${abilityType}`,
-      text: abilityType === 'talent' ? 'Talent' : 'Spell',
+      className: `ability-type-label is-${abilityType}${talentLabel ? ` is-${change.talentChange}` : ''}`,
+      text: talentLabel || (abilityType === 'talent' ? 'Talent' : 'Spell'),
     }));
   }
   if (change.spellId) {
