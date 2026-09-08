@@ -164,6 +164,16 @@ function isTalentChange(context, text) {
   return context.some((part) => /\btalents?\b/i.test(part)) || /\btalents?\b/i.test(text);
 }
 
+function talentChangeType(text) {
+  if (/^\s*new (?:(?:passive|hero|apex|pvp) )?talents?\s*:/i.test(text)) return 'new';
+  if (
+    /\b(?:talents?|talent nodes?)\b[^.!?]*\b(?:has|have) been removed\b/i.test(text)
+    || /\bhas been removed(?:\s*[.!?]|$)/i.test(text)
+    || /\bhas been removed from (?:the )?(?:hero |apex )?talent tree\b/i.test(text)
+  ) return 'removed';
+  return null;
+}
+
 function readableSubject(value, maxLength = 90) {
   const subject = cleanText(value);
   if (subject.length <= maxLength) return subject;
@@ -486,6 +496,7 @@ function parseList($, list, classKey, context, output, textPrefix = null, parent
         ? `${normalizedPrefix} ${text}${/[.!?]$/.test(text) ? '' : '.'}`
         : text;
       const dependentLabel = readableSubject(cleanText(text.split(/[.;]/, 1)[0]), 60);
+      const lifecycle = talentChangeType(presentedText);
       output.push({
         classKey,
         spec,
@@ -493,6 +504,7 @@ function parseList($, list, classKey, context, output, textPrefix = null, parent
         category: categoryParts.join(' · ') || null,
         subject: dependsOnParent ? `${parentSubject} · ${dependentLabel}` : stableSubject(text),
         text: presentedText,
+        ...(lifecycle ? { talentChange: lifecycle } : {}),
       });
     }
 
@@ -749,11 +761,17 @@ export function enrichPatchWithAbilities(patch, catalog, previousPatch = null) {
     for (const change of classInfo.changes) {
       const resolved = resolveAbilityMetadata(change, catalog);
       const fallback = previous.get(change.id);
+      const resolvedTalent = resolved?.abilityType === 'talent';
       change.isTalent = Boolean(
         change.isTalent
-        || resolved?.abilityType === 'talent'
+        || resolvedTalent
         || fallback?.isTalent,
       );
+      const talentChange = change.talentChange
+        || talentChangeType(change.text)
+        || fallback?.talentChange;
+      if (change.isTalent && talentChange) change.talentChange = talentChange;
+      else delete change.talentChange;
       change.abilityType = change.isTalent
         ? 'talent'
         : resolved?.abilityType || fallback?.abilityType || null;
@@ -1122,6 +1140,7 @@ export function buildPatch(source, posts) {
         existing.pvpImpact = historyItem.pvpImpact;
         existing.baseline = baseline ?? (numericVector(currentValue).length ? existing.baseline : null);
         existing.isTalent ||= raw.isTalent;
+        existing.talentChange ||= raw.talentChange;
         existing.lastChanged = date;
         applyCumulativeTuning(existing);
       } else {
@@ -1131,6 +1150,7 @@ export function buildPatch(source, posts) {
           spec: raw.spec,
           category: raw.category,
           isTalent: raw.isTalent,
+          ...(raw.talentChange ? { talentChange: raw.talentChange } : {}),
           subject: raw.subject,
           text: raw.text,
           value: historyItem.value,

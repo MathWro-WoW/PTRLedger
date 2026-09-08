@@ -97,6 +97,56 @@ test('marks source-confirmed talent changes without guessing ordinary abilities'
     { subject: 'Splinterstorm', category: 'Spellslinger', isTalent: true },
   ]);
 });
+test('marks explicitly introduced talents as new', () => {
+  const changes = parseClassChanges(post(1, '2026-01-01T00:00:00Z', `
+    <li>New Talent: Glacial Current – Frozen Orb damage increased by 20%.</li>
+  `).cooked);
+
+  assert.equal(changes[0].talentChange, 'new');
+});
+
+test('marks removed resolved talents as removed', () => {
+  const catalog = createAbilityCatalog([{
+    className: 'Mage',
+    specName: 'Frost',
+    specNodes: [{
+      name: 'Unload',
+      entries: [{ name: 'Unload', spellId: 123456, icon: 'ability_hunter_unload' }],
+    }],
+  }]);
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', `
+      <li>Unload has been removed.</li>
+    `),
+  ]);
+
+  enrichPatchWithAbilities(patch, catalog);
+
+  const unload = patch.classes[0].changes[0];
+  assert.equal(unload.isTalent, true);
+  assert.equal(unload.talentChange, 'removed');
+});
+test('does not mark talents removed from the cooldown manager as removed', () => {
+  const catalog = createAbilityCatalog([{
+    className: 'Mage',
+    specName: 'Frost',
+    specNodes: [{
+      name: 'Conflagration of Chaos',
+      entries: [{ name: 'Conflagration of Chaos', spellId: 123457, icon: 'ability_mage_conflagration' }],
+    }],
+  }]);
+  const patch = buildPatch(source, [
+    post(1, '2026-01-01T00:00:00Z', `
+      <li>Conflagration of Chaos has been removed from the Cooldown Manager.</li>
+    `),
+  ]);
+
+  enrichPatchWithAbilities(patch, catalog);
+
+  assert.equal(patch.classes[0].changes[0].talentChange, undefined);
+});
+
+
 
 test('classifies normal talent-tree entries and enriches resolved abilities', () => {
   const catalog = createAbilityCatalog([{
