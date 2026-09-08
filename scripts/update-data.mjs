@@ -504,12 +504,14 @@ export function parseClassChanges(cooked) {
   const $ = cheerio.load(cooked);
   const output = [];
 
-  $('h2').each((_, heading) => {
+  $('h2, h3').each((_, heading) => {
     if (normalizeHeading($(heading).text()) !== 'CLASSES') return;
 
+    const headingLevel = Number(heading.tagName.slice(1));
     let pendingClass = null;
     let sibling = $(heading).next();
-    while (sibling.length && !sibling.is('h2')) {
+    while (sibling.length) {
+      if (sibling.is('h2, h3') && Number(sibling[0].tagName.slice(1)) <= headingLevel) break;
       if (sibling.is('p')) {
         const classKey = normalizeHeading(directText($, sibling));
         pendingClass = CLASS_META[classKey] ? classKey : null;

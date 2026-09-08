@@ -24,7 +24,7 @@ After Pages is enabled and the first workflow succeeds, the site will be availab
 
 Patch sources are configured in [`config/sources.json`](config/sources.json). PTR history uses Blizzard's official Discourse topic API. Final release snapshots may use Blizzard's official news article HTML; neither path uses Wowhead's presentation layer as the source of truth.
 
-The tracked sources are the [Midnight 12.1 — Curse of Ula'tek PTR development notes](https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832) and Blizzard's [Curse of Ula'tek Content Update Notes](https://worldofwarcraft.blizzard.com/en-us/news/24293281).
+The tracked sources are the [Midnight 12.1 — Curse of Ula'tek PTR development notes](https://eu.forums.blizzard.com/en/wow/t/midnight-curse-of-ulatek-ptr-development-notes/621832), Blizzard's [Curse of Ula'tek Content Update Notes](https://worldofwarcraft.blizzard.com/en-us/news/24293281), and the [Midnight 12.1.5 PTR development notes](https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395).
 
 Generated output is stored in `site/data/patches.json`. Do not edit that file manually; run the updater instead.
 

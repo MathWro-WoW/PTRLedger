@@ -7,13 +7,22 @@
       "slug": "midnight-curse-of-ulatek-ptr-development-notes",
       "region": "eu",
       "status": "LIVE",
-      "current": true,
+      "current": false,
       "finalSource": {
         "type": "article",
         "url": "https://worldofwarcraft.blizzard.com/en-us/news/24293281",
         "checkpoint": "final",
         "roundLabel": "Final notes · LIVE"
       }
+    },
+    {
+      "id": "12.1.5",
+      "name": "The Promise of Tomorrow",
+      "topicId": 2344395,
+      "slug": "midnight-1215-ptr-development-notes",
+      "region": "us",
+      "status": "PTR",
+      "current": true
     }
   ]
 }
