@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-03T22:48:20.565Z",
+  "generatedAt": "2026-09-15T23:09:31.283Z",
   "patches": [
     {
       "id": "12.1",
@@ -39783,7 +39783,7 @@
       "current": true,
       "topicId": 2344395,
       "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395",
-      "lastUpdated": "2026-09-03T22:48:20.565Z",
+      "lastUpdated": "2026-09-15T23:09:31.283Z",
       "rounds": [
         {
           "number": 1,
@@ -39792,6 +39792,14 @@
           "changes": 17,
           "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1",
           "label": "Initial notes"
+        },
+        {
+          "number": 4,
+          "date": "2026-09-15T23:09:31.283Z",
+          "updatedAt": "2026-09-15T23:09:31.283Z",
+          "changes": 21,
+          "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4",
+          "label": "Update 1"
         }
       ],
       "classes": [
@@ -39927,6 +39935,37 @@
               "icon": "./assets/abilities/inv_12_dh_void_ability_collapsingstar.jpg"
             },
             {
+              "id": "53e96f189581",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": true,
+              "subject": "Demonic Instinct",
+              "text": "Demonic Instinct now connects to the talent one row down and one column to the left.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Demonic Instinct now connects to the talent one row down and one column to the left.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Demonic Instinct",
+              "spellId": 1247538,
+              "icon": "./assets/abilities/inv_12_dh_void_ability_predatorsthirst.jpg"
+            },
+            {
               "id": "beebc34ce817",
               "classKey": "DEMON HUNTER",
               "spec": "Devourer",
@@ -39989,6 +40028,37 @@
               "icon": "./assets/abilities/spell_warlock_demonicempowerment.jpg"
             },
             {
+              "id": "cc4824ae609b",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": true,
+              "subject": "Devourer’s Edge",
+              "text": "Devourer’s Edge now connects to the talent one row down and one column to the right.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Devourer’s Edge now connects to the talent one row down and one column to the right.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Devourer's Edge",
+              "spellId": 1244222,
+              "icon": "./assets/abilities/inv_12_dh_void_ability_empoweredreap.jpg"
+            },
+            {
               "id": "90a1a21a2d33",
               "classKey": "DEMON HUNTER",
               "spec": "Devourer",
@@ -40015,6 +40085,37 @@
                 }
               ],
               "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "dbc4cc833bc1",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": true,
+              "subject": "Many talents have changed positions",
+              "text": "Many talents have changed positions.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Many talents have changed positions.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
               "abilityName": null,
               "spellId": null,
               "icon": null
@@ -40080,6 +40181,37 @@
               "abilityName": "Monster Rising",
               "spellId": 452414,
               "icon": "./assets/abilities/ability_warlock_demonicpower.jpg"
+            },
+            {
+              "id": "b5f44743562e",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": true,
+              "subject": "Soulforged Blades",
+              "text": "Soulforged Blades now increases the critical strike chance of Hungering Slash and Voidblade by 18% (was 15%).",
+              "value": "18%",
+              "baseline": "15%",
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Soulforged Blades now increases the critical strike chance of Hungering Slash and Voidblade by 18% (was 15%).",
+                  "value": "18%",
+                  "baseline": "15%",
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Soulforged Blades",
+              "spellId": 1272432,
+              "icon": "./assets/abilities/inv12_ability_deathknight_frostscythe.jpg"
             },
             {
               "id": "2693f5bb2faf",
@@ -40173,6 +40305,117 @@
               "abilityName": "Violent Transformation",
               "spellId": 452409,
               "icon": "./assets/abilities/spell_shadow_demoniccirclesummon.jpg"
+            },
+            {
+              "id": "01479fd2eb48",
+              "classKey": "DEMON HUNTER",
+              "spec": "Devourer",
+              "category": null,
+              "isTalent": true,
+              "subject": "Voidpurge",
+              "text": "Voidpurge now reduces the cooldown of Void Ray during Void Metamorphosis by 2.5 seconds (was 2 seconds).",
+              "value": "2.5 seconds",
+              "baseline": "2 seconds",
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Voidpurge now reduces the cooldown of Void Ray during Void Metamorphosis by 2.5 seconds (was 2 seconds).",
+                  "value": "2.5 seconds",
+                  "baseline": "2 seconds",
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Voidpurge",
+              "spellId": 1244220,
+              "icon": "./assets/abilities/inv_12_dh_void_ability_voidray.jpg"
+            }
+          ]
+        },
+        {
+          "id": "druid",
+          "name": "Druid",
+          "color": "#ff7c0a",
+          "mark": "DR",
+          "icon": "./assets/classes/druid.jpg",
+          "changes": [
+            {
+              "id": "3e18ac64957a",
+              "classKey": "DRUID",
+              "spec": "Restoration",
+              "category": null,
+              "isTalent": true,
+              "subject": "Nature’s Bounty has been redesigned",
+              "text": "Nature’s Bounty has been redesigned – Regrowth heals up to 3 allies with Rejuvenation active for 15% of its healing, prioritizing allies with the lowest health.",
+              "value": "3 allies",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Nature’s Bounty has been redesigned – Regrowth heals up to 3 allies with Rejuvenation active for 15% of its healing, prioritizing allies with the lowest health.",
+                  "value": "3 allies",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Nature's Bounty",
+              "spellId": 1263879,
+              "icon": "./assets/abilities/talentspec_druid_restoration.jpg"
+            }
+          ]
+        },
+        {
+          "id": "evoker",
+          "name": "Evoker",
+          "color": "#33937f",
+          "mark": "EV",
+          "icon": "./assets/classes/evoker.jpg",
+          "changes": [
+            {
+              "id": "303b35110d36",
+              "classKey": "EVOKER",
+              "spec": "Preservation",
+              "category": null,
+              "isTalent": true,
+              "subject": "Merithra’s Blessing",
+              "text": "Merithra’s Blessing duration reduced to 30 seconds (was 1 minute).",
+              "value": "30 seconds",
+              "baseline": "1 minute",
+              "direction": "nerf",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Merithra’s Blessing duration reduced to 30 seconds (was 1 minute).",
+                  "value": "30 seconds",
+                  "baseline": "1 minute",
+                  "direction": "nerf",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Merithra's Blessing",
+              "spellId": 1256577,
+              "icon": "./assets/abilities/inv12_apextalent_evoker_merithrasblessing.jpg"
             }
           ]
         },
@@ -40250,6 +40493,374 @@
           ]
         },
         {
+          "id": "mage",
+          "name": "Mage",
+          "color": "#3fc7eb",
+          "mark": "MA",
+          "icon": "./assets/classes/mage.jpg",
+          "changes": [
+            {
+              "id": "44fd3bbb8a58",
+              "classKey": "MAGE",
+              "spec": "Arcane",
+              "category": null,
+              "isTalent": false,
+              "subject": "Several Arcane spells",
+              "text": "Several Arcane spells have been added to the Spell Density system for additional visibility options for non-Mage players.",
+              "value": "Buffed",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Several Arcane spells have been added to the Spell Density system for additional visibility options for non-Mage players.",
+                  "value": "Buffed",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "281d0c815758",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": "Frostfire",
+              "isTalent": true,
+              "subject": "Fixed an issue preventing Frostfire Empowerment’s effects from applying to the second…",
+              "text": "Fixed an issue preventing Frostfire Empowerment’s effects from applying to the second target when Frostfire Bolt hit a second target due to Splitting Ice.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Fixed an issue preventing Frostfire Empowerment’s effects from applying to the second target when Frostfire Bolt hit a second target due to Splitting Ice.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "9c24e67f0e62",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where casting a Frostfire Bolt and then switching to Spellslinger Hero…",
+              "text": "Fixed an issue where casting a Frostfire Bolt and then switching to Spellslinger Hero Specialization would cause Frostbolt to have the Splitting Ice damage multiplier apply to the main target in addition to the secondary target.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Fixed an issue where casting a Frostfire Bolt and then switching to Spellslinger Hero Specialization would cause Frostbolt to have the Splitting Ice damage multiplier apply to the main target in addition to the secondary target.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "f7f0ee6e6d98",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where Splitting Ice",
+              "text": "Fixed an issue where Splitting Ice’s damage modifier would not apply to Frostbolt, causing both Frostbolts to hit for full damage.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Fixed an issue where Splitting Ice’s damage modifier would not apply to Frostbolt, causing both Frostbolts to hit for full damage.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "884db34c47e6",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": "Frostfire",
+              "isTalent": true,
+              "subject": "Frostfire Infusion’s tooltip",
+              "text": "Frostfire Infusion’s tooltip has been updated, functionality unchanged.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Frostfire Infusion’s tooltip has been updated, functionality unchanged.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Frostfire Infusion",
+              "spellId": 431166,
+              "icon": "./assets/abilities/inv_10_blacksmithing_craftedbar_frostfirealloy.jpg"
+            },
+            {
+              "id": "a183ca5beccc",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": "Spellslinger",
+              "isTalent": true,
+              "subject": "Splinterstorm",
+              "text": "Splinterstorm is now trackable in the Cooldown Manager as a Buff.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Splinterstorm is now trackable in the Cooldown Manager as a Buff.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Splinterstorm",
+              "spellId": 443783,
+              "icon": "./assets/abilities/ability_mage_burstofcold.jpg"
+            },
+            {
+              "id": "2a9bea62df90",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": "Spellslinger",
+              "isTalent": true,
+              "subject": "Splinterstorm is no longer removed on start of a raid encounter or Mythic+",
+              "text": "Splinterstorm is no longer removed on start of a raid encounter or Mythic+.",
+              "value": "Nerfed",
+              "baseline": null,
+              "direction": "nerf",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Splinterstorm is no longer removed on start of a raid encounter or Mythic+.",
+                  "value": "Nerfed",
+                  "baseline": null,
+                  "direction": "nerf",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Splinterstorm",
+              "spellId": 443783,
+              "icon": "./assets/abilities/ability_mage_burstofcold.jpg"
+            }
+          ]
+        },
+        {
+          "id": "priest",
+          "name": "Priest",
+          "color": "#f3f3f3",
+          "mark": "PR",
+          "icon": "./assets/classes/priest.jpg",
+          "changes": [
+            {
+              "id": "bfa631c7b5ab",
+              "classKey": "PRIEST",
+              "spec": "Discipline",
+              "category": null,
+              "isTalent": true,
+              "subject": "Master the Darkness",
+              "text": "Master the Darkness duration reduced to 30 seconds (was 1 minute).",
+              "value": "30 seconds",
+              "baseline": "1 minute",
+              "direction": "nerf",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Master the Darkness duration reduced to 30 seconds (was 1 minute).",
+                  "value": "30 seconds",
+                  "baseline": "1 minute",
+                  "direction": "nerf",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Master the Darkness",
+              "spellId": 1253590,
+              "icon": "./assets/abilities/inv12_apextalent_priest_voidshield.jpg"
+            },
+            {
+              "id": "c1128aeb0b41",
+              "classKey": "PRIEST",
+              "spec": "Holy",
+              "category": null,
+              "isTalent": true,
+              "subject": "Holy Celerity and Ultimate Serenity have swapped positions on the specialization tree",
+              "text": "Holy Celerity and Ultimate Serenity have swapped positions on the specialization tree.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Holy Celerity and Ultimate Serenity have swapped positions on the specialization tree.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Holy Celerity",
+              "spellId": 1215275,
+              "icon": "./assets/abilities/spell_priest_pathofdevout.jpg"
+            }
+          ]
+        },
+        {
+          "id": "rogue",
+          "name": "Rogue",
+          "color": "#fff468",
+          "mark": "RO",
+          "icon": "./assets/classes/rogue.jpg",
+          "changes": [
+            {
+              "id": "df7f45f72eb4",
+              "classKey": "ROGUE",
+              "spec": "Outlaw",
+              "category": null,
+              "isTalent": true,
+              "subject": "Deft Maneuvers has been updated",
+              "text": "Deft Maneuvers has been updated – No longer increases Blade Flurry’s Energy cost by 30. Instead, it increases Blade Flurry’s Energy cost by 5 per target hit, up to 30.",
+              "value": "30",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Deft Maneuvers has been updated – No longer increases Blade Flurry’s Energy cost by 30. Instead, it increases Blade Flurry’s Energy cost by 5 per target hit, up to 30.",
+                  "value": "30",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Deft Maneuvers",
+              "spellId": 381878,
+              "icon": "./assets/abilities/spell_warrior_wildstrike.jpg"
+            },
+            {
+              "id": "8ecd0e982435",
+              "classKey": "ROGUE",
+              "spec": "Subtlety",
+              "category": null,
+              "isTalent": false,
+              "subject": "All modifiers to Shadow",
+              "text": "All modifiers to Shadow damage and many Shadow damage abilities have been updated to resolve circumstances where damage bonuses could be applied incorrectly.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "All modifiers to Shadow damage and many Shadow damage abilities have been updated to resolve circumstances where damage bonuses could be applied incorrectly.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            }
+          ]
+        },
+        {
           "id": "warrior",
           "name": "Warrior",
           "color": "#c69b6d",
@@ -40269,7 +40880,7 @@
               "direction": "changed",
               "pvpImpact": null,
               "firstSeen": "2026-09-03T16:42:43.783Z",
-              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
               "history": [
                 {
                   "round": 1,
@@ -40280,6 +40891,16 @@
                   "direction": "changed",
                   "pvpImpact": null,
                   "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                },
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Execute no longer consumes additional Rage for additional damage.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
                 }
               ],
               "abilityType": "spell",
@@ -40295,12 +40916,12 @@
               "isTalent": false,
               "subject": "Execute",
               "text": "Execute damage increased by 100%.",
-              "value": "+100%",
+              "value": "+300%",
               "baseline": null,
               "direction": "buff",
               "pvpImpact": null,
               "firstSeen": "2026-09-03T16:42:43.783Z",
-              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
               "history": [
                 {
                   "round": 1,
@@ -40310,7 +40931,54 @@
                   "baseline": null,
                   "direction": "buff",
                   "pvpImpact": null,
-                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1",
+                  "effectiveValue": "+100%",
+                  "effectiveDirection": "buff"
+                },
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Execute damage increased by 100%.",
+                  "value": "+100%",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4",
+                  "effectiveValue": "+300%",
+                  "effectiveDirection": "buff"
+                }
+              ],
+              "cumulative": true,
+              "latestAdjustment": "+100%",
+              "abilityType": "spell",
+              "abilityName": "Execute",
+              "spellId": 163201,
+              "icon": "./assets/abilities/inv_sword_48.jpg"
+            },
+            {
+              "id": "72140d395fba-3",
+              "classKey": "WARRIOR",
+              "spec": "Protection",
+              "category": null,
+              "isTalent": false,
+              "subject": "Execute",
+              "text": "Execute damage increased by 30%.",
+              "value": "+30%",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-15T23:09:31.283Z",
+              "lastChanged": "2026-09-15T23:09:31.283Z",
+              "history": [
+                {
+                  "round": 4,
+                  "date": "2026-09-15T23:09:31.283Z",
+                  "text": "Execute damage increased by 30%.",
+                  "value": "+30%",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
                 }
               ],
               "abilityType": "spell",
@@ -40353,9 +41021,9 @@
         }
       ],
       "stats": {
-        "classes": 3,
-        "changes": 17,
-        "revised": 0
+        "classes": 8,
+        "changes": 36,
+        "revised": 2
       }
     }
   ]
