@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-15T23:09:31.283Z",
+  "generatedAt": "2026-09-29T20:58:25.478Z",
   "patches": [
     {
       "id": "12.1",
@@ -39783,7 +39783,7 @@
       "current": true,
       "topicId": 2344395,
       "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395",
-      "lastUpdated": "2026-09-15T23:09:31.283Z",
+      "lastUpdated": "2026-09-29T20:58:25.478Z",
       "rounds": [
         {
           "number": 1,
@@ -39800,6 +39800,14 @@
           "changes": 21,
           "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4",
           "label": "Update 1"
+        },
+        {
+          "number": 6,
+          "date": "2026-09-29T20:58:25.478Z",
+          "updatedAt": "2026-09-29T20:58:25.478Z",
+          "changes": 21,
+          "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6",
+          "label": "Update 2"
         }
       ],
       "classes": [
@@ -40387,6 +40395,192 @@
           "icon": "./assets/classes/evoker.jpg",
           "changes": [
             {
+              "id": "3a4194957e7d",
+              "classKey": "EVOKER",
+              "spec": "Augmentation",
+              "category": "Scalecommander",
+              "isTalent": true,
+              "subject": "Melt Armor",
+              "text": "Melt Armor damage increased by 100%.",
+              "value": "+100%",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Melt Armor damage increased by 100%.",
+                  "value": "+100%",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Melt Armor",
+              "spellId": 441176,
+              "icon": "./assets/abilities/inv_10_gearupgrade_drakesshadowflameenhancedcrest.jpg"
+            },
+            {
+              "id": "275f0b2dea60",
+              "classKey": "EVOKER",
+              "spec": "Augmentation",
+              "category": "Chronowarden",
+              "isTalent": true,
+              "subject": "Temporal Burst",
+              "text": "Temporal Burst duration is now increased by Mastery: Timewalker.",
+              "value": "Buffed",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Temporal Burst duration is now increased by Mastery: Timewalker.",
+                  "value": "Buffed",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Temporal Burst",
+              "spellId": 431695,
+              "icon": "./assets/abilities/ability_evoker_essenceburst5.jpg"
+            },
+            {
+              "id": "937e3b132d60",
+              "classKey": "EVOKER",
+              "spec": "Augmentation",
+              "category": "Chronowarden",
+              "isTalent": true,
+              "subject": "Temporality",
+              "text": "Temporality duration is now increased by Mastery: Timewalker.",
+              "value": "Buffed",
+              "baseline": null,
+              "direction": "buff",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Temporality duration is now increased by Mastery: Timewalker.",
+                  "value": "Buffed",
+                  "baseline": null,
+                  "direction": "buff",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Temporality",
+              "spellId": 431873,
+              "icon": "./assets/abilities/ability_evoker_return.jpg"
+            },
+            {
+              "id": "0456601b7bfb",
+              "classKey": "EVOKER",
+              "spec": "Preservation",
+              "category": null,
+              "isTalent": true,
+              "subject": "Consume Flame",
+              "text": "Consume Flame no longer double dips from healing increases on the target.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Consume Flame no longer double dips from healing increases on the target.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Consume Flame",
+              "spellId": 444088,
+              "icon": "./assets/abilities/inv_shadowflames_wave.jpg"
+            },
+            {
+              "id": "5a874e00750d",
+              "classKey": "EVOKER",
+              "spec": "Preservation",
+              "category": "Chronowarden",
+              "isTalent": false,
+              "subject": "Fixed an issue where Afterimage was causing Deep Breath to sometimes cast Living Flame…",
+              "text": "Fixed an issue where Afterimage was causing Deep Breath to sometimes cast Living Flame on the Evoker.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where Afterimage was causing Deep Breath to sometimes cast Living Flame on the Evoker.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "d8b6b5f694f0",
+              "classKey": "EVOKER",
+              "spec": "Preservation",
+              "category": "Chronowarden",
+              "isTalent": false,
+              "subject": "Fixed an issue where extending Fire Breath with Double-time could cause Life-Giver’s Flame…",
+              "text": "Fixed an issue where extending Fire Breath with Double-time could cause Life-Giver’s Flame to stop healing.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where extending Fire Breath with Double-time could cause Life-Giver’s Flame to stop healing.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
               "id": "303b35110d36",
               "classKey": "EVOKER",
               "spec": "Preservation",
@@ -40459,6 +40653,68 @@
               "icon": null
             },
             {
+              "id": "9bb6d67f3a26",
+              "classKey": "HUNTER",
+              "spec": "Marksmanship",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where Explosive Shot would automatically select and fire at a nearby target…",
+              "text": "Fixed an issue where Explosive Shot would automatically select and fire at a nearby target if pressed without a target currently selected.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where Explosive Shot would automatically select and fire at a nearby target if pressed without a target currently selected.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "7c32748a3acb",
+              "classKey": "HUNTER",
+              "spec": "Marksmanship",
+              "category": "Dark Ranger",
+              "isTalent": false,
+              "subject": "Fixed an issue where Umbral Reach was not generating Trick Shots when Bleak Powder hit…",
+              "text": "Fixed an issue where Umbral Reach was not generating Trick Shots when Bleak Powder hit exactly 2 targets.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where Umbral Reach was not generating Trick Shots when Bleak Powder hit exactly 2 targets.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
               "id": "9da002af5884",
               "classKey": "HUNTER",
               "spec": "Marksmanship",
@@ -40489,6 +40745,68 @@
               "abilityName": "Unload",
               "spellId": 1277548,
               "icon": "./assets/abilities/ability_hunter_efficiency_brown.jpg"
+            },
+            {
+              "id": "2275a120e3c5",
+              "classKey": "HUNTER",
+              "spec": "Survival",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where Raptor Swipe had a longer range than intended while Aspect of…",
+              "text": "Fixed an issue where Raptor Swipe had a longer range than intended while Aspect of the Eagle was active.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where Raptor Swipe had a longer range than intended while Aspect of the Eagle was active.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "10e6d90d736e",
+              "classKey": "HUNTER",
+              "spec": "Survival",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where Strike as One",
+              "text": "Fixed an issue where Strike as One bonus damage from Raptor Swipe (Rank 3) did not properly work while Aspect of the Eagle was active.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where Strike as One bonus damage from Raptor Swipe (Rank 3) did not properly work while Aspect of the Eagle was active.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
             }
           ]
         },
@@ -40562,6 +40880,37 @@
               "icon": null
             },
             {
+              "id": "c80460dcdac3",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where a Splitting Ice Frostbolt had a smaller search radius for its second…",
+              "text": "Fixed an issue where a Splitting Ice Frostbolt had a smaller search radius for its second target than other spells.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where a Splitting Ice Frostbolt had a smaller search radius for its second target than other spells.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
               "id": "9c24e67f0e62",
               "classKey": "MAGE",
               "spec": "Frost",
@@ -40616,6 +40965,68 @@
                   "direction": "fixed",
                   "pvpImpact": null,
                   "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "82976e4c19ad",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue with Crystalline Refraction where interrupting Ray of Frost by casting Ray…",
+              "text": "Fixed an issue with Crystalline Refraction where interrupting Ray of Frost by casting Ray of Frost could cause it to not generate Fingers of Frost.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue with Crystalline Refraction where interrupting Ray of Frost by casting Ray of Frost could cause it to not generate Fingers of Frost.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "c8ff9c7a6b0a",
+              "classKey": "MAGE",
+              "spec": "Frost",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue with Shatter where if two Ice Lances were in the air at the same time,…",
+              "text": "Fixed an issue with Shatter where if two Ice Lances were in the air at the same time, with the first benefitting from Fingers of Frost and the second not, neither would benefit from Fingers of Frost. This could also occur with Thermal Void, which is also fixed.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue with Shatter where if two Ice Lances were in the air at the same time, with the first benefitting from Fingers of Frost and the second not, neither would benefit from Fingers of Frost. This could also occur with Thermal Void, which is also fixed.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
                 }
               ],
               "abilityType": null,
@@ -40719,6 +41130,46 @@
           ]
         },
         {
+          "id": "monk",
+          "name": "Monk",
+          "color": "#00ff98",
+          "mark": "MO",
+          "icon": "./assets/classes/monk.jpg",
+          "changes": [
+            {
+              "id": "5f3b2d073feb",
+              "classKey": "MONK",
+              "spec": "Class-wide",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where Transcendence: Transfer could be used while silenced if talented…",
+              "text": "Fixed an issue where Transcendence: Transfer could be used while silenced if talented into Transcendence: Linked Spirits.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where Transcendence: Transfer could be used while silenced if talented into Transcendence: Linked Spirits.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            }
+          ]
+        },
+        {
           "id": "priest",
           "name": "Priest",
           "color": "#f3f3f3",
@@ -40797,6 +41248,68 @@
           "icon": "./assets/classes/rogue.jpg",
           "changes": [
             {
+              "id": "7fa4d9f1a089",
+              "classKey": "ROGUE",
+              "spec": "Assassination",
+              "category": null,
+              "isTalent": true,
+              "subject": "Crimson Tempest animation",
+              "text": "Crimson Tempest animation has been updated and now has a weapon trail.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Crimson Tempest animation has been updated and now has a weapon trail.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Crimson Tempest",
+              "spellId": 1247227,
+              "icon": "./assets/abilities/inv12_ability_rogue_crimsontempest.jpg"
+            },
+            {
+              "id": "a4fff422619f",
+              "classKey": "ROGUE",
+              "spec": "Assassination",
+              "category": null,
+              "isTalent": false,
+              "subject": "Mutilate has an updated weapon trail",
+              "text": "Mutilate has an updated weapon trail.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Mutilate has an updated weapon trail.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
               "id": "df7f45f72eb4",
               "classKey": "ROGUE",
               "spec": "Outlaw",
@@ -40851,6 +41364,139 @@
                   "direction": "changed",
                   "pvpImpact": null,
                   "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/4"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "4e11563cd424",
+              "classKey": "ROGUE",
+              "spec": "Subtlety",
+              "category": null,
+              "isTalent": true,
+              "subject": "Shadow Blades has an updated cast visual and weapon visual",
+              "text": "Shadow Blades has an updated cast visual and weapon visual.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Shadow Blades has an updated cast visual and weapon visual.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": "talent",
+              "abilityName": "Shadow Blades",
+              "spellId": 121471,
+              "icon": "./assets/abilities/inv_knife_1h_grimbatolraid_d_03.jpg"
+            }
+          ]
+        },
+        {
+          "id": "shaman",
+          "name": "Shaman",
+          "color": "#0070dd",
+          "mark": "SH",
+          "icon": "./assets/classes/shaman.jpg",
+          "changes": [
+            {
+              "id": "b0578a598a81",
+              "classKey": "SHAMAN",
+              "spec": "Enhancement",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where Static Accumulation could cause Maelstrom Weapon stacks to stop…",
+              "text": "Fixed an issue where Static Accumulation could cause Maelstrom Weapon stacks to stop automatically generating if activated during certain points of Ascendance or Doom Winds being active.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where Static Accumulation could cause Maelstrom Weapon stacks to stop automatically generating if activated during certain points of Ascendance or Doom Winds being active.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "ad761254e174",
+              "classKey": "SHAMAN",
+              "spec": "Restoration",
+              "category": null,
+              "isTalent": false,
+              "subject": "Extending Riptide through Swelling Tides",
+              "text": "Extending Riptide through Swelling Tides now causes Riptide’s timer to extend rather than reset.",
+              "value": "Changed",
+              "baseline": null,
+              "direction": "changed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Extending Riptide through Swelling Tides now causes Riptide’s timer to extend rather than reset.",
+                  "value": "Changed",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
+                }
+              ],
+              "abilityType": null,
+              "abilityName": null,
+              "spellId": null,
+              "icon": null
+            },
+            {
+              "id": "e2279fee2ded",
+              "classKey": "SHAMAN",
+              "spec": "Restoration",
+              "category": null,
+              "isTalent": false,
+              "subject": "Fixed an issue where Nature’s Swiftness and Ancestral Swiftness did not properly make",
+              "text": "Fixed an issue where Nature’s Swiftness and Ancestral Swiftness did not properly make Healing Rain instant cast.",
+              "value": "Fixed",
+              "baseline": null,
+              "direction": "fixed",
+              "pvpImpact": null,
+              "firstSeen": "2026-09-29T20:58:25.478Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
+              "history": [
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Fixed an issue where Nature’s Swiftness and Ancestral Swiftness did not properly make Healing Rain instant cast.",
+                  "value": "Fixed",
+                  "baseline": null,
+                  "direction": "fixed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
                 }
               ],
               "abilityType": null,
@@ -40993,13 +41639,13 @@
               "category": "Colossus",
               "isTalent": true,
               "subject": "Practiced Strikes now has an additional effect",
-              "text": "Practiced Strikes now has an additional effect – Execute and Revenge Rage cost reduced by 10.",
-              "value": "−10 Rage",
+              "text": "Practiced Strikes now has an additional effect – Execute and Revenge rage cost reduced by 10.",
+              "value": "−10 rage",
               "baseline": null,
               "direction": "changed",
               "pvpImpact": null,
               "firstSeen": "2026-09-03T16:42:43.783Z",
-              "lastChanged": "2026-09-03T16:42:43.783Z",
+              "lastChanged": "2026-09-29T20:58:25.478Z",
               "history": [
                 {
                   "round": 1,
@@ -41010,6 +41656,16 @@
                   "direction": "changed",
                   "pvpImpact": null,
                   "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/1"
+                },
+                {
+                  "round": 6,
+                  "date": "2026-09-29T20:58:25.478Z",
+                  "text": "Practiced Strikes now has an additional effect – Execute and Revenge rage cost reduced by 10.",
+                  "value": "−10 rage",
+                  "baseline": null,
+                  "direction": "changed",
+                  "pvpImpact": null,
+                  "source": "https://us.forums.blizzard.com/en/wow/t/midnight-1215-ptr-development-notes/2344395/6"
                 }
               ],
               "abilityType": "talent",
@@ -41021,9 +41677,9 @@
         }
       ],
       "stats": {
-        "classes": 8,
-        "changes": 36,
-        "revised": 2
+        "classes": 10,
+        "changes": 56,
+        "revised": 3
       }
     }
   ]
